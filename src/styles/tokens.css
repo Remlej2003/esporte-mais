@@ -1,0 +1,155 @@
+/* ============================================================
+   MAIS ESPORTE — ontwerptokens
+   Eén bestand. Alle kleur, letter, ritme en beweging staat hier;
+   componenten bevatten geen losse waarden.
+   ============================================================ */
+
+/* --- Letters ------------------------------------------------ */
+
+@font-face {
+  font-family: 'Vollkorn';
+  src: url('/fonts/Vollkorn-latin.woff2') format('woff2');
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Vollkorn';
+  src: url('/fonts/Vollkorn-latin-ext.woff2') format('woff2');
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308,
+    U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Vollkorn';
+  src: url('/fonts/Vollkorn-latin-italic.woff2') format('woff2');
+  font-weight: 400 900;
+  font-style: italic;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Vollkorn';
+  src: url('/fonts/Vollkorn-latin-ext-italic.woff2') format('woff2');
+  font-weight: 400 900;
+  font-style: italic;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308,
+    U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Archivo';
+  src: url('/fonts/Archivo-latin.woff2') format('woff2');
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Archivo';
+  src: url('/fonts/Archivo-latin-ext.woff2') format('woff2');
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308,
+    U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+:root {
+  /* --- Verf ------------------------------------------------
+     De vijf kleuren die je op zo'n muur werkelijk vindt:
+     kalk, veldgroen, menie-oranje, goud en kwastzwart.       */
+  --kalk: #ede5d3;
+  --kalk-diep: #e0d6c0;
+  --kalk-schaduw: #d3c7ad;
+  --veld: #14483a;
+  --veld-diep: #0e3529;
+  --lak: #b93a18;
+  --lak-helder: #d9481f;
+  --goud: #e8a81c;
+  --roet: #1e1a16;
+
+  /* Tekstkleuren per ondergrond. Secundair is altijd getint
+     vanuit de ondergrond, nooit grijs — grijs verraadt zichzelf. */
+  --op-kalk: #1e1a16;
+  --op-kalk-zacht: #5a4e3c;
+  --op-veld: #ede5d3;
+  --op-veld-zacht: #b8cfc4;
+  --op-lak: #f7e7df;
+
+  /* --- Letters --------------------------------------------- */
+  --font-display: 'Vollkorn', 'Hoefler Text', Georgia, serif;
+  --font-tekst: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+
+  --t-display: clamp(2.75rem, 10.5vw, 6rem);
+  --t-h2: clamp(2rem, 5.5vw, 3.5rem);
+  --t-h3: clamp(1.3rem, 2.6vw, 1.75rem);
+  --t-groot: clamp(1.125rem, 1.8vw, 1.375rem);
+  --t-body: 1.0625rem;
+  --t-klein: 0.875rem;
+  --t-plaat: 0.7rem;
+  --t-cijfer: clamp(3rem, 8vw, 5.5rem);
+
+  /* Displaymaten tussen h3 en h2. Stonden eerder los in de pagina,
+     waardoor de ramp in DESIGN.md en de code uit elkaar liepen. */
+  --t-h4: clamp(1.15rem, 2vw, 1.45rem);
+  --t-uitspraak: clamp(1.3rem, 2.5vw, 1.85rem);
+  --t-keerpunt: clamp(1.6rem, 3.4vw, 2.5rem);
+  --t-bord: clamp(1.5rem, 3.4vw, 2.35rem);
+
+  --lh-display: 0.94;
+  --lh-kop: 1.06;
+  --lh-body: 1.62;
+  --sp-display: -0.03em;
+  --sp-plaat: 0.16em;
+
+  --maat: 68ch;
+
+  /* --- Ritme ------------------------------------------------ */
+  --s1: 0.25rem;
+  --s2: 0.5rem;
+  --s3: 0.75rem;
+  --s4: 1rem;
+  --s5: 1.5rem;
+  --s6: 2rem;
+  --s7: 3rem;
+  --s8: 4rem;
+  --s9: 6rem;
+  --s10: 8rem;
+  /* Twee maten in plaats van één. Een geverfd vlak heeft ademruimte
+     bínnen de verf nodig, anders raakt de tekst de gekwaste rand.
+     Een gewone sectie op dezelfde kalk heeft dat niet: daar is de
+     padding de tussenruimte, en die mocht fors korter. */
+  --sectie: clamp(3rem, 5.5vw, 4.75rem);
+  --sectie-vlak: clamp(2.25rem, 3.8vw, 3.25rem);
+  --rand: clamp(1.25rem, 5vw, 4rem);
+  --breed: 78rem;
+
+  /* --- Vormen ----------------------------------------------- */
+  --r-pil: 999px;
+  --r-boog: 46% 46% 3px 3px / 26% 26% 3px 3px;
+  --r-plaat: 2px;
+  --lijn: 2px;
+  --lijn-zwaar: 4px;
+
+  /* --- Beweging --------------------------------------------- */
+  --ease-uit: cubic-bezier(0.16, 1, 0.3, 1);
+  --duur-kort: 220ms;
+
+  /* --- Pleisterkorrel ---------------------------------------
+     Eén turbulentielaag over de hele muur, in overlay zodat hij
+     zowel oplicht als verdiept — kalk is korrelig naar twee kanten.
+     De sterkte is gemeten, niet geschat: zie scripts/meet-korrel.mjs.
+     Doel is een spreiding van 12 tot 24 van 255 op een vlak vlak;
+     daaronder is het een vinkje in plaats van materiaal.          */
+  --korrel: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0.33 0.33 0.33 0 0 0.33 0.33 0.33 0 0 0.33 0.33 0.33 0 0 0 0 0 0 1'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='3.4' intercept='-1.2'/%3E%3CfeFuncG type='linear' slope='3.4' intercept='-1.2'/%3E%3CfeFuncB type='linear' slope='3.4' intercept='-1.2'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E");
+  --korrel-sterkte: 0.28;
+}

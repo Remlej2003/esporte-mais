@@ -1,0 +1,54 @@
+---
+/* Het Vale da Serra-merk, nagetekend uit het partnerdocument: kompasroos
+   over een bergsilhouet. Het origineel bestaat alleen als rasterafbeelding;
+   dit is de vectorversie tot er een echt logobestand is. */
+import nl from '../content/nl.json';
+
+interface Props { hoogte?: string; kleur?: string; toonCoordinaten?: boolean; class?: string }
+const { hoogte = '2.4rem', kleur = 'currentColor', toonCoordinaten = false, class: klasse = '' } = Astro.props;
+---
+
+<div class={`merk ${klasse}`} style={`--merk-h:${hoogte}`}>
+  <svg viewBox="0 0 48 44" role="img" aria-label={`${nl.merk.naam}, ${nl.merk.afzender}`}>
+    <path d="M4 38 L18 16 L26 27 L32 19 L44 38 Z" fill={kleur} opacity="0.9" />
+    <path
+      d="M24 1 L26.6 9.4 L35 12 L26.6 14.6 L24 23 L21.4 14.6 L13 12 L21.4 9.4 Z"
+      fill={kleur}
+    />
+    <circle cx="24" cy="12" r="10.5" fill="none" stroke={kleur} stroke-width="1.4" opacity="0.65" />
+  </svg>
+  <div class="merk__woord">
+    <span class="merk__naam plaat">{nl.merk.naam}</span>
+    {toonCoordinaten && <span class="merk__coord plaat cijfers">{nl.merk.coordinaten}</span>}
+  </div>
+</div>
+
+<style>
+  .merk {
+    display: flex;
+    align-items: center;
+    gap: var(--s3);
+  }
+  .merk svg {
+    height: var(--merk-h);
+    width: auto;
+    flex: none;
+  }
+  .merk__woord {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15em;
+  }
+  .merk__naam {
+    font-weight: 700;
+    font-stretch: 78%;
+    letter-spacing: 0.14em;
+    font-size: calc(var(--merk-h) * 0.34);
+  }
+  .merk__coord {
+    font-weight: 500;
+    opacity: 0.7;
+    font-size: calc(var(--merk-h) * 0.23);
+    letter-spacing: 0.08em;
+  }
+</style>

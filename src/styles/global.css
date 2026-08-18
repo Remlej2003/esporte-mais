@@ -1,0 +1,143 @@
+@import './tokens.css';
+
+/* ============================================================
+   De muur. Eén doorlopend gekalkt oppervlak; secties zijn
+   plekken erop, geen losse blokken.
+   ============================================================ */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+  -webkit-text-size-adjust: 100%;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  margin: 0;
+  background-color: var(--kalk);
+  color: var(--op-kalk);
+  font-family: var(--font-tekst);
+  font-size: var(--t-body);
+  line-height: var(--lh-body);
+  font-synthesis-weight: none;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* De pleisterkorrel ligt over álles, ook over de geverfde vlakken,
+   zodat het één muur blijft en geen gestapelde kleurvlakken.
+   Absoluut en niet fixed: de korrel hoort bij de muur en scrollt dus
+   mee. Fixed zou hem over het glas leggen in plaats van op het pleister,
+   en dekt bovendien maar één viewport. */
+body { position: relative; }
+body::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--korrel);
+  opacity: var(--korrel-sterkte);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 9;
+}
+
+h1, h2, h3, p, ul, ol, figure, blockquote { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+img, svg, picture { display: block; max-width: 100%; }
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: var(--lh-kop);
+  letter-spacing: var(--sp-display);
+  text-wrap: balance;
+}
+
+p { text-wrap: pretty; }
+
+strong { font-weight: 700; }
+em { font-style: italic; }
+
+/* --- Browservlakken -----------------------------------------
+   De onderdelen die je niet tekent dragen het ontwerp ook.    */
+
+::selection {
+  background: var(--goud);
+  color: var(--roet);
+}
+
+:root { caret-color: var(--lak-helder); accent-color: var(--veld); }
+
+/* Geen eigen radius hier: de omlijning volgt de vorm die het element
+   zelf heeft, zodat een pil bij toetsenbordfocus een pil blijft. */
+:where(a, button, [tabindex]):focus-visible {
+  outline: var(--lijn-zwaar) solid var(--lak-helder);
+  outline-offset: 3px;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+  text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
+  transition: text-decoration-color var(--duur-kort) var(--ease-uit);
+}
+a:hover { text-decoration-color: currentColor; }
+
+/* Cijfers in tabellen en tellingen staan onder elkaar uitgelijnd. */
+.cijfers { font-variant-numeric: tabular-nums lining-nums; }
+
+@supports (scrollbar-color: red blue) {
+  html { scrollbar-color: var(--kalk-schaduw) var(--kalk); scrollbar-width: thin; }
+}
+
+/* --- Opmaakhulpen -------------------------------------------- */
+
+.omhulsel {
+  width: min(100% - var(--rand) * 2, var(--breed));
+  margin-inline: auto;
+}
+
+.overslaan {
+  position: absolute;
+  left: var(--rand);
+  top: -100%;
+  z-index: 50;
+  background: var(--veld);
+  color: var(--op-veld);
+  padding: var(--s3) var(--s5);
+  border-radius: var(--r-pil);
+  font-size: var(--t-klein);
+  font-weight: 600;
+  text-decoration: none;
+  transition: top var(--duur-kort) var(--ease-uit);
+}
+.overslaan:focus-visible { top: var(--s4); }
+
+/* Gesjabloneerd plaatje: de aanduiding bij een zone of foto.
+   Draagt informatie, staat nooit als opwarmertje boven een kop. */
+.plaat {
+  font-family: var(--font-tekst);
+  font-size: var(--t-plaat);
+  font-weight: 600;
+  font-stretch: 84%;
+  letter-spacing: var(--sp-plaat);
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.maat { max-width: var(--maat); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

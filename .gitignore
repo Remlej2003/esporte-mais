@@ -1,0 +1,14 @@
+# AI coding agent config & skills (lokaal, niet delen via GitHub)
+.claude/
+.gemini/
+
+# Build en afhankelijkheden
+node_modules/
+dist/
+.astro/
+
+# Werkbestanden van de ontwerpskill (schermafdrukken, surface briefs)
+.impeccable/
+
+# OS
+.DS_Store

@@ -1,0 +1,44 @@
+---
+import '../styles/global.css';
+import nl from '../content/nl.json';
+
+interface Props { titel?: string; omschrijving?: string }
+const { titel = nl.meta.titel, omschrijving = nl.meta.omschrijving } = Astro.props;
+---
+
+<!doctype html>
+<html lang={nl.meta.taal}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{titel}</title>
+    <meta name="description" content={omschrijving} />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta property="og:title" content={titel} />
+    <meta property="og:description" content={omschrijving} />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#ede5d3" />
+    <link rel="preload" href="/fonts/Vollkorn-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Archivo-latin.woff2" as="font" type="font/woff2" crossorigin />
+  </head>
+  <body>
+    <!--
+      THESIS: Een gemeenschap houdt haar eigen telling bij, met de kwast. Weigert de
+      statistiekenbalk in kolommen die vijfjaardoelen als behaalde resultaten presenteert.
+      OWN-WORLD: Gekalkt pleisterwerk (#ede5d3) onder één korrellaag; geverfde vlakken in
+      veldgroen en menie-oranje met gekwaste randen; Vollkorn als geschilderde romein,
+      Archivo als sjabloonplaatje; foto's in geverfde lijsten. Geen kaarten.
+      STORY: Jongeren uit de favela worden opgeleid en begeleiden daarna zelf de kinderen
+      daar. Die lus is het product. De partner plant een kennismaking.
+      FIRST VIEWPORT: Eén doorlopende muur. Kop geschilderd op architectuurschaal links,
+      daaronder één alinea uitleg, dan de kwastregel met de groene pil erop; de klimfoto
+      rechts in geverfde lijst met sjabloonplaatje; Vale da Serra gesjabloneerd linksboven.
+      De uitleg staat bewust vóór de actie: een bestuurder hoort niet eerst twee knoppen
+      tegen te komen.
+      FORM: Muurschrift, kandidaat 6 van 7, seed 42e25978.
+      FINISH: unreviewed and undocumented is unfinished; this build ends with the finish
+      review, the verdict, and DESIGN.md
+    -->
+    <slot />
+  </body>
+</html>

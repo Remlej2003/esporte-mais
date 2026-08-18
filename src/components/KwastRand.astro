@@ -1,0 +1,55 @@
+---
+/* De rand van een geverfd vlak. Verf houdt niet op in een rechte lijn,
+   en dat verschil is het hele punt: dit is één muur met vlakken erop,
+   geen gestapelde gekleurde blokken.
+
+   Drie verschillende randen, want één hergebruikte golf op elke sectie
+   is een sjabloon en geen kwast. De amplitude verschilt per variant. */
+interface Props {
+  kleur: string;
+  positie?: 'boven' | 'onder';
+  variant?: 1 | 2 | 3;
+  class?: string;
+}
+const { kleur, positie = 'boven', variant = 1, class: klasse = '' } = Astro.props;
+
+const paden: Record<number, string> = {
+  1: `M0,40 L0,26 C36,15 74,29 118,22 C170,14 196,31 244,26 C292,21 318,9 372,17
+      C424,25 452,32 500,24 C556,15 578,27 628,23 C684,19 712,8 764,16
+      C818,24 842,33 896,26 C948,19 976,12 1024,20 C1078,29 1106,31 1156,24
+      C1210,16 1244,27 1290,22 C1346,16 1392,29 1440,21 L1440,40 Z`,
+  2: `M0,40 L0,19 C52,29 88,12 140,20 C198,29 226,16 278,13 C330,10 360,27 414,24
+      C470,21 496,8 548,15 C604,23 634,30 688,22 C740,15 764,11 818,19
+      C874,28 902,14 952,11 C1006,8 1038,26 1092,25 C1146,24 1174,13 1226,17
+      C1284,22 1318,31 1368,25 C1400,21 1420,16 1440,18 L1440,40 Z`,
+  3: `M0,40 L0,23 C44,12 82,26 130,30 C186,35 214,18 264,14 C316,10 344,25 396,29
+      C452,33 484,20 534,15 C588,10 616,26 668,29 C722,32 750,17 800,13
+      C856,9 888,24 940,28 C994,32 1022,19 1072,14 C1128,9 1160,25 1212,28
+      C1268,32 1306,20 1354,16 C1386,13 1414,20 1440,17 L1440,40 Z`,
+};
+---
+
+<svg
+  class={`kwastrand kwastrand--${positie} ${klasse}`}
+  viewBox="0 0 1440 40"
+  preserveAspectRatio="none"
+  aria-hidden="true"
+  focusable="false"
+>
+  <path fill={kleur} d={paden[variant]} />
+</svg>
+
+<style>
+  .kwastrand {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: clamp(20px, 2.6vw, 34px);
+    pointer-events: none;
+  }
+  .kwastrand--boven { top: calc(-1 * clamp(20px, 2.6vw, 34px) + 1px); }
+  .kwastrand--onder {
+    bottom: calc(-1 * clamp(20px, 2.6vw, 34px) + 1px);
+    transform: scaleY(-1);
+  }
+</style>

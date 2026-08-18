@@ -1,0 +1,193 @@
+{
+  "_bron": "Alle feiten komen uit het partnerdocument (Esporte mais.pdf, 5 pagina's). Niets op deze pagina mag hier buiten vallen. Zie PRODUCT.md.",
+
+  "meta": {
+    "taal": "nl",
+    "titel": "MAIS ESPORTE: wie het geleerd heeft, geeft het door",
+    "omschrijving": "MAIS ESPORTE leidt jongeren in Braziliaanse favela's op tot Urban Adventure Coach. Zij begeleiden daarna zelf de kinderen in hun eigen wijk. Voor organisaties die verder kijken dan sponsoring."
+  },
+
+  "merk": {
+    "naam": "MAIS ESPORTE",
+    "afzender": "Vale da Serra Company",
+    "coordinaten": "3°55′33.93″ S · 38°43′38.49″ W"
+  },
+
+  "nav": {
+    "items": [
+      { "label": "Missie", "href": "#missie" },
+      { "label": "Onze aanpak", "href": "#aanpak" },
+      { "label": "Impact", "href": "#impact" },
+      { "label": "Word partner", "href": "#partner" }
+    ],
+    "actie": "Plan een kennismaking",
+    "overslaan": "Naar de inhoud"
+  },
+
+  "hero": {
+    "kop": "Wie het geleerd heeft, geeft het door.",
+    "inleiding": "MAIS ESPORTE leidt jongeren in Braziliaanse favela's op tot Urban Adventure Coach. Zij begeleiden daarna zelf de kinderen in hun eigen wijk. Een generatie die niet wordt bepaald door afkomst, maar door potentieel.",
+    "actie": "Plan een kennismaking",
+    "actieTweede": "Lees onze aanpak",
+    "foto": {
+      "alt": "Een groep jongeren duwt en trekt elkaar omhoog langs een steile rotswand naar een houten constructie.",
+      "plaat": "Klimoefening, samenwerking onder begeleiding"
+    }
+  },
+
+  "waarom": {
+    "kop": "Waarom dit nú nodig is",
+    "inleiding": "In Noordoost-Brazilië groeit een grote groep jongeren op in omstandigheden waarin kansen schaars zijn en negatieve invloeden dagelijks aanwezig zijn. Veel jongeren missen toegang tot goed onderwijs, stabiel werk, veilige leefomstandigheden en inspirerende rolmodellen.",
+    "gevolgenKop": "De gevolgen zijn zichtbaar",
+    "gevolgen": ["schooluitval", "criminaliteit", "uitzichtloosheid", "een gebrek aan toekomstperspectief"],
+    "keerpunt": "Maar juist daar ligt ook enorme potentie. Wij geloven dat jongeren geen medelijden nodig hebben, maar vertrouwen, verantwoordelijkheid en kansen om zichzelf te ontwikkelen."
+  },
+
+  "lus": {
+    "kop": "Jongeren leiden jongeren.",
+    "inleiding": "Jongeren leren niet alleen vaardigheden voor zichzelf, maar begeleiden vervolgens ook andere kinderen en jongeren binnen hun omgeving. Zo ontstaat een krachtige vorm van peer-education.",
+    "panelen": [
+      {
+        "rol": "Wordt opgeleid",
+        "titel": "De jongere",
+        "tekst": "Krijgt vertrouwen, verantwoordelijkheid en de ruimte om te groeien.",
+        "foto": { "alt": "Een jongere met helm en klimgordel staat boven op een toren van gestapelde kratten en krijgt een volgend krat aangereikt.", "plaat": "Krattentoren, oefening in vertrouwen en zekeren" }
+      },
+      {
+        "rol": "Wordt begeleid",
+        "titel": "Het kind uit dezelfde wijk",
+        "tekst": "Krijgt begeleiding van iemand die de wijk kent, omdat die er zelf vandaan komt.",
+        "foto": { "alt": "Een groep kinderen loopt door een poort die twee coaches met hun handen vormen.", "plaat": "Groepsoefening aan het einde van een training" }
+      }
+    ],
+    "sluit": "En daarna begint het opnieuw."
+  },
+
+  "_pad_herkomst": "De drie stationsnamen zijn een structurele samenvatting van de peer-lus uit het PDF. De beschrijvende zinnen eronder kwamen uit de designschets en zijn verwijderd; die stonden niet in het bronmateriaal.",
+  "pad": {
+    "kop": "Van jongere naar coach en rolmodel.",
+    "stations": [{ "titel": "Groeien" }, { "titel": "Leiden" }, { "titel": "Doorgeven" }],
+    "openNoot": "Een korte beschrijving per stap volgt, te schrijven met de opdrachtgever. De eerdere teksten kwamen uit de designschets en niet uit het partnerdocument."
+  },
+
+  "aanpak": {
+    "kop": "Leren door te doen.",
+    "onderdelen": ["persoonlijke ontwikkeling", "leiderschapstraining", "sport en ervaringsleren", "coaching", "community building"],
+    "bewijsKop": "Waarom deze aanpak werkt",
+    "bewijs": "MAIS ESPORTE bouwt voort op meer dan 25 jaar ervaring van ARCA in de Braziliaanse favela's. De aanpak is lokaal verankerd, praktijkgericht en bewezen effectief.",
+    "uniekKop": "Wat onze methode uniek maakt",
+    "uniek": [
+      "jongeren leiden jongeren",
+      "leren door doen",
+      "focus op eigenaarschap",
+      "directe verbinding met toekomst en arbeidsmarkt",
+      "sterke combinatie van lokale impact en internationale samenwerking"
+    ],
+    "slot": "We geloven dat duurzame verandering ontstaat wanneer jongeren zelf onderdeel worden van de oplossing.",
+    "foto": { "alt": "Een groep jongeren tilt samen een autoband over een houten paal, terwijl anderen hen ondersteunen.", "plaat": "Groepsopdracht tijdens een impactkamp" }
+  },
+
+  "doelen": {
+    "kop": "Wat we in vijf jaar willen bereiken.",
+    "waarschuwing": "Dit zijn doelen voor de komende vijf jaar, geen behaalde resultaten.",
+    "lijst": [
+      { "getal": "240", "eenheid": "jongeren", "tekst": "opleiden tot Urban Adventure Coach" },
+      { "getal": "2.000+", "eenheid": "kinderen", "tekst": "bereiken" },
+      { "getal": "10", "eenheid": "impactkampen", "tekst": "organiseren" },
+      { "getal": "50", "eenheid": "Nederlandse basisscholen", "tekst": "betrekken met de leerlijn Wat zie jij?" },
+      { "getal": "10.000+", "eenheid": "mensen", "tekst": "indirect bereiken" }
+    ],
+    "daarnaastKop": "Daarnaast werken we aan",
+    "daarnaast": [
+      "meer zelfvertrouwen bij jongeren",
+      "sterkere communities",
+      "minder invloed van criminaliteit",
+      "betere kansen op werk en opleiding"
+    ]
+  },
+
+  "partner": {
+    "kop": "Meer dan sponsoring.",
+    "inleiding": "Partners verbinden zich niet alleen aan een project, maar aan een internationale beweging met zichtbare maatschappelijke impact.",
+    "bordenKop": "Partnershipmogelijkheden",
+    "borden": [
+      {
+        "naam": "Founding Partner",
+        "tekst": "Voor organisaties die strategisch willen bijdragen aan de groei van MAIS ESPORTE, inclusief exclusiviteit binnen branche, co-creatie en prominente positionering."
+      },
+      {
+        "naam": "Impact Partner",
+        "tekst": "Voor organisaties die zichtbaar onderdeel willen zijn van de beweging via branding, events en activaties."
+      },
+      {
+        "naam": "Community Partner",
+        "tekst": "Voor organisaties die betrokken willen zijn bij activiteiten, community events en maatschappelijke impact."
+      }
+    ],
+    "bedragNoot": "Bedragen worden in het kennismakingsgesprek besproken.",
+    "biedtKop": "Samenwerkingen bieden onder andere",
+    "biedt": [
+      "een concrete bijdrage aan de Sustainable Development Goals",
+      "krachtige employer branding",
+      "authentieke storytelling en content",
+      "employee engagement",
+      "internationale zichtbaarheid",
+      "toegang tot een netwerk van impactgedreven organisaties"
+    ],
+    "afstemKop": "Partnerships kunnen volledig worden afgestemd op",
+    "afstem": ["employer branding", "onderwijsprojecten", "employee engagement", "maatschappelijke positionering"]
+  },
+
+  "ervaring": {
+    "kop": "Niet vanaf de zijlijn.",
+    "inleiding": "Partners worden écht onderdeel van de beweging. Denk aan:",
+    "vormen": [
+      "impactreizen naar Brazilië",
+      "vrijwilligersprogramma's",
+      "onderwijsprojecten",
+      "inspiratiesessies",
+      "storytelling en contentcreatie",
+      "internationale samenwerking"
+    ],
+    "slot": "Niet betrokken vanaf de zijlijn, maar midden in de impact.",
+    "foto": { "alt": "Kinderen en begeleiders in een sportactiviteit op een zandveld, met bakstenen huizen en de stad op de achtergrond.", "plaat": "Sportactiviteit op het veld in de wijk" }
+  },
+
+  "visie": {
+    "kop": "Onze visie",
+    "inleiding": "MAIS ESPORTE wil uitgroeien tot een internationaal platform voor ervaringsleren, leiderschap en community impact. De komende jaren bouwen we aan:",
+    "onderdelen": [
+      "een kenniscentrum voor ervaringsleren",
+      "een schaalbare methodiek",
+      "internationale samenwerkingen",
+      "onderwijsverbindingen",
+      "een groeiend netwerk van impactpartners"
+    ],
+    "slot": "Ons doel is om een model te ontwikkelen dat ook inzetbaar wordt in andere regio's en landen.",
+    "foto": { "alt": "Het terrein: een open grasveld met palmen, lage gebouwen en een beboste heuvel op de achtergrond.", "plaat": "Het terrein waar de opleiding plaatsvindt" }
+  },
+
+  "contact": {
+    "kop": "Bouw mee aan de volgende generatie leiders.",
+    "inleiding": "Wij zoeken organisaties die verder kijken dan alleen sponsoring, die willen investeren in menselijk potentieel en blijvende maatschappelijke impact.",
+    "uitnodiging": "Plan een kennismakingsgesprek en ontdek hoe jouw organisatie onderdeel wordt van deze beweging.",
+    "actie": "Plan een kennismaking",
+    "placeholder": {
+      "titel": "Contactgegevens nog niet vastgesteld",
+      "tekst": "Deze knop heeft nog geen bestemming. Zodra bekend is of het een formulier, een agendalink of een e-mailadres wordt, komt dat hier."
+    }
+  },
+
+  "voet": {
+    "openKop": "Nog vast te stellen",
+    "open": [
+      "Contactgegevens en de manier waarop een gesprek wordt ingepland",
+      "Bedragen bij de drie partnervormen",
+      "Wie de juridische afzender is: MAIS ESPORTE, ARCA of Vale da Serra Company",
+      "Toestemming voor publicatie van de herkenbare personen op de foto's",
+      "Logo als vectorbestand",
+      "Beschrijving van de drie stappen bij Groeien, Leiden en Doorgeven"
+    ],
+    "fotoNoot": "Alle foto's op deze pagina komen uit het partnerdocument."
+  }
+}

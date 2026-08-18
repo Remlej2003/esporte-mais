@@ -1,0 +1,81 @@
+---
+import { Image } from 'astro:assets';
+
+/* Een foto op de muur: eerst een vlek verf op het pleisterwerk, de foto
+   daar net iets uit het lood overheen, en een gesjabloneerd plaatje eronder
+   dat zegt wat je ziet. Het plaatje draagt informatie — het is geen label
+   dat de kop naast zich herhaalt. */
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  plaat?: string;
+  vorm?: 'boog' | 'recht';
+  vlek?: string;
+  breedtes?: number[];
+  sizes?: string;
+  /* Vaste beeldverhouding. Nodig waar twee foto's naast elkaar
+     hetzelfde vak moeten vullen ondanks verschillende bronformaten. */
+  verhouding?: string;
+  class?: string;
+}
+const {
+  src,
+  alt,
+  plaat,
+  vorm = 'boog',
+  vlek = 'var(--lak-helder)',
+  breedtes = [400, 700, 1000],
+  sizes = '(max-width: 48rem) 92vw, 44vw',
+  verhouding,
+  class: klasse = '',
+} = Astro.props;
+---
+
+<figure
+  class={`foto foto--${vorm} ${klasse}`}
+  style={`--vlek:${vlek}${verhouding ? `;--verhouding:${verhouding}` : ''}`}
+>
+  <div class="foto__vel">
+    <Image src={src} alt={alt} widths={breedtes} sizes={sizes} class="foto__beeld" />
+  </div>
+  {plaat && <figcaption class="foto__plaat plaat">{plaat}</figcaption>}
+</figure>
+
+<style>
+  .foto { margin: 0; }
+
+  .foto__vel {
+    position: relative;
+    isolation: isolate;
+  }
+  /* De geverfde vlek waar de foto op geplakt zit. */
+  .foto__vel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--vlek);
+    transform: translate(clamp(8px, 1.4vw, 18px), clamp(8px, 1.4vw, 18px)) rotate(-0.7deg);
+    z-index: -1;
+  }
+  .foto__beeld {
+    width: 100%;
+    height: auto;
+    aspect-ratio: var(--verhouding, auto);
+    object-fit: cover;
+    object-position: center;
+    transform: rotate(0.35deg);
+  }
+
+  .foto--boog .foto__beeld,
+  .foto--boog .foto__vel::before { border-radius: var(--r-boog); }
+  .foto--recht .foto__beeld,
+  .foto--recht .foto__vel::before { border-radius: var(--r-plaat); }
+
+  .foto__plaat {
+    margin-top: calc(var(--s5) + 0.4vw);
+    padding-left: var(--s3);
+    border-left: 1px solid color-mix(in srgb, currentColor 45%, transparent);
+    opacity: 0.78;
+    max-width: 34ch;
+  }
+</style>

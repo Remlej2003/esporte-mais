@@ -1,0 +1,94 @@
+---
+import nl from '../content/nl.json';
+import Merk from './Merk.astro';
+import Knop from './Knop.astro';
+import KwastRand from './KwastRand.astro';
+---
+
+<header class="kop">
+  <div class="kop__band">
+    <div class="omhulsel kop__rij">
+      <a href="#top" class="kop__merk" aria-label={nl.merk.naam}>
+        <Merk hoogte="2.1rem" kleur="var(--lak)" />
+      </a>
+
+      <nav class="kop__nav" aria-label="Secties">
+        <ul class="kop__lijst">
+          {nl.nav.items.map((item) => (
+            <li><a href={item.href} class="kop__link plaat">{item.label}</a></li>
+          ))}
+        </ul>
+      </nav>
+
+      <Knop href="#contact" soort="vol" class="kop__actie">{nl.nav.actie}</Knop>
+    </div>
+    <KwastRand kleur="var(--kalk)" positie="onder" />
+  </div>
+</header>
+
+<style>
+  .kop {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+  .kop__band {
+    position: relative;
+    background: var(--kalk);
+  }
+  .kop__rij {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s5);
+    padding-block: var(--s4);
+  }
+  .kop__merk {
+    color: var(--op-kalk);
+    text-decoration: none;
+    flex: none;
+  }
+
+  .kop__lijst {
+    display: flex;
+    gap: clamp(var(--s4), 2.2vw, var(--s6));
+  }
+  .kop__link {
+    color: var(--op-kalk-zacht);
+    text-decoration: none;
+    padding-block: var(--s2);
+    border-bottom: var(--lijn) solid transparent;
+    transition:
+      color var(--duur-kort) var(--ease-uit),
+      border-color var(--duur-kort) var(--ease-uit);
+  }
+  .kop__link:hover {
+    color: var(--op-kalk);
+    border-bottom-color: var(--lak-helder);
+  }
+
+  /* Onder 60rem past de rij niet meer naast elkaar: de links zakken
+     onder het merk in plaats van in een uitklapmenu te verdwijnen.
+     Vier ankers verbergen achter een knop kost meer dan het oplevert. */
+  @media (max-width: 60rem) {
+    .kop__rij {
+      flex-wrap: wrap;
+      row-gap: var(--s3);
+      padding-block: var(--s3);
+    }
+    .kop__nav {
+      order: 3;
+      width: 100%;
+    }
+    .kop__lijst {
+      flex-wrap: wrap;
+      gap: var(--s3) var(--s5);
+      padding-top: var(--s1);
+      border-top: 1px solid color-mix(in srgb, var(--op-kalk) 16%, transparent);
+    }
+  }
+  /* Doorgegeven aan een component, dus :global() onder de gescopete ouder. */
+  @media (max-width: 30rem) {
+    .kop__rij :global(.kop__actie) { padding: 0.7em 1.05em; }
+  }
+</style>

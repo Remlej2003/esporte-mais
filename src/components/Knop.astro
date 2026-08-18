@@ -1,0 +1,90 @@
+---
+interface Props {
+  href?: string;
+  soort?: 'vol' | 'lijn' | 'licht';
+  /* Uitgeschakeld: de knop bestaat wel, maar heeft nog geen bestemming.
+     Beter zichtbaar leeg dan een link die nergens heen gaat. */
+  uit?: boolean;
+  class?: string;
+}
+const { href, soort = 'vol', uit = false, class: klasse = '' } = Astro.props;
+const Tag = uit ? 'button' : 'a';
+const attrs = uit ? { type: 'button', disabled: true } : { href };
+---
+
+<Tag class={`knop knop--${soort} ${uit ? 'knop--uit' : ''} ${klasse}`} {...attrs}>
+  <span class="knop__tekst"><slot /></span>
+  <svg class="knop__pijl" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+    <path
+      d="M2.5 8h10M9 4.5 12.5 8 9 11.5"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.6"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+</Tag>
+
+<style>
+  .knop {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s3);
+    padding: 0.85em 1.5em;
+    border-radius: var(--r-pil);
+    font-family: var(--font-tekst);
+    font-size: var(--t-klein);
+    font-weight: 650;
+    font-stretch: 96%;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    line-height: 1;
+    transition:
+      background-color var(--duur-kort) var(--ease-uit),
+      color var(--duur-kort) var(--ease-uit),
+      border-color var(--duur-kort) var(--ease-uit);
+  }
+  .knop__pijl {
+    width: 1em;
+    height: 1em;
+    flex: none;
+    transition: transform var(--duur-kort) var(--ease-uit);
+  }
+  .knop:hover .knop__pijl { transform: translateX(0.2em); }
+
+  .knop--vol {
+    background: var(--veld);
+    color: var(--op-veld);
+    border: var(--lijn) solid var(--veld);
+  }
+  .knop--vol:hover { background: var(--veld-diep); border-color: var(--veld-diep); }
+
+  .knop--lijn {
+    background: transparent;
+    color: var(--op-kalk);
+    border: var(--lijn) solid color-mix(in srgb, var(--op-kalk) 38%, transparent);
+  }
+  .knop--lijn:hover { border-color: var(--op-kalk); }
+
+  .knop--licht {
+    background: var(--kalk);
+    color: var(--roet);
+    border: var(--lijn) solid var(--kalk);
+  }
+  .knop--licht:hover { background: var(--goud); border-color: var(--goud); }
+
+  .knop--uit {
+    font: inherit;
+    font-size: var(--t-klein);
+    font-weight: 650;
+    cursor: not-allowed;
+    background: transparent;
+    color: var(--op-veld);
+    border-style: dashed;
+    border-color: color-mix(in srgb, var(--goud) 70%, transparent);
+  }
+  .knop--uit:hover { background: transparent; border-color: color-mix(in srgb, var(--goud) 70%, transparent); }
+  .knop--uit .knop__pijl { opacity: 0.45; }
+  .knop--uit:hover .knop__pijl { transform: none; }
+</style>

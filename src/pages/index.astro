@@ -1,0 +1,935 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Knop from '../components/Knop.astro';
+import Foto from '../components/Foto.astro';
+import Merk from '../components/Merk.astro';
+import KwastRand from '../components/KwastRand.astro';
+import Kwastregel from '../components/Kwastregel.astro';
+import nl from '../content/nl.json';
+
+import veldFoto from '../images/community-veld.jpg';
+import hellingFoto from '../images/helling-omhoog.jpg';
+import poortFoto from '../images/poort-groep.jpg';
+import krattenFoto from '../images/kratten-toren.jpg';
+import bandFoto from '../images/band-paal.jpg';
+import terreinFoto from '../images/terrein.jpg';
+
+const kop = nl.hero.kop.replace(/door\.$/, '');
+---
+
+<Base>
+  <a href="#inhoud" class="overslaan">{nl.nav.overslaan}</a>
+  <Nav />
+
+  <main id="inhoud">
+    <!-- ── De kop op de muur ─────────────────────────────── -->
+    <section id="top" class="hero">
+      <div class="omhulsel hero__raster">
+        <div class="hero__woord">
+          <h1 class="hero__kop">{kop}<em>door.</em></h1>
+          <p class="hero__inleiding maat">{nl.hero.inleiding}</p>
+
+          <!-- De kwastregel met de actie erop. De uitleg staat er bewust
+               bóven: een bestuurder die nog niet weet wat dit is, hoort
+               niet eerst twee knoppen tegen te komen. -->
+          <div class="hero__lijn">
+            <Kwastregel kleur="var(--roet)" class="hero__kwast" />
+            <div class="hero__acties">
+              <Knop href="#contact" soort="vol">{nl.hero.actie}</Knop>
+              <Knop href="#aanpak" soort="lijn">{nl.hero.actieTweede}</Knop>
+            </div>
+          </div>
+        </div>
+        <Foto
+          src={hellingFoto}
+          alt={nl.hero.foto.alt}
+          plaat={nl.hero.foto.plaat}
+          vorm="boog"
+          verhouding="4 / 5"
+          breedtes={[440, 700, 900]}
+          sizes="(max-width: 62rem) 88vw, 32vw"
+          class="hero__foto"
+        />
+      </div>
+    </section>
+
+    <!-- ── Waarom dit nú nodig is ────────────────────────── -->
+    <section class="waarom">
+      <div class="omhulsel">
+        <div class="waarom__hoofd">
+          <h2 class="waarom__kop">{nl.waarom.kop}</h2>
+          <p class="groot">{nl.waarom.inleiding}</p>
+        </div>
+
+        <div class="waarom__onder">
+          <div>
+            <p class="waarom__lijstkop">{nl.waarom.gevolgenKop}:</p>
+            <ul class="waarom__lijst">
+              {nl.waarom.gevolgen.map((g) => <li class="waarom__gevolg">{g}</li>)}
+            </ul>
+          </div>
+          <p class="keerpunt">{nl.waarom.keerpunt}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── De lus: het scharnier van de pagina ───────────── -->
+    <section id="missie" class="lus geverfd donker">
+      <KwastRand kleur="var(--veld)" positie="boven" />
+      <div class="omhulsel">
+        <h2 class="lus__kop">{nl.lus.kop}</h2>
+        <p class="groot maat lus__inleiding">{nl.lus.inleiding}</p>
+
+        <div class="lus__kring">
+          {nl.lus.panelen.map((p, i) => (
+            <article class="paneel">
+              <KwastRand kleur="var(--veld-diep)" positie="boven" variant={i === 0 ? 1 : 2} />
+              <p class="plaat paneel__rol">{p.rol}</p>
+              <Foto
+                src={i === 0 ? krattenFoto : poortFoto}
+                alt={p.foto.alt}
+                plaat={p.foto.plaat}
+                vorm="recht"
+                vlek="var(--goud)"
+                verhouding="1 / 1"
+                breedtes={[380, 620]}
+                sizes="(max-width: 54rem) 88vw, 40vw"
+              />
+              <h3 class="paneel__titel">{p.titel}</h3>
+              <p class="paneel__tekst">{p.tekst}</p>
+              <KwastRand kleur="var(--veld-diep)" positie="onder" variant={i === 0 ? 3 : 1} />
+            </article>
+          ))}
+
+        </div>
+
+        <!-- Het circuit: wat de ene kant uit gaat, komt aan de andere terug.
+             Dat is de hele claim, dus het staat er ook echt als een rondgang. -->
+        <div class="lus__circuit" data-lus>
+          <svg viewBox="0 0 1200 130" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+            <path
+              class="lus__pad"
+              d="M300 14 H 900 C 1010 14 1010 108 900 108 H 316"
+              fill="none"
+              stroke="var(--goud)"
+              stroke-width="4"
+              stroke-linecap="round"
+            />
+            <path
+              d="M336 96 L312 108 L336 120"
+              fill="none"
+              stroke="var(--goud)"
+              stroke-width="4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <p class="lus__sluit">{nl.lus.sluit}</p>
+        </div>
+      </div>
+      <KwastRand kleur="var(--veld)" positie="onder" />
+    </section>
+
+    <!-- ── Het pad: één richting, drie stations ──────────── -->
+    <section class="pad">
+      <div class="omhulsel">
+        <h2 class="pad__kop">{nl.pad.kop}</h2>
+
+        <!-- Eén doorlopende lijn die aanzwelt en eindigt in een punt.
+             De afstanden tussen de stations lopen terug, zodat de richting
+             uit de vorm blijkt en niet uit genummerde kolommen. -->
+        <div class="pad__spoor">
+          <svg class="pad__lijn" viewBox="0 0 1200 26" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+            <path
+              fill="var(--lak)"
+              d="M0,12.6 C280,11.8 640,10.9 1096,8.4 L1096,1.5 L1200,13 L1096,24.5 L1096,17.6
+                 C640,15.4 280,14.6 0,14.4 Z"
+            />
+          </svg>
+          <ol class="pad__stations">
+            {nl.pad.stations.map((s) => (
+              <li class="station">
+                <span class="station__merk" aria-hidden="true"></span>
+                <h3 class="station__titel">{s.titel}</h3>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <!-- Elk ander open punt op deze pagina is zichtbaar gemarkeerd.
+             Dit gat hoort dat ook te zijn, anders leest het als een
+             ontwerpkeuze in plaats van als tekst die nog moet komen. -->
+        <p class="pad__open" role="note">{nl.pad.openNoot}</p>
+      </div>
+    </section>
+
+    <!-- ── Leren door te doen ────────────────────────────── -->
+    <section id="aanpak" class="aanpak geverfd">
+      <KwastRand kleur="var(--kalk-diep)" positie="boven" variant={2} />
+      <div class="omhulsel aanpak__raster">
+        <div class="aanpak__woord">
+          <h2>{nl.aanpak.kop}</h2>
+          <ul class="etiketten">
+            {nl.aanpak.onderdelen.map((o) => <li class="etiket">{o}</li>)}
+          </ul>
+
+          <h3 class="aanpak__subkop">{nl.aanpak.bewijsKop}</h3>
+          <p class="maat">{nl.aanpak.bewijs}</p>
+
+          <h3 class="aanpak__subkop">{nl.aanpak.uniekKop}</h3>
+          <ul class="streeplijst">
+            {nl.aanpak.uniek.map((u) => <li>{u}</li>)}
+          </ul>
+
+          <p class="keerpunt keerpunt--klein">{nl.aanpak.slot}</p>
+        </div>
+        <Foto
+          src={bandFoto}
+          alt={nl.aanpak.foto.alt}
+          plaat={nl.aanpak.foto.plaat}
+          vorm="boog"
+          breedtes={[420, 700]}
+          sizes="(max-width: 62rem) 88vw, 36vw"
+          class="aanpak__foto"
+        />
+      </div>
+      <KwastRand kleur="var(--kalk-diep)" positie="onder" variant={3} />
+    </section>
+
+    <!-- ── De telling op de muur ─────────────────────────── -->
+    <section id="impact" class="doelen geverfd donker">
+      <KwastRand kleur="var(--lak)" positie="boven" />
+      <div class="omhulsel">
+        <div class="doelen__hoofd">
+          <div class="doelen__titel">
+            <h2 class="doelen__kop">{nl.doelen.kop}</h2>
+            <!-- Vijf jaar, vijf strepen. De THESIS zegt dat deze
+                 gemeenschap haar eigen telling met de kwast bijhoudt;
+                 dan moet er ook één streepje met de kwast staan. -->
+            <svg class="doelen__turf" viewBox="0 0 108 62" aria-hidden="true" focusable="false">
+              <path d="M8,7 C6.4,22 7.2,38 9,55" stroke="currentColor" stroke-width="5.2" stroke-linecap="round" fill="none" />
+              <path d="M27,5 C25.8,21 26.6,39 28,54" stroke="currentColor" stroke-width="4.6" stroke-linecap="round" fill="none" />
+              <path d="M46,8 C45.2,23 45.6,39 47,56" stroke="currentColor" stroke-width="5" stroke-linecap="round" fill="none" />
+              <path d="M65,4 C64.2,21 64.8,38 66,54" stroke="currentColor" stroke-width="4.4" stroke-linecap="round" fill="none" />
+              <path d="M2,50 C22,41 52,22 78,6" stroke="currentColor" stroke-width="5.6" stroke-linecap="round" fill="none" />
+            </svg>
+          </div>
+          <p class="doelen__waarschuwing">{nl.doelen.waarschuwing}</p>
+        </div>
+
+        <ol class="telling">
+          {nl.doelen.lijst.map((d) => (
+            <li class="tel">
+              <span class="tel__getal cijfers">{d.getal}</span>
+              <span class="tel__woord">
+                <strong class="tel__eenheid">{d.eenheid}</strong>
+                <span class="tel__tekst">{d.tekst}</span>
+              </span>
+            </li>
+          ))}
+        </ol>
+
+        <div class="doelen__voet">
+          <h3 class="doelen__daarnaastkop">{nl.doelen.daarnaastKop}</h3>
+          <ul class="doelen__daarnaast">
+            {nl.doelen.daarnaast.map((d) => <li>{d}</li>)}
+          </ul>
+        </div>
+      </div>
+      <KwastRand kleur="var(--lak)" positie="onder" />
+    </section>
+
+    <!-- ── De borden langs het veld ──────────────────────── -->
+    <section id="partner" class="partner">
+      <div class="omhulsel">
+        <div class="partner__hoofd">
+          <h2>{nl.partner.kop}</h2>
+          <p class="groot maat">{nl.partner.inleiding}</p>
+        </div>
+
+        <h3 class="partner__bordenkop">{nl.partner.bordenKop}</h3>
+        <!-- Wat een sponsor in het echt koopt: een geschilderd bord langs
+             de rand van het veld. Geen omrande kaarten maar verf op de
+             muur, dus gekwaste randen en geen lijst eromheen. -->
+        <ul class="borden">
+          {nl.partner.borden.map((b, i) => {
+            /* Verf en inkt uit één bron, zodat een vierde bord niet stilletjes
+               zonder kleur valt. Zonder omlijning moet de verf zelf presence
+               hebben: het derde bord was zandkleur op kalk (~1,3:1) en verdween
+               tegen de muur; goud is de vierde huiskleur en houdt stand. */
+            const lagen = [
+              { verf: 'var(--veld)', inkt: 'var(--op-veld)' },
+              { verf: 'var(--lak)', inkt: 'var(--op-lak)' },
+              { verf: 'var(--goud)', inkt: 'var(--roet)' },
+            ];
+            const { verf, inkt } = lagen[i % lagen.length];
+            return (
+              <li class="bord" style={`--verf:${verf};--inkt:${inkt}`}>
+                <KwastRand kleur={verf} positie="boven" variant={((i % 3) + 1) as 1 | 2 | 3} />
+                <h3 class="bord__naam">{b.naam}</h3>
+                <p class="bord__tekst">{b.tekst}</p>
+                <KwastRand kleur={verf} positie="onder" variant={(((i + 1) % 3) + 1) as 1 | 2 | 3} />
+              </li>
+            );
+          })}
+        </ul>
+        <p class="partner__noot">{nl.partner.bedragNoot}</p>
+
+        <div class="partner__raster">
+          <div>
+            <h3 class="partner__lijstkop">{nl.partner.biedtKop}</h3>
+            <ul class="streeplijst">
+              {nl.partner.biedt.map((b) => <li>{b}</li>)}
+            </ul>
+          </div>
+          <div>
+            <h3 class="partner__lijstkop">{nl.partner.afstemKop}</h3>
+            <ul class="etiketten etiketten--los">
+              {nl.partner.afstem.map((a) => <li class="etiket">{a}</li>)}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Niet vanaf de zijlijn ─────────────────────────── -->
+    <section class="ervaring">
+      <div class="omhulsel ervaring__raster">
+        <Foto
+          src={veldFoto}
+          alt={nl.ervaring.foto.alt}
+          plaat={nl.ervaring.foto.plaat}
+          vorm="boog"
+          vlek="var(--veld)"
+          verhouding="4 / 3"
+          breedtes={[450, 760]}
+          sizes="(max-width: 62rem) 88vw, 42vw"
+          class="ervaring__foto"
+        />
+        <div class="ervaring__woord">
+          <h2>{nl.ervaring.kop}</h2>
+          <p class="groot">{nl.ervaring.inleiding}</p>
+          <ul class="streeplijst streeplijst--twee">
+            {nl.ervaring.vormen.map((v) => <li>{v}</li>)}
+          </ul>
+          <p class="keerpunt keerpunt--klein">{nl.ervaring.slot}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── De visie ──────────────────────────────────────── -->
+    <section class="visie geverfd">
+      <KwastRand kleur="var(--kalk-diep)" positie="boven" variant={3} />
+      <div class="omhulsel visie__raster">
+        <div class="visie__woord">
+          <h2>{nl.visie.kop}</h2>
+          <p class="groot maat">{nl.visie.inleiding}</p>
+          <ul class="streeplijst">
+            {nl.visie.onderdelen.map((o) => <li>{o}</li>)}
+          </ul>
+          <p class="visie__slot maat">{nl.visie.slot}</p>
+        </div>
+        <Foto
+          src={terreinFoto}
+          alt={nl.visie.foto.alt}
+          plaat={nl.visie.foto.plaat}
+          vorm="recht"
+          vlek="var(--goud)"
+          breedtes={[400, 660]}
+          sizes="(max-width: 62rem) 88vw, 34vw"
+          class="visie__foto"
+        />
+      </div>
+      <KwastRand kleur="var(--kalk-diep)" positie="onder" variant={1} />
+    </section>
+
+    <!-- ── Bouw mee ──────────────────────────────────────── -->
+    <section id="contact" class="contact geverfd donker">
+      <KwastRand kleur="var(--veld-diep)" positie="boven" />
+      <div class="omhulsel contact__binnen">
+        <h2 class="contact__kop">{nl.contact.kop}</h2>
+        <p class="groot maat">{nl.contact.inleiding}</p>
+        <p class="contact__uitnodiging maat">{nl.contact.uitnodiging}</p>
+
+        <div class="actieslot">
+          <Knop soort="licht" uit={true}>{nl.contact.actie}</Knop>
+          <div class="actieslot__noot" role="note">
+            <p class="plaat actieslot__titel">{nl.contact.placeholder.titel}</p>
+            <p class="actieslot__tekst">{nl.contact.placeholder.tekst}</p>
+          </div>
+        </div>
+      </div>
+      <KwastRand kleur="var(--veld-diep)" positie="onder" />
+    </section>
+
+    <!-- ── Het impressum ─────────────────────────────────── -->
+    <footer class="voet">
+      <div class="omhulsel voet__raster">
+        <Merk hoogte="3rem" kleur="var(--lak)" toonCoordinaten={true} />
+        <div class="voet__open">
+          <p class="plaat voet__openkop">{nl.voet.openKop}</p>
+          <ul class="voet__lijst">
+            {nl.voet.open.map((o) => <li>{o}</li>)}
+          </ul>
+        </div>
+      </div>
+      <div class="omhulsel">
+        <p class="plaat voet__noot">{nl.voet.fotoNoot}</p>
+      </div>
+    </footer>
+  </main>
+</Base>
+
+<style>
+  /* ══ Gedeelde vormen op de muur ══════════════════════════ */
+
+  section { position: relative; }
+
+  .geverfd {
+    /* Net meer dan de hoogte van de gekwaste rand, zodat die vrij ligt
+       zonder dat er een gat ontstaat. */
+    margin-block: clamp(1.5rem, 2.4vw, 2.25rem);
+    padding-block: var(--sectie);
+  }
+  .lus { background: var(--veld); color: var(--op-veld); }
+  .doelen { background: var(--lak); color: var(--op-lak); }
+  .contact { background: var(--veld-diep); color: var(--op-veld); }
+
+  .groot {
+    font-size: var(--t-groot);
+    line-height: 1.5;
+    color: var(--op-kalk-zacht);
+  }
+  /* Alleen op de donkere vlakken. Eerder hing dit aan .geverfd, waardoor
+     de aanpak- en visiesectie hun tekstkleur en streepjeskleur meekregen
+     zodra ze een gekwaste rand kregen — één streepje in twee kleuren. */
+  .donker .groot { color: inherit; opacity: 0.92; }
+
+  /* De omslagzin: waar het stuk kantelt van probleem naar potentieel. */
+  .keerpunt {
+    font-family: var(--font-display);
+    font-size: var(--t-keerpunt);
+    line-height: 1.24;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+    margin-top: var(--s8);
+  }
+  .keerpunt--klein {
+    font-size: var(--t-uitspraak);
+    margin-top: var(--s7);
+  }
+
+  /* Opsomming op geschilderde regels — geen kaarten. */
+  .streeplijst { display: grid; gap: var(--s3); margin-top: var(--s4); }
+  .streeplijst li {
+    padding-block: var(--s3);
+    padding-left: var(--s5);
+    border-top: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+    position: relative;
+  }
+  .streeplijst li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: calc(var(--s3) + 0.62em);
+    width: var(--s4);
+    height: 2px;
+    background: var(--lak-helder);
+  }
+  .donker .streeplijst li::before { background: var(--goud); }
+  .streeplijst--twee { grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 0 var(--s6); }
+
+  /* Handgeschilderde etiketten. */
+  .etiketten {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s3);
+    margin-top: var(--s5);
+  }
+  .etiket {
+    padding: 0.55em 1.15em;
+    border: var(--lijn) solid color-mix(in srgb, var(--lak) 55%, transparent);
+    border-radius: var(--r-pil);
+    font-size: var(--t-klein);
+    font-weight: 600;
+    color: var(--op-kalk);
+  }
+  .etiketten--los { margin-top: var(--s4); }
+
+  /* ══ Hero ════════════════════════════════════════════════ */
+
+  .hero { padding-top: clamp(2rem, 4.5vw, 3.5rem); padding-bottom: var(--sectie-vlak); }
+  .hero__raster {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
+    gap: clamp(var(--s6), 5vw, var(--s8));
+    align-items: start;
+  }
+  .hero__kop {
+    font-size: var(--t-display);
+    line-height: var(--lh-display);
+    font-weight: 800;
+    max-width: 13ch;
+  }
+  .hero__kop em {
+    color: var(--lak);
+    font-weight: 700;
+  }
+  /* De kwastregel loopt door achter de knoppen: de pil staat op de
+     regel, zoals het contract het beschrijft. */
+  .hero__lijn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: clamp(var(--s6), 3.5vw, var(--s8));
+    min-height: 3.4rem;
+  }
+  /* Klassen die aan een component worden doorgegeven krijgen het
+     scope-attribuut van de pagina niet; zonder :global() valt de regel
+     stil weg. De ouder is wél gescopet, dus er lekt niets. */
+  .hero__lijn :global(.hero__kwast) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .hero__acties {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s3);
+  }
+  /* De wand achter de knoppen, zodat de regel er niet doorheen loopt. */
+  .hero__acties :global(.knop--lijn) { background: var(--kalk); }
+
+  /* Onder 34rem passen de twee knoppen niet naast elkaar. Ze gaan
+     onder elkaar en de haal loopt onder de primaire pil door, zodat
+     "de pil staat op de regel" ook op een telefoon waar is — daar
+     leest de meerderheid deze pagina. */
+  @media (max-width: 34rem) {
+    .hero__acties {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--s4);
+    }
+    .hero__lijn :global(.hero__kwast) {
+      top: 1.35rem;
+      transform: none;
+    }
+  }
+
+  .hero__inleiding {
+    margin-top: clamp(var(--s5), 2.5vw, var(--s6));
+    font-size: var(--t-groot);
+    line-height: 1.55;
+    color: var(--op-kalk-zacht);
+  }
+  .hero__raster :global(.hero__foto) { margin-top: var(--s2); }
+
+  /* ══ Waarom ══════════════════════════════════════════════ */
+
+  .waarom { padding-block: var(--sectie-vlak); }
+  .waarom__hoofd {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: clamp(var(--s5), 4vw, var(--s8));
+    align-items: end;
+  }
+  .waarom__kop { font-size: var(--t-h2); max-width: 11ch; }
+  .waarom__onder {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(var(--s6), 5vw, var(--s9));
+    align-items: start;
+    margin-top: clamp(var(--s7), 5vw, var(--s9));
+  }
+  .waarom__lijstkop { font-size: var(--t-groot); color: var(--op-kalk-zacht); }
+  .waarom__lijst {
+    margin-top: var(--s4);
+    border-top: var(--lijn) solid color-mix(in srgb, var(--op-kalk) 22%, transparent);
+  }
+  .waarom__gevolg {
+    padding-block: var(--s3);
+    border-bottom: 1px solid color-mix(in srgb, var(--op-kalk) 16%, transparent);
+    font-family: var(--font-display);
+    font-size: var(--t-h4);
+    font-weight: 500;
+  }
+  .waarom .keerpunt { margin-top: 0; }
+
+  /* ══ De lus ══════════════════════════════════════════════ */
+
+  .lus__kop { font-size: var(--t-h2); max-width: 14ch; }
+  .lus__inleiding { margin-top: var(--s5); }
+
+  .lus__kring {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: clamp(var(--s4), 3vw, var(--s6));
+    margin-top: clamp(var(--s7), 6vw, var(--s9));
+  }
+
+  /* Coach en kind delen exact hetzelfde vak: zelfde rand, zelfde
+     hoogte, zelfde beeldverhouding. Dat is de claim, dus het moet
+     ook letterlijk zo op de muur staan. */
+  .paneel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: clamp(var(--s4), 2.2vw, var(--s6));
+    background: var(--veld-diep);
+  }
+  .paneel__rol { color: var(--goud); margin-bottom: var(--s4); }
+  .paneel__titel { font-size: var(--t-h3); margin-top: var(--s5); }
+  .paneel__tekst { margin-top: var(--s3); color: var(--op-veld-zacht); }
+
+  /* Het circuit onder beide panelen. */
+  .lus__circuit { margin-top: var(--s5); }
+  .lus__circuit svg {
+    width: 100%;
+    height: auto;
+    max-height: 8rem;
+    overflow: visible;
+  }
+  .lus__pad {
+    stroke-dasharray: 6 14;
+  }
+  .lus__circuit[data-zichtbaar] .lus__pad {
+    animation: kruip 26s linear infinite;
+  }
+  @keyframes kruip { to { stroke-dashoffset: -400; } }
+
+  .lus__sluit {
+    margin-top: var(--s5);
+    text-align: center;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: var(--t-uitspraak);
+    color: var(--goud);
+  }
+
+  /* ══ Het pad ═════════════════════════════════════════════ */
+
+  .pad { padding-block: var(--sectie-vlak); }
+  .pad__kop { font-size: var(--t-h2); max-width: 16ch; }
+
+  .pad__spoor { margin-top: clamp(var(--s7), 5vw, var(--s9)); }
+  .pad__lijn {
+    display: block;
+    width: 100%;
+    height: clamp(14px, 1.7vw, 24px);
+  }
+  /* Ongelijke tussenafstanden: de stappen worden korter naar het eind,
+     dus de vaart zit in de vorm en niet in nummers. */
+  .pad__stations {
+    display: grid;
+    grid-template-columns: 39% 33% 28%;
+    margin-top: var(--s2);
+  }
+  .station { padding-right: var(--s5); }
+  .station__merk {
+    display: block;
+    width: 3px;
+    height: var(--s5);
+    background: var(--lak);
+    margin-bottom: var(--s4);
+  }
+  .station__titel { font-size: var(--t-h3); }
+  .pad__open {
+    margin-top: var(--s6);
+    margin-left: auto;
+    max-width: 34ch;
+    padding: var(--s3) var(--s4);
+    border: 1px dashed color-mix(in srgb, var(--lak) 55%, transparent);
+    font-size: var(--t-klein);
+    color: var(--op-kalk-zacht);
+  }
+
+  /* ══ Aanpak ══════════════════════════════════════════════ */
+
+  .aanpak { background: var(--kalk-diep); }
+  .aanpak__raster {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    gap: clamp(var(--s6), 5vw, var(--s9));
+    align-items: start;
+  }
+  .aanpak h2 { font-size: var(--t-h2); max-width: 12ch; }
+  .aanpak__woord > .groot { margin-top: var(--s5); max-width: var(--maat); }
+  .aanpak__subkop { font-size: var(--t-h3); margin-top: var(--s8); }
+  .aanpak__subkop + p { margin-top: var(--s3); color: var(--op-kalk-zacht); }
+  .aanpak__raster :global(.aanpak__foto) { position: sticky; top: 8rem; }
+
+  /* Kopjes die eerder als sjabloonplaatje waren opgemaakt zonder ooit
+     iets aan te duiden. Een kop hoort een kop te zijn. */
+  .partner__bordenkop,
+  .partner__lijstkop,
+  .doelen__daarnaastkop {
+    font-size: var(--t-h3);
+    font-weight: 600;
+  }
+  .partner__bordenkop { margin-top: clamp(var(--s7), 5vw, var(--s9)); }
+  .doelen__daarnaastkop { font-size: var(--t-h4); }
+
+  /* ══ De telling ══════════════════════════════════════════ */
+
+  .doelen__hoofd {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--s5);
+  }
+  .doelen__titel { display: flex; align-items: flex-end; gap: clamp(var(--s4), 2.5vw, var(--s6)); }
+  .doelen__kop { font-size: var(--t-h2); max-width: 15ch; }
+  .doelen__turf {
+    flex: none;
+    width: clamp(3.2rem, 5vw, 4.6rem);
+    height: auto;
+    color: var(--op-lak);
+    opacity: 0.85;
+    margin-bottom: 0.5em;
+  }
+  /* De belangrijkste waarheidsclaim op de pagina staat op leesformaat,
+     niet in het kleinste type dat er is. */
+  .doelen__waarschuwing {
+    border: var(--lijn) solid color-mix(in srgb, var(--op-lak) 45%, transparent);
+    padding: var(--s4) var(--s5);
+    flex: 0 1 27rem;
+    min-width: 17rem;
+    font-size: var(--t-body);
+    font-weight: 550;
+    line-height: 1.55;
+  }
+
+  .telling { margin-top: clamp(var(--s7), 5vw, var(--s9)); }
+  .tel {
+    display: grid;
+    grid-template-columns: minmax(max-content, 26%) minmax(0, 1fr);
+    align-items: baseline;
+    gap: clamp(var(--s5), 3vw, var(--s7));
+    padding-block: clamp(var(--s4), 2vw, var(--s5));
+    border-top: var(--lijn) solid color-mix(in srgb, var(--op-lak) 38%, transparent);
+  }
+  .tel:last-child { border-bottom: var(--lijn) solid color-mix(in srgb, var(--op-lak) 38%, transparent); }
+  .tel__getal {
+    font-family: var(--font-display);
+    font-size: var(--t-cijfer);
+    font-weight: 800;
+    line-height: 0.9;
+    letter-spacing: -0.035em;
+  }
+  .tel__woord { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 0.4em; }
+  .tel__eenheid { font-size: var(--t-groot); font-weight: 650; }
+  .tel__tekst { font-size: var(--t-groot); opacity: 0.86; }
+
+  .doelen__voet { margin-top: clamp(var(--s6), 4vw, var(--s8)); }
+  .doelen__daarnaast {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s3) var(--s5);
+    margin-top: var(--s4);
+    font-size: var(--t-groot);
+  }
+  .doelen__daarnaast li { display: flex; align-items: baseline; gap: var(--s3); }
+  /* Geen liggend streepje als leesteken maar hetzelfde geschilderde
+     staafje dat de rest van de pagina gebruikt. */
+  .doelen__daarnaast li::before {
+    content: '';
+    width: var(--s4);
+    height: 2px;
+    background: currentColor;
+    opacity: 0.6;
+    flex: none;
+    align-self: center;
+  }
+
+  /* ══ De borden ═══════════════════════════════════════════ */
+
+  .partner { padding-block: var(--sectie-vlak); }
+  .partner h2 { font-size: var(--t-h2); max-width: 12ch; }
+  .partner__hoofd {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(var(--s5), 4vw, var(--s8));
+    align-items: end;
+  }
+
+  .borden {
+    display: grid;
+    gap: clamp(var(--s6), 4vw, var(--s8));
+    margin-top: var(--s6);
+  }
+  .bord {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+    align-items: center;
+    gap: var(--s5);
+    padding: clamp(var(--s5), 3vw, var(--s7));
+    background: var(--verf);
+    color: var(--inkt);
+  }
+  .bord__naam {
+    font-size: var(--t-bord);
+    line-height: 1.05;
+    font-weight: 700;
+  }
+  .bord__tekst { font-size: var(--t-groot); line-height: 1.5; opacity: 0.95; }
+  .partner__noot {
+    margin-top: var(--s4);
+    font-size: var(--t-klein);
+    color: var(--op-kalk-zacht);
+  }
+
+  .partner__raster {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+    gap: clamp(var(--s6), 4vw, var(--s8));
+    margin-top: clamp(var(--s7), 5vw, var(--s9));
+    align-items: start;
+  }
+  @media (max-width: 54rem) {
+    .partner__raster { grid-template-columns: minmax(0, 1fr); }
+  }
+
+  /* ══ Ervaring ════════════════════════════════════════════ */
+
+  .ervaring { padding-block: var(--sectie-vlak); }
+  .ervaring__raster {
+    display: grid;
+    grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+    gap: clamp(var(--s6), 5vw, var(--s9));
+    align-items: center;
+  }
+  .ervaring h2 { font-size: var(--t-h2); max-width: 11ch; }
+  .ervaring__woord > .groot { margin-top: var(--s5); max-width: var(--maat); }
+
+  /* ══ Visie ═══════════════════════════════════════════════ */
+
+  .visie { background: var(--kalk-diep); }
+  .visie__raster {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    gap: clamp(var(--s6), 5vw, var(--s9));
+    align-items: start;
+  }
+  .visie h2 { font-size: var(--t-h2); }
+  .visie__woord > .groot { margin-top: var(--s5); }
+  .visie__slot {
+    margin-top: var(--s7);
+    font-family: var(--font-display);
+    font-size: var(--t-uitspraak);
+    line-height: 1.3;
+  }
+
+  /* ══ Contact ═════════════════════════════════════════════ */
+
+  .contact__binnen { max-width: 52rem; }
+  .contact__kop { font-size: var(--t-h2); }
+  .contact__binnen > .groot { margin-top: var(--s5); }
+  .contact__uitnodiging {
+    margin-top: var(--s5);
+    font-size: var(--t-groot);
+    color: var(--goud);
+  }
+
+  /* Het actieslot. De knop staat er wel, maar uitgeschakeld en met
+     uitleg ernaast: zichtbaar leeg is eerlijker dan een dode link,
+     en de opdrachtgever ziet meteen wat er nog moet komen. */
+  .actieslot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--s5) var(--s6);
+    margin-top: var(--s7);
+    padding: clamp(var(--s5), 3vw, var(--s6));
+    border: var(--lijn) dashed color-mix(in srgb, var(--goud) 60%, transparent);
+    background: color-mix(in srgb, var(--roet) 26%, transparent);
+  }
+  .actieslot__noot { flex: 1 1 22rem; }
+  .actieslot__titel { color: var(--goud); }
+  .actieslot__tekst { margin-top: var(--s3); color: var(--op-veld-zacht); max-width: 56ch; }
+
+  /* ══ Voet ════════════════════════════════════════════════ */
+
+  .voet { padding-block: var(--s8) var(--s7); }
+  .voet__raster {
+    display: grid;
+    grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+    gap: clamp(var(--s6), 6vw, var(--s10));
+    align-items: start;
+    padding-top: var(--s7);
+    border-top: var(--lijn-zwaar) solid var(--lak);
+  }
+  .voet__openkop { color: var(--lak); }
+  .voet__lijst {
+    margin-top: var(--s4);
+    display: grid;
+    gap: var(--s2);
+    font-size: var(--t-klein);
+    color: var(--op-kalk-zacht);
+  }
+  .voet__lijst li { padding-left: var(--s5); position: relative; }
+  .voet__lijst li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: var(--s3);
+    height: 2px;
+    background: currentColor;
+    opacity: 0.5;
+  }
+  .voet__noot { margin-top: var(--s7); color: var(--op-kalk-zacht); opacity: 0.7; }
+
+  /* ══ Smallere schermen ═══════════════════════════════════ */
+
+  @media (max-width: 62rem) {
+    .hero__raster,
+    .waarom__hoofd,
+    .waarom__onder,
+    .aanpak__raster,
+    .ervaring__raster,
+    .visie__raster,
+    .partner__hoofd,
+    .voet__raster { grid-template-columns: minmax(0, 1fr); }
+
+    .hero__kop { max-width: 16ch; }
+    .aanpak__raster :global(.aanpak__foto) { position: static; }
+    .ervaring__raster :global(.ervaring__foto) { order: 2; }
+    .bord { grid-template-columns: minmax(0, 1fr); gap: var(--s4); }
+    .waarom .keerpunt { margin-top: var(--s6); }
+  }
+
+  @media (max-width: 54rem) {
+    .lus__kring { grid-template-columns: minmax(0, 1fr); gap: var(--s5); }
+    /* Op één kolom is de rondgang een pijl terug omhoog. */
+    .lus__circuit svg { max-height: 5rem; }
+    .tel { grid-template-columns: minmax(0, 1fr); gap: var(--s2); }
+  }
+</style>
+
+<script>
+  // Eén geregisseerd moment: de lus gaat lopen zodra je hem ziet.
+  // Verder beweegt er niets bij het scrollen.
+  const kring = document.querySelector('[data-lus]');
+  const stil = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (kring && !stil && 'IntersectionObserver' in window) {
+    const kijker = new IntersectionObserver(
+      (regels) => {
+        for (const regel of regels) {
+          if (regel.isIntersecting) {
+            regel.target.setAttribute('data-zichtbaar', '');
+            kijker.disconnect();
+          }
+        }
+      },
+      { threshold: 0.25 }
+    );
+    kijker.observe(kring);
+  }
+</script>
