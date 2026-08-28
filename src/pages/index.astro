@@ -75,7 +75,7 @@ const kop = nl.hero.kop.replace(/door\.$/, '');
     </section>
 
     <!-- ── De lus: het scharnier van de pagina ───────────── -->
-    <section id="missie" class="lus geverfd donker">
+    <section class="lus geverfd donker">
       <KwastRand kleur="var(--veld)" positie="boven" />
       <div class="omhulsel">
         <h2 class="lus__kop">{nl.lus.kop}</h2>
@@ -160,7 +160,7 @@ const kop = nl.hero.kop.replace(/door\.$/, '');
         <!-- Elk ander open punt op deze pagina is zichtbaar gemarkeerd.
              Dit gat hoort dat ook te zijn, anders leest het als een
              ontwerpkeuze in plaats van als tekst die nog moet komen. -->
-        <p class="pad__open" role="note">{nl.pad.openNoot}</p>
+        <p class="pad__open openpunt" role="note">{nl.pad.openNoot}</p>
       </div>
     </section>
 
@@ -195,6 +195,17 @@ const kop = nl.hero.kop.replace(/door\.$/, '');
         />
       </div>
       <KwastRand kleur="var(--kalk-diep)" positie="onder" variant={3} />
+    </section>
+
+    <!-- ── Het opleidingscentrum ─────────────────────────── -->
+    <!-- Gevraagd door de opdrachtgever. Het partnerdocument levert hier geen
+         tekst voor, dus staat het gat zichtbaar open in plaats van dat het
+         met bedachte zinnen wordt gevuld. -->
+    <section id="opleidingscentrum" class="centrum">
+      <div class="omhulsel">
+        <h2 class="centrum__kop">{nl.centrum.kop}</h2>
+        <p class="centrum__open openpunt" role="note">{nl.centrum.openNoot}</p>
+      </div>
     </section>
 
     <!-- ── De telling op de muur ─────────────────────────── -->
@@ -318,8 +329,11 @@ const kop = nl.hero.kop.replace(/door\.$/, '');
       </div>
     </section>
 
-    <!-- ── De visie ──────────────────────────────────────── -->
-    <section class="visie geverfd">
+    <!-- ── De missie ─────────────────────────────────────── -->
+    <!-- Klasse- en contentnaam blijven `visie`: het bronmateriaal noemt dit
+         zo en DESIGN.md documenteert het onder die naam. Op de site heet het
+         Missie, op verzoek van de opdrachtgever. Vandaar het anker hier. -->
+    <section id="missie" class="visie geverfd">
       <KwastRand kleur="var(--kalk-diep)" positie="boven" variant={3} />
       <div class="omhulsel visie__raster">
         <div class="visie__woord">
@@ -638,14 +652,27 @@ const kop = nl.hero.kop.replace(/door\.$/, '');
     margin-bottom: var(--s4);
   }
   .station__titel { font-size: var(--t-h3); }
-  .pad__open {
-    margin-top: var(--s6);
-    margin-left: auto;
-    max-width: 34ch;
+  /* Elk open punt op de kalk draagt dezelfde gestreepte doos; waar hij
+     hangt verschilt per sectie. */
+  .openpunt {
     padding: var(--s3) var(--s4);
     border: 1px dashed color-mix(in srgb, var(--lak) 55%, transparent);
     font-size: var(--t-klein);
     color: var(--op-kalk-zacht);
+  }
+  .pad__open {
+    margin-top: var(--s6);
+    margin-left: auto;
+    max-width: 34ch;
+  }
+
+  /* ══ Het opleidingscentrum ═══════════════════════════════ */
+
+  .centrum { padding-block: var(--sectie-vlak); }
+  .centrum__kop { font-size: var(--t-h2); max-width: 14ch; }
+  .centrum__open {
+    margin-top: var(--s6);
+    max-width: 46ch;
   }
 
   /* ══ Aanpak ══════════════════════════════════════════════ */

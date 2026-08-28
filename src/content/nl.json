@@ -17,10 +17,11 @@
     "items": [
       { "label": "Missie", "href": "#missie" },
       { "label": "Onze aanpak", "href": "#aanpak" },
+      { "label": "Opleidingscentrum", "href": "#opleidingscentrum" },
       { "label": "Impact", "href": "#impact" },
       { "label": "Word partner", "href": "#partner" }
     ],
-    "actie": "Plan een kennismaking",
+    "actie": "Contact",
     "overslaan": "Naar de inhoud"
   },
 
@@ -85,6 +86,12 @@
     ],
     "slot": "We geloven dat duurzame verandering ontstaat wanneer jongeren zelf onderdeel worden van de oplossing.",
     "foto": { "alt": "Een groep jongeren tilt samen een autoband over een houten paal, terwijl anderen hen ondersteunen.", "plaat": "Groepsopdracht tijdens een impactkamp" }
+  },
+
+  "_centrum_herkomst": "Het partnerdocument noemt het opleidingscentrum niet. Deze sectie staat er op verzoek van de opdrachtgever; de tekst moet nog met hem geschreven worden. Daarom alleen een kop en een zichtbaar open punt, geen ingevulde zinnen.",
+  "centrum": {
+    "kop": "Het opleidingscentrum.",
+    "openNoot": "De beschrijving van het opleidingscentrum volgt, te schrijven met de opdrachtgever. Het partnerdocument bevat hier geen tekst over."
   },
 
   "doelen": {
@@ -154,7 +161,7 @@
   },
 
   "visie": {
-    "kop": "Onze visie",
+    "kop": "Onze missie",
     "inleiding": "MAIS ESPORTE wil uitgroeien tot een internationaal platform voor ervaringsleren, leiderschap en community impact. De komende jaren bouwen we aan:",
     "onderdelen": [
       "een kenniscentrum voor ervaringsleren",
@@ -186,7 +193,8 @@
       "Wie de juridische afzender is: MAIS ESPORTE, ARCA of Vale da Serra Company",
       "Toestemming voor publicatie van de herkenbare personen op de foto's",
       "Logo als vectorbestand",
-      "Beschrijving van de drie stappen bij Groeien, Leiden en Doorgeven"
+      "Beschrijving van de drie stappen bij Groeien, Leiden en Doorgeven",
+      "Tekst voor het opleidingscentrum"
     ],
     "fotoNoot": "Alle foto's op deze pagina komen uit het partnerdocument."
   }
