@@ -177,7 +177,7 @@ Vijf verven die je op zo'n muur werkelijk vindt: kalk, veldgroen, menieoranje, g
 ### Primary
 
 - **Veldgroen** (`veld`): de kleur van het speelveld en van het scharnier van de pagina. Draagt de peer-lus-sectie, de primaire pil en het merkvlak. `veld-diep` is dezelfde pot dieper: de twee panelen binnen de lus, de contactsectie, en de hoverstand van de primaire knop.
-- **Menieoranje** (`lak`): de accentverf. Het laatste woord van de hoofdkop, de doelensectie, het tweede partnerbord, de streep bij het pad, de bovenrand van de voet en het merk in de navigatiebalk. `lak-helder` is uitsluitend interactieaccent: focusring, streepjes voor lijstitems, de onderstreping bij hover in de navigatie, en de caret.
+- **Menieoranje** (`lak`): de accentverf. Het cursieve slotwoord van de hoofdkop, de doelensectie, het tweede partnerbord, de bovenrand van de voet, de huidige taal in de schakelaar en het merk in de navigatiebalk. `lak-helder` is uitsluitend interactieaccent: focusring, streepjes voor lijstitems, de onderstreping bij hover in de navigatie, en de caret.
 
 ### Secondary
 
@@ -219,7 +219,7 @@ Beide zijn lokaal gehost als gesubsette woff2 in `public/fonts/`, met `font-disp
 
 - **Display** (Vollkorn 800, `clamp(2.75rem, 10.5vw, 6rem)`, lh 0.94, ls -0.03em): uitsluitend de hoofdkop. Op architectuurschaal, maximaal 13ch breed (16ch onder 62rem) zodat hij afbreekt als geschilderde tekst en niet als een regel.
 - **Headline** (Vollkorn 700, `clamp(2rem, 5.5vw, 3.5rem)`, lh 1.06): elke sectiekop. Altijd met een `max-width` in `ch` (11 tot 16), zodat de afbreking een compositie is en geen toeval.
-- **Title** (Vollkorn 700, `clamp(1.3rem, 2.6vw, 1.75rem)`, lh 1.06): subkoppen binnen een sectie, paneeltitels, stationsnamen.
+- **Title** (Vollkorn 700, `clamp(1.3rem, 2.6vw, 1.75rem)`, lh 1.06): subkoppen binnen een sectie en de twee bijschriften onder de panelen in de lus.
 - **Cijfer** (Vollkorn 800, `clamp(3rem, 8vw, 5.5rem)`, lh 0.9, ls -0.035em, `tabular-nums lining-nums`): uitsluitend de getallen van de vijfjarentelling. De tabulaire cijfers zorgen dat de vijf getallen onder elkaar uitlijnen.
 - **Keerpunt** (`--t-keerpunt`, Vollkorn 600, `clamp(1.6rem, 3.4vw, 2.5rem)`, lh 1.24): de omslagzin waar een stuk kantelt van probleem naar potentieel. Geen citaatblok, geen aanhalingstekens: dit is proza op grotere schaal.
 - **Uitspraak** (`--t-uitspraak`, Vollkorn, `clamp(1.3rem, 2.5vw, 1.85rem)`): de kortere zin die een sectie afsluit. Draagt de kleine keerpuntvariant, de cursieve sluitzin van de lus en de slotzin van de visie. Eén maat voor alle drie, want het zijn dezelfde soort zin.
@@ -227,7 +227,7 @@ Beide zijn lokaal gehost als gesubsette woff2 in `public/fonts/`, met `font-disp
 - **H4** (`--t-h4`, `clamp(1.15rem, 2vw, 1.45rem)`): de gevolgenlijst en het kopje boven de kwalitatieve ambities. De kleinste stap die nog als kop leest.
 - **Groot** (Archivo, `clamp(1.125rem, 1.8vw, 1.375rem)`, lh 1.5): de inleidende alinea onder een kop, en de tekst in de partnerborden. Op kalk in `op-kalk-zacht`; op donker in de eigen tekstkleur met opacity 0.92.
 - **Body** (Archivo 400, 1.0625rem, lh 1.62): lopende tekst. Regellengte begrensd op `--maat` (68ch) via `.maat`.
-- **Klein** (Archivo, 0.875rem): knoplabels, voetnoten, de open-noot bij het pad.
+- **Klein** (Archivo, 0.875rem): knoplabels, voetnoten, de open punten.
 - **Plaat** (Archivo 600, 0.7rem, breedte 84%, ls 0.16em, kapitaal): het gesjabloneerde plaatje.
 
 ### Named Rules
@@ -246,7 +246,7 @@ Beide zijn lokaal gehost als gesubsette woff2 in `public/fonts/`, met `font-disp
 
 **Container.** Eén enkele omhulling: `.omhulsel` = `width: min(100% - var(--rand) * 2, var(--breed))`, gecentreerd. `--breed` is 78rem (1248px), `--rand` loopt van 20px tot 64px. Op een viewport van 1440px levert dat een paginamarge van precies 96px links en rechts. Die 96px is het bemonsteringsgebied voor de korrelmeting hieronder.
 
-**Rasters.** Alle secties zijn tweekoloms `grid` met ongelijke verhoudingen, nooit 50/50: 1.35/0.65 (hero), 0.85/1.15 (waarom), 1.15/0.85 (aanpak), 0.86/1.14 (ervaring), 1.2/0.8 (visie), 0.9/1.1 (partner), 1.3/0.7 (partnerlijsten). De ongelijkheid is het punt: geschilderde compositie, geen kolomindeling. De enige uitzondering is het lusraster, dat exact 1/1 is, en dat is een inhoudelijke eis (zie Components).
+**Rasters.** Alle secties zijn tweekoloms `grid` met ongelijke verhoudingen, nooit 50/50: 1.35/0.65 (hero), 0.85/1.15 (waarom), 1.15/0.85 (aanpak), 0.8/1.2 (opleidingscentrum), 0.86/1.14 (ervaring), 1.2/0.8 (missie), 0.9/1.1 (partner), 1.3/0.7 (partnerlijsten), 1.1/0.9 (doorlezen). De ongelijkheid is het punt: geschilderde compositie, geen kolomindeling. De enige uitzondering is het lusraster, dat exact 1/1 is, en dat is een inhoudelijke eis (zie Components).
 
 **Breekpunten.** Twee, geen meer.
 
@@ -310,7 +310,7 @@ De vormtaal kent precies drie vormen, en ze staan tegenover elkaar.
 
 ### Named Rules
 
-**De Geen Kaarten Regel.** Vlakken op de muur hebben gekwaste randen, geen omlijning en geen radius. Er staat nergens een `border` rondom een blok inhoud, en er komt er nooit een bij. Een nieuw blok krijgt een verfkleur en twee `KwastRand`-componenten, of het krijgt niets. De enige rechthoekige omlijningen die het systeem toestaat zijn **gestippeld** en betekenen "hier ontbreekt nog iets": het actieslot, de open-noot bij het pad, en de uitgeschakelde knop.
+**De Geen Kaarten Regel.** Vlakken op de muur hebben gekwaste randen, geen omlijning en geen radius. Er staat nergens een `border` rondom een blok inhoud, en er komt er nooit een bij. Een nieuw blok krijgt een verfkleur en twee `KwastRand`-componenten, of het krijgt niets. De enige rechthoekige omlijningen die het systeem toestaat zijn **gestippeld** en betekenen "hier ontbreekt nog iets": het actieslot, elk open punt (`.openpunt`), en de uitgeschakelde knop.
 
 **De Randvariatie Regel.** Twee aangrenzende gekwaste randen krijgen nooit hetzelfde variantnummer. Eén hergebruikte golf op elke sectie is een sjabloon, geen kwast. Wissel `variant={1|2|3}` af per plek.
 
@@ -370,7 +370,7 @@ Handgeschilderd etiket: pilvormig, doorzichtig, met een 2px rand op 55% `lak`. A
 
 **De Scoperegel.** Een klasse die je aan een Astro-childcomponent doorgeeft, erft het `data-astro-cid`-attribuut van het oudertemplate **niet**. Een gescopete regel die zo'n klasse aanspreekt moet daarom geschreven worden als `.gescopete-ouder :global(.de-klasse)`, anders valt hij geruisloos weg. Vijf regels zijn op precies deze manier dood geweest. Het is veilig omdat de ouderselector wél gescopet is, dus er lekt niets. Herken je aan het patroon: staat er in het template `class="iets"` op een `<Component />`, dan hoort de CSS ernaar te wijzen via `:global()`.
 
-**De Placeholderregel.** Elk gat in het materiaal is zichtbaar gemarkeerd, met een gestippelde rand en een `role="note"`. Het actieslot draait op een uitgeschakelde knop met uitleg ernaast; het pad heeft een open-noot; de voet heeft een register van openstaande punten. Een aannemelijke invulling is nooit toegestaan: een zichtbaar gat is eerlijker en de opdrachtgever ziet meteen wat er nog moet komen.
+**De Placeholderregel.** Elk gat in het materiaal is zichtbaar gemarkeerd, met een gestippelde rand (`.openpunt`) en een `role="note"`. Het actieslot draait op een uitgeschakelde knop met uitleg ernaast; het opleidingscentrum, de USP's bij Word partner en de twee projectbeschrijvingen hebben een open punt; de voet heeft een register van openstaande punten. Een aannemelijke invulling is nooit toegestaan: een zichtbaar gat is eerlijker en de opdrachtgever ziet meteen wat er nog moet komen.
 
 ## Do's and Don'ts
 

@@ -120,6 +120,20 @@ a:hover { text-decoration-color: currentColor; }
 }
 .overslaan:focus-visible { top: var(--s4); }
 
+/* Alleen voor schermlezers. Voor tekst die een afkorting op het scherm
+   uitschrijft, zoals de volledige taalnaam achter NL, EN en PT. */
+.verborgen {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* Gesjabloneerd plaatje: de aanduiding bij een zone of foto.
    Draagt informatie, staat nooit als opwarmertje boven een kop. */
 .plaat {

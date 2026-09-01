@@ -17,16 +17,20 @@
     "items": [
       { "label": "Missie", "href": "#missie" },
       { "label": "Onze aanpak", "href": "#aanpak" },
-      { "label": "Opleidingscentrum", "href": "#opleidingscentrum" },
+      { "label": "Het opleidingscentrum", "href": "#opleidingscentrum" },
       { "label": "Impact", "href": "#impact" },
       { "label": "Word partner", "href": "#partner" }
     ],
     "actie": "Contact",
-    "overslaan": "Naar de inhoud"
+    "overslaan": "Naar de inhoud",
+    "sectiesLabel": "Secties",
+    "taalLabel": "Taal"
   },
 
   "hero": {
-    "kop": "Wie het geleerd heeft, geeft het door.",
+    "_kop_uitleg": "De kop staat in twee stukken omdat het laatste woord cursief geschilderd is. Bij vertalen: kopCursief is het slotwoord dat de nadruk draagt, niet per se het laatste woord van de Nederlandse zin.",
+    "kop": "Wie het geleerd heeft, geeft het ",
+    "kopCursief": "door.",
     "inleiding": "MAIS ESPORTE leidt jongeren in Braziliaanse favela's op tot Urban Adventure Coach. Zij begeleiden daarna zelf de kinderen in hun eigen wijk. Een generatie die niet wordt bepaald door afkomst, maar door potentieel.",
     "actie": "Plan een kennismaking",
     "actieTweede": "Lees onze aanpak",
@@ -47,35 +51,29 @@
   "lus": {
     "kop": "Jongeren leiden jongeren.",
     "inleiding": "Jongeren leren niet alleen vaardigheden voor zichzelf, maar begeleiden vervolgens ook andere kinderen en jongeren binnen hun omgeving. Zo ontstaat een krachtige vorm van peer-education.",
+    "_panelen_herkomst": "De twee bijschriften vormen samen één zin, op verzoek van de opdrachtgever: de jongere wordt opgeleid en het kind wordt begeleid. Bij vertalen die zin als geheel behandelen, niet per paneel los.",
     "panelen": [
       {
-        "rol": "Wordt opgeleid",
-        "titel": "De jongere",
-        "tekst": "Krijgt vertrouwen, verantwoordelijkheid en de ruimte om te groeien.",
+        "bijschrift": "De jongere wordt opgeleid",
         "foto": { "alt": "Een jongere met helm en klimgordel staat boven op een toren van gestapelde kratten en krijgt een volgend krat aangereikt.", "plaat": "Krattentoren, oefening in vertrouwen en zekeren" }
       },
       {
-        "rol": "Wordt begeleid",
-        "titel": "Het kind uit dezelfde wijk",
-        "tekst": "Krijgt begeleiding van iemand die de wijk kent, omdat die er zelf vandaan komt.",
+        "bijschrift": "en het kind wordt begeleid",
         "foto": { "alt": "Een groep kinderen loopt door een poort die twee coaches met hun handen vormen.", "plaat": "Groepsoefening aan het einde van een training" }
       }
     ],
     "sluit": "En daarna begint het opnieuw."
   },
 
-  "_pad_herkomst": "De drie stationsnamen zijn een structurele samenvatting van de peer-lus uit het PDF. De beschrijvende zinnen eronder kwamen uit de designschets en zijn verwijderd; die stonden niet in het bronmateriaal.",
-  "pad": {
-    "kop": "Van jongere naar coach en rolmodel.",
-    "stations": [{ "titel": "Groeien" }, { "titel": "Leiden" }, { "titel": "Doorgeven" }],
-    "openNoot": "Een korte beschrijving per stap volgt, te schrijven met de opdrachtgever. De eerdere teksten kwamen uit de designschets en niet uit het partnerdocument."
-  },
-
   "aanpak": {
     "kop": "Leren door te doen.",
     "onderdelen": ["persoonlijke ontwikkeling", "leiderschapstraining", "sport en ervaringsleren", "coaching", "community building"],
     "bewijsKop": "Waarom deze aanpak werkt",
-    "bewijs": "MAIS ESPORTE bouwt voort op meer dan 25 jaar ervaring van ARCA in de Braziliaanse favela's. De aanpak is lokaal verankerd, praktijkgericht en bewezen effectief.",
+    "bewijs": [
+      "MAIS ESPORTE bouwt voort op meer dan 25 jaar ervaring van ",
+      { "tekst": "ARCA", "href": "https://www.arcaceara.org.br" },
+      " in de Braziliaanse favela's. De aanpak is lokaal verankerd, praktijkgericht en bewezen effectief."
+    ],
     "uniekKop": "Wat onze methode uniek maakt",
     "uniek": [
       "jongeren leiden jongeren",
@@ -88,10 +86,16 @@
     "foto": { "alt": "Een groep jongeren tilt samen een autoband over een houten paal, terwijl anderen hen ondersteunen.", "plaat": "Groepsopdracht tijdens een impactkamp" }
   },
 
-  "_centrum_herkomst": "Het partnerdocument noemt het opleidingscentrum niet. Deze sectie staat er op verzoek van de opdrachtgever; de tekst moet nog met hem geschreven worden. Daarom alleen een kop en een zichtbaar open punt, geen ingevulde zinnen.",
+  "_centrum_herkomst": "Deze tekst is los aangeleverd door de opdrachtgever en staat niet in het partnerdocument. De foto's ontbreken nog.",
   "centrum": {
     "kop": "Het opleidingscentrum.",
-    "openNoot": "De beschrijving van het opleidingscentrum volgt, te schrijven met de opdrachtgever. Het partnerdocument bevat hier geen tekst over."
+    "inleiding": "Sitio (landgoed) Vale da Serra bevindt zich in de bergen van Maranguape, in de staat Ceará, op slechts 25 km van de hoofdstad Fortaleza, in het noordoosten van Brazilië.",
+    "alineas": [
+      "De locatie beslaat 75 hectare met een overvloed aan natuur, water, watervallen, rivieren en natuurlijke poelen die actief zijn tijdens het regenseizoen. Er lopen 7 km aan wandelpaden doorheen en er zijn 22 educatieve platformen gemaakt, stukjes open bos waarbij elk platform zijn eigen pedagogische voorstel heeft.",
+      "Sitio Vale da Serra is ontstaan uit de droom om een plek te creëren waar kansarme jongeren de kans krijgen om op het gebied van sociaal en emotioneel leren verder te groeien door middel van ervaringsgericht leren. Deze methodiek erkent het belang van \"leren door te doen\", de verbinding met de natuur en waar jongeren de kapitein kunnen zijn van hun eigen leerproces.",
+      "Vale da Serra is opgericht door twee docenten lichamelijke opvoeding (Onno Raadsen en Milza Gomes Raadsen), die beiden een uitgebreide ervaring hebben op het gebied van menselijke ontwikkeling door middel van sport en spel in landen als Brazilië, Nederland, Guatemala, Haïti, Oost-Timor en Afrikaanse landen."
+    ],
+    "openNoot": "Foto's van het opleidingscentrum volgen nog."
   },
 
   "doelen": {
@@ -101,7 +105,7 @@
       { "getal": "240", "eenheid": "jongeren", "tekst": "opleiden tot Urban Adventure Coach" },
       { "getal": "2.000+", "eenheid": "kinderen", "tekst": "bereiken" },
       { "getal": "10", "eenheid": "impactkampen", "tekst": "organiseren" },
-      { "getal": "50", "eenheid": "Nederlandse basisscholen", "tekst": "betrekken met de leerlijn Wat zie jij?" },
+      { "getal": "50", "eenheid": "Nederlandse basisscholen", "tekst": ["betrekken met de leerlijn ", { "tekst": "Wat zie jij?", "href": "https://watziejij.nu" }] },
       { "getal": "10.000+", "eenheid": "mensen", "tekst": "indirect bereiken" }
     ],
     "daarnaastKop": "Daarnaast werken we aan",
@@ -116,7 +120,7 @@
   "partner": {
     "kop": "Meer dan sponsoring.",
     "inleiding": "Partners verbinden zich niet alleen aan een project, maar aan een internationale beweging met zichtbare maatschappelijke impact.",
-    "bordenKop": "Partnershipmogelijkheden",
+    "bordenKop": "Partnership mogelijkheden",
     "borden": [
       {
         "naam": "Founding Partner",
@@ -132,6 +136,8 @@
       }
     ],
     "bedragNoot": "Bedragen worden in het kennismakingsgesprek besproken.",
+    "uspKop": "Wat dit project uniek maakt",
+    "uspOpenNoot": "De Unique Selling Points van het project worden nog aangeleverd door de opdrachtgever, net als de resterende partnermogelijkheden.",
     "biedtKop": "Samenwerkingen bieden onder andere",
     "biedt": [
       "een concrete bijdrage aan de Sustainable Development Goals",
@@ -168,10 +174,21 @@
       "een schaalbare methodiek",
       "internationale samenwerkingen",
       "onderwijsverbindingen",
-      "een groeiend netwerk van impactpartners"
+      "een groeiend netwerk van partners"
     ],
     "slot": "Ons doel is om een model te ontwikkelen dat ook inzetbaar wordt in andere regio's en landen.",
     "foto": { "alt": "Het terrein: een open grasveld met palmen, lage gebouwen en een beboste heuvel op de achtergrond.", "plaat": "Het terrein waar de opleiding plaatsvindt" }
+  },
+
+  "_documenten_herkomst": "De twee PDF's zijn nog niet aangeleverd. Zolang er geen bestand is, staan de knoppen uitgeschakeld met uitleg ernaast, volgens de Placeholderregel uit DESIGN.md.",
+  "documenten": {
+    "kop": "Lees het hele verhaal.",
+    "inleiding": "De projectbeschrijving vertelt uitgebreider wat MAIS ESPORTE doet, voor wie en waarom. Er is een volledige versie en een verkorte.",
+    "items": [
+      { "naam": "Volledige projectbeschrijving", "bestand": null },
+      { "naam": "Verkorte projectbeschrijving", "bestand": null }
+    ],
+    "openNoot": "De twee documenten worden nog aangeleverd. Zodra de PDF's er zijn, openen deze knoppen ze in een nieuw tabblad."
   },
 
   "contact": {
@@ -190,11 +207,12 @@
     "open": [
       "Contactgegevens en de manier waarop een gesprek wordt ingepland",
       "Bedragen bij de drie partnervormen",
+      "De volledige en verkorte projectbeschrijving als PDF",
+      "Unique Selling Points van het project en de resterende partnermogelijkheden",
+      "Foto's van het opleidingscentrum en de definitieve foto's bij de lus",
       "Wie de juridische afzender is: MAIS ESPORTE, ARCA of Vale da Serra Company",
       "Toestemming voor publicatie van de herkenbare personen op de foto's",
-      "Logo als vectorbestand",
-      "Beschrijving van de drie stappen bij Groeien, Leiden en Doorgeven",
-      "Tekst voor het opleidingscentrum"
+      "Logo als vectorbestand"
     ],
     "fotoNoot": "Alle foto's op deze pagina komen uit het partnerdocument."
   }

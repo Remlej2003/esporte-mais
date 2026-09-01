@@ -5,11 +5,16 @@ interface Props {
   /* Uitgeschakeld: de knop bestaat wel, maar heeft nog geen bestemming.
      Beter zichtbaar leeg dan een link die nergens heen gaat. */
   uit?: boolean;
+  /* Opent in een nieuw tabblad. Voor PDF's: de bezoeker raakt de pagina
+     niet kwijt terwijl hij het document doorleest. */
+  extern?: boolean;
   class?: string;
 }
-const { href, soort = 'vol', uit = false, class: klasse = '' } = Astro.props;
+const { href, soort = 'vol', uit = false, extern = false, class: klasse = '' } = Astro.props;
 const Tag = uit ? 'button' : 'a';
-const attrs = uit ? { type: 'button', disabled: true } : { href };
+const attrs = uit
+  ? { type: 'button', disabled: true }
+  : { href, ...(extern ? { target: '_blank', rel: 'noopener noreferrer' } : {}) };
 ---
 
 <Tag class={`knop knop--${soort} ${uit ? 'knop--uit' : ''} ${klasse}`} {...attrs}>

@@ -15,7 +15,9 @@ Twee architectuurafspraken die hierbij horen, gemaakt om latere wijzigingen goed
 - **Copy staat los van markup.** Alle teksten in losse contentbestanden per taal, nooit inline in componenten. Reden: bij een design-aanpassing hoeft de copy dan niet opnieuw geschreven te worden.
 - **Design tokens staan in één bestand.** Kleuren, typografie en spacing centraal, zodat een visuele koerswijziging één bestand raakt in plaats van elke component.
 
-Meertaligheid: gebouwd met i18n-routing, maar bij lancering is alleen `nl` actief. `en` en `pt` toevoegen is later een vertaalbestand plus een regel config — geen verbouwing. De taalschakelaar uit de schets toont pas iets zodra er een tweede taal bestaat.
+Meertaligheid: `nl`, `en` en `pt` zijn alle drie actief. Nederlands staat op de wortel, de andere twee onder `/en/` en `/pt/`. De pagina zelf staat in `src/layouts/Startpagina.astro` en krijgt het contentbestand als prop; `src/i18n/talen.ts` is het register. Een taal erbij is een contentbestand, een regel in dat register en een regel in `astro.config.mjs`. Het Portugees is Braziliaans (`pt-BR`), want daar staat het programma. De taalschakelaar staat in de kop en toont alleen talen die bestaan.
+
+De drie contentbestanden hebben dezelfde vorm en dezelfde volgorde. Een wijziging in `nl.json` hoort in alle drie te landen; als de vorm uiteenloopt, valt de pagina in die taal om.
 
 Deploytarget is nog niet vastgelegd.
 

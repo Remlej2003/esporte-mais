@@ -1,0 +1,215 @@
+{
+  "_bron": "Vertaling van nl.json naar Braziliaans Portugees (pt-BR). Zelfde structuur, zelfde volgorde, zelfde feiten. Geen kastlijntjes, ook niet in het Portugees (zie DESIGN.md). Bij een wijziging in nl.json hoort dezelfde wijziging hier. Deze vertaling is nog niet nagelezen door een moedertaalspreker.",
+
+  "meta": {
+    "taal": "pt",
+    "titel": "MAIS ESPORTE: quem aprendeu, repassa",
+    "omschrijving": "O MAIS ESPORTE forma jovens de favelas brasileiras como Urban Adventure Coaches. Depois são eles que acompanham as crianças da própria comunidade. Para organizações que enxergam além do patrocínio."
+  },
+
+  "merk": {
+    "naam": "MAIS ESPORTE",
+    "afzender": "Vale da Serra Company",
+    "coordinaten": "3°55′33.93″ S · 38°43′38.49″ W"
+  },
+
+  "nav": {
+    "items": [
+      { "label": "Missão", "href": "#missie" },
+      { "label": "Nossa abordagem", "href": "#aanpak" },
+      { "label": "O centro de formação", "href": "#opleidingscentrum" },
+      { "label": "Impacto", "href": "#impact" },
+      { "label": "Seja parceiro", "href": "#partner" }
+    ],
+    "actie": "Contato",
+    "overslaan": "Ir para o conteúdo",
+    "sectiesLabel": "Seções",
+    "taalLabel": "Idioma"
+  },
+
+  "hero": {
+    "kop": "Quem aprendeu, ",
+    "kopCursief": "repassa.",
+    "inleiding": "O MAIS ESPORTE forma jovens de favelas brasileiras como Urban Adventure Coaches. Depois são eles que acompanham as crianças da própria comunidade. Uma geração definida não pela origem, mas pelo potencial.",
+    "actie": "Agende uma conversa",
+    "actieTweede": "Conheça nossa abordagem",
+    "foto": {
+      "alt": "Um grupo de jovens empurra e puxa uns aos outros por uma parede de rocha íngreme até uma estrutura de madeira.",
+      "plaat": "Exercício de escalada, cooperação com acompanhamento"
+    }
+  },
+
+  "waarom": {
+    "kop": "Por que isso é necessário agora",
+    "inleiding": "No Nordeste do Brasil, um grande número de jovens cresce em condições nas quais as oportunidades são escassas e as influências negativas estão presentes todos os dias. Muitos não têm acesso a uma boa educação, a trabalho estável, a condições de vida seguras e a referências que inspirem.",
+    "gevolgenKop": "As consequências são visíveis",
+    "gevolgen": ["evasão escolar", "criminalidade", "falta de esperança", "ausência de perspectiva de futuro"],
+    "keerpunt": "Mas é justamente ali que está o potencial. Acreditamos que os jovens não precisam de pena, e sim de confiança, responsabilidade e oportunidades para se desenvolverem."
+  },
+
+  "lus": {
+    "kop": "Jovens conduzindo jovens.",
+    "inleiding": "Os jovens não aprendem apenas para si mesmos. Em seguida, passam a acompanhar outras crianças e jovens do próprio entorno. É assim que nasce uma forma potente de educação entre pares.",
+    "panelen": [
+      {
+        "bijschrift": "O jovem é formado",
+        "foto": { "alt": "Um jovem de capacete e cadeirinha de escalada está no alto de uma torre de caixotes empilhados e recebe mais um caixote.", "plaat": "Torre de caixotes, exercício de confiança e segurança" }
+      },
+      {
+        "bijschrift": "e a criança é acompanhada",
+        "foto": { "alt": "Um grupo de crianças passa por um arco formado pelas mãos de dois coaches.", "plaat": "Exercício em grupo ao final de um treino" }
+      }
+    ],
+    "sluit": "E então tudo recomeça."
+  },
+
+  "aanpak": {
+    "kop": "Aprender fazendo.",
+    "onderdelen": ["desenvolvimento pessoal", "formação em liderança", "esporte e aprendizagem vivencial", "coaching", "construção de comunidade"],
+    "bewijsKop": "Por que esta abordagem funciona",
+    "bewijs": [
+      "O MAIS ESPORTE se apoia em mais de 25 anos de experiência da ",
+      { "tekst": "ARCA", "href": "https://www.arcaceara.org.br" },
+      " nas favelas brasileiras. A abordagem tem raiz local, é voltada à prática e tem eficácia comprovada."
+    ],
+    "uniekKop": "O que torna nosso método singular",
+    "uniek": [
+      "jovens conduzindo jovens",
+      "aprender fazendo",
+      "foco no protagonismo",
+      "ligação direta com o futuro e com o mercado de trabalho",
+      "combinação forte entre impacto local e cooperação internacional"
+    ],
+    "slot": "Acreditamos que a mudança duradoura acontece quando os próprios jovens passam a fazer parte da solução.",
+    "foto": { "alt": "Um grupo de jovens ergue junto um pneu por cima de um poste de madeira, enquanto outros os apoiam.", "plaat": "Atividade em grupo durante um campo de impacto" }
+  },
+
+  "centrum": {
+    "kop": "O centro de formação.",
+    "inleiding": "O Sítio Vale da Serra fica na serra de Maranguape, no estado do Ceará, a apenas 25 km da capital Fortaleza, no Nordeste do Brasil.",
+    "alineas": [
+      "A área tem 75 hectares, com abundância de natureza, água, cachoeiras, rios e piscinas naturais que se enchem na estação chuvosa. São 7 km de trilhas e 22 plataformas educativas construídas ali: clareiras na mata, cada uma com a sua própria proposta pedagógica.",
+      "O Sítio Vale da Serra nasceu do sonho de criar um lugar onde jovens em situação de vulnerabilidade possam crescer no campo socioemocional por meio da aprendizagem vivencial. Essa metodologia reconhece o valor de \"aprender fazendo\", da ligação com a natureza, e de o jovem ser o capitão do próprio processo de aprendizagem.",
+      "O Vale da Serra foi fundado por dois professores de educação física (Onno Raadsen e Milza Gomes Raadsen), ambos com ampla experiência em desenvolvimento humano por meio do esporte e do jogo em países como Brasil, Holanda, Guatemala, Haiti, Timor Leste e países africanos."
+    ],
+    "openNoot": "As fotos do centro de formação ainda serão enviadas."
+  },
+
+  "doelen": {
+    "kop": "O que queremos alcançar em cinco anos.",
+    "waarschuwing": "Estas são metas para os próximos cinco anos, não resultados já alcançados.",
+    "lijst": [
+      { "getal": "240", "eenheid": "jovens", "tekst": "formados como Urban Adventure Coaches" },
+      { "getal": "2.000+", "eenheid": "crianças", "tekst": "alcançadas" },
+      { "getal": "10", "eenheid": "campos de impacto", "tekst": "realizados" },
+      { "getal": "50", "eenheid": "escolas primárias holandesas", "tekst": ["envolvidas com o programa ", { "tekst": "Wat zie jij?", "href": "https://watziejij.nu" }] },
+      { "getal": "10.000+", "eenheid": "pessoas", "tekst": "alcançadas de forma indireta" }
+    ],
+    "daarnaastKop": "Além disso, trabalhamos por",
+    "daarnaast": [
+      "mais autoconfiança entre os jovens",
+      "comunidades mais fortes",
+      "menos influência da criminalidade",
+      "melhores oportunidades de trabalho e estudo"
+    ]
+  },
+
+  "partner": {
+    "kop": "Mais do que patrocínio.",
+    "inleiding": "Os parceiros não se comprometem apenas com um projeto, mas com um movimento internacional de impacto social visível.",
+    "bordenKop": "Formas de parceria",
+    "borden": [
+      {
+        "naam": "Founding Partner",
+        "tekst": "Para organizações que querem contribuir estrategicamente com o crescimento do MAIS ESPORTE, com exclusividade no setor, cocriação e posicionamento em destaque."
+      },
+      {
+        "naam": "Impact Partner",
+        "tekst": "Para organizações que querem fazer parte do movimento de forma visível, por meio de marca, eventos e ativações."
+      },
+      {
+        "naam": "Community Partner",
+        "tekst": "Para organizações que querem se envolver em atividades, eventos comunitários e impacto social."
+      }
+    ],
+    "bedragNoot": "Os valores são discutidos na conversa inicial.",
+    "uspKop": "O que torna este projeto único",
+    "uspOpenNoot": "Os Unique Selling Points do projeto ainda serão enviados pelo cliente, assim como as demais formas de parceria.",
+    "biedtKop": "As parcerias oferecem, entre outras coisas",
+    "biedt": [
+      "uma contribuição concreta aos Objetivos de Desenvolvimento Sustentável",
+      "employer branding consistente",
+      "narrativas e conteúdo autênticos",
+      "engajamento dos colaboradores",
+      "visibilidade internacional",
+      "acesso a uma rede de organizações orientadas ao impacto"
+    ],
+    "afstemKop": "As parcerias podem ser totalmente ajustadas a",
+    "afstem": ["employer branding", "projetos educacionais", "engajamento dos colaboradores", "posicionamento social"]
+  },
+
+  "ervaring": {
+    "kop": "Não da arquibancada.",
+    "inleiding": "Os parceiros passam a fazer parte do movimento de verdade. Por exemplo:",
+    "vormen": [
+      "viagens de impacto ao Brasil",
+      "programas de voluntariado",
+      "projetos educacionais",
+      "sessões de inspiração",
+      "narrativas e produção de conteúdo",
+      "cooperação internacional"
+    ],
+    "slot": "Não envolvidos da arquibancada, mas no meio do impacto.",
+    "foto": { "alt": "Crianças e educadores em uma atividade esportiva num campo de areia, com casas de tijolo e a cidade ao fundo.", "plaat": "Atividade esportiva no campo da comunidade" }
+  },
+
+  "visie": {
+    "kop": "Nossa missão",
+    "inleiding": "O MAIS ESPORTE quer se tornar uma plataforma internacional de aprendizagem vivencial, liderança e impacto comunitário. Nos próximos anos vamos construir:",
+    "onderdelen": [
+      "um centro de referência em aprendizagem vivencial",
+      "uma metodologia escalável",
+      "cooperações internacionais",
+      "pontes com a educação",
+      "uma rede crescente de parceiros"
+    ],
+    "slot": "Nosso objetivo é desenvolver um modelo que também possa ser aplicado em outras regiões e países.",
+    "foto": { "alt": "O terreno: um campo aberto de grama com palmeiras, construções baixas e uma colina arborizada ao fundo.", "plaat": "O terreno onde acontece a formação" }
+  },
+
+  "documenten": {
+    "kop": "Leia a história completa.",
+    "inleiding": "A descrição do projeto conta com mais detalhes o que o MAIS ESPORTE faz, para quem e por quê. Há uma versão completa e uma resumida.",
+    "items": [
+      { "naam": "Descrição completa do projeto", "bestand": null },
+      { "naam": "Descrição resumida do projeto", "bestand": null }
+    ],
+    "openNoot": "Os dois documentos ainda serão enviados. Assim que os PDFs estiverem disponíveis, estes botões vão abri los em uma nova aba."
+  },
+
+  "contact": {
+    "kop": "Construa conosco a próxima geração de líderes.",
+    "inleiding": "Procuramos organizações que enxergam além do patrocínio, que querem investir em potencial humano e em impacto social duradouro.",
+    "uitnodiging": "Agende uma conversa inicial e descubra como a sua organização passa a fazer parte deste movimento.",
+    "actie": "Agende uma conversa",
+    "placeholder": {
+      "titel": "Dados de contato ainda não definidos",
+      "tekst": "Este botão ainda não tem destino. Assim que ficar claro se será um formulário, um link de agenda ou um endereço de e mail, ele aparecerá aqui."
+    }
+  },
+
+  "voet": {
+    "openKop": "Ainda a definir",
+    "open": [
+      "Dados de contato e a forma de agendar uma conversa",
+      "Valores das três formas de parceria",
+      "A descrição completa e a resumida do projeto em PDF",
+      "Unique Selling Points do projeto e as demais formas de parceria",
+      "Fotos do centro de formação e as fotos definitivas do ciclo",
+      "Quem é o remetente jurídico: MAIS ESPORTE, ARCA ou Vale da Serra Company",
+      "Autorização para publicar as pessoas identificáveis nas fotos",
+      "O logotipo em arquivo vetorial"
+    ],
+    "fotoNoot": "Todas as fotos desta página vêm do documento de parceria."
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "_bron": "Vertaling van nl.json. Zelfde structuur, zelfde volgorde, zelfde feiten. Geen kastlijntjes, ook niet in het Engels (zie DESIGN.md). Bij een wijziging in nl.json hoort dezelfde wijziging hier.",
+
+  "meta": {
+    "taal": "en",
+    "titel": "MAIS ESPORTE: those who have learned, pass it on",
+    "omschrijving": "MAIS ESPORTE trains young people in Brazilian favelas to become Urban Adventure Coaches. They then guide the children in their own neighbourhood. For organisations looking beyond sponsorship."
+  },
+
+  "merk": {
+    "naam": "MAIS ESPORTE",
+    "afzender": "Vale da Serra Company",
+    "coordinaten": "3°55′33.93″ S · 38°43′38.49″ W"
+  },
+
+  "nav": {
+    "items": [
+      { "label": "Mission", "href": "#missie" },
+      { "label": "Our approach", "href": "#aanpak" },
+      { "label": "The training centre", "href": "#opleidingscentrum" },
+      { "label": "Impact", "href": "#impact" },
+      { "label": "Become a partner", "href": "#partner" }
+    ],
+    "actie": "Contact",
+    "overslaan": "Skip to content",
+    "sectiesLabel": "Sections",
+    "taalLabel": "Language"
+  },
+
+  "hero": {
+    "kop": "Those who have learned, ",
+    "kopCursief": "pass it on.",
+    "inleiding": "MAIS ESPORTE trains young people in Brazilian favelas to become Urban Adventure Coaches. They then guide the children in their own neighbourhood. A generation defined not by where they come from, but by what they are capable of.",
+    "actie": "Arrange an introduction",
+    "actieTweede": "Read our approach",
+    "foto": {
+      "alt": "A group of young people push and pull each other up a steep rock face towards a wooden structure.",
+      "plaat": "Climbing exercise, working together under supervision"
+    }
+  },
+
+  "waarom": {
+    "kop": "Why this is needed now",
+    "inleiding": "In north eastern Brazil, a large group of young people grows up in conditions where opportunities are scarce and negative influences are present every day. Many lack access to good education, stable work, safe living conditions and inspiring role models.",
+    "gevolgenKop": "The consequences are visible",
+    "gevolgen": ["dropping out of school", "crime", "hopelessness", "a lack of prospects"],
+    "keerpunt": "Yet that is exactly where the potential lies. We believe young people do not need pity, but trust, responsibility and the chance to develop themselves."
+  },
+
+  "lus": {
+    "kop": "Young people leading young people.",
+    "inleiding": "Young people do not only learn skills for themselves. They go on to guide other children and young people in their own surroundings. That is where a powerful form of peer education begins.",
+    "panelen": [
+      {
+        "bijschrift": "The young person is trained",
+        "foto": { "alt": "A young person wearing a helmet and climbing harness stands on top of a tower of stacked crates and is handed another crate.", "plaat": "Crate tower, an exercise in trust and belaying" }
+      },
+      {
+        "bijschrift": "and the child is guided",
+        "foto": { "alt": "A group of children walks through an arch formed by the hands of two coaches.", "plaat": "Group exercise at the end of a training session" }
+      }
+    ],
+    "sluit": "And then it begins again."
+  },
+
+  "aanpak": {
+    "kop": "Learning by doing.",
+    "onderdelen": ["personal development", "leadership training", "sport and experiential learning", "coaching", "community building"],
+    "bewijsKop": "Why this approach works",
+    "bewijs": [
+      "MAIS ESPORTE builds on more than 25 years of experience by ",
+      { "tekst": "ARCA", "href": "https://www.arcaceara.org.br" },
+      " in the Brazilian favelas. The approach is locally rooted, grounded in practice and proven effective."
+    ],
+    "uniekKop": "What makes our method distinctive",
+    "uniek": [
+      "young people leading young people",
+      "learning by doing",
+      "a focus on ownership",
+      "a direct link to the future and the labour market",
+      "a strong combination of local impact and international cooperation"
+    ],
+    "slot": "We believe lasting change happens when young people become part of the solution themselves.",
+    "foto": { "alt": "A group of young people lift a car tyre over a wooden pole together while others support them.", "plaat": "Group assignment during an impact camp" }
+  },
+
+  "centrum": {
+    "kop": "The training centre.",
+    "inleiding": "Sitio (estate) Vale da Serra lies in the mountains of Maranguape, in the state of Ceará, just 25 km from the capital Fortaleza in north eastern Brazil.",
+    "alineas": [
+      "The site covers 75 hectares, rich in nature, water, waterfalls, rivers and natural pools that fill during the rainy season. Seven kilometres of walking trails run through it, and 22 educational platforms have been built: clearings in the forest, each with its own pedagogical purpose.",
+      "Sitio Vale da Serra grew out of the dream of creating a place where young people with few opportunities can develop socially and emotionally through experiential learning. That method recognises the value of \"learning by doing\", the connection with nature, and young people being the captain of their own learning.",
+      "Vale da Serra was founded by two physical education teachers (Onno Raadsen and Milza Gomes Raadsen), both with extensive experience in human development through sport and play in countries including Brazil, the Netherlands, Guatemala, Haiti, Timor Leste and several African countries."
+    ],
+    "openNoot": "Photographs of the training centre are still to follow."
+  },
+
+  "doelen": {
+    "kop": "What we want to achieve in five years.",
+    "waarschuwing": "These are goals for the coming five years, not results already achieved.",
+    "lijst": [
+      { "getal": "240", "eenheid": "young people", "tekst": "trained as Urban Adventure Coaches" },
+      { "getal": "2,000+", "eenheid": "children", "tekst": "reached" },
+      { "getal": "10", "eenheid": "impact camps", "tekst": "organised" },
+      { "getal": "50", "eenheid": "Dutch primary schools", "tekst": ["involved through the teaching programme ", { "tekst": "Wat zie jij?", "href": "https://watziejij.nu" }] },
+      { "getal": "10,000+", "eenheid": "people", "tekst": "reached indirectly" }
+    ],
+    "daarnaastKop": "Alongside that, we are working on",
+    "daarnaast": [
+      "greater self confidence among young people",
+      "stronger communities",
+      "less influence from crime",
+      "better prospects for work and education"
+    ]
+  },
+
+  "partner": {
+    "kop": "More than sponsorship.",
+    "inleiding": "Partners commit not merely to a project, but to an international movement with visible social impact.",
+    "bordenKop": "Partnership options",
+    "borden": [
+      {
+        "naam": "Founding Partner",
+        "tekst": "For organisations that want to contribute strategically to the growth of MAIS ESPORTE, including exclusivity within their sector, co-creation and prominent positioning."
+      },
+      {
+        "naam": "Impact Partner",
+        "tekst": "For organisations that want to be a visible part of the movement through branding, events and activations."
+      },
+      {
+        "naam": "Community Partner",
+        "tekst": "For organisations that want to be involved in activities, community events and social impact."
+      }
+    ],
+    "bedragNoot": "Amounts are discussed during the introductory conversation.",
+    "uspKop": "What makes this project unique",
+    "uspOpenNoot": "The Unique Selling Points of the project are still to be supplied by the client, as are the remaining partnership options.",
+    "biedtKop": "Collaborations offer, among other things",
+    "biedt": [
+      "a concrete contribution to the Sustainable Development Goals",
+      "strong employer branding",
+      "authentic storytelling and content",
+      "employee engagement",
+      "international visibility",
+      "access to a network of impact driven organisations"
+    ],
+    "afstemKop": "Partnerships can be fully tailored to",
+    "afstem": ["employer branding", "education projects", "employee engagement", "social positioning"]
+  },
+
+  "ervaring": {
+    "kop": "Not from the sidelines.",
+    "inleiding": "Partners genuinely become part of the movement. For example:",
+    "vormen": [
+      "impact journeys to Brazil",
+      "volunteer programmes",
+      "education projects",
+      "inspiration sessions",
+      "storytelling and content creation",
+      "international cooperation"
+    ],
+    "slot": "Not involved from the sidelines, but in the middle of the impact.",
+    "foto": { "alt": "Children and coaches during a sports activity on a sand pitch, with brick houses and the city behind them.", "plaat": "Sports activity on the pitch in the neighbourhood" }
+  },
+
+  "visie": {
+    "kop": "Our mission",
+    "inleiding": "MAIS ESPORTE aims to grow into an international platform for experiential learning, leadership and community impact. Over the coming years we are building:",
+    "onderdelen": [
+      "a centre of expertise for experiential learning",
+      "a scalable method",
+      "international collaborations",
+      "connections with education",
+      "a growing network of partners"
+    ],
+    "slot": "Our aim is to develop a model that can also be used in other regions and countries.",
+    "foto": { "alt": "The site: an open grass field with palm trees, low buildings and a wooded hill behind.", "plaat": "The site where the training takes place" }
+  },
+
+  "documenten": {
+    "kop": "Read the whole story.",
+    "inleiding": "The project description explains in more detail what MAIS ESPORTE does, for whom and why. There is a full version and a short one.",
+    "items": [
+      { "naam": "Full project description", "bestand": null },
+      { "naam": "Short project description", "bestand": null }
+    ],
+    "openNoot": "Both documents are still to be supplied. Once the PDFs are available, these buttons will open them in a new tab."
+  },
+
+  "contact": {
+    "kop": "Help build the next generation of leaders.",
+    "inleiding": "We are looking for organisations that see beyond sponsorship, that want to invest in human potential and lasting social impact.",
+    "uitnodiging": "Arrange an introductory conversation and discover how your organisation becomes part of this movement.",
+    "actie": "Arrange an introduction",
+    "placeholder": {
+      "titel": "Contact details not yet confirmed",
+      "tekst": "This button has no destination yet. As soon as it is clear whether it becomes a form, a calendar link or an email address, it will appear here."
+    }
+  },
+
+  "voet": {
+    "openKop": "Still to be confirmed",
+    "open": [
+      "Contact details and how a conversation is scheduled",
+      "Amounts for the three partnership levels",
+      "The full and short project description as PDFs",
+      "Unique Selling Points of the project and the remaining partnership options",
+      "Photographs of the training centre and the final photographs for the loop",
+      "Who the legal sender is: MAIS ESPORTE, ARCA or Vale da Serra Company",
+      "Permission to publish the identifiable people in the photographs",
+      "The logo as a vector file"
+    ],
+    "fotoNoot": "All photographs on this page come from the partner document."
+  }
+}

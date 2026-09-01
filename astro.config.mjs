@@ -1,12 +1,13 @@
 import { defineConfig } from 'astro/config';
 
-// Eén taal actief. EN en PT toevoegen = een vertaalbestand in src/content/
-// plus de code hieronder uitbreiden; de componenten hoeven niet mee.
+// Drie talen. Nederlands staat op de wortel, en en pt krijgen een
+// voorvoegsel. Een taal erbij: een contentbestand in src/content/, een regel
+// in src/i18n/talen.ts en de code hieronder. De componenten hoeven niet mee.
 export default defineConfig({
   site: 'https://maisesporte.nl',
   i18n: {
     defaultLocale: 'nl',
-    locales: ['nl'],
+    locales: ['nl', 'en', 'pt'],
     routing: { prefixDefaultLocale: false },
   },
   build: { inlineStylesheets: 'always' },

@@ -1,0 +1,55 @@
+---
+/**
+ * Een zin die een link in zich draagt.
+ *
+ * De copy blijft in het contentbestand staan, ook als er een link middenin
+ * zit. Een zin is dan een rij stukken: een gewone string, of een object met
+ * `tekst` en `href`. Bij vertalen verschuift de woordvolgorde, dus de link
+ * moet mee kunnen schuiven; daarom stukken en niet "zin voor" en "zin na".
+ */
+interface Deel {
+  tekst: string;
+  href?: string;
+  extern?: boolean;
+}
+interface Props {
+  delen: (string | Deel)[];
+}
+const { delen } = Astro.props;
+const isExtern = (d: Deel) => d.extern ?? /^https?:/.test(d.href ?? '');
+---
+
+{
+  delen.map((deel) =>
+    typeof deel === 'string' ? (
+      <Fragment>{deel}</Fragment>
+    ) : deel.href ? (
+      <a
+        class="inlijn"
+        href={deel.href}
+        {...(isExtern(deel) ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+      >
+        {deel.tekst}
+      </a>
+    ) : (
+      <Fragment>{deel.tekst}</Fragment>
+    ),
+  )
+}
+
+<style>
+  /* Een link in lopende tekst is onderstreept, want kleur alleen is geen
+     signaal voor wie kleuren niet onderscheidt. De onderstreping zakt onder
+     de staarten door in plaats van er dwars doorheen. */
+  .inlijn {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
+    text-underline-offset: 0.18em;
+    text-decoration-thickness: 1px;
+    transition: text-decoration-color var(--duur-kort) var(--ease-uit);
+  }
+  .inlijn:hover {
+    text-decoration-color: currentColor;
+  }
+</style>

@@ -1,23 +1,31 @@
 ---
 import '../styles/global.css';
-import nl from '../content/nl.json';
+import { talen, taalCodes, standaardTaal } from '../i18n/talen';
 
-interface Props { titel?: string; omschrijving?: string }
-const { titel = nl.meta.titel, omschrijving = nl.meta.omschrijving } = Astro.props;
+interface Props { taal?: string; titel?: string; omschrijving?: string }
+const { taal = standaardTaal, titel, omschrijving } = Astro.props;
+const huidige = talen[taal as keyof typeof talen] ?? talen[standaardTaal];
+const kopTitel = titel ?? huidige.content.meta.titel;
+const kopOmschrijving = omschrijving ?? huidige.content.meta.omschrijving;
 ---
 
 <!doctype html>
-<html lang={nl.meta.taal}>
+<html lang={huidige.htmlLang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{titel}</title>
-    <meta name="description" content={omschrijving} />
+    <title>{kopTitel}</title>
+    <meta name="description" content={kopOmschrijving} />
     <meta name="robots" content="noindex, nofollow" />
-    <meta property="og:title" content={titel} />
-    <meta property="og:description" content={omschrijving} />
+    <meta property="og:title" content={kopTitel} />
+    <meta property="og:description" content={kopOmschrijving} />
+    <meta property="og:locale" content={huidige.htmlLang.replace('-', '_')} />
     <meta property="og:type" content="website" />
     <meta name="theme-color" content="#ede5d3" />
+    {taalCodes.map((code) => (
+      <link rel="alternate" hreflang={talen[code].htmlLang} href={new URL(talen[code].pad, Astro.site)} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={new URL(talen[standaardTaal].pad, Astro.site)} />
     <link rel="preload" href="/fonts/Vollkorn-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/Archivo-latin.woff2" as="font" type="font/woff2" crossorigin />
   </head>

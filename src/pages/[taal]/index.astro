@@ -1,0 +1,14 @@
+---
+/* Elke taal behalve de standaardtaal krijgt hier zijn eigen pad: /en/, /pt/.
+   Dezelfde pagina, een ander contentbestand. */
+import Startpagina from '../../layouts/Startpagina.astro';
+import { talen, bijkomendeTalen } from '../../i18n/talen';
+
+export function getStaticPaths() {
+  return bijkomendeTalen.map((taal) => ({ params: { taal } }));
+}
+
+const { taal } = Astro.params as { taal: keyof typeof talen };
+---
+
+<Startpagina t={talen[taal].content} taal={taal} />

@@ -1,26 +1,53 @@
 ---
-import nl from '../content/nl.json';
 import Merk from './Merk.astro';
 import Knop from './Knop.astro';
 import KwastRand from './KwastRand.astro';
+import { talen, taalCodes } from '../i18n/talen';
+
+interface Props { t: any; taal: string }
+const { t, taal } = Astro.props;
 ---
 
 <header class="kop">
   <div class="kop__band">
     <div class="omhulsel kop__rij">
-      <a href="#top" class="kop__merk" aria-label={nl.merk.naam}>
+      <a href="#top" class="kop__merk" aria-label={t.merk.naam}>
         <Merk hoogte="2.1rem" kleur="var(--lak)" />
       </a>
 
-      <nav class="kop__nav" aria-label="Secties">
+      <nav class="kop__nav" aria-label={t.nav.sectiesLabel}>
         <ul class="kop__lijst">
-          {nl.nav.items.map((item) => (
+          {t.nav.items.map((item) => (
             <li><a href={item.href} class="kop__link plaat">{item.label}</a></li>
           ))}
         </ul>
       </nav>
 
-      <Knop href="#contact" soort="vol" class="kop__actie">{nl.nav.actie}</Knop>
+      <div class="kop__rechts">
+        <!-- De schakelaar toont alleen wat er is. Zolang er één taal was,
+             stond hier niets; nu staan alle drie de talen naast elkaar. -->
+        {taalCodes.length > 1 && (
+          <nav class="kop__talen" aria-label={t.nav.taalLabel}>
+            <ul>
+              {taalCodes.map((code) => (
+                <li>
+                  {code === taal ? (
+                    <span class="kop__taal kop__taal--nu plaat" aria-current="true">
+                      {talen[code].label}
+                    </span>
+                  ) : (
+                    <a class="kop__taal plaat" href={talen[code].pad} hreflang={talen[code].htmlLang} lang={talen[code].htmlLang}>
+                      <span class="verborgen">{talen[code].naam}</span>
+                      <span aria-hidden="true">{talen[code].label}</span>
+                    </a>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
+        <Knop href="#contact" soort="vol" class="kop__actie">{t.nav.actie}</Knop>
+      </div>
     </div>
     <KwastRand kleur="var(--kalk)" positie="onder" />
   </div>
@@ -67,10 +94,14 @@ import KwastRand from './KwastRand.astro';
     border-bottom-color: var(--lak-helder);
   }
 
-  /* Onder 60rem past de rij niet meer naast elkaar: de links zakken
+  /* Onder 74rem past de rij niet meer naast elkaar: de links zakken
      onder het merk in plaats van in een uitklapmenu te verdwijnen.
-     Vier ankers verbergen achter een knop kost meer dan het oplevert. */
-  @media (max-width: 60rem) {
+     Vijf ankers verbergen achter een knop kost meer dan het oplevert.
+     Het omslagpunt lag op 60rem toen er vier korte Nederlandse labels
+     stonden. Er zijn nu vijf labels, een taalschakelaar, en in het
+     Portugees zijn de labels langer ("O centro de formação"), dus de rij
+     loopt eerder vol. Gemeten op de langste taal, niet op de kortste. */
+  @media (max-width: 74rem) {
     .kop__rij {
       flex-wrap: wrap;
       row-gap: var(--s3);
@@ -87,6 +118,35 @@ import KwastRand from './KwastRand.astro';
       border-top: 1px solid color-mix(in srgb, var(--op-kalk) 16%, transparent);
     }
   }
+  .kop__rechts {
+    display: flex;
+    align-items: center;
+    gap: var(--s4);
+    flex: none;
+  }
+  .kop__talen ul {
+    display: flex;
+    align-items: center;
+    gap: var(--s2);
+  }
+  /* Geen kaders en geen scheidingstekens: de huidige taal is de enige die
+     vol staat, de andere twee zijn gedempt. Dat is genoeg signaal. */
+  .kop__taal {
+    color: var(--op-kalk-zacht);
+    text-decoration: none;
+    padding: var(--s1) var(--s2);
+    opacity: 0.72;
+    transition:
+      color var(--duur-kort) var(--ease-uit),
+      opacity var(--duur-kort) var(--ease-uit);
+  }
+  .kop__taal:hover { color: var(--op-kalk); opacity: 1; }
+  .kop__taal--nu {
+    color: var(--op-kalk);
+    opacity: 1;
+    border-bottom: var(--lijn) solid var(--lak-helder);
+  }
+
   /* Doorgegeven aan een component, dus :global() onder de gescopete ouder. */
   @media (max-width: 30rem) {
     .kop__rij :global(.kop__actie) { padding: 0.7em 1.05em; }
