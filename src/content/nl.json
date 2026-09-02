@@ -51,14 +51,16 @@
   "lus": {
     "kop": "Jongeren leiden jongeren.",
     "inleiding": "Jongeren leren niet alleen vaardigheden voor zichzelf, maar begeleiden vervolgens ook andere kinderen en jongeren binnen hun omgeving. Zo ontstaat een krachtige vorm van peer-education.",
-    "_panelen_herkomst": "De twee bijschriften vormen samen één zin, op verzoek van de opdrachtgever: de jongere wordt opgeleid en het kind wordt begeleid. Bij vertalen die zin als geheel behandelen, niet per paneel los.",
+    "_panelen_herkomst": "Het linkerpaneel draagt de hele zin, op verzoek van de opdrachtgever: de jongere wordt opgeleid en het kind wordt begeleid. Het rechterpaneel houdt zijn oorspronkelijke drieluik. De twee panelen hebben dus bewust een verschillende vorm; dat is geen slordigheid.",
     "panelen": [
       {
-        "bijschrift": "De jongere wordt opgeleid",
+        "bijschrift": "De jongere wordt opgeleid en het kind wordt begeleid",
         "foto": { "alt": "Een jongere met helm en klimgordel staat boven op een toren van gestapelde kratten en krijgt een volgend krat aangereikt.", "plaat": "Krattentoren, oefening in vertrouwen en zekeren" }
       },
       {
-        "bijschrift": "en het kind wordt begeleid",
+        "rol": "Wordt begeleid",
+        "titel": "Het kind uit dezelfde wijk",
+        "tekst": "Krijgt begeleiding van iemand die de wijk kent, omdat die er zelf vandaan komt.",
         "foto": { "alt": "Een groep kinderen loopt door een poort die twee coaches met hun handen vormen.", "plaat": "Groepsoefening aan het einde van een training" }
       }
     ],

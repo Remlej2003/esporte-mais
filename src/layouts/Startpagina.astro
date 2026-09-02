@@ -90,6 +90,7 @@ import terreinFoto from '../images/terrein.jpg';
           {t.lus.panelen.map((p, i) => (
             <article class="paneel">
               <KwastRand kleur="var(--veld-diep)" positie="boven" variant={i === 0 ? 1 : 2} />
+              {p.rol && <p class="plaat paneel__rol">{p.rol}</p>}
               <Foto
                 src={i === 0 ? krattenFoto : poortFoto}
                 alt={p.foto.alt}
@@ -99,8 +100,13 @@ import terreinFoto from '../images/terrein.jpg';
                 verhouding="1 / 1"
                 breedtes={[380, 620]}
                 sizes="(max-width: 54rem) 88vw, 40vw"
+                class="paneel__foto"
               />
-              <p class="paneel__bijschrift">{p.bijschrift}</p>
+              <div class="paneel__onder">
+                {p.bijschrift && <p class="paneel__bijschrift">{p.bijschrift}</p>}
+                {p.titel && <h3 class="paneel__titel">{p.titel}</h3>}
+                {p.tekst && <p class="paneel__tekst">{p.tekst}</p>}
+              </div>
               <KwastRand kleur="var(--veld-diep)" positie="onder" variant={i === 0 ? 3 : 1} />
             </article>
           ))}
@@ -585,6 +591,7 @@ import terreinFoto from '../images/terrein.jpg';
   .lus__kring {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto auto 1fr;
     align-items: stretch;
     gap: clamp(var(--s4), 3vw, var(--s6));
     margin-top: clamp(var(--s7), 6vw, var(--s9));
@@ -593,24 +600,35 @@ import terreinFoto from '../images/terrein.jpg';
   /* Coach en kind delen exact hetzelfde vak: zelfde rand, zelfde
      hoogte, zelfde beeldverhouding. Dat is de claim, dus het moet
      ook letterlijk zo op de muur staan. */
+  /* De twee panelen dragen sinds de klantronde niet meer dezelfde vorm:
+     links staat één zin over allebei de rollen, rechts het oorspronkelijke
+     drieluik met een rol boven de foto. Zonder ingrijpen begint de linker
+     foto hoger dan de rechter, omdat die rolregel er links niet is. Een
+     subgrid legt rol, foto en tekst van beide panelen op dezelfde rijen,
+     zodat de twee beelden op één lijn blijven staan. */
   .paneel {
     position: relative;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-row: 1 / -1;
+    grid-template-rows: subgrid;
+    align-content: start;
     padding: clamp(var(--s4), 2.2vw, var(--s6));
     background: var(--veld-diep);
   }
-  /* De twee bijschriften lezen als één doorlopende zin, dus ze moeten op
-     dezelfde regel staan. De fotobijschriften erboven lopen niet even lang
-     door, dus uitlijnen op de onderkant van het paneel en niet op de foto:
-     `margin-top: auto` duwt beide helften naar dezelfde hoogte. */
+  /* Drie vaste rijen: de rol, de foto, en alles eronder. Expliciet
+     toegewezen, want het linkerpaneel heeft geen rol en zou anders met
+     zijn foto in rij 1 belanden terwijl de rechter foto in rij 2 staat. */
+  .paneel__rol { grid-row: 1; color: var(--goud); margin-bottom: var(--s4); }
+  .paneel :global(.paneel__foto) { grid-row: 2; }
+  .paneel__onder { grid-row: 3; }
   .paneel__bijschrift {
-    margin-top: auto;
     padding-top: var(--s5);
     font-size: var(--t-h3);
     font-family: var(--font-kop);
     line-height: 1.15;
   }
+  .paneel__titel { font-size: var(--t-h3); margin-top: var(--s5); }
+  .paneel__tekst { margin-top: var(--s3); color: var(--op-veld-zacht); }
 
   /* Het circuit onder beide panelen. */
   .lus__circuit { margin-top: var(--s5); }
@@ -944,7 +962,19 @@ import terreinFoto from '../images/terrein.jpg';
   }
 
   @media (max-width: 54rem) {
-    .lus__kring { grid-template-columns: minmax(0, 1fr); gap: var(--s5); }
+    /* Op één kolom moet de subgrid los: twee panelen die allebei
+       `grid-row: 1 / -1` houden, belanden anders in dezelfde cel en
+       liggen letterlijk over elkaar heen. Onder elkaar lijnt er niets
+       meer uit, dus is de gedeelde rijindeling ook niet meer nodig. */
+    .lus__kring {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-rows: none;
+      gap: var(--s5);
+    }
+    .paneel {
+      grid-row: auto;
+      grid-template-rows: auto;
+    }
     /* Op één kolom is de rondgang een pijl terug omhoog. */
     .lus__circuit svg { max-height: 5rem; }
     .tel { grid-template-columns: minmax(0, 1fr); gap: var(--s2); }

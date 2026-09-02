@@ -52,11 +52,13 @@
     "inleiding": "Young people do not only learn skills for themselves. They go on to guide other children and young people in their own surroundings. That is where a powerful form of peer education begins.",
     "panelen": [
       {
-        "bijschrift": "The young person is trained",
+        "bijschrift": "The young person is trained and the child is guided",
         "foto": { "alt": "A young person wearing a helmet and climbing harness stands on top of a tower of stacked crates and is handed another crate.", "plaat": "Crate tower, an exercise in trust and belaying" }
       },
       {
-        "bijschrift": "and the child is guided",
+        "rol": "Is guided",
+        "titel": "The child from the same neighbourhood",
+        "tekst": "Is guided by someone who knows the neighbourhood, because they come from it themselves.",
         "foto": { "alt": "A group of children walks through an arch formed by the hands of two coaches.", "plaat": "Group exercise at the end of a training session" }
       }
     ],

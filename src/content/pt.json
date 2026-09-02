@@ -52,11 +52,13 @@
     "inleiding": "Os jovens não aprendem apenas para si mesmos. Em seguida, passam a acompanhar outras crianças e jovens do próprio entorno. É assim que nasce uma forma potente de educação entre pares.",
     "panelen": [
       {
-        "bijschrift": "O jovem é formado",
+        "bijschrift": "O jovem é formado e a criança é acompanhada",
         "foto": { "alt": "Um jovem de capacete e cadeirinha de escalada está no alto de uma torre de caixotes empilhados e recebe mais um caixote.", "plaat": "Torre de caixotes, exercício de confiança e segurança" }
       },
       {
-        "bijschrift": "e a criança é acompanhada",
+        "rol": "É acompanhada",
+        "titel": "A criança da mesma comunidade",
+        "tekst": "É acompanhada por alguém que conhece a comunidade, porque veio dali.",
         "foto": { "alt": "Um grupo de crianças passa por um arco formado pelas mãos de dois coaches.", "plaat": "Exercício em grupo ao final de um treino" }
       }
     ],
