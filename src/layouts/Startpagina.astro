@@ -17,10 +17,28 @@ const { t, taal } = Astro.props;
 
 import veldFoto from '../images/community-veld.jpg';
 import hellingFoto from '../images/helling-omhoog.jpg';
-import poortFoto from '../images/poort-groep.jpg';
 import krattenFoto from '../images/kratten-toren.jpg';
+import kindFoto from '../images/kind-begeleid.jpg';
 import bandFoto from '../images/band-paal.jpg';
 import terreinFoto from '../images/terrein.jpg';
+import centrumTerrein from '../images/centrum-terrein.jpg';
+import centrumVijver from '../images/centrum-vijver.jpg';
+import centrumKring from '../images/centrum-kring.jpg';
+import centrumGrasveld from '../images/centrum-grasveld.jpg';
+
+/* De vier foto's van het opleidingscentrum, in de volgorde van
+   `centrum.fotos` in het contentbestand. Twee rijen van twee, gespiegeld:
+   breed naast smal, dan smal naast breed. `verhouding` is wat de foto in
+   de rij krijgt; de rij deelt de breedte daar naar, zodat de twee foto's
+   in een rij exact even hoog uitkomen (zie de CSS bij .centrum__rij). */
+const centrumBeelden = [
+  { src: centrumTerrein, verhouding: '4 / 3', vlek: 'var(--goud)' },
+  { src: centrumVijver, verhouding: '8 / 9', vlek: 'var(--veld)' },
+  { src: centrumKring, verhouding: '3 / 2', vlek: 'var(--veld)' },
+  { src: centrumGrasveld, verhouding: '2000 / 922', vlek: 'var(--lak-helder)' },
+];
+const centrumFotos = t.centrum.fotos.map((f: any, i: number) => ({ ...f, ...centrumBeelden[i] }));
+const centrumRijen = [centrumFotos.slice(0, 2), centrumFotos.slice(2, 4)];
 ---
 
 <Base taal={taal} titel={t.meta.titel} omschrijving={t.meta.omschrijving}>
@@ -34,6 +52,7 @@ import terreinFoto from '../images/terrein.jpg';
         <div class="hero__woord">
           <h1 class="hero__kop">{t.hero.kop}<em>{t.hero.kopCursief}</em></h1>
           <p class="hero__inleiding maat">{t.hero.inleiding}</p>
+          <p class="hero__geloof maat">{t.hero.geloof}</p>
 
           <!-- De kwastregel met de actie erop. De uitleg staat er bewust
                bóven: een bestuurder die nog niet weet wat dit is, hoort
@@ -79,20 +98,54 @@ import terreinFoto from '../images/terrein.jpg';
       </div>
     </section>
 
+    <!-- ── De missie ─────────────────────────────────────── -->
+    <!-- Klasse- en contentnaam blijven `visie`: het bronmateriaal noemt dit
+         zo en DESIGN.md documenteert het onder die naam. Op de site heet het
+         Missie, op verzoek van de opdrachtgever. Het staat als eerste in het
+         menu en dus ook als eerste na de probleemschets. -->
+    <section id="missie" class="visie geverfd">
+      <KwastRand kleur="var(--kalk-diep)" positie="boven" variant={3} />
+      <div class="omhulsel visie__raster">
+        <div class="visie__woord">
+          <h2>{t.visie.kop}</h2>
+          <p class="groot maat">{t.visie.inleiding}</p>
+          <ul class="streeplijst">
+            {t.visie.onderdelen.map((o) => <li>{o}</li>)}
+          </ul>
+          <p class="visie__slot maat">{t.visie.slot}</p>
+        </div>
+        <Foto
+          src={terreinFoto}
+          alt={t.visie.foto.alt}
+          plaat={t.visie.foto.plaat}
+          vorm="recht"
+          vlek="var(--goud)"
+          breedtes={[400, 660]}
+          sizes="(max-width: 62rem) 88vw, 34vw"
+          class="visie__foto"
+        />
+      </div>
+      <KwastRand kleur="var(--kalk-diep)" positie="onder" variant={2} />
+    </section>
+
     <!-- ── De lus: het scharnier van de pagina ───────────── -->
-    <section class="lus geverfd donker">
+    <!-- Draagt het anker #aanpak: "Onze aanpak" en "Lees onze aanpak"
+         horen hier te landen, bij jongeren leiden jongeren. -->
+    <section id="aanpak" class="lus geverfd donker">
       <KwastRand kleur="var(--veld)" positie="boven" />
       <div class="omhulsel">
         <h2 class="lus__kop">{t.lus.kop}</h2>
         <p class="groot maat lus__inleiding">{t.lus.inleiding}</p>
 
+        <!-- Eén zin over twee vakken: links wordt de jongere opgeleid,
+             rechts wordt het kind begeleid. Twee identieke vakken, want
+             het is één beweging. -->
         <div class="lus__kring">
           {t.lus.panelen.map((p, i) => (
             <article class="paneel">
               <KwastRand kleur="var(--veld-diep)" positie="boven" variant={i === 0 ? 1 : 2} />
-              {p.rol && <p class="plaat paneel__rol">{p.rol}</p>}
               <Foto
-                src={i === 0 ? krattenFoto : poortFoto}
+                src={i === 0 ? krattenFoto : kindFoto}
                 alt={p.foto.alt}
                 plaat={p.foto.plaat}
                 vorm="recht"
@@ -102,15 +155,10 @@ import terreinFoto from '../images/terrein.jpg';
                 sizes="(max-width: 54rem) 88vw, 40vw"
                 class="paneel__foto"
               />
-              <div class="paneel__onder">
-                {p.bijschrift && <p class="paneel__bijschrift">{p.bijschrift}</p>}
-                {p.titel && <h3 class="paneel__titel">{p.titel}</h3>}
-                {p.tekst && <p class="paneel__tekst">{p.tekst}</p>}
-              </div>
+              <p class="paneel__bijschrift">{p.bijschrift}</p>
               <KwastRand kleur="var(--veld-diep)" positie="onder" variant={i === 0 ? 3 : 1} />
             </article>
           ))}
-
         </div>
 
         <!-- Het circuit: wat de ene kant uit gaat, komt aan de andere terug.
@@ -141,7 +189,7 @@ import terreinFoto from '../images/terrein.jpg';
     </section>
 
     <!-- ── Leren door te doen ────────────────────────────── -->
-    <section id="aanpak" class="aanpak geverfd">
+    <section id="methode" class="aanpak geverfd">
       <KwastRand kleur="var(--kalk-diep)" positie="boven" variant={2} />
       <div class="omhulsel aanpak__raster">
         <div class="aanpak__woord">
@@ -174,16 +222,36 @@ import terreinFoto from '../images/terrein.jpg';
     </section>
 
     <!-- ── Het opleidingscentrum ─────────────────────────── -->
-    <!-- Gevraagd door de opdrachtgever. Het partnerdocument levert hier geen
-         tekst voor, dus staat het gat zichtbaar open in plaats van dat het
-         met bedachte zinnen wordt gevuld. -->
     <section id="opleidingscentrum" class="centrum">
-      <div class="omhulsel centrum__raster">
-        <h2 class="centrum__kop">{t.centrum.kop}</h2>
-        <div class="centrum__woord">
-          <p class="groot">{t.centrum.inleiding}</p>
-          {t.centrum.alineas.map((a) => <p class="centrum__alinea maat">{a}</p>)}
-          <p class="centrum__open openpunt" role="note">{t.centrum.openNoot}</p>
+      <div class="omhulsel">
+        <div class="centrum__raster">
+          <h2 class="centrum__kop">{t.centrum.kop}</h2>
+          <div class="centrum__woord">
+            <p class="groot">{t.centrum.inleiding}</p>
+            {t.centrum.alineas.map((a) => <p class="centrum__alinea maat">{a}</p>)}
+          </div>
+        </div>
+
+        <!-- Documentatie van de plek, dus rechte plaatjes en geen bogen. -->
+        <div class="centrum__fotos">
+          {centrumRijen.map((rij, r) => (
+            <div class="centrum__rij">
+              {rij.map((f, k) => (
+                <Foto
+                  src={f.src}
+                  alt={f.alt}
+                  plaat={f.plaat}
+                  vorm="recht"
+                  vlek={f.vlek}
+                  verhouding={f.verhouding}
+                  breedtes={[420, 760, 1100]}
+                  sizes="(max-width: 54rem) 88vw, 46vw"
+                  kwaliteit={64}
+                  class={`centrum__foto centrum__foto--${r * 2 + k + 1}`}
+                />
+              ))}
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -244,47 +312,58 @@ import terreinFoto from '../images/terrein.jpg';
         <h3 class="partner__bordenkop">{t.partner.bordenKop}</h3>
         <!-- Wat een sponsor in het echt koopt: een geschilderd bord langs
              de rand van het veld. Geen omrande kaarten maar verf op de
-             muur, dus gekwaste randen en geen lijst eromheen. -->
+             muur, dus gekwaste randen en geen lijst eromheen. Van klein
+             naar groot, in de kleuren van het partnerdocument waar de
+             muur ze heeft: goud, groen, en menie voor het blauw. -->
         <ul class="borden">
           {t.partner.borden.map((b, i) => {
             /* Verf en inkt uit één bron, zodat een vierde bord niet stilletjes
-               zonder kleur valt. Zonder omlijning moet de verf zelf presence
-               hebben: het derde bord was zandkleur op kalk (~1,3:1) en verdween
-               tegen de muur; goud is de vierde huiskleur en houdt stand. */
+               zonder kleur valt. */
             const lagen = [
+              { verf: 'var(--goud)', inkt: 'var(--roet)' },
               { verf: 'var(--veld)', inkt: 'var(--op-veld)' },
               { verf: 'var(--lak)', inkt: 'var(--op-lak)' },
-              { verf: 'var(--goud)', inkt: 'var(--roet)' },
             ];
             const { verf, inkt } = lagen[i % lagen.length];
             return (
               <li class="bord" style={`--verf:${verf};--inkt:${inkt}`}>
                 <KwastRand kleur={verf} positie="boven" variant={((i % 3) + 1) as 1 | 2 | 3} />
-                <h3 class="bord__naam">{b.naam}</h3>
-                <p class="bord__tekst">{b.tekst}</p>
+                <div class="bord__kop">
+                  <h4 class="bord__naam">
+                    {b.naam}
+                    <em class="bord__werkwoord">{b.werkwoord}</em>
+                  </h4>
+                  <p class="bord__bedrag cijfers">{b.bedrag}</p>
+                  <p class="bord__voor">{b.voor}</p>
+                </div>
+                <div class="bord__inhoud">
+                  {b.basis && <p class="bord__basis">{b.basis}</p>}
+                  <ul class="streeplijst bord__punten">
+                    {b.punten.map((p) => <li>{Array.isArray(p) ? <Tekst delen={p} /> : p}</li>)}
+                  </ul>
+                </div>
                 <KwastRand kleur={verf} positie="onder" variant={(((i + 1) % 3) + 1) as 1 | 2 | 3} />
               </li>
             );
           })}
         </ul>
-        <p class="partner__noot">{t.partner.bedragNoot}</p>
 
-        <div class="partner__usp">
-          <h3 class="partner__lijstkop">{t.partner.uspKop}</h3>
-          <p class="partner__uspopen openpunt" role="note">{t.partner.uspOpenNoot}</p>
+        <div class="partner__overzicht">
+          <p class="partner__noot">{t.partner.overzicht.tekst}</p>
+          <Knop href={t.partner.overzicht.bestand} soort="lijn" extern={true}>{t.partner.overzicht.naam}</Knop>
         </div>
 
         <div class="partner__raster">
+          <div class="partner__begin">
+            <h3 class="partner__lijstkop">{t.partner.beginKop}</h3>
+            <p class="maat partner__begintekst">{t.partner.begin}</p>
+            <p class="partner__prijs cijfers">{t.partner.beginPrijs}</p>
+            <p class="partner__prijsnoot">{t.partner.beginPrijsNoot}</p>
+          </div>
           <div>
             <h3 class="partner__lijstkop">{t.partner.biedtKop}</h3>
             <ul class="streeplijst">
               {t.partner.biedt.map((b) => <li>{b}</li>)}
-            </ul>
-          </div>
-          <div>
-            <h3 class="partner__lijstkop">{t.partner.afstemKop}</h3>
-            <ul class="etiketten etiketten--los">
-              {t.partner.afstem.map((a) => <li class="etiket">{a}</li>)}
             </ul>
           </div>
         </div>
@@ -316,39 +395,11 @@ import terreinFoto from '../images/terrein.jpg';
       </div>
     </section>
 
-    <!-- ── De missie ─────────────────────────────────────── -->
-    <!-- Klasse- en contentnaam blijven `visie`: het bronmateriaal noemt dit
-         zo en DESIGN.md documenteert het onder die naam. Op de site heet het
-         Missie, op verzoek van de opdrachtgever. Vandaar het anker hier. -->
-    <section id="missie" class="visie geverfd">
-      <KwastRand kleur="var(--kalk-diep)" positie="boven" variant={3} />
-      <div class="omhulsel visie__raster">
-        <div class="visie__woord">
-          <h2>{t.visie.kop}</h2>
-          <p class="groot maat">{t.visie.inleiding}</p>
-          <ul class="streeplijst">
-            {t.visie.onderdelen.map((o) => <li>{o}</li>)}
-          </ul>
-          <p class="visie__slot maat">{t.visie.slot}</p>
-        </div>
-        <Foto
-          src={terreinFoto}
-          alt={t.visie.foto.alt}
-          plaat={t.visie.foto.plaat}
-          vorm="recht"
-          vlek="var(--goud)"
-          breedtes={[400, 660]}
-          sizes="(max-width: 62rem) 88vw, 34vw"
-          class="visie__foto"
-        />
-      </div>
-      <KwastRand kleur="var(--kalk-diep)" positie="onder" variant={1} />
-    </section>
-
     <!-- ── Doorlezen ─────────────────────────────────────── -->
     <!-- Wie meer wil dan deze pagina, hoort niet te hoeven mailen om
-         eerst het verhaal te kunnen lezen. Staat bewust vlak voor de
-         uitnodiging: dit is de laatste stap voor iemand contact opneemt. -->
+         eerst het verhaal te kunnen lezen: de korte versie staat online.
+         Het volledige projectplan is op aanvraag. Staat bewust vlak voor
+         de uitnodiging: dit is de laatste stap voor iemand contact opneemt. -->
     <section class="documenten">
       <div class="omhulsel documenten__raster">
         <div>
@@ -360,10 +411,9 @@ import terreinFoto from '../images/terrein.jpg';
             item.bestand ? (
               <Knop href={item.bestand} soort="lijn" extern={true}>{item.naam}</Knop>
             ) : (
-              <Knop soort="lijn" uit={true}>{item.naam}</Knop>
+              <Knop href={item.mail} soort="lijn">{item.naam}</Knop>
             ),
           )}
-          <p class="documenten__open openpunt" role="note">{t.documenten.openNoot}</p>
         </div>
       </div>
     </section>
@@ -376,13 +426,19 @@ import terreinFoto from '../images/terrein.jpg';
         <p class="groot maat">{t.contact.inleiding}</p>
         <p class="contact__uitnodiging maat">{t.contact.uitnodiging}</p>
 
-        <div class="actieslot">
-          <Knop soort="licht" uit={true}>{t.contact.actie}</Knop>
-          <div class="actieslot__noot" role="note">
-            <p class="plaat actieslot__titel">{t.contact.placeholder.titel}</p>
-            <p class="actieslot__tekst">{t.contact.placeholder.tekst}</p>
-          </div>
+        <div class="contact__acties">
+          <Knop href={t.contact.actieMail} soort="licht">{t.contact.actie}</Knop>
+          <Knop href={t.contact.actieWhatsapp} soort="lijnlicht" extern={true}>{t.contact.actieTweede}</Knop>
         </div>
+
+        <dl class="contact__gegevens">
+          {t.contact.gegevens.map((g) => (
+            <div class="contact__gegeven">
+              <dt class="plaat">{g.label}</dt>
+              <dd><a href={g.href} {...(/^https?:/.test(g.href) ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>{g.tekst}</a></dd>
+            </div>
+          ))}
+        </dl>
       </div>
       <KwastRand kleur="var(--veld-diep)" positie="onder" />
     </section>
@@ -391,11 +447,21 @@ import terreinFoto from '../images/terrein.jpg';
     <footer class="voet">
       <div class="omhulsel voet__raster">
         <Merk hoogte="3rem" kleur="var(--lak)" toonCoordinaten={true} />
-        <div class="voet__open">
-          <p class="plaat voet__openkop">{t.voet.openKop}</p>
-          <ul class="voet__lijst">
-            {t.voet.open.map((o) => <li>{o}</li>)}
-          </ul>
+        <div class="voet__kolommen">
+          <div>
+            <p class="plaat voet__openkop">{t.voet.websitesKop}</p>
+            <ul class="voet__lijst voet__lijst--links">
+              {t.voet.websites.map((w) => (
+                <li><a href={w.href} target="_blank" rel="noopener noreferrer">{w.tekst}</a></li>
+              ))}
+            </ul>
+          </div>
+          <div class="voet__open">
+            <p class="plaat voet__openkop">{t.voet.openKop}</p>
+            <ul class="voet__lijst">
+              {t.voet.open.map((o) => <li>{o}</li>)}
+            </ul>
+          </div>
         </div>
       </div>
       <div class="omhulsel">
@@ -479,7 +545,6 @@ import terreinFoto from '../images/terrein.jpg';
     font-weight: 600;
     color: var(--op-kalk);
   }
-  .etiketten--los { margin-top: var(--s4); }
 
   /* ══ Hero ════════════════════════════════════════════════ */
 
@@ -550,6 +615,12 @@ import terreinFoto from '../images/terrein.jpg';
     line-height: 1.55;
     color: var(--op-kalk-zacht);
   }
+  /* De tweede alinea is de onderbouwing onder de belofte: lopende tekst,
+     niet nog een inleiding op groot formaat. */
+  .hero__geloof {
+    margin-top: var(--s4);
+    color: var(--op-kalk-zacht);
+  }
   .hero__raster :global(.hero__foto) { margin-top: var(--s2); }
 
   /* ══ Waarom ══════════════════════════════════════════════ */
@@ -583,52 +654,61 @@ import terreinFoto from '../images/terrein.jpg';
   }
   .waarom .keerpunt { margin-top: 0; }
 
+  /* ══ Visie (de missie) ═══════════════════════════════════ */
+
+  .visie { background: var(--kalk-diep); }
+  .visie__raster {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    gap: clamp(var(--s6), 5vw, var(--s9));
+    align-items: start;
+  }
+  .visie h2 { font-size: var(--t-h2); }
+  .visie__woord > .groot { margin-top: var(--s5); }
+  .visie__slot {
+    margin-top: var(--s7);
+    font-family: var(--font-display);
+    font-size: var(--t-uitspraak);
+    line-height: 1.3;
+  }
+
   /* ══ De lus ══════════════════════════════════════════════ */
 
   .lus__kop { font-size: var(--t-h2); max-width: 14ch; }
   .lus__inleiding { margin-top: var(--s5); }
 
+  /* Coach en kind delen exact hetzelfde vak: zelfde rand, zelfde
+     hoogte, zelfde beeldverhouding. Dat is de claim, dus het moet
+     ook letterlijk zo op de muur staan. De zin loopt van het ene vak
+     door in het andere. */
   .lus__kring {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: auto auto 1fr;
+    grid-template-rows: auto auto;
     align-items: stretch;
-    gap: clamp(var(--s4), 3vw, var(--s6));
+    gap: 0 clamp(var(--s4), 3vw, var(--s6));
     margin-top: clamp(var(--s7), 6vw, var(--s9));
   }
-
-  /* Coach en kind delen exact hetzelfde vak: zelfde rand, zelfde
-     hoogte, zelfde beeldverhouding. Dat is de claim, dus het moet
-     ook letterlijk zo op de muur staan. */
-  /* De twee panelen dragen sinds de klantronde niet meer dezelfde vorm:
-     links staat één zin over allebei de rollen, rechts het oorspronkelijke
-     drieluik met een rol boven de foto. Zonder ingrijpen begint de linker
-     foto hoger dan de rechter, omdat die rolregel er links niet is. Een
-     subgrid legt rol, foto en tekst van beide panelen op dezelfde rijen,
-     zodat de twee beelden op één lijn blijven staan. */
+  /* Een subgrid legt foto en zin van beide vakken op dezelfde twee rijen.
+     Het fotobijschrift is links langer dan rechts; zonder subgrid begint
+     de zin rechts een regel hoger en loopt hij niet meer door van het
+     ene vak in het andere. */
   .paneel {
     position: relative;
     display: grid;
-    grid-row: 1 / -1;
+    grid-row: span 2;
     grid-template-rows: subgrid;
     align-content: start;
     padding: clamp(var(--s4), 2.2vw, var(--s6));
     background: var(--veld-diep);
   }
-  /* Drie vaste rijen: de rol, de foto, en alles eronder. Expliciet
-     toegewezen, want het linkerpaneel heeft geen rol en zou anders met
-     zijn foto in rij 1 belanden terwijl de rechter foto in rij 2 staat. */
-  .paneel__rol { grid-row: 1; color: var(--goud); margin-bottom: var(--s4); }
-  .paneel :global(.paneel__foto) { grid-row: 2; }
-  .paneel__onder { grid-row: 3; }
   .paneel__bijschrift {
     padding-top: var(--s5);
     font-size: var(--t-h3);
-    font-family: var(--font-kop);
+    font-family: var(--font-display);
+    font-weight: 700;
     line-height: 1.15;
   }
-  .paneel__titel { font-size: var(--t-h3); margin-top: var(--s5); }
-  .paneel__tekst { margin-top: var(--s3); color: var(--op-veld-zacht); }
 
   /* Het circuit onder beide panelen. */
   .lus__circuit { margin-top: var(--s5); }
@@ -657,29 +737,14 @@ import terreinFoto from '../images/terrein.jpg';
 
   /* ══ Open punten ═════════════════════════════════════════ */
 
-  /* Elk open punt op de kalk draagt dezelfde gestreepte doos; waar hij
-     hangt verschilt per sectie. */
+  /* Het mechanisme voor een gat in het materiaal: een gestippelde doos
+     met role="note". Staat er nu nergens, maar hoort bij het systeem
+     zodra er weer iets ontbreekt. */
   .openpunt {
     padding: var(--s3) var(--s4);
     border: 1px dashed color-mix(in srgb, var(--lak) 55%, transparent);
     font-size: var(--t-klein);
     color: var(--op-kalk-zacht);
-  }
-
-  /* ══ Het opleidingscentrum ═══════════════════════════════ */
-
-  .centrum { padding-block: var(--sectie-vlak); }
-  .centrum__raster {
-    display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-    gap: clamp(var(--s6), 5vw, var(--s9));
-    align-items: start;
-  }
-  .centrum__kop { font-size: var(--t-h2); max-width: 12ch; }
-  .centrum__alinea { margin-top: var(--s5); }
-  .centrum__open {
-    margin-top: var(--s6);
-    max-width: 46ch;
   }
 
   /* ══ Aanpak ══════════════════════════════════════════════ */
@@ -692,10 +757,42 @@ import terreinFoto from '../images/terrein.jpg';
     align-items: start;
   }
   .aanpak h2 { font-size: var(--t-h2); max-width: 12ch; }
-  .aanpak__woord > .groot { margin-top: var(--s5); max-width: var(--maat); }
   .aanpak__subkop { font-size: var(--t-h3); margin-top: var(--s8); }
   .aanpak__subkop + p { margin-top: var(--s3); color: var(--op-kalk-zacht); }
   .aanpak__raster :global(.aanpak__foto) { position: sticky; top: 8rem; }
+
+  /* ══ Het opleidingscentrum ═══════════════════════════════ */
+
+  .centrum { padding-block: var(--sectie-vlak); }
+  .centrum__raster {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: clamp(var(--s6), 5vw, var(--s9));
+    align-items: start;
+  }
+  .centrum__kop { font-size: var(--t-h2); max-width: 12ch; }
+  .centrum__alinea { margin-top: var(--s5); }
+
+  /* Twee rijen van twee. Elke foto groeit naar rato van zijn
+     beeldverhouding (flex-grow = breedte gedeeld door hoogte, basis 0),
+     dus de twee foto's in een rij komen exact even hoog uit en de
+     bijschriften beginnen op dezelfde lijn. De getallen horen bij de
+     `verhouding` die het template meegeeft: 4/3, 8/9, 3/2 en 2000/922. */
+  .centrum__fotos {
+    display: grid;
+    gap: clamp(var(--s6), 4vw, var(--s8));
+    margin-top: clamp(var(--s7), 5vw, var(--s9));
+  }
+  .centrum__rij {
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(var(--s5), 3vw, var(--s7));
+  }
+  .centrum__rij :global(.centrum__foto) { min-width: 0; }
+  .centrum__rij :global(.centrum__foto--1) { flex: 1.3333 1 0; }
+  .centrum__rij :global(.centrum__foto--2) { flex: 0.8889 1 0; }
+  .centrum__rij :global(.centrum__foto--3) { flex: 1.5 1 0; }
+  .centrum__rij :global(.centrum__foto--4) { flex: 2.1692 1 0; }
 
   /* Kopjes die eerder als sjabloonplaatje waren opgemaakt zonder ooit
      iets aan te duiden. Een kop hoort een kop te zijn. */
@@ -801,8 +898,8 @@ import terreinFoto from '../images/terrein.jpg';
     position: relative;
     display: grid;
     grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
-    align-items: center;
-    gap: var(--s5);
+    align-items: start;
+    gap: var(--s5) clamp(var(--s5), 4vw, var(--s8));
     padding: clamp(var(--s5), 3vw, var(--s7));
     background: var(--verf);
     color: var(--inkt);
@@ -812,11 +909,44 @@ import terreinFoto from '../images/terrein.jpg';
     line-height: 1.05;
     font-weight: 700;
   }
-  .bord__tekst { font-size: var(--t-groot); line-height: 1.5; opacity: 0.95; }
-  .partner__usp { margin-top: clamp(var(--s7), 4vw, var(--s8)); }
-  .partner__uspopen { margin-top: var(--s4); max-width: 46ch; }
+  /* Het werkwoord bij de naam, cursief geschilderd zoals het slotwoord
+     van de hoofdkop. Staat onder de naam, niet erboven: een kop krijgt
+     geen opwarmer. */
+  .bord__werkwoord {
+    display: block;
+    margin-top: var(--s2);
+    font-size: var(--t-h3);
+    font-weight: 600;
+  }
+  .bord__bedrag {
+    margin-top: var(--s5);
+    font-family: var(--font-display);
+    font-size: var(--t-h4);
+    font-weight: 700;
+  }
+  .bord__voor {
+    margin-top: var(--s2);
+    font-size: var(--t-klein);
+    font-weight: 600;
+    opacity: 0.86;
+  }
+  .bord__basis { font-weight: 650; }
+  .bord__basis + .bord__punten { margin-top: var(--s3); }
+  .bord__punten { margin-top: 0; gap: 0; }
+  /* Op verf draagt het staafje de inkt van het bord, niet het oranje
+     interactieaccent: dat verdwijnt op goud en op menie. */
+  .bord__punten li::before { background: currentColor; opacity: 0.7; }
+  .bord__punten li:first-child { border-top: 0; padding-top: 0; }
+  .bord__punten li:first-child::before { top: 0.62em; }
+
+  .partner__overzicht {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--s4) var(--s5);
+    margin-top: var(--s6);
+  }
   .partner__noot {
-    margin-top: var(--s4);
     font-size: var(--t-klein);
     color: var(--op-kalk-zacht);
   }
@@ -827,6 +957,18 @@ import terreinFoto from '../images/terrein.jpg';
     gap: clamp(var(--s6), 4vw, var(--s8));
     margin-top: clamp(var(--s7), 5vw, var(--s9));
     align-items: start;
+  }
+  .partner__begintekst { margin-top: var(--s4); color: var(--op-kalk-zacht); }
+  .partner__prijs {
+    margin-top: var(--s5);
+    font-family: var(--font-display);
+    font-size: var(--t-h4);
+    font-weight: 700;
+  }
+  .partner__prijsnoot {
+    margin-top: var(--s1);
+    font-size: var(--t-klein);
+    color: var(--op-kalk-zacht);
   }
   @media (max-width: 54rem) {
     .partner__raster { grid-template-columns: minmax(0, 1fr); }
@@ -844,22 +986,21 @@ import terreinFoto from '../images/terrein.jpg';
   .ervaring h2 { font-size: var(--t-h2); max-width: 11ch; }
   .ervaring__woord > .groot { margin-top: var(--s5); max-width: var(--maat); }
 
-  /* ══ Visie ═══════════════════════════════════════════════ */
+  /* ══ Doorlezen ═══════════════════════════════════════════ */
 
-  .visie { background: var(--kalk-diep); }
-  .visie__raster {
+  .documenten { padding-block: var(--sectie-vlak); }
+  .documenten__raster {
     display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
     gap: clamp(var(--s6), 5vw, var(--s9));
     align-items: start;
   }
-  .visie h2 { font-size: var(--t-h2); }
-  .visie__woord > .groot { margin-top: var(--s5); }
-  .visie__slot {
-    margin-top: var(--s7);
-    font-family: var(--font-display);
-    font-size: var(--t-uitspraak);
-    line-height: 1.3;
+  .documenten__kop { font-size: var(--t-h2); max-width: 12ch; margin-bottom: var(--s5); }
+  .documenten__acties {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--s4);
   }
 
   /* ══ Contact ═════════════════════════════════════════════ */
@@ -872,23 +1013,24 @@ import terreinFoto from '../images/terrein.jpg';
     font-size: var(--t-groot);
     color: var(--goud);
   }
-
-  /* Het actieslot. De knop staat er wel, maar uitgeschakeld en met
-     uitleg ernaast: zichtbaar leeg is eerlijker dan een dode link,
-     en de opdrachtgever ziet meteen wat er nog moet komen. */
-  .actieslot {
+  .contact__acties {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
-    gap: var(--s5) var(--s6);
+    gap: var(--s3);
     margin-top: var(--s7);
-    padding: clamp(var(--s5), 3vw, var(--s6));
-    border: var(--lijn) dashed color-mix(in srgb, var(--goud) 60%, transparent);
-    background: color-mix(in srgb, var(--roet) 26%, transparent);
   }
-  .actieslot__noot { flex: 1 1 22rem; }
-  .actieslot__titel { color: var(--goud); }
-  .actieslot__tekst { margin-top: var(--s3); color: var(--op-veld-zacht); max-width: 56ch; }
+  /* De gegevens zelf, voor wie liever overtypt of kopieert dan klikt. */
+  .contact__gegevens {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s4) var(--s8);
+    margin-top: var(--s6);
+  }
+  .contact__gegeven dt { color: var(--goud); }
+  .contact__gegeven dd {
+    margin-top: var(--s1);
+    font-size: var(--t-groot);
+  }
 
   /* ══ Voet ════════════════════════════════════════════════ */
 
@@ -900,6 +1042,11 @@ import terreinFoto from '../images/terrein.jpg';
     align-items: start;
     padding-top: var(--s7);
     border-top: var(--lijn-zwaar) solid var(--lak);
+  }
+  .voet__kolommen {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: var(--s6) clamp(var(--s6), 4vw, var(--s8));
   }
   .voet__openkop { color: var(--lak); }
   .voet__lijst {
@@ -920,25 +1067,8 @@ import terreinFoto from '../images/terrein.jpg';
     background: currentColor;
     opacity: 0.5;
   }
+  .voet__lijst--links a { color: var(--op-kalk); }
   .voet__noot { margin-top: var(--s7); color: var(--op-kalk-zacht); opacity: 0.7; }
-
-  /* ══ Doorlezen ═══════════════════════════════════════════ */
-
-  .documenten { padding-block: var(--sectie-vlak); }
-  .documenten__raster {
-    display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-    gap: clamp(var(--s6), 5vw, var(--s9));
-    align-items: start;
-  }
-  .documenten__kop { font-size: var(--t-h2); max-width: 12ch; margin-bottom: var(--s5); }
-  .documenten__acties {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--s4);
-  }
-  .documenten__open { max-width: 40ch; }
 
   /* ══ Smallere schermen ═══════════════════════════════════ */
 
@@ -957,15 +1087,13 @@ import terreinFoto from '../images/terrein.jpg';
     .hero__kop { max-width: 16ch; }
     .aanpak__raster :global(.aanpak__foto) { position: static; }
     .ervaring__raster :global(.ervaring__foto) { order: 2; }
-    .bord { grid-template-columns: minmax(0, 1fr); gap: var(--s4); }
+    .bord { grid-template-columns: minmax(0, 1fr); gap: var(--s5); }
     .waarom .keerpunt { margin-top: var(--s6); }
   }
 
   @media (max-width: 54rem) {
-    /* Op één kolom moet de subgrid los: twee panelen die allebei
-       `grid-row: 1 / -1` houden, belanden anders in dezelfde cel en
-       liggen letterlijk over elkaar heen. Onder elkaar lijnt er niets
-       meer uit, dus is de gedeelde rijindeling ook niet meer nodig. */
+    /* Op één kolom moet de subgrid los: twee vakken die allebei twee
+       rijen overspannen, belanden anders over elkaar. */
     .lus__kring {
       grid-template-columns: minmax(0, 1fr);
       grid-template-rows: none;
@@ -978,6 +1106,13 @@ import terreinFoto from '../images/terrein.jpg';
     /* Op één kolom is de rondgang een pijl terug omhoog. */
     .lus__circuit svg { max-height: 5rem; }
     .tel { grid-template-columns: minmax(0, 1fr); gap: var(--s2); }
+
+    /* De fotorijen stapelen: twee foto's naast elkaar worden op een
+       telefoon postzegels. Onder elkaar houdt elke foto zijn verhouding. */
+    .centrum__rij { flex-direction: column; gap: clamp(var(--s6), 4vw, var(--s8)); }
+    .centrum__rij :global(.centrum__foto) { flex: none; width: 100%; }
+
+    .voet__kolommen { grid-template-columns: minmax(0, 1fr); }
   }
 </style>
 

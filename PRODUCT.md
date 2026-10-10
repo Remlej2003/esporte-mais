@@ -19,7 +19,7 @@ Meertaligheid: `nl`, `en` en `pt` zijn alle drie actief. Nederlands staat op de 
 
 De drie contentbestanden hebben dezelfde vorm en dezelfde volgorde. Een wijziging in `nl.json` hoort in alle drie te landen; als de vorm uiteenloopt, valt de pagina in die taal om.
 
-Deploytarget is nog niet vastgelegd.
+Deploytarget: Vercel. Een push naar `main` zet de site op esporte-mais.vercel.app. Het domein maisesporte.nl staat nog bij Cloud86 en wordt later omgezet. Let op: de mail van info@maisesporte.nl (MX) draait op dezelfde Cloud86-server, dus bij het omzetten eerst de MX naar een eigen hostrecord verhuizen, anders valt de mail weg.
 
 ## Users
 
@@ -69,13 +69,15 @@ Partnerships zijn afstembaar op employer branding, onderwijsprojecten, employee 
 
 ## Capabilities and Constraints
 
-**Drie partnertiers.** Namen en omschrijvingen liggen vast; bedragen niet.
+**Drie partnertiers.** Namen, bedragen en voordelen liggen vast in het document Partnershipmogelijkheden (aangeleverd 4 oktober). Op de site staat per pakket een samenvatting; het volledige document is als PDF te downloaden.
 
-- *Founding Partner* — voor organisaties die strategisch willen bijdragen aan de groei van MAIS ESPORTE, inclusief exclusiviteit binnen branche, co-creatie en prominente positionering.
-- *Impact Partner* — voor organisaties die zichtbaar onderdeel willen zijn van de beweging via branding, events en activaties.
-- *Community Partner* — voor organisaties die betrokken willen zijn bij activiteiten, community events en maatschappelijke impact.
+- *Community partner, Verbinden*: vanaf € 12.500 per jaar. Voor een eerste kennismaking, laagdrempelig. Onder meer vermelding en logo op de Sportbus, content, impact dashboard en een reis van 7 dagen voor 2 medewerkers.
+- *Impact partner, Verbreden*: vanaf € 25.000 per jaar. Voor zichtbaarheid en teambinding. Alles van Community plus de reis voor 4 medewerkers, een workshop door Onno, een film per halfjaar en een presentatie per jaar.
+- *Strategic partner, Verankeren*: vanaf € 50.000 per jaar. Strategisch. Alles van Impact plus een Full Moon Expedition van 10 dagen, de naam verbonden aan een projectonderdeel, een training van 2 dagdelen en twee keer per jaar overleg met Onno.
 
-**Doelstellingen voor vijf jaar.** 240 jongeren opleiden tot Urban Adventure Coach; meer dan 2.000 kinderen bereiken; 10 impactkampen organiseren; 50 Nederlandse basisscholen betrekken met de leerlijn "Wat zie jij?"; meer dan 10.000 mensen indirect bereiken.
+Daarnaast een laagdrempelige instap: een losse workshop of training door Onno, richtprijs € 2.000 tot € 3.500, zonder verdere verplichting.
+
+**Doelstellingen voor vijf jaar.** 240 jongeren opleiden tot Urban Adventure Coach; meer dan 1.500 kinderen bereiken; 20 impactkampen organiseren; 50 Nederlandse basisscholen betrekken met de leerlijn "Wat zie jij?"; meer dan 10.000 mensen indirect bereiken.
 
 Daarnaast wordt gewerkt aan meer zelfvertrouwen bij jongeren, sterkere communities, minder invloed van criminaliteit en betere kansen op werk en opleiding. Dit zijn expliciet kwalitatieve ambities, geen gemeten resultaten — het bronmateriaal presenteert ze ook zo.
 
@@ -85,11 +87,9 @@ Daarnaast wordt gewerkt aan meer zelfvertrouwen bij jongeren, sterkere communiti
 
 ### Expliciet onbesloten — niet invullen zonder de opdrachtgever
 
-- **Partnerbedragen.** De schets noemde vanaf €50.000 / €25.000 / €10.000 per jaar. Die bedragen staan niet in het bronmateriaal en zijn door de opdrachtgever als verzonnen aangemerkt. Ze mogen niet op de site verschijnen tot ze bevestigd zijn.
 - **De relatie tussen MAIS ESPORTE, ARCA en Vale da Serra Company.** Alle drie komen in het bronmateriaal voor, maar hun onderlinge verhouding niet. Vale da Serra staat als logo op de titelpagina, ARCA wordt genoemd als de organisatie met 25+ jaar ervaring. Wie de juridische afzender van de site is, moet bevestigd worden.
-- **Deploytarget.**
+- **Het moment waarop maisesporte.nl naar Vercel wordt omgezet** (zie Stack, en de mail).
 - **Of basisscholen een eigen ingang krijgen.**
-- **Of er een contactformulier komt of alleen een directe afspraaklink.**
 
 ## Brand Commitments
 
@@ -105,16 +105,20 @@ Daarnaast wordt gewerkt aan meer zelfvertrouwen bij jongeren, sterkere communiti
 
 ## Evidence on Hand
 
-**Bron van waarheid: `~/Downloads/Esporte mais.pdf` (5 pagina's).** De opdrachtgever heeft expliciet bepaald dat alleen de inhoud van dit PDF feitelijk is. Alles wat in de designschets stond maar niet in het PDF, is fictie.
+**Bron van waarheid, sinds 4 oktober:** de korte versie (`MAIS ESPORTE korte versie.pdf`), het document Partnershipmogelijkheden en de aanpassingenlijst van de opdrachtgever (`Aanpassingen 4 oktober`). Daarvoor was dat `Esporte mais.pdf` (5 pagina's). Alles wat in de designschets stond maar niet in deze documenten, is fictie.
 
-**Zes echte foto's.** Vier zijn inmiddels vervangen door de originelen die de opdrachtgever aanleverde: die missen het ingebakken vignet en zijn aanzienlijk scherper.
+**Wat online staat en wat niet.** De korte versie en de partnershipmogelijkheden staan als PDF op de site (`public/downloads/`). Het volledige projectplan 2027 tot en met 2031 staat bewust níet online: dat is op aanvraag, via info@maisesporte.nl. Het bedrag van de financieringsbehoefte staat niet op de site.
+
+**Contact.** info@maisesporte.nl en WhatsApp +31 6 19 63 09 20, uit het partnerdocument. De primaire knop opent een mail, de tweede WhatsApp.
+
+**Echte foto's.** Vier zijn inmiddels vervangen door de originelen die de opdrachtgever aanleverde: die missen het ingebakken vignet en zijn aanzienlijk scherper. Op 4 oktober kwamen er vier foto's van het opleidingscentrum bij (`centrum-*.jpg`: terrein, vijver, kring, grasveld) en een foto voor het rechter lusvak (`kind-begeleid.jpg`).
 
 1. `1100x1375` — groep die iemand over een betonnen helling omhoog duwt onder een houten constructie. Origineel, uitgesneden op de handeling. Draagt de hero.
 2. `900x900` — jongere met helm en klimgordel boven op een toren van bierkratten, krijgt een krat aangereikt van onderen. Origineel.
 3. `1100x825` — het terrein: open veld, palmen, lage gebouwen, beboste heuvel. Origineel.
 4. `800x600` — kinderen en begeleiders met ballen en pionnen op een zandveld, met bakstenen huizen en de stad erachter. Origineel.
 5. `572x1090` — groep die samen een autoband over een paal tilt. Nog uit het PDF, met vignet weggesneden.
-6. `402x376` — groep die door een poort van handen loopt. Nog uit het PDF. **Te klein**: hij wordt op 548px getoond en dus opgerekt, terwijl hij naast een scherpe foto staat in een paneel dat identiek hoort te ogen. Een origineel hiervan is nodig.
+6. `kind-begeleid.jpg` — kinderen bij een spel op een zandveld, een begeleider aan de kant. Door de opdrachtgever aangeleverd in de aanpassingenlijst, maar maar **364x273** groot. Tweemaal vergroot (Lanczos, licht verscherpt) zodat de srcset werkt, maar nog steeds zacht naast de scherpe krattentoren. Een origineel hiervan is nodig. De eerdere poortfoto (402x376) is vervallen.
 
 Het bronmateriaal bevat daarnaast een handdruk-clipart bij "Meer dan sponsoring". Dat is geen bewijsmateriaal maar opvulling, en hoort niet op de site.
 

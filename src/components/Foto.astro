@@ -16,6 +16,10 @@ interface Props {
   /* Vaste beeldverhouding. Nodig waar twee foto's naast elkaar
      hetzelfde vak moeten vullen ondanks verschillende bronformaten. */
   verhouding?: string;
+  /* Webp-kwaliteit, 1 tot 100. Alleen zetten waar het bronmateriaal
+     het nodig heeft: druk gebladerte comprimeert slecht en de galerij
+     van het opleidingscentrum werd anders een halve megabyte per foto. */
+  kwaliteit?: number;
   class?: string;
 }
 const {
@@ -27,6 +31,7 @@ const {
   breedtes = [400, 700, 1000],
   sizes = '(max-width: 48rem) 92vw, 44vw',
   verhouding,
+  kwaliteit,
   class: klasse = '',
 } = Astro.props;
 ---
@@ -36,7 +41,7 @@ const {
   style={`--vlek:${vlek}${verhouding ? `;--verhouding:${verhouding}` : ''}`}
 >
   <div class="foto__vel">
-    <Image src={src} alt={alt} widths={breedtes} sizes={sizes} class="foto__beeld" />
+    <Image src={src} alt={alt} widths={breedtes} sizes={sizes} quality={kwaliteit} class="foto__beeld" />
   </div>
   {plaat && <figcaption class="foto__plaat plaat">{plaat}</figcaption>}
 </figure>

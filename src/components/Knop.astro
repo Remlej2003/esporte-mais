@@ -1,7 +1,7 @@
 ---
 interface Props {
   href?: string;
-  soort?: 'vol' | 'lijn' | 'licht';
+  soort?: 'vol' | 'lijn' | 'licht' | 'lijnlicht';
   /* Uitgeschakeld: de knop bestaat wel, maar heeft nog geen bestemming.
      Beter zichtbaar leeg dan een link die nergens heen gaat. */
   uit?: boolean;
@@ -78,6 +78,15 @@ const attrs = uit
     border: var(--lijn) solid var(--kalk);
   }
   .knop--licht:hover { background: var(--goud); border-color: var(--goud); }
+
+  /* De lijnknop voor op donker: de tweede actie naast een lichte knop.
+     De rand komt uit de tekstkleur van het vlak, niet uit kwastzwart. */
+  .knop--lijnlicht {
+    background: transparent;
+    color: var(--op-veld);
+    border: var(--lijn) solid color-mix(in srgb, var(--op-veld) 45%, transparent);
+  }
+  .knop--lijnlicht:hover { border-color: var(--op-veld); }
 
   .knop--uit {
     font: inherit;

@@ -4,7 +4,7 @@
   "meta": {
     "taal": "pt",
     "titel": "MAIS ESPORTE: quem aprendeu, repassa",
-    "omschrijving": "O MAIS ESPORTE forma jovens de favelas brasileiras como Urban Adventure Coaches. Depois são eles que acompanham as crianças da própria comunidade. Para organizações que enxergam além do patrocínio."
+    "omschrijving": "O MAIS ESPORTE forma jovens de favelas brasileiras como Urban Adventure Coaches: líderes esportivos que depois acompanham as crianças da própria comunidade. Para organizações que enxergam além do patrocínio."
   },
 
   "merk": {
@@ -30,7 +30,8 @@
   "hero": {
     "kop": "Quem aprendeu, ",
     "kopCursief": "repassa.",
-    "inleiding": "O MAIS ESPORTE forma jovens de favelas brasileiras como Urban Adventure Coaches. Depois são eles que acompanham as crianças da própria comunidade. Uma geração definida não pela origem, mas pelo potencial.",
+    "inleiding": "O MAIS ESPORTE forma jovens de favelas brasileiras como Urban Adventure Coaches, líderes esportivos que também sabem organizar atividades de aventura e desafio. Depois são eles que acompanham as crianças da própria comunidade com atividades de esporte e brincadeira. Uma geração definida não pela origem, mas pelo potencial.",
+    "geloof": "Acreditamos que passar um tempo como líder esportivo, com o acompanhamento de um coach experiente, ajuda muito esses jovens a encurtar o caminho até o mercado de trabalho. Ao longo do percurso, eles aprendem e praticam várias competências ligadas ao trabalho.",
     "actie": "Agende uma conversa",
     "actieTweede": "Conheça nossa abordagem",
     "foto": {
@@ -47,19 +48,31 @@
     "keerpunt": "Mas é justamente ali que está o potencial. Acreditamos que os jovens não precisam de pena, e sim de confiança, responsabilidade e oportunidades para se desenvolverem."
   },
 
+  "visie": {
+    "kop": "Nossa missão",
+    "inleiding": "O MAIS ESPORTE quer se tornar uma plataforma internacional de aprendizagem vivencial, liderança e impacto comunitário. Nos próximos anos vamos construir:",
+    "onderdelen": [
+      "um centro de referência em aprendizagem vivencial",
+      "uma metodologia escalável",
+      "cooperações internacionais",
+      "pontes com a educação",
+      "uma rede crescente de parceiros"
+    ],
+    "slot": "Nosso objetivo é desenvolver um modelo que também possa ser aplicado em outras regiões e países.",
+    "foto": { "alt": "O terreno: um campo aberto de grama com palmeiras, construções baixas e uma colina arborizada ao fundo.", "plaat": "O terreno onde acontece a formação" }
+  },
+
   "lus": {
     "kop": "Jovens conduzindo jovens.",
     "inleiding": "Os jovens não aprendem apenas para si mesmos. Em seguida, passam a acompanhar outras crianças e jovens do próprio entorno. É assim que nasce uma forma potente de educação entre pares.",
     "panelen": [
       {
-        "bijschrift": "O jovem é formado e a criança é acompanhada",
+        "bijschrift": "O jovem é formado…",
         "foto": { "alt": "Um jovem de capacete e cadeirinha de escalada está no alto de uma torre de caixotes empilhados e recebe mais um caixote.", "plaat": "Torre de caixotes, exercício de confiança e segurança" }
       },
       {
-        "rol": "É acompanhada",
-        "titel": "A criança da mesma comunidade",
-        "tekst": "É acompanhada por alguém que conhece a comunidade, porque veio dali.",
-        "foto": { "alt": "Um grupo de crianças passa por um arco formado pelas mãos de dois coaches.", "plaat": "Exercício em grupo ao final de um treino" }
+        "bijschrift": "…e a criança é acompanhada.",
+        "foto": { "alt": "Crianças fazem uma brincadeira num campo de areia, enquanto um educador, ao lado, dá orientações.", "plaat": "Esporte e brincadeira no campo, com acompanhamento" }
       }
     ],
     "sluit": "E então tudo recomeça."
@@ -90,11 +103,16 @@
     "kop": "O centro de formação.",
     "inleiding": "O Sítio Vale da Serra fica na serra de Maranguape, no estado do Ceará, a apenas 25 km da capital Fortaleza, no Nordeste do Brasil.",
     "alineas": [
-      "A área tem 75 hectares, com abundância de natureza, água, cachoeiras, rios e piscinas naturais que se enchem na estação chuvosa. São 7 km de trilhas e 22 plataformas educativas construídas ali: clareiras na mata, cada uma com a sua própria proposta pedagógica.",
+      "A área tem 75 hectares, com abundância de natureza, água, cachoeiras, rios e piscinas naturais que se enchem na estação chuvosa. São 7 km de trilhas e 22 plataformas educativas construídas ali: clareiras na mata com uma infraestrutura específica, cada uma com a sua própria proposta pedagógica.",
       "O Sítio Vale da Serra nasceu do sonho de criar um lugar onde jovens em situação de vulnerabilidade possam crescer no campo socioemocional por meio da aprendizagem vivencial. Essa metodologia reconhece o valor de \"aprender fazendo\", da ligação com a natureza, e de o jovem ser o capitão do próprio processo de aprendizagem.",
       "O Vale da Serra foi fundado por dois professores de educação física (Onno Raadsen e Milza Gomes Raadsen), ambos com ampla experiência em desenvolvimento humano por meio do esporte e do jogo em países como Brasil, Holanda, Guatemala, Haiti, Timor Leste e países africanos."
     ],
-    "openNoot": "As fotos do centro de formação ainda serão enviadas."
+    "fotos": [
+      { "alt": "O terreno do Vale da Serra: um gramado com pedras e árvores, construções cobertas e, ao fundo, a serra coberta de mata.", "plaat": "O terreno ao pé da serra" },
+      { "alt": "Crianças e adultos com varas de pesca em volta de um lago, com uma pequena ilha com uma palmeira no meio.", "plaat": "Pescaria no lago do sítio" },
+      { "alt": "Um grupo sentado em roda no chão de um salão aberto e coberto, com os pés voltados para o centro.", "plaat": "Exercício em roda no salão coberto" },
+      { "alt": "Um grupo em pé sobre tapetes no gramado, com os braços esticados acima da cabeça, entre as árvores e uma construção com um forno.", "plaat": "Exercício em grupo no gramado" }
+    ]
   },
 
   "doelen": {
@@ -102,8 +120,8 @@
     "waarschuwing": "Estas são metas para os próximos cinco anos, não resultados já alcançados.",
     "lijst": [
       { "getal": "240", "eenheid": "jovens", "tekst": "formados como Urban Adventure Coaches" },
-      { "getal": "2.000+", "eenheid": "crianças", "tekst": "alcançadas" },
-      { "getal": "10", "eenheid": "campos de impacto", "tekst": "realizados" },
+      { "getal": "1.500+", "eenheid": "crianças", "tekst": "alcançadas" },
+      { "getal": "20", "eenheid": "campos de impacto", "tekst": "realizados" },
       { "getal": "50", "eenheid": "escolas primárias holandesas", "tekst": ["envolvidas com o programa ", { "tekst": "Wat zie jij?", "href": "https://watziejij.nu" }] },
       { "getal": "10.000+", "eenheid": "pessoas", "tekst": "alcançadas de forma indireta" }
     ],
@@ -119,24 +137,58 @@
   "partner": {
     "kop": "Mais do que patrocínio.",
     "inleiding": "Os parceiros não se comprometem apenas com um projeto, mas com um movimento internacional de impacto social visível.",
-    "bordenKop": "Formas de parceria",
+    "bordenKop": "As três formas de parceria",
     "borden": [
       {
-        "naam": "Founding Partner",
-        "tekst": "Para organizações que querem contribuir estrategicamente com o crescimento do MAIS ESPORTE, com exclusividade no setor, cocriação e posicionamento em destaque."
+        "naam": "Community partner",
+        "werkwoord": "Conectar",
+        "bedrag": "a partir de € 12.500 / ano",
+        "voor": "Para: primeiro contato, acessível",
+        "punten": [
+          "menção como parceiro no site e em toda a comunicação, e o seu logotipo no Sportbus",
+          "fotos, vídeos e histórias para o seu próprio marketing e comunicação de responsabilidade social",
+          "atualizações digitais e um relatório financeiro e de impacto semestral por meio de um painel de impacto",
+          "convite para o encontro anual de parceiros",
+          "uma viagem organizada de 7 dias ao Brasil para 2 colaboradores, com voo, visita ao projeto e um dia com o Sportbus no interior"
+        ]
       },
       {
-        "naam": "Impact Partner",
-        "tekst": "Para organizações que querem fazer parte do movimento de forma visível, por meio de marca, eventos e ativações."
+        "naam": "Impact partner",
+        "werkwoord": "Ampliar",
+        "bedrag": "a partir de € 25.000 / ano",
+        "voor": "Para: visibilidade e integração da equipe",
+        "basis": "Tudo do Community partner, mais:",
+        "punten": [
+          "a viagem organizada de 7 dias ao Brasil para 4 colaboradores",
+          "um workshop de meio período no local, conduzido pelo Onno, no valor de € 2.000",
+          "a cada seis meses, um filme sobre o MAIS ESPORTE para a sua própria divulgação",
+          "uma apresentação por ano sobre o impacto do projeto, para um público à sua escolha",
+          ["a possibilidade de oferecer, por conta própria, uma viagem de impacto a colaboradores ou parceiros e, na volta, colaborar com o programa ", { "tekst": "Wat zie jij?", "href": "https://watziejij.nu" }]
+        ]
       },
       {
-        "naam": "Community Partner",
-        "tekst": "Para organizações que querem se envolver em atividades, eventos comunitários e impacto social."
+        "naam": "Strategic partner",
+        "werkwoord": "Ancorar",
+        "bedrag": "a partir de € 50.000 / ano",
+        "voor": "Para: visibilidade e integração da equipe, estratégico",
+        "basis": "Tudo do Community e do Impact partner, mais:",
+        "punten": [
+          ["uma viagem organizada de 10 dias para 4 colaboradores pelo Nordeste do Brasil com uma ", { "tekst": "Full Moon Expedition", "href": "https://www.fullmoonexpedition.com" }, ", com visita ao projeto e um dia com o Sportbus"],
+          "o seu nome ligado a uma parte importante do projeto, como parte de um prédio ou de um programa",
+          "um treinamento de até 2 períodos no local, conduzido pelo Onno, no valor de € 3.500",
+          "até 2 apresentações por ano sobre o impacto e duas reuniões por ano com o Onno sobre o andamento"
+        ]
       }
     ],
-    "bedragNoot": "Os valores são discutidos na conversa inicial.",
-    "uspKop": "O que torna este projeto único",
-    "uspOpenNoot": "Os Unique Selling Points do projeto ainda serão enviados pelo cliente, assim como as demais formas de parceria.",
+    "overzicht": {
+      "tekst": "Este é um resumo. Todos os benefícios de cada pacote estão no documento completo, em holandês.",
+      "naam": "Formas de parceria (PDF, em holandês)",
+      "bestand": "/downloads/mais-esporte-partnershipmogelijkheden.pdf"
+    },
+    "beginKop": "Comece pequeno.",
+    "begin": "Uma parceria não precisa ser grande nem longa logo de início. Conheça primeiro o MAIS ESPORTE com um workshop ou treinamento inspirador para a sua equipe. O Onno conduz sessões interativas no local ou fora dele, com base na metodologia vivencial com que os jovens no Brasil trabalham o seu desenvolvimento pessoal. Liderança, cooperação, resiliência e desenvolvimento pessoal podem estar no centro. O workshop pode ser contratado de forma totalmente independente, sem nenhum compromisso adicional.",
+    "beginPrijs": "Preço de referência: € 2.000 a € 3.500 por workshop ou treinamento",
+    "beginPrijsNoot": "Dependendo do tamanho do grupo, do conteúdo e da duração.",
     "biedtKop": "As parcerias oferecem, entre outras coisas",
     "biedt": [
       "uma contribuição concreta aos Objetivos de Desenvolvimento Sustentável",
@@ -145,9 +197,7 @@
       "engajamento dos colaboradores",
       "visibilidade internacional",
       "acesso a uma rede de organizações orientadas ao impacto"
-    ],
-    "afstemKop": "As parcerias podem ser totalmente ajustadas a",
-    "afstem": ["employer branding", "projetos educacionais", "engajamento dos colaboradores", "posicionamento social"]
+    ]
   },
 
   "ervaring": {
@@ -165,28 +215,13 @@
     "foto": { "alt": "Crianças e educadores em uma atividade esportiva num campo de areia, com casas de tijolo e a cidade ao fundo.", "plaat": "Atividade esportiva no campo da comunidade" }
   },
 
-  "visie": {
-    "kop": "Nossa missão",
-    "inleiding": "O MAIS ESPORTE quer se tornar uma plataforma internacional de aprendizagem vivencial, liderança e impacto comunitário. Nos próximos anos vamos construir:",
-    "onderdelen": [
-      "um centro de referência em aprendizagem vivencial",
-      "uma metodologia escalável",
-      "cooperações internacionais",
-      "pontes com a educação",
-      "uma rede crescente de parceiros"
-    ],
-    "slot": "Nosso objetivo é desenvolver um modelo que também possa ser aplicado em outras regiões e países.",
-    "foto": { "alt": "O terreno: um campo aberto de grama com palmeiras, construções baixas e uma colina arborizada ao fundo.", "plaat": "O terreno onde acontece a formação" }
-  },
-
   "documenten": {
     "kop": "Leia a história completa.",
-    "inleiding": "A descrição do projeto conta com mais detalhes o que o MAIS ESPORTE faz, para quem e por quê. Há uma versão completa e uma resumida.",
+    "inleiding": "A descrição do projeto conta com mais detalhes o que o MAIS ESPORTE faz, para quem e por quê. A versão resumida está disponível aqui. O plano completo do projeto para 2027 a 2031 pode ser enviado mediante solicitação.",
     "items": [
-      { "naam": "Descrição completa do projeto", "bestand": null },
-      { "naam": "Descrição resumida do projeto", "bestand": null }
-    ],
-    "openNoot": "Os dois documentos ainda serão enviados. Assim que os PDFs estiverem disponíveis, estes botões vão abri los em uma nova aba."
+      { "naam": "Versão resumida (PDF, em holandês)", "bestand": "/downloads/mais-esporte-korte-versie.pdf" },
+      { "naam": "Solicitar o plano completo", "mail": "mailto:info@maisesporte.nl?subject=Solicita%C3%A7%C3%A3o%20do%20plano%20completo%20MAIS%20ESPORTE" }
+    ]
   },
 
   "contact": {
@@ -194,24 +229,29 @@
     "inleiding": "Procuramos organizações que enxergam além do patrocínio, que querem investir em potencial humano e em impacto social duradouro.",
     "uitnodiging": "Agende uma conversa inicial e descubra como a sua organização passa a fazer parte deste movimento.",
     "actie": "Agende uma conversa",
-    "placeholder": {
-      "titel": "Dados de contato ainda não definidos",
-      "tekst": "Este botão ainda não tem destino. Assim que ficar claro se será um formulário, um link de agenda ou um endereço de e mail, ele aparecerá aqui."
-    }
+    "actieMail": "mailto:info@maisesporte.nl?subject=Conversa%20inicial%20MAIS%20ESPORTE",
+    "actieTweede": "Enviar WhatsApp",
+    "actieWhatsapp": "https://wa.me/31619630920",
+    "gegevens": [
+      { "label": "E-mail", "tekst": "info@maisesporte.nl", "href": "mailto:info@maisesporte.nl" },
+      { "label": "WhatsApp", "tekst": "+31 6 19 63 09 20", "href": "https://wa.me/31619630920" }
+    ]
   },
 
   "voet": {
+    "websitesKop": "Sites",
+    "websites": [
+      { "tekst": "www.onnoraadsen.nl", "href": "https://www.onnoraadsen.nl" },
+      { "tekst": "www.fullmoonexpedition.com", "href": "https://www.fullmoonexpedition.com" },
+      { "tekst": "www.watziejij.nu", "href": "https://www.watziejij.nu" }
+    ],
     "openKop": "Ainda a definir",
     "open": [
-      "Dados de contato e a forma de agendar uma conversa",
-      "Valores das três formas de parceria",
-      "A descrição completa e a resumida do projeto em PDF",
-      "Unique Selling Points do projeto e as demais formas de parceria",
-      "Fotos do centro de formação e as fotos definitivas do ciclo",
+      "Uma versão maior da foto da criança no ciclo",
       "Quem é o remetente jurídico: MAIS ESPORTE, ARCA ou Vale da Serra Company",
       "Autorização para publicar as pessoas identificáveis nas fotos",
       "O logotipo em arquivo vetorial"
     ],
-    "fotoNoot": "Todas as fotos desta página vêm do documento de parceria."
+    "fotoNoot": "Todas as fotos desta página foram fornecidas pelo MAIS ESPORTE."
   }
 }

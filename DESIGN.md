@@ -113,6 +113,12 @@ components:
   knop-licht-hover:
     backgroundColor: "{colors.goud}"
     textColor: "{colors.roet}"
+  knop-lijnlicht:
+    backgroundColor: "transparent"
+    textColor: "{colors.op-veld}"
+    rounded: "{rounded.pil}"
+    padding: "0.85em 1.5em"
+    typography: "{typography.klein}"
   knop-uit:
     backgroundColor: "transparent"
     textColor: "{colors.op-veld}"
@@ -125,8 +131,8 @@ components:
     rounded: "0"
     padding: "clamp(1rem, 2.2vw, 2rem)"
   bord:
-    backgroundColor: "{colors.veld}"
-    textColor: "{colors.op-veld}"
+    backgroundColor: "{colors.goud}"
+    textColor: "{colors.roet}"
     rounded: "0"
     padding: "clamp(1.5rem, 3vw, 3rem)"
   etiket:
@@ -176,12 +182,12 @@ Vijf verven die je op zo'n muur werkelijk vindt: kalk, veldgroen, menieoranje, g
 
 ### Primary
 
-- **Veldgroen** (`veld`): de kleur van het speelveld en van het scharnier van de pagina. Draagt de peer-lus-sectie, de primaire pil en het merkvlak. `veld-diep` is dezelfde pot dieper: de twee panelen binnen de lus, de contactsectie, en de hoverstand van de primaire knop.
-- **Menieoranje** (`lak`): de accentverf. Het cursieve slotwoord van de hoofdkop, de doelensectie, het tweede partnerbord, de bovenrand van de voet, de huidige taal in de schakelaar en het merk in de navigatiebalk. `lak-helder` is uitsluitend interactieaccent: focusring, streepjes voor lijstitems, de onderstreping bij hover in de navigatie, en de caret.
+- **Veldgroen** (`veld`): de kleur van het speelveld en van het scharnier van de pagina. Draagt de peer-lus-sectie, het tweede partnerbord (Impact partner), de primaire pil en het merkvlak. `veld-diep` is dezelfde pot dieper: de twee panelen binnen de lus, de contactsectie, en de hoverstand van de primaire knop.
+- **Menieoranje** (`lak`): de accentverf. Het cursieve slotwoord van de hoofdkop, de doelensectie, het derde partnerbord (Strategic partner), de bovenrand van de voet, de huidige taal in de schakelaar en het merk in de navigatiebalk. `lak-helder` is uitsluitend interactieaccent: focusring, streepjes voor lijstitems, de onderstreping bij hover in de navigatie, en de caret.
 
 ### Secondary
 
-- **Goud** (`goud`): de vierde huiskleur, en de enige die op kalk én op donker overeind blijft. Draagt het circuit van de lus, de rol-plaatjes in de panelen, het derde partnerbord, de slotzin van de lus, de streepjes op donkere vlakken en de selectiekleur van de browser.
+- **Goud** (`goud`): de vierde huiskleur, en de enige die op kalk én op donker overeind blijft. Draagt het circuit van de lus, het eerste partnerbord (Community partner), de slotzin van de lus, de labels bij de contactgegevens, de streepjes op donkere vlakken en de selectiekleur van de browser.
 
 ### Neutral
 
@@ -232,7 +238,7 @@ Beide zijn lokaal gehost als gesubsette woff2 in `public/fonts/`, met `font-disp
 
 ### Named Rules
 
-**De Plaatregel.** `.plaat` is uitsluitend voor echte aanduidingen: een fotobijschrift, de rol van een paneel, het merkwoord, het register van openstaande punten, de titel van een placeholder. Het is **nooit** een label dat de kop ernaast herhaalt. Toets: verwijder het plaatje. Verdwijnt er informatie, dan mocht het er staan. Verdwijnt er alleen decoratie, dan was het een eyebrow.
+**De Plaatregel.** `.plaat` is uitsluitend voor echte aanduidingen: een fotobijschrift, het merkwoord, het label bij een contactgegeven, de kopjes boven de websites en het register van openstaande punten in de voet, de titel van een placeholder. Het is **nooit** een label dat de kop ernaast herhaalt. Toets: verwijder het plaatje. Verdwijnt er informatie, dan mocht het er staan. Verdwijnt er alleen decoratie, dan was het een eyebrow.
 
 **Geen Eyebrow Regel.** Er staat nergens op deze pagina een kicker of eyebrow boven een kop, en er komt er nooit een bij. Een kop die opgewarmd moet worden is de verkeerde kop. Kopjes die eerder als sjabloonplaatje waren opgemaakt zonder ooit iets aan te duiden (`partner__bordenkop`, `partner__lijstkop`, `doelen__daarnaastkop`) zijn teruggezet naar gewone `title`-koppen. Een kop hoort een kop te zijn.
 
@@ -246,12 +252,12 @@ Beide zijn lokaal gehost als gesubsette woff2 in `public/fonts/`, met `font-disp
 
 **Container.** Eén enkele omhulling: `.omhulsel` = `width: min(100% - var(--rand) * 2, var(--breed))`, gecentreerd. `--breed` is 78rem (1248px), `--rand` loopt van 20px tot 64px. Op een viewport van 1440px levert dat een paginamarge van precies 96px links en rechts. Die 96px is het bemonsteringsgebied voor de korrelmeting hieronder.
 
-**Rasters.** Alle secties zijn tweekoloms `grid` met ongelijke verhoudingen, nooit 50/50: 1.35/0.65 (hero), 0.85/1.15 (waarom), 1.15/0.85 (aanpak), 0.8/1.2 (opleidingscentrum), 0.86/1.14 (ervaring), 1.2/0.8 (missie), 0.9/1.1 (partner), 1.3/0.7 (partnerlijsten), 1.1/0.9 (doorlezen). De ongelijkheid is het punt: geschilderde compositie, geen kolomindeling. De enige uitzondering is het lusraster, dat exact 1/1 is, en dat is een inhoudelijke eis (zie Components).
+**Rasters.** Alle secties zijn tweekoloms `grid` met ongelijke verhoudingen, nooit 50/50: 1.35/0.65 (hero), 0.85/1.15 (waarom), 1.15/0.85 (aanpak), 0.8/1.2 (opleidingscentrum), 0.86/1.14 (ervaring), 1.2/0.8 (missie), 0.9/1.1 (partner), 0.72/1.28 (in een partnerbord), 1.3/0.7 (Begin klein naast de lijst), 1.1/0.9 (doorlezen). De fotogalerij van het opleidingscentrum is geen raster maar twee flexrijen, gespiegeld: breed naast smal, dan smal naast breed (zie Foto). De ongelijkheid is het punt: geschilderde compositie, geen kolomindeling. De enige uitzondering is het lusraster, dat exact 1/1 is, en dat is een inhoudelijke eis (zie Components).
 
 **Breekpunten.** Twee, geen meer.
 
 - **62rem**: alle tweekoloms rasters vallen naar één kolom; de kleefzittende aanpakfoto wordt statisch; de ervaringsfoto gaat onder de tekst (`order: 2`); de hoofdkop verruimt van 13ch naar 16ch.
-- **54rem**: het lusraster valt naar één kolom en het circuit wordt een pijl terug omhoog (`max-height` 8rem naar 5rem); de telling stapelt getal boven woord.
+- **54rem**: het lusraster valt naar één kolom en het circuit wordt een pijl terug omhoog (`max-height` 8rem naar 5rem); de telling stapelt getal boven woord; de fotorijen van het opleidingscentrum stapelen; Begin klein en de lijst ernaast gaan onder elkaar; de twee voetkolommen ook.
 - Twee lokale correcties daarbuiten: 60rem voor de navigatierij, 34rem voor de heroknoppen, 30rem voor de navigatieknop.
 
 **Ritme.** Tien stappen (`s1` 0.25rem tot `s10` 8rem), plus twee sectiematen.
@@ -310,7 +316,7 @@ De vormtaal kent precies drie vormen, en ze staan tegenover elkaar.
 
 ### Named Rules
 
-**De Geen Kaarten Regel.** Vlakken op de muur hebben gekwaste randen, geen omlijning en geen radius. Er staat nergens een `border` rondom een blok inhoud, en er komt er nooit een bij. Een nieuw blok krijgt een verfkleur en twee `KwastRand`-componenten, of het krijgt niets. De enige rechthoekige omlijningen die het systeem toestaat zijn **gestippeld** en betekenen "hier ontbreekt nog iets": het actieslot, elk open punt (`.openpunt`), en de uitgeschakelde knop.
+**De Geen Kaarten Regel.** Vlakken op de muur hebben gekwaste randen, geen omlijning en geen radius. Er staat nergens een `border` rondom een blok inhoud, en er komt er nooit een bij. Een nieuw blok krijgt een verfkleur en twee `KwastRand`-componenten, of het krijgt niets. De enige rechthoekige omlijningen die het systeem toestaat zijn **gestippeld** en betekenen "hier ontbreekt nog iets": elk open punt (`.openpunt`) en de uitgeschakelde knop.
 
 **De Randvariatie Regel.** Twee aangrenzende gekwaste randen krijgen nooit hetzelfde variantnummer. Eén hergebruikte golf op elke sectie is een sjabloon, geen kwast. Wissel `variant={1|2|3}` af per plek.
 
@@ -318,13 +324,14 @@ De vormtaal kent precies drie vormen, en ze staan tegenover elkaar.
 
 ### Buttons (`Knop.astro`)
 
-Karakter: een pil met een pijl erin, klein en dicht, meer een gedrukte knop dan een banner. Props: `href`, `soort` (`vol` | `lijn` | `licht`), `uit` (boolean), `class`. Zonder `uit` rendert hij als `<a>`; met `uit` als een `<button type="button" disabled>`.
+Karakter: een pil met een pijl erin, klein en dicht, meer een gedrukte knop dan een banner. Props: `href`, `soort` (`vol` | `lijn` | `licht` | `lijnlicht`), `uit` (boolean), `extern` (boolean, opent in een nieuw tabblad: voor PDF's en WhatsApp), `class`. Zonder `uit` rendert hij als `<a>`; met `uit` als een `<button type="button" disabled>`.
 
 - **Shape:** volledig rond (`rounded.pil`), padding `0.85em 1.5em`, altijd een 2px rand, ook bij de gevulde variant.
 - **Type:** Archivo 650, 0.875rem, breedte 96%, ls 0.02em, lh 1. Nooit kapitaal.
 - **Vol:** groen vlak met kalktekst. De enige primaire actie. Hover: naar `veld-diep`, rand mee.
 - **Lijn:** doorzichtig met een rand van 38% kwastzwart. Hover: rand naar vol kwastzwart. Op de hero krijgt deze variant expliciet een kalk-achtergrond, zodat de kwastregel er niet doorheen loopt.
 - **Licht:** kalkvlak met kwastzwarte tekst, voor gebruik op donker. Hover: **naar goud**, niet naar wit.
+- **Lijnlicht:** de tweede actie op donker, naast een lichte knop. Doorzichtig, tekst in `op-veld`, rand van 45% `op-veld`. Hover: rand naar vol `op-veld`. Staat in de contactsectie naast de mailknop (WhatsApp).
 - **Uit:** doorzichtig met een gestippelde gouden rand, `cursor: not-allowed`, pijl op 45% en geen hoverbeweging. Betekent: deze knop bestaat wel, maar heeft nog geen bestemming. Zichtbaar leeg is eerlijker dan een dode link.
 - **Pijl:** een 1em SVG die bij hover 0.2em naar rechts schuift. Dat is de enige beweging die een knop maakt.
 
@@ -334,21 +341,23 @@ Een kleefzittende kalkband (`position: sticky`, `z-index: 20`) met onderaan een 
 
 ### Foto (`Foto.astro`)
 
-De signatuurcomponent. Props: `src` (ImageMetadata), `alt`, `plaat` (optioneel bijschrift), `vorm` (`boog` | `recht`, standaard `boog`), `vlek` (verfkleur van de vlek eronder, standaard `lak-helder`), `breedtes` (array voor `widths`), `sizes`, `verhouding` (optionele geforceerde `aspect-ratio`), `class`.
+De signatuurcomponent. Props: `src` (ImageMetadata), `alt`, `plaat` (optioneel bijschrift), `vorm` (`boog` | `recht`, standaard `boog`), `vlek` (verfkleur van de vlek eronder, standaard `lak-helder`), `breedtes` (array voor `widths`), `sizes`, `verhouding` (optionele geforceerde `aspect-ratio`), `kwaliteit` (optionele webp-kwaliteit, alleen voor bronmateriaal dat slecht comprimeert), `class`.
 
 Structuur: een `<figure>` met daarin een vel waarop de vlek verf achter het beeld ligt, en optioneel een `<figcaption>` met de `plaat`-opmaak, links uitgelijnd achter een 1px verticale streep op 45% currentColor, maximaal 34ch breed. Het bijschrift beschrijft wat je ziet; het is geen label dat de kop ernaast herhaalt.
 
 `verhouding` bestaat voor één doel: twee foto's naast elkaar dwingen hetzelfde vak te vullen ondanks verschillende bronformaten. Gebruik het niet decoratief.
 
+**De fotogalerij van het opleidingscentrum.** Vier rechte plaatjes (`vorm="recht"`, het is documentatie van de plek) in twee flexrijen. Elke foto krijgt `flex-grow` gelijk aan zijn `verhouding` (breedte gedeeld door hoogte) met basis 0, zodat de twee foto's in een rij exact even hoog uitkomen en hun bijschriften op één lijn beginnen. Wie een verhouding in het template wijzigt, wijzigt de `flex-grow` in de CSS mee. Onder 54rem stapelen de rijen.
+
 ### Paneel (het lusvak)
 
-Karakter: twee vakken in `veld-diep` binnen het groene vlak, elk met een gekwaste rand boven en onder, en met de vaste volgorde rol-plaatje, foto, titel, tekst.
+Karakter: twee vakken in `veld-diep` binnen het groene vlak, elk met een gekwaste rand boven en onder, en met de vaste volgorde foto (met bijschrift), dan de zin. De zin loopt door over de twee vakken: "De jongere wordt opgeleid…" links, "…en het kind wordt begeleid." rechts. Een subgrid legt foto en zin van beide vakken op dezelfde rijen, zodat de zin rechts niet een regel hoger begint als het fotobijschrift links langer is.
 
-**De Gelijkheidsregel.** De twee panelen in de peer-lus zijn **geometrisch identiek**: zelfde breedte (`repeat(2, minmax(0, 1fr))`, exact 1/1), zelfde `align-items: stretch`, zelfde padding, zelfde achtergrond, zelfde `vorm="recht"`, zelfde `vlek`, en dezelfde geforceerde `verhouding="4 / 3"` op de foto. Dat is geen opmaakvoorkeur maar de productclaim letterlijk gerenderd: de jongere die wordt opgeleid en het kind dat wordt begeleid staan in hetzelfde vak omdat ze dezelfde persoon worden. Ongelijke panelen breken de belofte. Het enige wat mag verschillen is het variantnummer van de gekwaste rand.
+**De Gelijkheidsregel.** De twee panelen in de peer-lus zijn **geometrisch identiek**: zelfde breedte (`repeat(2, minmax(0, 1fr))`, exact 1/1), zelfde `align-items: stretch`, zelfde padding, zelfde achtergrond, zelfde `vorm="recht"`, zelfde `vlek`, en dezelfde geforceerde `verhouding="1 / 1"` op de foto. Dat is geen opmaakvoorkeur maar de productclaim letterlijk gerenderd: de jongere die wordt opgeleid en het kind dat wordt begeleid staan in hetzelfde vak omdat ze dezelfde persoon worden. Ongelijke panelen breken de belofte. Het enige wat mag verschillen is het variantnummer van de gekwaste rand.
 
 ### Bord (het partnerbord)
 
-Wat een sponsor in het echt koopt is een geschilderd bord langs de rand van het veld. Drie borden onder elkaar, elk een vol vlak in een eigen verf (`veld`, `lak`, `goud`) met een gekwaste rand boven en onder, tweekoloms 0.72/1.28 met de naam links. Geen omlijning, geen radius, geen schaduw: verf op de muur. De tekstkleur is per bord gepaard aan zijn verf (`op-veld`, `op-lak`, `roet`).
+Wat een sponsor in het echt koopt is een geschilderd bord langs de rand van het veld. Drie borden onder elkaar, van klein naar groot, elk een vol vlak in een eigen verf met een gekwaste rand boven en onder: Community partner op `goud`, Impact partner op `veld`, Strategic partner op `lak`. Dat volgt het partnerdocument (goud, groen, blauw) zover de muur die verven heeft; blauw is er niet, dus menie. Tweekoloms 0.72/1.28. Links de naam in `--t-bord` met het werkwoord (Verbinden, Verbreden, Verankeren) cursief eronder, het bedrag in Vollkorn op `--t-h4` met `.cijfers`, en de doelgroep ("Voor: …") klein. Rechts eventueel "Alles uit …, plus:" en een `streeplijst` met de voordelen. Op verf dragen de streepjes de inkt van het bord in plaats van `lak-helder`, want oranje verdwijnt op goud en menie. Geen omlijning, geen radius, geen schaduw: verf op de muur. Verf en inkt komen uit één array in het template (`goud`/`roet`, `veld`/`op-veld`, `lak`/`op-lak`).
 
 ### Kwastrand (`KwastRand.astro`)
 
@@ -360,17 +369,17 @@ Eén kwasthaal als scheidingsregel: dikker in het midden waar de kwast vol zit, 
 
 ### Merk (`Merk.astro`)
 
-Het Vale da Serra-merk, nagetekend als SVG: een kompasroos over een bergsilhouet, in een viewBox van 48 bij 44. Props: `hoogte` (standaard 2.4rem), `kleur` (standaard `currentColor`), `toonCoordinaten` (boolean), `class`. De woordmerkgroottes schalen mee met `hoogte` (naam op 34%, coördinaten op 23%), zodat het merk één ding blijft op elke schaal. De coördinaten (`3°55′33.93″ S · 38°43′38.49″ W`) staan alleen in de voet, niet in de navigatie. Dit is een vectorherteking van een rasterafbeelding uit het bronmateriaal; hij wordt vervangen zodra er een echt logobestand is.
+Het Vale da Serra-merk, nagetekend als SVG: een kompasroos over een bergsilhouet, in een viewBox van 48 bij 44. Props: `hoogte` (standaard 2.4rem), `kleur` (standaard `currentColor`), `toonCoordinaten` (boolean), `class`. De woordmerkgroottes schalen mee met `hoogte` (naam op 34%, coördinaten op 23%), zodat het merk één ding blijft op elke schaal. De coördinaten (`3°55′33.93″ S · 38°43′38.49″ W`) staan alleen in de voet, niet in de navigatie. Dit is een vectorherteking van een rasterafbeelding uit het bronmateriaal; hij wordt vervangen zodra er een echt logobestand is. Losse logobestanden (SVG met de letters als paden, en PNG) staan in `merk/`, gemaakt met `scripts/maak-logo.py`.
 
 ### Etiket
 
-Handgeschilderd etiket: pilvormig, doorzichtig, met een 2px rand op 55% `lak`. Archivo 600 op 0.875rem. Voor korte opsommingen die geen lijst hoeven te zijn (de onderdelen van de aanpak, de afstemmogelijkheden bij partnerships).
+Handgeschilderd etiket: pilvormig, doorzichtig, met een 2px rand op 55% `lak`. Archivo 600 op 0.875rem. Voor korte opsommingen die geen lijst hoeven te zijn (de onderdelen van de aanpak).
 
 ### Named Rules
 
 **De Scoperegel.** Een klasse die je aan een Astro-childcomponent doorgeeft, erft het `data-astro-cid`-attribuut van het oudertemplate **niet**. Een gescopete regel die zo'n klasse aanspreekt moet daarom geschreven worden als `.gescopete-ouder :global(.de-klasse)`, anders valt hij geruisloos weg. Vijf regels zijn op precies deze manier dood geweest. Het is veilig omdat de ouderselector wél gescopet is, dus er lekt niets. Herken je aan het patroon: staat er in het template `class="iets"` op een `<Component />`, dan hoort de CSS ernaar te wijzen via `:global()`.
 
-**De Placeholderregel.** Elk gat in het materiaal is zichtbaar gemarkeerd, met een gestippelde rand (`.openpunt`) en een `role="note"`. Het actieslot draait op een uitgeschakelde knop met uitleg ernaast; het opleidingscentrum, de USP's bij Word partner en de twee projectbeschrijvingen hebben een open punt; de voet heeft een register van openstaande punten. Een aannemelijke invulling is nooit toegestaan: een zichtbaar gat is eerlijker en de opdrachtgever ziet meteen wat er nog moet komen.
+**De Placeholderregel.** Elk gat in het materiaal is zichtbaar gemarkeerd, met een gestippelde rand (`.openpunt`) en een `role="note"`. Sinds de aanlevering van 4 oktober (contactgegevens, bedragen, PDF's, foto's van het opleidingscentrum) staat er alleen nog een register van openstaande punten in de voet. Het mechanisme blijft: `.openpunt` voor een gat in een sectie, en een `Knop` met `uit` voor een actie zonder bestemming. Een aannemelijke invulling is nooit toegestaan: een zichtbaar gat is eerlijker en de opdrachtgever ziet meteen wat er nog moet komen.
 
 ## Do's and Don'ts
 
@@ -395,7 +404,7 @@ Handgeschilderd etiket: pilvormig, doorzichtig, met een 2px rand op 55% `lak`. A
 - **Don't** de korrel op `position: fixed` zetten. Hij hoort op het pleisterwerk, niet op het glas, en fixed dekt maar één viewport.
 - **Don't** de korrel meten buiten de paginamarge van 96px: daar meet je letterantialiasing.
 - **Don't** een kicker of eyebrow boven een kop zetten, in welke vorm dan ook.
-- **Don't** `.plaat` gebruiken als label dat de kop ernaast herhaalt. Sjabloonplaatjes dragen informatie: fotobijschriften, paneelrollen, het register van openstaande punten.
+- **Don't** `.plaat` gebruiken als label dat de kop ernaast herhaalt. Sjabloonplaatjes dragen informatie: fotobijschriften, contactlabels, het register van openstaande punten.
 - **Don't** een kastlijntje (em dash) in zichtbare tekst zetten, in geen enkele taal.
 - **Don't** grijs gebruiken voor secundaire tekst. Tint vanuit de ondergrond.
 - **Don't** een tweede bewegend element toevoegen. Er is precies één geregisseerd moment op deze pagina: het circuit van de lus dat gaat lopen zodra je het ziet (`stroke-dasharray: 6 14`, `animation: kruip 26s linear infinite`), aangezet door een IntersectionObserver op 25% zichtbaarheid die zichzelf daarna losknoopt, en volledig uitgeschakeld onder `prefers-reduced-motion: reduce`. Alle andere beweging is een toestandsovergang van 220ms op hover of focus, nooit iets dat vanzelf begint.
@@ -409,6 +418,5 @@ Eerlijk vastgelegd zodat niemand ze voor systeem aanziet.
 - **Dood token.** `--duur: 800ms` staat in `tokens.css` maar wordt nergens gebruikt; alle overgangen draaien op `--duur-kort` (220ms). Eén duur is dus het feitelijke systeem, niet twee.
 - **Ongebruikte helpers.** `.regel` (de platte 1px-scheidingsregel) en `.maat-kort` / `--maat-kort: 46ch` staan in `global.css` maar worden in geen enkel template toegepast. `.regel` is in de praktijk vervangen door `Kwastregel.astro`. Beschouw ze niet als vastgelegd systeem tot ze een gebruiker hebben.
 - **Dode responsieve regel.** In `src/pages/index.astro` zet de 62rem-mediaquery `grid-template-columns` en `gap` op `.pad__spoor`, maar dat element is geen grid- of flexcontainer. Beide declaraties doen niets.
-- **Twee bronnen voor één bordkleur.** De verf van een partnerbord komt uit een array in het template (`['var(--veld)', 'var(--lak)', 'var(--goud)'][i]`), terwijl de bijbehorende tekstkleur uit `:nth-child`-regels in de CSS komt. Een vierde bord krijgt daardoor `--verf: undefined` met een tekstkleur die niet meebeweegt. Bij uitbreiding hoort de paring in één bron te komen.
 - **Ongetokeniseerde lettergewichten.** Naast de gewichten in de typeschaal staan losse waarden in de code: 550 (waarschuwing bij de doelen), 650 (knoplabel, eenheid in de telling), 600 (etiket, keerpunt, plaat). Ze zijn legitiem omdat Archivo en Vollkorn variabele fonts zijn, maar er is geen gewichtsschaal als token.
 - **Korrelspreiding per kanaal.** Zie De Gemeten Materiaal Regel: op kalk haalt het rode kanaal 10 in plaats van de beoogde 12 tot 24, terwijl blauw op 25 zit. Bekend en geaccepteerd, niet stilzwijgend gladgestreken.

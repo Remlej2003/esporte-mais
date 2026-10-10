@@ -4,7 +4,7 @@
   "meta": {
     "taal": "en",
     "titel": "MAIS ESPORTE: those who have learned, pass it on",
-    "omschrijving": "MAIS ESPORTE trains young people in Brazilian favelas to become Urban Adventure Coaches. They then guide the children in their own neighbourhood. For organisations looking beyond sponsorship."
+    "omschrijving": "MAIS ESPORTE trains young people in Brazilian favelas to become Urban Adventure Coaches: sports leaders who then guide the children in their own neighbourhood. For organisations looking beyond sponsorship."
   },
 
   "merk": {
@@ -30,7 +30,8 @@
   "hero": {
     "kop": "Those who have learned, ",
     "kopCursief": "pass it on.",
-    "inleiding": "MAIS ESPORTE trains young people in Brazilian favelas to become Urban Adventure Coaches. They then guide the children in their own neighbourhood. A generation defined not by where they come from, but by what they are capable of.",
+    "inleiding": "MAIS ESPORTE trains young people in Brazilian favelas to become Urban Adventure Coaches, sports leaders who can also organise adventurous and challenging activities. They then guide the children in their own neighbourhood through sport and play. A generation defined not by where they come from, but by what they are capable of.",
+    "geloof": "We believe that a period as a sports leader, under the guidance of an experienced coach, helps these young people enormously in making the step to the labour market. Along the way they learn and practise all kinds of skills that matter at work.",
     "actie": "Arrange an introduction",
     "actieTweede": "Read our approach",
     "foto": {
@@ -47,19 +48,31 @@
     "keerpunt": "Yet that is exactly where the potential lies. We believe young people do not need pity, but trust, responsibility and the chance to develop themselves."
   },
 
+  "visie": {
+    "kop": "Our mission",
+    "inleiding": "MAIS ESPORTE aims to grow into an international platform for experiential learning, leadership and community impact. Over the coming years we are building:",
+    "onderdelen": [
+      "a centre of expertise for experiential learning",
+      "a scalable method",
+      "international collaborations",
+      "connections with education",
+      "a growing network of partners"
+    ],
+    "slot": "Our aim is to develop a model that can also be used in other regions and countries.",
+    "foto": { "alt": "The site: an open grass field with palm trees, low buildings and a wooded hill behind.", "plaat": "The site where the training takes place" }
+  },
+
   "lus": {
     "kop": "Young people leading young people.",
     "inleiding": "Young people do not only learn skills for themselves. They go on to guide other children and young people in their own surroundings. That is where a powerful form of peer education begins.",
     "panelen": [
       {
-        "bijschrift": "The young person is trained and the child is guided",
+        "bijschrift": "The young person is trained…",
         "foto": { "alt": "A young person wearing a helmet and climbing harness stands on top of a tower of stacked crates and is handed another crate.", "plaat": "Crate tower, an exercise in trust and belaying" }
       },
       {
-        "rol": "Is guided",
-        "titel": "The child from the same neighbourhood",
-        "tekst": "Is guided by someone who knows the neighbourhood, because they come from it themselves.",
-        "foto": { "alt": "A group of children walks through an arch formed by the hands of two coaches.", "plaat": "Group exercise at the end of a training session" }
+        "bijschrift": "…and the child is guided.",
+        "foto": { "alt": "Children play a game on a sand pitch while a coach stands at the side giving directions.", "plaat": "Sport and play on the pitch, with a coach" }
       }
     ],
     "sluit": "And then it begins again."
@@ -90,11 +103,16 @@
     "kop": "The training centre.",
     "inleiding": "Sitio (estate) Vale da Serra lies in the mountains of Maranguape, in the state of Ceará, just 25 km from the capital Fortaleza in north eastern Brazil.",
     "alineas": [
-      "The site covers 75 hectares, rich in nature, water, waterfalls, rivers and natural pools that fill during the rainy season. Seven kilometres of walking trails run through it, and 22 educational platforms have been built: clearings in the forest, each with its own pedagogical purpose.",
+      "The site covers 75 hectares, rich in nature, water, waterfalls, rivers and natural pools that fill during the rainy season. Seven kilometres of walking trails run through it, and 22 educational platforms have been built: clearings in the forest with their own specific infrastructure, each with its own pedagogical purpose.",
       "Sitio Vale da Serra grew out of the dream of creating a place where young people with few opportunities can develop socially and emotionally through experiential learning. That method recognises the value of \"learning by doing\", the connection with nature, and young people being the captain of their own learning.",
       "Vale da Serra was founded by two physical education teachers (Onno Raadsen and Milza Gomes Raadsen), both with extensive experience in human development through sport and play in countries including Brazil, the Netherlands, Guatemala, Haiti, Timor Leste and several African countries."
     ],
-    "openNoot": "Photographs of the training centre are still to follow."
+    "fotos": [
+      { "alt": "The grounds of Vale da Serra: a lawn with boulders and trees, covered buildings and the wooded mountain behind.", "plaat": "The grounds at the foot of the serra" },
+      { "alt": "Children and adults stand with fishing rods around a pond with a small palm island in the middle.", "plaat": "Fishing at the pond on the estate" },
+      { "alt": "A group sits in a circle on the floor of an open, covered hall, feet towards the centre.", "plaat": "Circle exercise in the covered hall" },
+      { "alt": "A group stands on mats on the lawn with arms stretched overhead, between the trees and a building with an outdoor oven.", "plaat": "Group exercise on the lawn" }
+    ]
   },
 
   "doelen": {
@@ -102,8 +120,8 @@
     "waarschuwing": "These are goals for the coming five years, not results already achieved.",
     "lijst": [
       { "getal": "240", "eenheid": "young people", "tekst": "trained as Urban Adventure Coaches" },
-      { "getal": "2,000+", "eenheid": "children", "tekst": "reached" },
-      { "getal": "10", "eenheid": "impact camps", "tekst": "organised" },
+      { "getal": "1,500+", "eenheid": "children", "tekst": "reached" },
+      { "getal": "20", "eenheid": "impact camps", "tekst": "organised" },
       { "getal": "50", "eenheid": "Dutch primary schools", "tekst": ["involved through the teaching programme ", { "tekst": "Wat zie jij?", "href": "https://watziejij.nu" }] },
       { "getal": "10,000+", "eenheid": "people", "tekst": "reached indirectly" }
     ],
@@ -119,24 +137,58 @@
   "partner": {
     "kop": "More than sponsorship.",
     "inleiding": "Partners commit not merely to a project, but to an international movement with visible social impact.",
-    "bordenKop": "Partnership options",
+    "bordenKop": "The three partnership options",
     "borden": [
       {
-        "naam": "Founding Partner",
-        "tekst": "For organisations that want to contribute strategically to the growth of MAIS ESPORTE, including exclusivity within their sector, co-creation and prominent positioning."
+        "naam": "Community partner",
+        "werkwoord": "Connect",
+        "bedrag": "from € 12,500 / year",
+        "voor": "For: a first introduction, easy to start",
+        "punten": [
+          "a mention as partner on the website and in all communications, and your logo on the Sportbus",
+          "photos, videos and stories for your own marketing and CSR communication",
+          "digital updates and a twice yearly financial and impact report through an impact dashboard",
+          "an invitation to the annual partner meeting",
+          "a fully arranged 7 day trip to Brazil for 2 employees, including flights, a project visit and a day out with the Sportbus to the interior"
+        ]
       },
       {
-        "naam": "Impact Partner",
-        "tekst": "For organisations that want to be a visible part of the movement through branding, events and activations."
+        "naam": "Impact partner",
+        "werkwoord": "Broaden",
+        "bedrag": "from € 25,000 / year",
+        "voor": "For: visibility and team building",
+        "basis": "Everything in Community partner, plus:",
+        "punten": [
+          "the fully arranged 7 day trip to Brazil for 4 employees",
+          "a half day workshop on location by Onno, worth € 2,000",
+          "a film about MAIS ESPORTE every six months for your own promotion",
+          "one presentation a year on the impact of the project, for an audience of your choice",
+          ["the option to offer employees or business relations an impact trip at your own cost, and afterwards to contribute to the teaching programme ", { "tekst": "Wat zie jij?", "href": "https://watziejij.nu" }]
+        ]
       },
       {
-        "naam": "Community Partner",
-        "tekst": "For organisations that want to be involved in activities, community events and social impact."
+        "naam": "Strategic partner",
+        "werkwoord": "Anchor",
+        "bedrag": "from € 50,000 / year",
+        "voor": "For: visibility and team building, strategic",
+        "basis": "Everything in Community and Impact partner, plus:",
+        "punten": [
+          ["a fully arranged 10 day journey for 4 employees through north eastern Brazil on a ", { "tekst": "Full Moon Expedition", "href": "https://www.fullmoonexpedition.com" }, ", including a project visit and a day with the Sportbus"],
+          "your name connected to an important part of the project, such as part of a building or programme",
+          "a training of up to 2 half days on location by Onno, worth € 3,500",
+          "up to 2 presentations a year on the impact, and a progress meeting with Onno twice a year"
+        ]
       }
     ],
-    "bedragNoot": "Amounts are discussed during the introductory conversation.",
-    "uspKop": "What makes this project unique",
-    "uspOpenNoot": "The Unique Selling Points of the project are still to be supplied by the client, as are the remaining partnership options.",
+    "overzicht": {
+      "tekst": "This is a summary. Every benefit per package is listed in the overview, which is in Dutch.",
+      "naam": "Partnership options (PDF, Dutch)",
+      "bestand": "/downloads/mais-esporte-partnershipmogelijkheden.pdf"
+    },
+    "beginKop": "Start small.",
+    "begin": "A partnership does not have to be large or long term from the start. First get to know MAIS ESPORTE through an inspiring workshop or training for your team. Onno runs interactive sessions on location or elsewhere, based on the experiential method young people in Brazil use to work on their personal development. Leadership, cooperation, resilience and personal development can be at the centre. The workshop can be booked entirely on its own, with no further obligation.",
+    "beginPrijs": "Guide price: € 2,000 to € 3,500 per workshop or training",
+    "beginPrijsNoot": "Depending on group size, content and duration.",
     "biedtKop": "Collaborations offer, among other things",
     "biedt": [
       "a concrete contribution to the Sustainable Development Goals",
@@ -145,9 +197,7 @@
       "employee engagement",
       "international visibility",
       "access to a network of impact driven organisations"
-    ],
-    "afstemKop": "Partnerships can be fully tailored to",
-    "afstem": ["employer branding", "education projects", "employee engagement", "social positioning"]
+    ]
   },
 
   "ervaring": {
@@ -165,28 +215,13 @@
     "foto": { "alt": "Children and coaches during a sports activity on a sand pitch, with brick houses and the city behind them.", "plaat": "Sports activity on the pitch in the neighbourhood" }
   },
 
-  "visie": {
-    "kop": "Our mission",
-    "inleiding": "MAIS ESPORTE aims to grow into an international platform for experiential learning, leadership and community impact. Over the coming years we are building:",
-    "onderdelen": [
-      "a centre of expertise for experiential learning",
-      "a scalable method",
-      "international collaborations",
-      "connections with education",
-      "a growing network of partners"
-    ],
-    "slot": "Our aim is to develop a model that can also be used in other regions and countries.",
-    "foto": { "alt": "The site: an open grass field with palm trees, low buildings and a wooded hill behind.", "plaat": "The site where the training takes place" }
-  },
-
   "documenten": {
     "kop": "Read the whole story.",
-    "inleiding": "The project description explains in more detail what MAIS ESPORTE does, for whom and why. There is a full version and a short one.",
+    "inleiding": "The project description explains in more detail what MAIS ESPORTE does, for whom and why. You can read the short version here. We are happy to send you the full project plan for 2027 to 2031 on request.",
     "items": [
-      { "naam": "Full project description", "bestand": null },
-      { "naam": "Short project description", "bestand": null }
-    ],
-    "openNoot": "Both documents are still to be supplied. Once the PDFs are available, these buttons will open them in a new tab."
+      { "naam": "Short version (PDF, Dutch)", "bestand": "/downloads/mais-esporte-korte-versie.pdf" },
+      { "naam": "Request the full project plan", "mail": "mailto:info@maisesporte.nl?subject=Request%20full%20project%20plan%20MAIS%20ESPORTE" }
+    ]
   },
 
   "contact": {
@@ -194,24 +229,29 @@
     "inleiding": "We are looking for organisations that see beyond sponsorship, that want to invest in human potential and lasting social impact.",
     "uitnodiging": "Arrange an introductory conversation and discover how your organisation becomes part of this movement.",
     "actie": "Arrange an introduction",
-    "placeholder": {
-      "titel": "Contact details not yet confirmed",
-      "tekst": "This button has no destination yet. As soon as it is clear whether it becomes a form, a calendar link or an email address, it will appear here."
-    }
+    "actieMail": "mailto:info@maisesporte.nl?subject=Introduction%20MAIS%20ESPORTE",
+    "actieTweede": "Send a WhatsApp",
+    "actieWhatsapp": "https://wa.me/31619630920",
+    "gegevens": [
+      { "label": "Email", "tekst": "info@maisesporte.nl", "href": "mailto:info@maisesporte.nl" },
+      { "label": "WhatsApp", "tekst": "+31 6 19 63 09 20", "href": "https://wa.me/31619630920" }
+    ]
   },
 
   "voet": {
+    "websitesKop": "Websites",
+    "websites": [
+      { "tekst": "www.onnoraadsen.nl", "href": "https://www.onnoraadsen.nl" },
+      { "tekst": "www.fullmoonexpedition.com", "href": "https://www.fullmoonexpedition.com" },
+      { "tekst": "www.watziejij.nu", "href": "https://www.watziejij.nu" }
+    ],
     "openKop": "Still to be confirmed",
     "open": [
-      "Contact details and how a conversation is scheduled",
-      "Amounts for the three partnership levels",
-      "The full and short project description as PDFs",
-      "Unique Selling Points of the project and the remaining partnership options",
-      "Photographs of the training centre and the final photographs for the loop",
+      "A larger version of the photo of the child in the loop",
       "Who the legal sender is: MAIS ESPORTE, ARCA or Vale da Serra Company",
       "Permission to publish the identifiable people in the photographs",
       "The logo as a vector file"
     ],
-    "fotoNoot": "All photographs on this page come from the partner document."
+    "fotoNoot": "All photographs on this page were supplied by MAIS ESPORTE."
   }
 }
