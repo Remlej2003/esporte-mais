@@ -13,7 +13,7 @@ interface Props {
   t: any;
   taal: string;
   /* Optioneel ander kleurenpalet, alleen voor de kleurvoorbeeldpagina. */
-  palet?: 'onno';
+  palet?: 'onno' | 'onno-donker';
 }
 const { t, taal, palet } = Astro.props;
 
@@ -60,7 +60,7 @@ const centrumRijen = [centrumFotos.slice(0, 2), centrumFotos.slice(2, 4)];
                bóven: een bestuurder die nog niet weet wat dit is, hoort
                niet eerst twee knoppen tegen te komen. -->
           <div class="hero__lijn">
-            <Kwastregel kleur="var(--roet)" class="hero__kwast" />
+            <Kwastregel kleur="var(--op-kalk)" class="hero__kwast" />
             <div class="hero__acties">
               <Knop href="#contact" soort="vol">{t.hero.actie}</Knop>
               <Knop href="#aanpak" soort="lijn">{t.hero.actieTweede}</Knop>

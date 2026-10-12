@@ -1,0 +1,8 @@
+---
+/* Kleurvoorbeeld donker: de startpagina zoals hij is, met de kleuren van
+   onnoraadsen.nl op een zwarte ondergrond (palet `onno-donker`). */
+import Startpagina from '../../layouts/Startpagina.astro';
+import { talen, standaardTaal } from '../../i18n/talen';
+---
+
+<Startpagina t={talen[standaardTaal].content} taal={standaardTaal} palet="onno-donker" />

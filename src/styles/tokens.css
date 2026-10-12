@@ -92,6 +92,8 @@
   --bord-1: var(--goud);  --bord-1-inkt: var(--roet);
   --bord-2: var(--veld);  --bord-2-inkt: var(--op-veld);
   --bord-3: var(--lak);   --bord-3-inkt: var(--op-lak);
+  --knop-vol: var(--veld);  --knop-vol-inkt: var(--op-veld);  --knop-vol-hover: var(--veld-diep);
+  --knop-licht: var(--kalk);  --knop-licht-inkt: var(--roet);
   --theme-kleur: #ede5d3;
 
   /* --- Letters --------------------------------------------- */
@@ -193,6 +195,39 @@
   --theme-kleur: #faf8f5;
   /* Op antraciet tekent de korrel zwaarder af dan op groen; iets zachter
      houdt het zakelijk zonder het pleisterwerk kwijt te raken. */
+  --korrel-sterkte: 0.2;
+}
+
+/* --- Palet: de kleuren van onnoraadsen.nl, donker ---------------
+   Dezelfde muur, maar dan zoals onnoraadsen.nl zelf: zwart als
+   ondergrond, antraciet voor de geverfde vlakken, gouden koppen en
+   crème tekst. Het impactblok blijft goud, de borden lopen op van
+   antraciet via zand naar goud. Koppen in goud staan in global.css. */
+:root[data-palet='onno-donker'] {
+  --kalk: #1a1a1a;
+  --kalk-diep: #262626;
+  --kalk-schaduw: #3d3d3d;
+  --veld: #3d3d3d;
+  --veld-diep: #2e2e2e;
+  --lak: #d4a84b;
+  --lak-helder: #d4a84b;
+  --goud: #e8c97b;
+  --roet: #1a1a1a;
+
+  --op-kalk: #faf8f5;
+  --op-kalk-zacht: #c4beb3;
+  --op-veld: #faf8f5;
+  --op-veld-zacht: #cfc9be;
+  --op-lak: #1a1a1a;
+
+  --accent-kop: #faf8f5;
+  --accent-tekst: #d4a84b;
+  --bord-1: #3d3d3d;  --bord-1-inkt: #faf8f5;
+  --bord-2: #e8e4dc;  --bord-2-inkt: #1a1a1a;
+  --bord-3: #d4a84b;  --bord-3-inkt: #1a1a1a;
+  --knop-vol: #d4a84b;  --knop-vol-inkt: #1a1a1a;  --knop-vol-hover: #e8c97b;
+  --knop-licht: #d4a84b;  --knop-licht-inkt: #1a1a1a;
+  --theme-kleur: #1a1a1a;
   --korrel-sterkte: 0.2;
 }
 

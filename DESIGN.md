@@ -229,6 +229,23 @@ Op verzoek van de opdrachtgever bestaat er een tweede palet met alleen de kleure
 
 Goud is te licht voor tekst op crème. Daarom zijn er twee betekenistokens: `--accent-kop` (het cursieve slotwoord van de hoofdkop, `#9a7426`, 4,0:1) en `--accent-tekst` (kleine accenttekst zoals de voetkopjes, `#8a6820`, 4,9:1). In het standaardpalet wijzen beide naar `lak`. De bordkleuren komen uit `--bord-1` tot en met `--bord-3` met elk een `-inkt`. Alle tekstparen in dit palet halen minimaal 4,5:1; het hoofdkopwoord 4,0:1 op displayformaat. De korrel staat in dit palet op 0.2 in plaats van 0.28, omdat hij op antraciet zwaarder aftekent dan op groen.
 
+### Palet `onno-donker` (kleurvoorbeeld donker)
+
+Dezelfde kleuren van onnoraadsen.nl op een zwarte muur, zoals die site zelf. Te zien op `/voorbeeld-donker/`, via `palet="onno-donker"`.
+
+| Rol | Palet `onno-donker` |
+| --- | --- |
+| Muur (`kalk`) | zwart `#1a1a1a` |
+| Lichte vlakken (`kalk-diep`) | `#262626` |
+| Lus (`veld`) | antraciet `#3d3d3d` |
+| Panelen en contact (`veld-diep`) | `#2e2e2e` |
+| Doelen, merk, koppen (`lak`) | goud `#d4a84b` |
+| Tekst / zacht | crème `#faf8f5` / `#c4beb3` |
+| Borden 1, 2, 3 | antraciet, zand, goud |
+| Primaire knop en lichte knop | goud met zwarte tekst |
+
+Koppen staan in dit palet in goud (regel in `global.css`); op het gouden impactvlak en op de borden volgen ze de inkt van het vlak. Het cursieve slotwoord van de hoofdkop is crème. Voor de knoppen zijn er tokens `--knop-vol(-inkt, -hover)` en `--knop-licht(-inkt)`, en de kwastregel in de hero volgt `--op-kalk` in plaats van `--roet`; in de andere paletten verandert daardoor niets. Laagste contrast: gouden kop op antraciet 4,9:1.
+
 ## Typography
 
 **Display Font:** Vollkorn (fallback 'Hoefler Text', Georgia, serif), variabel 400 tot 900, met echte cursief

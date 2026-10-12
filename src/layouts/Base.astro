@@ -3,7 +3,7 @@ import '../styles/global.css';
 import { talen, taalCodes, standaardTaal } from '../i18n/talen';
 
 /* `palet` zet een ander kleurenpalet op de pagina (zie tokens.css). */
-interface Props { taal?: string; titel?: string; omschrijving?: string; palet?: 'onno' }
+interface Props { taal?: string; titel?: string; omschrijving?: string; palet?: 'onno' | 'onno-donker' }
 const { taal = standaardTaal, titel, omschrijving, palet } = Astro.props;
 const huidige = talen[taal as keyof typeof talen] ?? talen[standaardTaal];
 const kopTitel = titel ?? huidige.content.meta.titel;
@@ -22,7 +22,7 @@ const kopOmschrijving = omschrijving ?? huidige.content.meta.omschrijving;
     <meta property="og:description" content={kopOmschrijving} />
     <meta property="og:locale" content={huidige.htmlLang.replace('-', '_')} />
     <meta property="og:type" content="website" />
-    <meta name="theme-color" content={palet === 'onno' ? '#faf8f5' : '#ede5d3'} />
+    <meta name="theme-color" content={{ onno: '#faf8f5', 'onno-donker': '#1a1a1a' }[palet ?? ''] ?? '#ede5d3'} />
     {taalCodes.map((code) => (
       <link rel="alternate" hreflang={talen[code].htmlLang} href={new URL(talen[code].pad, Astro.site)} />
     ))}

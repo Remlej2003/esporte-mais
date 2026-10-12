@@ -59,6 +59,12 @@ h1, h2, h3, h4 {
   text-wrap: balance;
 }
 
+/* Donker palet: koppen in goud, zoals op onnoraadsen.nl. Op een vlak dat
+   zelf goud of licht geverfd is (impact, borden) volgt de kop de inkt van
+   dat vlak. */
+:root[data-palet='onno-donker'] :is(h1, h2, h3, h4) { color: var(--lak); }
+:root[data-palet='onno-donker'] :is(.doelen, .bord) :is(h1, h2, h3, h4) { color: inherit; }
+
 p { text-wrap: pretty; }
 
 strong { font-weight: 700; }
