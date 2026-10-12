@@ -2,7 +2,7 @@
 /* Stijlvoorbeeld voor de opdrachtgever: dezelfde inhoud als de startpagina,
    in de vormtaal van onnoraadsen.nl (Bebas Neue, Montserrat, goud, haarlijnen,
    genummerde kaarten). Twee thema's:
-   - `licht`: crème en wit, goud als accent, salie als tweede kleur.
+   - `licht`: dezelfde opbouw en hetzelfde palet als onnoraadsen.nl, op crème.
    - `onno`: volledig de stijl van onnoraadsen.nl, donker met goud.
    Staat los van Base.astro en de ontwerptokens van de huidige site, zodat een
    keuze voor of tegen een voorbeeld niets aan de live pagina verandert. */
@@ -81,11 +81,9 @@ const nr = (i: number) => String(i + 1).padStart(2, '0');
     <main>
       <!-- Hero -->
       <section id="top" class="hero">
-        {thema === 'onno' && (
-          <div class="hero__beeld">
-            <Image src={hellingFoto} alt="" widths={[800, 1100]} sizes="100vw" loading="eager" />
-          </div>
-        )}
+        <div class="hero__beeld">
+          <Image src={hellingFoto} alt="" widths={[800, 1100]} sizes="100vw" loading="eager" />
+        </div>
         <div class="rij hero__rij">
           <div class="hero__tekst">
             <p class="kicker">MAIS ESPORTE · an international movement</p>
@@ -98,11 +96,6 @@ const nr = (i: number) => String(i + 1).padStart(2, '0');
               <a href="#aanpak" class="knop knop--lijn">{t.hero.actieTweede}</a>
             </div>
           </div>
-          {thema === 'licht' && (
-            <figure class="hero__foto">
-              <Image src={hellingFoto} alt={t.hero.foto.alt} widths={[500, 800, 1100]} sizes="(max-width: 60rem) 90vw, 40vw" loading="eager" />
-            </figure>
-          )}
         </div>
       </section>
 
@@ -263,7 +256,7 @@ const nr = (i: number) => String(i + 1).padStart(2, '0');
           <h3 class="kleinkop kleinkop--midden">{t.partner.bordenKop}</h3>
           <div class="tiers">
             {t.partner.borden.map((b, i) => (
-              <article class="kaart tier" style={`--tier:${tierKleur[i]}`}>
+              <article class={`kaart tier tier--${i + 1}`} style={`--tier:${tierKleur[i]}`}>
                 <div class="tier__kop">
                   <span class="nr">{nr(i)}</span>
                   <h4 class="tier__naam">{b.naam}</h4>
@@ -413,26 +406,32 @@ const nr = (i: number) => String(i + 1).padStart(2, '0');
     --tier-2: #9caf88;
     --tier-3: #c87b5a;
     --band-overlay: rgba(26, 26, 26, 0.68);
+    --hero-eind: #1a1a1a;
   }
+  /* Licht: hetzelfde palet als onnoraadsen.nl (cream, sand, goud,
+     charcoal, soft-black), alleen met crème als ondergrond. Goud op crème
+     is te zwak voor tekst, dus koppen en kleine tekst gebruiken de donkere
+     goudtinten; het heldere goud blijft voor lijnen, cijfers en knoppen. */
   [data-thema='licht'] {
     --bg: #faf8f5;
-    --bg-alt: #f1ede5;
+    --bg-alt: #f2eee7;
     --kaart: #ffffff;
-    --rand: rgba(184, 144, 61, 0.22);
-    --rand-sterk: rgba(184, 144, 61, 0.6);
-    --tekst: #2b2b2b;
-    --tekst-zacht: #635d53;
-    --kop: #1a1a1a;
+    --rand: rgba(212, 168, 75, 0.3);
+    --rand-sterk: rgba(184, 144, 61, 0.65);
+    --tekst: #3d3d3d;
+    --tekst-zacht: #5e594f;
+    --kop: #a67f2e;
     --goud: #d4a84b;
-    --goud-tekst: #9a7426;
+    --goud-tekst: #8a6820;
     --op-goud: #1a1a1a;
-    --kopbalk: rgba(250, 248, 245, 0.95);
-    --impact-bg: #eef1e9;
+    --kopbalk: rgba(250, 248, 245, 0.96);
+    --impact-bg: #f2eee7;
     --contact-bg: #1a1a1a;
     --tier-1: #d4a84b;
-    --tier-2: #7f9a6c;
-    --tier-3: #c87b5a;
-    --band-overlay: rgba(26, 26, 26, 0.55);
+    --tier-2: #b8903d;
+    --tier-3: #d4a84b;
+    --band-overlay: rgba(26, 26, 26, 0.62);
+    --hero-eind: rgba(26, 26, 26, 0.74);
   }
 
   /* ── Basis ───────────────────────────────────────────────── */
@@ -506,7 +505,6 @@ const nr = (i: number) => String(i + 1).padStart(2, '0');
     transition: border-color 0.3s;
   }
   .kaart:hover { border-color: var(--rand-sterk); }
-  [data-thema='licht'] .kaart { box-shadow: 0 1px 2px rgba(26, 26, 26, 0.04), 0 12px 32px -18px rgba(26, 26, 26, 0.18); }
 
   /* Knoppen: rechthoekig met lichte afronding en spatiering, zoals bij Onno */
   .knop {
@@ -560,8 +558,8 @@ const nr = (i: number) => String(i + 1).padStart(2, '0');
   }
   .kop__rij { display: flex; align-items: center; gap: 2rem; min-height: 4.75rem; }
   .logo { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--goud); text-decoration: none; font-size: 1.7rem; line-height: 1; }
-  [data-thema='licht'] .logo { color: #1a1a1a; }
-  [data-thema='licht'] .logo svg { color: #c87b5a; }
+  [data-thema='licht'] .logo { color: #a67f2e; }
+  [data-thema='licht'] .menu a { color: #3d3d3d; }
   .logo svg { width: 2rem; height: auto; }
   .menu { display: flex; flex-wrap: wrap; gap: 0.4rem 1.6rem; margin-left: auto; }
   .menu a {
@@ -582,33 +580,24 @@ const nr = (i: number) => String(i + 1).padStart(2, '0');
   .hero__intro { font-size: clamp(1.1rem, 1.7vw, 1.3rem); line-height: 1.6; font-weight: 400; }
   .hero__geloof { margin-top: 1rem; color: var(--tekst-zacht); font-weight: 300; }
 
-  [data-thema='onno'] .hero__beeld { position: absolute; inset: 0; }
-  [data-thema='onno'] .hero__beeld img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
-  [data-thema='onno'] .hero__beeld::after {
+  .hero__beeld { position: absolute; inset: 0; }
+  .hero__beeld img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
+  .hero__beeld::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(26, 26, 26, 0.55), rgba(26, 26, 26, 0.78) 60%, #1a1a1a);
+    background: linear-gradient(180deg, rgba(26, 26, 26, 0.55), rgba(26, 26, 26, 0.76) 60%, var(--hero-eind));
   }
-  [data-thema='onno'] .hero__rij { min-height: min(52rem, 88vh); justify-items: center; text-align: center; }
-  [data-thema='onno'] .hero__tekst { max-width: 56rem; }
-  [data-thema='onno'] .hero__kop { color: #d4a84b; }
-  [data-thema='onno'] .hero__kop .goud { color: #faf8f5; }
-  [data-thema='onno'] .hero__intro { color: rgba(250, 248, 245, 0.9); }
-  [data-thema='onno'] .hero .knoppen { justify-content: center; }
-
-  [data-thema='licht'] .hero { background: linear-gradient(180deg, #faf8f5, #f1ede5); }
-  [data-thema='licht'] .hero__rij { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); }
-  [data-thema='licht'] .hero .haar { margin-left: 0; width: 4rem; background: var(--goud); }
-  [data-thema='licht'] .hero__foto { position: relative; }
-  [data-thema='licht'] .hero__foto::before {
-    content: '';
-    position: absolute;
-    inset: 1.25rem -1.25rem -1.25rem 1.25rem;
-    border: 2px solid var(--goud);
-    border-radius: 0.8rem;
-  }
-  [data-thema='licht'] .hero__foto img { position: relative; border-radius: 0.8rem; aspect-ratio: 4 / 5; object-fit: cover; width: 100%; }
+  .hero__rij { min-height: min(52rem, 88vh); justify-items: center; text-align: center; }
+  .hero__tekst { max-width: 56rem; }
+  .hero__kop { color: #d4a84b; }
+  .hero__kop .goud { color: #faf8f5; }
+  .hero .kicker { color: #e8c97b; }
+  .hero__intro { color: rgba(250, 248, 245, 0.92); }
+  .hero__geloof { color: rgba(250, 248, 245, 0.75); }
+  .hero .knoppen { justify-content: center; }
+  .hero .knop--lijn { color: #faf8f5; border-color: rgba(232, 201, 123, 0.6); }
+  .hero .knop--lijn:hover { color: #e8c97b; border-color: #e8c97b; }
 
   /* ── Blokken ─────────────────────────────────────────────── */
   .blok { padding-block: clamp(4.5rem, 9vw, 7.5rem); }
@@ -712,7 +701,16 @@ const nr = (i: number) => String(i + 1).padStart(2, '0');
   .tier__kop { margin-inline: calc(clamp(1.25rem, 2.5vw, 2rem) * -1); padding: 1.6rem clamp(1.25rem, 2.5vw, 2rem) 1.4rem; border-top: 5px solid var(--tier); background: color-mix(in srgb, var(--tier) 12%, transparent); }
   .tier__naam { font-size: 2.1rem; line-height: 1; color: var(--kop); margin-top: 0.4rem; }
   .tier__werkwoord { font-size: 0.8rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--tier); font-weight: 600; }
-  [data-thema='licht'] .tier__werkwoord { color: color-mix(in srgb, var(--tier) 75%, #1a1a1a); }
+  [data-thema='licht'] .tier__werkwoord { color: #8a6820; }
+  [data-thema='licht'] .tier--1 .tier__kop { background: #f4efe6; }
+  [data-thema='licht'] .tier--2 .tier__kop { background: rgba(212, 168, 75, 0.16); }
+  [data-thema='licht'] .tier--3 .tier__kop { background: #2b2b2b; color: #faf8f5; }
+  [data-thema='licht'] .tier--3 .tier__naam,
+  [data-thema='licht'] .tier--3 .tier__werkwoord,
+  [data-thema='licht'] .tier--3 .nr { color: #d4a84b; }
+  [data-thema='licht'] .tier--3 .tier__voor { color: rgba(250, 248, 245, 0.72); }
+  [data-thema='licht'] .tier--3 { border-color: rgba(184, 144, 61, 0.55); }
+  [data-thema='licht'] .stat__getal { color: var(--kop); }
   .tier__bedrag { margin-top: 1rem; font-size: 1.9rem; line-height: 1; }
   .tier__voor { margin-top: 0.4rem; font-size: 0.85rem; color: var(--tekst-zacht); }
   .tier__basis { font-weight: 600; font-size: 0.92rem; }
@@ -751,7 +749,7 @@ const nr = (i: number) => String(i + 1).padStart(2, '0');
   @media (max-width: 60rem) {
     .menu { display: none; }
     .kop__rij { justify-content: space-between; }
-    [data-thema='licht'] .hero__rij, .twee { grid-template-columns: minmax(0, 1fr); }
+    .twee { grid-template-columns: minmax(0, 1fr); }
     .gevolgen { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .nummers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -759,7 +757,6 @@ const nr = (i: number) => String(i + 1).padStart(2, '0');
     .stats li:last-child { grid-column: 1 / -1; }
     .tiers { grid-template-columns: minmax(0, 1fr); }
     .voet__rij { grid-template-columns: minmax(0, 1fr); }
-    [data-thema='licht'] .hero__foto { max-width: 30rem; margin-right: 1.25rem; }
   }
   @media (max-width: 40rem) {
     .lus, .galerij { grid-template-columns: minmax(0, 1fr); }
