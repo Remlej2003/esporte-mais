@@ -12,8 +12,10 @@ interface Props {
   /* Het contentbestand van deze taal. Dezelfde vorm voor nl, en en pt. */
   t: any;
   taal: string;
+  /* Optioneel ander kleurenpalet, alleen voor de kleurvoorbeeldpagina. */
+  palet?: 'onno';
 }
-const { t, taal } = Astro.props;
+const { t, taal, palet } = Astro.props;
 
 import veldFoto from '../images/community-veld.jpg';
 import hellingFoto from '../images/helling-omhoog.jpg';
@@ -41,7 +43,7 @@ const centrumFotos = t.centrum.fotos.map((f: any, i: number) => ({ ...f, ...cent
 const centrumRijen = [centrumFotos.slice(0, 2), centrumFotos.slice(2, 4)];
 ---
 
-<Base taal={taal} titel={t.meta.titel} omschrijving={t.meta.omschrijving}>
+<Base taal={taal} titel={t.meta.titel} omschrijving={t.meta.omschrijving} palet={palet}>
   <a href="#inhoud" class="overslaan">{t.nav.overslaan}</a>
   <Nav t={t} taal={taal} />
 
@@ -320,9 +322,9 @@ const centrumRijen = [centrumFotos.slice(0, 2), centrumFotos.slice(2, 4)];
             /* Verf en inkt uit één bron, zodat een vierde bord niet stilletjes
                zonder kleur valt. */
             const lagen = [
-              { verf: 'var(--goud)', inkt: 'var(--roet)' },
-              { verf: 'var(--veld)', inkt: 'var(--op-veld)' },
-              { verf: 'var(--lak)', inkt: 'var(--op-lak)' },
+              { verf: 'var(--bord-1)', inkt: 'var(--bord-1-inkt)' },
+              { verf: 'var(--bord-2)', inkt: 'var(--bord-2-inkt)' },
+              { verf: 'var(--bord-3)', inkt: 'var(--bord-3-inkt)' },
             ];
             const { verf, inkt } = lagen[i % lagen.length];
             return (
@@ -562,7 +564,7 @@ const centrumRijen = [centrumFotos.slice(0, 2), centrumFotos.slice(2, 4)];
     max-width: 13ch;
   }
   .hero__kop em {
-    color: var(--lak);
+    color: var(--accent-kop);
     font-weight: 700;
   }
   /* De kwastregel loopt door achter de knoppen: de pil staat op de
@@ -1048,7 +1050,7 @@ const centrumRijen = [centrumFotos.slice(0, 2), centrumFotos.slice(2, 4)];
     grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
     gap: var(--s6) clamp(var(--s6), 4vw, var(--s8));
   }
-  .voet__openkop { color: var(--lak); }
+  .voet__openkop { color: var(--accent-tekst); }
   .voet__lijst {
     margin-top: var(--s4);
     display: grid;

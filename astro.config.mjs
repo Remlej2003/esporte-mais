@@ -11,4 +11,9 @@ export default defineConfig({
     routing: { prefixDefaultLocale: false },
   },
   build: { inlineStylesheets: 'always' },
+  // De eerdere stijlvoorbeelden zijn vervangen door het kleurvoorbeeld.
+  redirects: {
+    '/voorbeeld-licht': '/voorbeeld-kleuren/',
+    '/voorbeeld-onno': '/voorbeeld-kleuren/',
+  },
 });

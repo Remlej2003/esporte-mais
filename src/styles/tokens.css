@@ -85,6 +85,15 @@
   --op-veld-zacht: #b8cfc4;
   --op-lak: #f7e7df;
 
+  /* Betekenis bovenop de verf. Standaard precies de huidige kleuren;
+     een palet hieronder kan ze los van de verfpotten zetten. */
+  --accent-kop: var(--lak);       /* het cursieve slotwoord van de hoofdkop */
+  --accent-tekst: var(--lak);     /* kleine accenttekst op kalk */
+  --bord-1: var(--goud);  --bord-1-inkt: var(--roet);
+  --bord-2: var(--veld);  --bord-2-inkt: var(--op-veld);
+  --bord-3: var(--lak);   --bord-3-inkt: var(--op-lak);
+  --theme-kleur: #ede5d3;
+
   /* --- Letters --------------------------------------------- */
   --font-display: 'Vollkorn', 'Hoefler Text', Georgia, serif;
   --font-tekst: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
@@ -153,3 +162,37 @@
   --korrel: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.62' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0.33 0.33 0.33 0 0 0.33 0.33 0.33 0 0 0.33 0.33 0.33 0 0 0 0 0 0 1'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='linear' slope='3.4' intercept='-1.2'/%3E%3CfeFuncG type='linear' slope='3.4' intercept='-1.2'/%3E%3CfeFuncB type='linear' slope='3.4' intercept='-1.2'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E");
   --korrel-sterkte: 0.28;
 }
+
+/* --- Palet: de kleuren van onnoraadsen.nl ----------------------
+   Alleen de verf wisselt; vorm, letters en opbouw blijven Muurschrift.
+   Crème en zand als muur, antraciet en zwart als donkere vlakken,
+   goud als accent. Goud is te licht voor tekst op crème, dus tekst in
+   een accentkleur gebruikt de donkere goudtinten (zie DESIGN.md). */
+:root[data-palet='onno'] {
+  --kalk: #faf8f5;
+  --kalk-diep: #e8e4dc;
+  --kalk-schaduw: #d4cec3;
+  --veld: #3d3d3d;
+  --veld-diep: #1a1a1a;
+  --lak: #d4a84b;
+  --lak-helder: #a67f2e;
+  --goud: #e8c97b;
+  --roet: #1a1a1a;
+
+  --op-kalk: #1a1a1a;
+  --op-kalk-zacht: #5c574f;
+  --op-veld: #faf8f5;
+  --op-veld-zacht: #cfc9be;
+  --op-lak: #1a1a1a;
+
+  --accent-kop: #9a7426;
+  --accent-tekst: #8a6820;
+  --bord-1: #d4a84b;  --bord-1-inkt: #1a1a1a;
+  --bord-2: #3d3d3d;  --bord-2-inkt: #faf8f5;
+  --bord-3: #1a1a1a;  --bord-3-inkt: #faf8f5;
+  --theme-kleur: #faf8f5;
+  /* Op antraciet tekent de korrel zwaarder af dan op groen; iets zachter
+     houdt het zakelijk zonder het pleisterwerk kwijt te raken. */
+  --korrel-sterkte: 0.2;
+}
+

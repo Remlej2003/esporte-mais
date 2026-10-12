@@ -212,6 +212,23 @@ Vijf gescheiden tokens, één per ondergrond. Ze zijn geen variant op elkaar maa
 
 **De Vierde Kleur Regel.** Zonder omlijning moet de verf zelf presence hebben. Zandkleur op kalk haalde ongeveer 1,3:1 en verdween tegen de muur; goud is daarom de vierde verfpot en niet een tint van kalk. Een nieuw geverfd vlak kiest uit `veld`, `veld-diep`, `lak`, `goud` of `kalk-diep`, niet uit iets ertussenin.
 
+### Palet `onno` (kleurvoorbeeld)
+
+Op verzoek van de opdrachtgever bestaat er een tweede palet met alleen de kleuren van onnoraadsen.nl; vorm, letters en opbouw blijven Muurschrift. Het staat in `tokens.css` onder `:root[data-palet='onno']` en is te zien op `/voorbeeld-kleuren/`. `Startpagina` en `Base` nemen een optionele prop `palet="onno"` aan.
+
+| Rol | Standaard | Palet `onno` |
+| --- | --- | --- |
+| Muur (`kalk`) | `#ede5d3` | crème `#faf8f5` |
+| Lichte vlakken (`kalk-diep`) | `#e0d6c0` | zand `#e8e4dc` |
+| Lus en tweede bord (`veld`) | veldgroen | antraciet `#3d3d3d` |
+| Panelen en contact (`veld-diep`) | diep groen | zwart `#1a1a1a` |
+| Doelen, merk, voetrand (`lak`) | menie | goud `#d4a84b` |
+| Streepjes en focus (`lak-helder`) | helder menie | donker goud `#a67f2e` |
+| Accent op donker (`goud`) | goud | licht goud `#e8c97b` |
+| Borden 1, 2, 3 | goud, groen, menie | goud, antraciet, zwart |
+
+Goud is te licht voor tekst op crème. Daarom zijn er twee betekenistokens: `--accent-kop` (het cursieve slotwoord van de hoofdkop, `#9a7426`, 4,0:1) en `--accent-tekst` (kleine accenttekst zoals de voetkopjes, `#8a6820`, 4,9:1). In het standaardpalet wijzen beide naar `lak`. De bordkleuren komen uit `--bord-1` tot en met `--bord-3` met elk een `-inkt`. Alle tekstparen in dit palet halen minimaal 4,5:1; het hoofdkopwoord 4,0:1 op displayformaat. De korrel staat in dit palet op 0.2 in plaats van 0.28, omdat hij op antraciet zwaarder aftekent dan op groen.
+
 ## Typography
 
 **Display Font:** Vollkorn (fallback 'Hoefler Text', Georgia, serif), variabel 400 tot 900, met echte cursief
