@@ -99,7 +99,7 @@ Daarnaast wordt gewerkt aan meer zelfvertrouwen bij jongeren, sterkere communiti
 
 **Voertaal Nederlands**, gericht op een Nederlands zakelijk publiek. De toon in het bronmateriaal is stellig en waardig, zonder liefdadigheidssentiment: potentieel boven medelijden, vertrouwen boven hulp. Zinnen als "Niet betrokken vanaf de zijlijn, maar midden in de impact" zetten het register.
 
-**De designschets is bindend als stijlverwachting.** De opdrachtgever verwacht in grote lijnen de richting van de eerder gedeelde schets: gebroken wit, diepgroen en koraaloranje, een display-schreefletter, gebogen fotovormen en pill-vormige knoppen. Dat is een vastgelegde referentie, geen suggestie. De verzonnen inhoud daarin (partnerbedragen, het citaat) valt daar nadrukkelijk buiten.
+**De kleuren zijn die van onnoraadsen.nl, op zwart.** Op 13 oktober 2026 is uit twee kleurvoorbeelden de donkere stijl gekozen: zwart, antraciet, goud en crème, zoals onnoraadsen.nl en de PDF's van MAIS ESPORTE zelf. Dat vervangt het gebroken wit, diepgroen en koraaloranje van de eerste schets. De rest van die schets blijft de stijlverwachting: een display-schreefletter, gebogen fotovormen en pill-vormige knoppen. De verzonnen inhoud daarin (partnerbedragen, het citaat) valt daar nadrukkelijk buiten.
 
 **Geen slachtofferframing.** Dit is de scherpste inhoudelijke randvoorwaarde: het bronmateriaal beschrijft de omstandigheden eerlijk en hard, maar positioneert jongeren consequent als dragers van potentieel. Beeld en tekst moeten dat volhouden.
 

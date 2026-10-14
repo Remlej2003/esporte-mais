@@ -1,8 +1,0 @@
----
-/* Kleurvoorbeeld voor de opdrachtgever: de startpagina zoals hij is, met
-   alleen de kleuren van onnoraadsen.nl (palet `onno` in tokens.css). */
-import Startpagina from '../../layouts/Startpagina.astro';
-import { talen, standaardTaal } from '../../i18n/talen';
----
-
-<Startpagina t={talen[standaardTaal].content} taal={standaardTaal} palet="onno" />

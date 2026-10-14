@@ -57,11 +57,14 @@ basis = H / 2 + cap / 2            # kapitalen gecentreerd op het merk
 d, eind = tekstpad(naamfont, 'MAIS ESPORTE', grootte, 48 + gat, basis, 0.14)
 breedte = eind + 2
 
-# (beeldmerk, naam). De standaard is zoals op de site: menie merk, zwarte naam.
+# (beeldmerk, naam). De standaard is zoals op de site: gouden merk, crème
+# naam, voor op een donkere achtergrond. `licht` is dezelfde maar met een
+# zwarte naam, voor op wit of crème.
 kleuren = {
-    'standaard': ('#b93a18', '#1e1a16'),
-    'menie': ('#b93a18', '#b93a18'),
-    'zwart': ('#1e1a16', '#1e1a16'),
+    'standaard': ('#d4a84b', '#faf8f5'),
+    'licht': ('#d4a84b', '#1a1a1a'),
+    'goud': ('#d4a84b', '#d4a84b'),
+    'zwart': ('#1a1a1a', '#1a1a1a'),
     'wit': ('#ffffff', '#ffffff'),
 }
 for naam, (k, kt) in kleuren.items():
@@ -79,6 +82,6 @@ for naam, (k, kt) in kleuren.items():
 {MERK.format(k=k)}
 </svg>
 '''
-    if naam != 'standaard':
+    if naam not in ('standaard', 'licht'):
         open(f'{uit}/mais-esporte-beeldmerk-{naam}.svg', 'w').write(beeld)
 print('breedte', round(breedte, 2), 'hoogte', H)

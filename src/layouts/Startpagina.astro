@@ -12,10 +12,8 @@ interface Props {
   /* Het contentbestand van deze taal. Dezelfde vorm voor nl, en en pt. */
   t: any;
   taal: string;
-  /* Optioneel ander kleurenpalet, alleen voor de kleurvoorbeeldpagina. */
-  palet?: 'onno' | 'onno-donker';
 }
-const { t, taal, palet } = Astro.props;
+const { t, taal } = Astro.props;
 
 import veldFoto from '../images/community-veld.jpg';
 import hellingFoto from '../images/helling-omhoog.jpg';
@@ -29,21 +27,24 @@ import centrumKring from '../images/centrum-kring.jpg';
 import centrumGrasveld from '../images/centrum-grasveld.jpg';
 
 /* De vier foto's van het opleidingscentrum, in de volgorde van
-   `centrum.fotos` in het contentbestand. Twee rijen van twee, gespiegeld:
-   breed naast smal, dan smal naast breed. `verhouding` is wat de foto in
-   de rij krijgt; de rij deelt de breedte daar naar, zodat de twee foto's
-   in een rij exact even hoog uitkomen (zie de CSS bij .centrum__rij). */
+   `centrum.fotos` in het contentbestand. De eerste is het overzicht van het
+   terrein: die staat groot onder de kop, in de kolom naast de tekst. De
+   andere drie staan eronder: smal naast breed, dan het grasveld als
+   panorama over de volle breedte. `verhouding` is wat de foto krijgt; in de
+   rij deelt de breedte daar naar, zodat de twee foto's exact even hoog
+   uitkomen (zie de CSS bij .centrum__rij). */
 const centrumBeelden = [
-  { src: centrumTerrein, verhouding: '4 / 3', vlek: 'var(--goud)' },
-  { src: centrumVijver, verhouding: '8 / 9', vlek: 'var(--veld)' },
-  { src: centrumKring, verhouding: '3 / 2', vlek: 'var(--veld)' },
-  { src: centrumGrasveld, verhouding: '2000 / 922', vlek: 'var(--lak-helder)' },
+  { src: centrumTerrein, verhouding: '4 / 3', vlek: 'var(--lak)' },
+  { src: centrumVijver, verhouding: '8 / 9', vlek: 'var(--goud)' },
+  { src: centrumKring, verhouding: '3 / 2', vlek: 'var(--lak)' },
+  { src: centrumGrasveld, verhouding: '2000 / 922', vlek: 'var(--goud)' },
 ];
 const centrumFotos = t.centrum.fotos.map((f: any, i: number) => ({ ...f, ...centrumBeelden[i] }));
-const centrumRijen = [centrumFotos.slice(0, 2), centrumFotos.slice(2, 4)];
+const [centrumOverzicht, ...centrumRest] = centrumFotos;
+const centrumRijen = [centrumRest.slice(0, 2), centrumRest.slice(2)];
 ---
 
-<Base taal={taal} titel={t.meta.titel} omschrijving={t.meta.omschrijving} palet={palet}>
+<Base taal={taal} titel={t.meta.titel} omschrijving={t.meta.omschrijving}>
   <a href="#inhoud" class="overslaan">{t.nav.overslaan}</a>
   <Nav t={t} taal={taal} />
 
@@ -135,10 +136,16 @@ const centrumRijen = [centrumFotos.slice(0, 2), centrumFotos.slice(2, 4)];
          horen hier te landen, bij jongeren leiden jongeren. -->
     <section id="aanpak" class="lus geverfd donker">
       <KwastRand kleur="var(--veld)" positie="boven" />
-      <div class="omhulsel">
-        <h2 class="lus__kop">{t.lus.kop}</h2>
-        <p class="groot maat lus__inleiding">{t.lus.inleiding}</p>
+      <div class="omhulsel lus__raster">
+        <div class="lus__woord">
+          <h2 class="lus__kop">{t.lus.kop}</h2>
+          <p class="groot maat lus__inleiding">{t.lus.inleiding}</p>
+        </div>
 
+        <!-- De foto's zijn klein aangeleverd (het kind 728 bij 546 pixels).
+             Daarom staan de vakken naast de tekst en niet over de volle
+             breedte: kleiner afgebeeld blijven ze scherp. -->
+        <div class="lus__beeld">
         <!-- Eén zin over twee vakken: links wordt de jongere opgeleid,
              rechts wordt het kind begeleid. Twee identieke vakken, want
              het is één beweging. -->
@@ -153,8 +160,8 @@ const centrumRijen = [centrumFotos.slice(0, 2), centrumFotos.slice(2, 4)];
                 vorm="recht"
                 vlek="var(--goud)"
                 verhouding="1 / 1"
-                breedtes={[380, 620]}
-                sizes="(max-width: 54rem) 88vw, 40vw"
+                breedtes={[320, 546, 640]}
+                sizes="(max-width: 34rem) 88vw, (max-width: 62rem) 40vw, 24vw"
                 class="paneel__foto"
               />
               <p class="paneel__bijschrift">{p.bijschrift}</p>
@@ -185,6 +192,7 @@ const centrumRijen = [centrumFotos.slice(0, 2), centrumFotos.slice(2, 4)];
             />
           </svg>
           <p class="lus__sluit">{t.lus.sluit}</p>
+        </div>
         </div>
       </div>
       <KwastRand kleur="var(--veld)" positie="onder" />
@@ -228,6 +236,20 @@ const centrumRijen = [centrumFotos.slice(0, 2), centrumFotos.slice(2, 4)];
       <div class="omhulsel">
         <div class="centrum__raster">
           <h2 class="centrum__kop">{t.centrum.kop}</h2>
+          <!-- Het overzicht van het terrein vult de kolom onder de kop, waar
+               naast de lange tekst anders een leeg vlak stond. -->
+          <Foto
+            src={centrumOverzicht.src}
+            alt={centrumOverzicht.alt}
+            plaat={centrumOverzicht.plaat}
+            vorm="recht"
+            vlek={centrumOverzicht.vlek}
+            verhouding={centrumOverzicht.verhouding}
+            breedtes={[420, 760, 1100]}
+            sizes="(max-width: 62rem) 88vw, 36vw"
+            kwaliteit={64}
+            class="centrum__overzicht"
+          />
           <div class="centrum__woord">
             <p class="groot">{t.centrum.inleiding}</p>
             {t.centrum.alineas.map((a) => <p class="centrum__alinea maat">{a}</p>)}
@@ -246,10 +268,10 @@ const centrumRijen = [centrumFotos.slice(0, 2), centrumFotos.slice(2, 4)];
                   vorm="recht"
                   vlek={f.vlek}
                   verhouding={f.verhouding}
-                  breedtes={[420, 760, 1100]}
-                  sizes="(max-width: 54rem) 88vw, 46vw"
+                  breedtes={[420, 760, 1100, 1600]}
+                  sizes={rij.length === 1 ? '(max-width: 54rem) 88vw, 86vw' : '(max-width: 54rem) 88vw, 52vw'}
                   kwaliteit={64}
-                  class={`centrum__foto centrum__foto--${r * 2 + k + 1}`}
+                  class={`centrum__foto centrum__foto--${r * 2 + k + 2}`}
                 />
               ))}
             </div>
@@ -380,7 +402,7 @@ const centrumRijen = [centrumFotos.slice(0, 2), centrumFotos.slice(2, 4)];
           alt={t.ervaring.foto.alt}
           plaat={t.ervaring.foto.plaat}
           vorm="boog"
-          vlek="var(--veld)"
+          vlek="var(--goud)"
           verhouding="4 / 3"
           breedtes={[450, 760]}
           sizes="(max-width: 62rem) 88vw, 42vw"
@@ -466,7 +488,8 @@ const centrumRijen = [centrumFotos.slice(0, 2), centrumFotos.slice(2, 4)];
           </div>
         </div>
       </div>
-      <div class="omhulsel">
+      <div class="omhulsel voet__noten">
+        <p class="plaat voet__afzender">{t.voet.afzender}</p>
         <p class="plaat voet__noot">{t.voet.fotoNoot}</p>
       </div>
     </footer>
@@ -676,6 +699,14 @@ const centrumRijen = [centrumFotos.slice(0, 2), centrumFotos.slice(2, 4)];
 
   /* ══ De lus ══════════════════════════════════════════════ */
 
+  /* Tekst links, de twee vakken met het circuit rechts. Over de volle
+     breedte werden de aangeleverde foto's te groot opgeblazen en dus wazig. */
+  .lus__raster {
+    display: grid;
+    grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+    gap: clamp(var(--s6), 5vw, var(--s9));
+    align-items: center;
+  }
   .lus__kop { font-size: var(--t-h2); max-width: 14ch; }
   .lus__inleiding { margin-top: var(--s5); }
 
@@ -688,8 +719,7 @@ const centrumRijen = [centrumFotos.slice(0, 2), centrumFotos.slice(2, 4)];
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: auto auto;
     align-items: stretch;
-    gap: 0 clamp(var(--s4), 3vw, var(--s6));
-    margin-top: clamp(var(--s7), 6vw, var(--s9));
+    gap: 0 clamp(var(--s4), 2.5vw, var(--s5));
   }
   /* Een subgrid legt foto en zin van beide vakken op dezelfde twee rijen.
      Het fotobijschrift is links langer dan rechts; zonder subgrid begint
@@ -706,7 +736,7 @@ const centrumRijen = [centrumFotos.slice(0, 2), centrumFotos.slice(2, 4)];
   }
   .paneel__bijschrift {
     padding-top: var(--s5);
-    font-size: var(--t-h3);
+    font-size: var(--t-h4);
     font-family: var(--font-display);
     font-weight: 700;
     line-height: 1.15;
@@ -766,20 +796,31 @@ const centrumRijen = [centrumFotos.slice(0, 2), centrumFotos.slice(2, 4)];
   /* ══ Het opleidingscentrum ═══════════════════════════════ */
 
   .centrum { padding-block: var(--sectie-vlak); }
+  /* Links de kop met daaronder het overzicht van het terrein, rechts de
+     tekst over twee rijen. Zonder de foto stond naast de lange tekst een
+     leeg vlak onder de kop. */
   .centrum__raster {
     display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-    gap: clamp(var(--s6), 5vw, var(--s9));
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    grid-template-areas:
+      'kop woord'
+      'foto woord';
+    grid-template-rows: auto 1fr;
+    gap: clamp(var(--s6), 3vw, var(--s7)) clamp(var(--s6), 5vw, var(--s9));
     align-items: start;
   }
-  .centrum__kop { font-size: var(--t-h2); max-width: 12ch; }
-  .centrum__alinea { margin-top: var(--s5); }
+  /* "opleidingscentrum." is één lang woord: in de smalle kolom schaalt de
+     kop mee met het scherm, anders loopt hij de tekstkolom in. */
+  .centrum__kop { grid-area: kop; font-size: min(var(--t-h2), 4.3vw); }
+  .centrum__raster :global(.centrum__overzicht) { grid-area: foto; }
+  .centrum__woord { grid-area: woord; }
+  .centrum__alinea { margin-top: var(--s5); color: var(--op-kalk-zacht); }
 
-  /* Twee rijen van twee. Elke foto groeit naar rato van zijn
-     beeldverhouding (flex-grow = breedte gedeeld door hoogte, basis 0),
-     dus de twee foto's in een rij komen exact even hoog uit en de
-     bijschriften beginnen op dezelfde lijn. De getallen horen bij de
-     `verhouding` die het template meegeeft: 4/3, 8/9, 3/2 en 2000/922. */
+  /* Eerst een rij van twee, dan het grasveld als panorama. In een rij
+     groeit elke foto naar rato van zijn beeldverhouding (flex-grow =
+     breedte gedeeld door hoogte, basis 0), dus de twee foto's komen exact
+     even hoog uit en de bijschriften beginnen op dezelfde lijn. De getallen
+     horen bij de `verhouding` die het template meegeeft: 8/9 en 3/2. */
   .centrum__fotos {
     display: grid;
     gap: clamp(var(--s6), 4vw, var(--s8));
@@ -790,11 +831,9 @@ const centrumRijen = [centrumFotos.slice(0, 2), centrumFotos.slice(2, 4)];
     align-items: flex-start;
     gap: clamp(var(--s5), 3vw, var(--s7));
   }
-  .centrum__rij :global(.centrum__foto) { min-width: 0; }
-  .centrum__rij :global(.centrum__foto--1) { flex: 1.3333 1 0; }
+  .centrum__rij :global(.centrum__foto) { min-width: 0; flex: 1 1 0; }
   .centrum__rij :global(.centrum__foto--2) { flex: 0.8889 1 0; }
   .centrum__rij :global(.centrum__foto--3) { flex: 1.5 1 0; }
-  .centrum__rij :global(.centrum__foto--4) { flex: 2.1692 1 0; }
 
   /* Kopjes die eerder als sjabloonplaatje waren opgemaakt zonder ooit
      iets aan te duiden. Een kop hoort een kop te zijn. */
@@ -1007,8 +1046,10 @@ const centrumRijen = [centrumFotos.slice(0, 2), centrumFotos.slice(2, 4)];
 
   /* ══ Contact ═════════════════════════════════════════════ */
 
-  .contact__binnen { max-width: 52rem; }
-  .contact__kop { font-size: var(--t-h2); }
+  /* Links uitgelijnd met de rest van de pagina; alleen de regels zelf
+     krijgen een maximale breedte. Eerder stond het hele blok gecentreerd
+     en sprong de linkerkant hier als enige naar binnen. */
+  .contact__kop { font-size: var(--t-h2); max-width: 52rem; }
   .contact__binnen > .groot { margin-top: var(--s5); }
   .contact__uitnodiging {
     margin-top: var(--s5);
@@ -1070,7 +1111,17 @@ const centrumRijen = [centrumFotos.slice(0, 2), centrumFotos.slice(2, 4)];
     opacity: 0.5;
   }
   .voet__lijst--links a { color: var(--op-kalk); }
-  .voet__noot { margin-top: var(--s7); color: var(--op-kalk-zacht); opacity: 0.7; }
+  /* De juridische afzender en de herkomst van de foto's: onderaan, klein,
+     maar wel te vinden. */
+  .voet__noten {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--s2) var(--s6);
+    margin-top: var(--s7);
+  }
+  .voet__afzender { color: var(--op-kalk-zacht); }
+  .voet__noot { color: var(--op-kalk-zacht); opacity: 0.7; }
 
   /* ══ Smallere schermen ═══════════════════════════════════ */
 
@@ -1083,10 +1134,16 @@ const centrumRijen = [centrumFotos.slice(0, 2), centrumFotos.slice(2, 4)];
     .visie__raster,
     .partner__hoofd,
     .centrum__raster,
+    .lus__raster,
     .documenten__raster,
     .voet__raster { grid-template-columns: minmax(0, 1fr); }
 
     .hero__kop { max-width: 16ch; }
+    /* Gestapeld blijven de vakken op schaal: niet breder dan nodig, zodat
+       de foto's niet weer groter worden dan ze zijn aangeleverd. */
+    .lus__beeld { max-width: 46rem; }
+    .centrum__raster { grid-template-areas: 'kop' 'woord' 'foto'; grid-template-rows: none; }
+    .centrum__kop { font-size: var(--t-h2); }
     .aanpak__raster :global(.aanpak__foto) { position: static; }
     .ervaring__raster :global(.ervaring__foto) { order: 2; }
     .bord { grid-template-columns: minmax(0, 1fr); gap: var(--s5); }

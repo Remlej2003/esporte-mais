@@ -1,21 +1,22 @@
 ---
 name: MAIS ESPORTE
-description: Muurschrift. Eén doorlopende gekalkte muur met geverfde vlakken, gekwaste randen en een geschilderde telling.
+description: Muurschrift in de kleuren van onnoraadsen.nl. Eén doorlopende zwarte muur met geverfde vlakken in antraciet en goud, gekwaste randen en een geschilderde telling.
 colors:
-  kalk: "#ede5d3"
-  kalk-diep: "#e0d6c0"
-  kalk-schaduw: "#d3c7ad"
-  veld: "#14483a"
-  veld-diep: "#0e3529"
-  lak: "#b93a18"
-  lak-helder: "#d9481f"
-  goud: "#e8a81c"
-  roet: "#1e1a16"
-  op-kalk: "#1e1a16"
-  op-kalk-zacht: "#5a4e3c"
-  op-veld: "#ede5d3"
-  op-veld-zacht: "#b8cfc4"
-  op-lak: "#f7e7df"
+  kalk: "#1a1a1a"
+  kalk-diep: "#242322"
+  kalk-schaduw: "#3d3d3d"
+  veld: "#353433"
+  veld-diep: "#2a2928"
+  lak: "#d4a84b"
+  lak-helder: "#d4a84b"
+  goud: "#e8c97b"
+  roet: "#1a1a1a"
+  op-kalk: "#faf8f5"
+  op-kalk-zacht: "#c9c2b6"
+  op-veld: "#faf8f5"
+  op-veld-zacht: "#d2cbbf"
+  op-lak: "#1a1a1a"
+  zand: "#e8e4dc"
 typography:
   display:
     fontFamily: "Vollkorn, 'Hoefler Text', Georgia, serif"
@@ -90,14 +91,14 @@ spacing:
   rand: "clamp(1.25rem, 5vw, 4rem)"
 components:
   knop-vol:
-    backgroundColor: "{colors.veld}"
-    textColor: "{colors.op-veld}"
+    backgroundColor: "{colors.lak}"
+    textColor: "{colors.roet}"
     rounded: "{rounded.pil}"
     padding: "0.85em 1.5em"
     typography: "{typography.klein}"
   knop-vol-hover:
-    backgroundColor: "{colors.veld-diep}"
-    textColor: "{colors.op-veld}"
+    backgroundColor: "{colors.goud}"
+    textColor: "{colors.roet}"
   knop-lijn:
     backgroundColor: "transparent"
     textColor: "{colors.op-kalk}"
@@ -105,7 +106,7 @@ components:
     padding: "0.85em 1.5em"
     typography: "{typography.klein}"
   knop-licht:
-    backgroundColor: "{colors.kalk}"
+    backgroundColor: "{colors.lak}"
     textColor: "{colors.roet}"
     rounded: "{rounded.pil}"
     padding: "0.85em 1.5em"
@@ -131,8 +132,8 @@ components:
     rounded: "0"
     padding: "clamp(1rem, 2.2vw, 2rem)"
   bord:
-    backgroundColor: "{colors.goud}"
-    textColor: "{colors.roet}"
+    backgroundColor: "{colors.veld}"
+    textColor: "{colors.op-veld}"
     rounded: "0"
     padding: "clamp(1.5rem, 3vw, 3rem)"
   etiket:
@@ -161,9 +162,9 @@ components:
 
 **Creative North Star: "Muurschrift"**
 
-De hele pagina is één handgeschilderde muur op een Braziliaans buurtveld. Geen scherm met blokken erop, maar gekalkt pleisterwerk waar iemand met een kwast op geschreven heeft. Secties zijn plekken op die muur, geen losse componenten: de kalk (`kalk`, `#ede5d3`) loopt onafgebroken door van de kop tot de voet, en de korrellaag ligt over alles heen, ook over de geverfde vlakken. Dat is wat het één oppervlak maakt in plaats van gestapelde kleurvlakken.
+De hele pagina is één handgeschilderde muur op een Braziliaans buurtveld. Geen scherm met blokken erop, maar pleisterwerk waar iemand met een kwast op geschreven heeft. Sinds 13 oktober 2026 is die muur zwart, in de kleuren van onnoraadsen.nl: uit twee kleurvoorbeelden is de donkere stijl gekozen. Secties zijn plekken op die muur, geen losse componenten: de muur (`kalk`, `#1a1a1a`) loopt onafgebroken door van de kop tot de voet, en de korrellaag ligt over alles heen, ook over de geverfde vlakken. Dat is wat het één oppervlak maakt in plaats van gestapelde kleurvlakken.
 
-Wat erop staat is geverfd, niet gekaderd. Een vlak in veldgroen of menieoranje eindigt in een kwasthaal met ongelijke amplitude, niet in een rechte lijn of een afgeronde hoek. Er zijn nergens kaarten, nergens omlijningen om inhoud heen, nergens schaduwen. De dichtheid is ruim maar niet leeg: tekst krijgt binnen de verf meer lucht dan erbuiten, omdat een letter de gekwaste rand niet mag raken.
+Wat erop staat is geverfd, niet gekaderd. Een vlak in antraciet of goud eindigt in een kwasthaal met ongelijke amplitude, niet in een rechte lijn of een afgeronde hoek. Er zijn nergens kaarten, nergens omlijningen om inhoud heen, nergens schaduwen. De dichtheid is ruim maar niet leeg: tekst krijgt binnen de verf meer lucht dan erbuiten, omdat een letter de gekwaste rand niet mag raken.
 
 De toon is stellig en waardig, nooit zielig. Dat is een productafspraak (potentieel boven medelijden) die zich visueel vertaalt: jongeren staan op foto's als hoofdrolspelers in een geverfde lijst, de vijfjaardoelen staan als een met de hand bijgehouden telling op de muur en niet als een statistiekenbalk in kolommen, en de partnertiers zijn de geschilderde reclameborden langs de rand van het veld.
 
@@ -173,78 +174,52 @@ De toon is stellig en waardig, nooit zielig. Dat is een productafspraak (potenti
 - Gekwaste randen in plaats van omlijning, radius of schaduw
 - Gemeten pleisterkorrel over de volle paginahoogte, in `overlay`
 - Twee handen: Vollkorn schildert, Archivo sjabloneert
-- Vier verfkleuren (kalk, veld, lak, goud) plus kwastzwart, meer niet
+- Zwart, antraciet, goud en crème, de kleuren van onnoraadsen.nl, meer niet
 - Eén geregisseerd bewegingsmoment op de hele pagina
 
 ## Colors
 
-Vijf verven die je op zo'n muur werkelijk vindt: kalk, veldgroen, menieoranje, goud en kwastzwart. Geen kleur is decoratief; elke kleur is een verfpot.
+De kleuren van onnoraadsen.nl op een zwarte muur: zwart als ondergrond, antraciet voor de geverfde vlakken, goud als verf en crème als tekst. De tokennamen zijn de rollen uit Muurschrift gebleven (`kalk` is de muur, `veld` het scharnier, `lak` het accent), zodat componenten niet hoeven te weten welke verf erin zit. Alles staat in `tokens.css`; er is geen tweede palet meer.
 
 ### Primary
 
-- **Veldgroen** (`veld`): de kleur van het speelveld en van het scharnier van de pagina. Draagt de peer-lus-sectie, het tweede partnerbord (Impact partner), de primaire pil en het merkvlak. `veld-diep` is dezelfde pot dieper: de twee panelen binnen de lus, de contactsectie, en de hoverstand van de primaire knop.
-- **Menieoranje** (`lak`): de accentverf. Het cursieve slotwoord van de hoofdkop, de doelensectie, het derde partnerbord (Strategic partner), de bovenrand van de voet, de huidige taal in de schakelaar en het merk in de navigatiebalk. `lak-helder` is uitsluitend interactieaccent: focusring, streepjes voor lijstitems, de onderstreping bij hover in de navigatie, en de caret.
+- **Goud** (`lak`, `#d4a84b`): de verf van dit palet. Alle koppen (regel in `global.css`), de primaire en de lichte knop, het impactblok, het derde partnerbord (Strategic partner), het merk, de bovenrand van de voet, de streepjes voor lijstitems, de focusring en de huidige taal. `lak-helder` is hier dezelfde kleur; de naam blijft voor het interactieaccent.
+- **Antraciet** (`veld`, `#353433`): het scharnier van de pagina. Draagt de lus en het eerste partnerbord (Community partner). `veld-diep` (`#2a2928`) is dezelfde pot dieper: de twee panelen binnen de lus en de contactsectie.
 
 ### Secondary
 
-- **Goud** (`goud`): de vierde huiskleur, en de enige die op kalk én op donker overeind blijft. Draagt het circuit van de lus, het eerste partnerbord (Community partner), de slotzin van de lus, de labels bij de contactgegevens, de streepjes op donkere vlakken en de selectiekleur van de browser.
+- **Licht goud** (`goud`, `#e8c97b`): het accent op donkere vlakken. Het circuit van de lus, de slotzin van de lus, de uitnodiging en de labels in de contactsectie, de streepjes op donkere vlakken, de hoverstand van de knoppen en de selectiekleur van de browser.
+- **Zand** (`#e8e4dc`): uitsluitend het tweede partnerbord (Impact partner), zodat de drie borden oplopen van antraciet via zand naar goud.
 
 ### Neutral
 
-- **Kalk** (`kalk`): de muur zelf. Achtergrond van `body`, van de navigatieband, van de lichte knop en van de `theme-color` van de browser.
-- **Diepe kalk** (`kalk-diep`): dezelfde muur, één tint gezakt. Onderscheidt de twee lichte geverfde vlakken (aanpak en visie) van de kale kalk eromheen zonder er een kaart van te maken.
-- **Kalkschaduw** (`kalk-schaduw`): uitsluitend de duim van de scrollbar.
-- **Kwastzwart** (`roet`): de donkerste verf. Tekst op kalk en op goud.
+- **Muur** (`kalk`, `#1a1a1a`): achtergrond van `body`, van de navigatieband en van de `theme-color` van de browser.
+- **Diepe muur** (`kalk-diep`, `#242322`): dezelfde muur één tint opgehaald. Onderscheidt de twee geverfde vlakken missie en aanpak van de kale muur eromheen zonder er een kaart van te maken.
+- **Schaduw** (`kalk-schaduw`, `#3d3d3d`): uitsluitend de duim van de scrollbar.
+- **Kwastzwart** (`roet`, `#1a1a1a`): tekst op goud en op zand.
+
+De antraciettinten zijn een fractie warm gezet (`#353433` in plaats van `#3d3d3d`), zodat ze bij het goud en de crème horen en niet koud grijs worden.
 
 ### Tekstkleuren per ondergrond
 
-Vijf gescheiden tokens, één per ondergrond. Ze zijn geen variant op elkaar maar een paring.
+- **`op-kalk` / `op-kalk-zacht`**: crème `#faf8f5` en warm zand `#c9c2b6` op de muur.
+- **`op-veld` / `op-veld-zacht`**: crème en `#d2cbbf` op antraciet.
+- **`op-lak`**: kwastzwart op goud.
+- **`accent-kop`**: crème, voor het cursieve slotwoord van de hoofdkop ("door.").
 
-- **`op-kalk` / `op-kalk-zacht`**: tekst en secundaire tekst op kalk. Het zachte token is warm getint bruin, geen grijs.
-- **`op-veld` / `op-veld-zacht`**: tekst en secundaire tekst op groen. Het zachte token is naar het groen toe getint, geen grijs.
-- **`op-lak`**: tekst op menieoranje.
+Gemeten contrast: gouden kop op de muur 7,9:1, op antraciet 5,6:1; zachte tekst op de muur 9,8:1; zwart op goud 7,9:1. Niets zakt onder 5,5:1.
 
 ### Named Rules
 
-**De Grondregel.** Tekstkleur volgt de ondergrond, niet het element. Op elk vlak wordt de bijbehorende `op-*`-kleur gebruikt; secundaire tekst is altijd getint vanuit diezelfde ondergrond en **nooit grijs**. Grijs verraadt zichzelf op gekalkt pleisterwerk. Toets: als een secundaire regel dezelfde hue heeft als de achtergrond eronder, klopt het; als hij neutraal is, klopt het niet.
+**De Grondregel.** Tekstkleur volgt de ondergrond, niet het element. Op elk vlak wordt de bijbehorende `op-*`-kleur gebruikt; secundaire tekst is altijd getint vanuit diezelfde ondergrond en **nooit koel grijs**. Op zwart betekent dat warm crème en zand. Toets: als een secundaire regel naar het goud en de crème trekt, klopt het; als hij blauwig neutraal is, klopt het niet.
 
-**De Twee Assen Regel.** `.geverfd` en `.donker` zijn onafhankelijke assen. `.geverfd` betekent uitsluitend "heeft gekwaste randen"; `.donker` betekent uitsluitend "staat op een donker vlak". Een sectie kan het één zonder het ander zijn (aanpak en visie zijn `.geverfd` op diepe kalk, dus licht). Ze zijn ooit één klasse geweest en dat gaf twee lichte secties in stilte gouden streepjes en de verkeerde tekstkleur. Nooit weer samenvoegen.
+**De Twee Assen Regel.** `.geverfd` en `.donker` zijn onafhankelijke assen. `.geverfd` betekent uitsluitend "heeft gekwaste randen"; `.donker` betekent uitsluitend "staat op een eigen gekleurd vlak" (lus, impact, contact). Een sectie kan het één zonder het ander zijn (aanpak en missie zijn `.geverfd` op de diepe muur). Ze zijn ooit één klasse geweest en dat gaf twee secties in stilte de verkeerde streepjes en tekstkleur. Nooit weer samenvoegen.
 
-**De Vierde Kleur Regel.** Zonder omlijning moet de verf zelf presence hebben. Zandkleur op kalk haalde ongeveer 1,3:1 en verdween tegen de muur; goud is daarom de vierde verfpot en niet een tint van kalk. Een nieuw geverfd vlak kiest uit `veld`, `veld-diep`, `lak`, `goud` of `kalk-diep`, niet uit iets ertussenin.
+**De Gouden Vlek Regel.** De verfvlek achter een foto is altijd goud (`lak` of `goud`). Een vlek in antraciet of grijs leest op zwart als een slagschaduw, en dit systeem heeft geen schaduwen.
 
-### Palet `onno` (kleurvoorbeeld)
+### Herkomst
 
-Op verzoek van de opdrachtgever bestaat er een tweede palet met alleen de kleuren van onnoraadsen.nl; vorm, letters en opbouw blijven Muurschrift. Het staat in `tokens.css` onder `:root[data-palet='onno']` en is te zien op `/voorbeeld-kleuren/`. `Startpagina` en `Base` nemen een optionele prop `palet="onno"` aan.
-
-| Rol | Standaard | Palet `onno` |
-| --- | --- | --- |
-| Muur (`kalk`) | `#ede5d3` | crème `#faf8f5` |
-| Lichte vlakken (`kalk-diep`) | `#e0d6c0` | zand `#e8e4dc` |
-| Lus en tweede bord (`veld`) | veldgroen | antraciet `#3d3d3d` |
-| Panelen en contact (`veld-diep`) | diep groen | zwart `#1a1a1a` |
-| Doelen, merk, voetrand (`lak`) | menie | goud `#d4a84b` |
-| Streepjes en focus (`lak-helder`) | helder menie | donker goud `#a67f2e` |
-| Accent op donker (`goud`) | goud | licht goud `#e8c97b` |
-| Borden 1, 2, 3 | goud, groen, menie | goud, antraciet, zwart |
-
-Goud is te licht voor tekst op crème. Daarom zijn er twee betekenistokens: `--accent-kop` (het cursieve slotwoord van de hoofdkop, `#9a7426`, 4,0:1) en `--accent-tekst` (kleine accenttekst zoals de voetkopjes, `#8a6820`, 4,9:1). In het standaardpalet wijzen beide naar `lak`. De bordkleuren komen uit `--bord-1` tot en met `--bord-3` met elk een `-inkt`. Alle tekstparen in dit palet halen minimaal 4,5:1; het hoofdkopwoord 4,0:1 op displayformaat. De korrel staat in dit palet op 0.2 in plaats van 0.28, omdat hij op antraciet zwaarder aftekent dan op groen.
-
-### Palet `onno-donker` (kleurvoorbeeld donker)
-
-Dezelfde kleuren van onnoraadsen.nl op een zwarte muur, zoals die site zelf. Te zien op `/voorbeeld-donker/`, via `palet="onno-donker"`.
-
-| Rol | Palet `onno-donker` |
-| --- | --- |
-| Muur (`kalk`) | zwart `#1a1a1a` |
-| Lichte vlakken (`kalk-diep`) | `#262626` |
-| Lus (`veld`) | antraciet `#3d3d3d` |
-| Panelen en contact (`veld-diep`) | `#2e2e2e` |
-| Doelen, merk, koppen (`lak`) | goud `#d4a84b` |
-| Tekst / zacht | crème `#faf8f5` / `#c4beb3` |
-| Borden 1, 2, 3 | antraciet, zand, goud |
-| Primaire knop en lichte knop | goud met zwarte tekst |
-
-Koppen staan in dit palet in goud (regel in `global.css`); op het gouden impactvlak en op de borden volgen ze de inkt van het vlak. Het cursieve slotwoord van de hoofdkop is crème. Voor de knoppen zijn er tokens `--knop-vol(-inkt, -hover)` en `--knop-licht(-inkt)`, en de kwastregel in de hero volgt `--op-kalk` in plaats van `--roet`; in de andere paletten verandert daardoor niets. Laagste contrast: gouden kop op antraciet 4,9:1.
+Tot 12 oktober 2026 was de muur gekalkt (`#ede5d3`) met veldgroen, menie en goud. Daarna stonden er twee kleurvoorbeelden naast de site, `/voorbeeld-kleuren/` (licht) en `/voorbeeld-donker/`. Donker is gekozen; dat palet is nu de site zelf. De voorbeeldpagina's en de schakelaar `data-palet` zijn weg, en de oude adressen sturen door naar de startpagina (`astro.config.mjs`).
 
 ## Typography
 
@@ -286,13 +261,13 @@ Beide zijn lokaal gehost als gesubsette woff2 in `public/fonts/`, met `font-disp
 
 **Container.** Eén enkele omhulling: `.omhulsel` = `width: min(100% - var(--rand) * 2, var(--breed))`, gecentreerd. `--breed` is 78rem (1248px), `--rand` loopt van 20px tot 64px. Op een viewport van 1440px levert dat een paginamarge van precies 96px links en rechts. Die 96px is het bemonsteringsgebied voor de korrelmeting hieronder.
 
-**Rasters.** Alle secties zijn tweekoloms `grid` met ongelijke verhoudingen, nooit 50/50: 1.35/0.65 (hero), 0.85/1.15 (waarom), 1.15/0.85 (aanpak), 0.8/1.2 (opleidingscentrum), 0.86/1.14 (ervaring), 1.2/0.8 (missie), 0.9/1.1 (partner), 0.72/1.28 (in een partnerbord), 1.3/0.7 (Begin klein naast de lijst), 1.1/0.9 (doorlezen). De fotogalerij van het opleidingscentrum is geen raster maar twee flexrijen, gespiegeld: breed naast smal, dan smal naast breed (zie Foto). De ongelijkheid is het punt: geschilderde compositie, geen kolomindeling. De enige uitzondering is het lusraster, dat exact 1/1 is, en dat is een inhoudelijke eis (zie Components).
+**Rasters.** Alle secties zijn tweekoloms `grid` met ongelijke verhoudingen, nooit 50/50: 1.35/0.65 (hero), 0.85/1.15 (waarom), 0.78/1.22 (de lus: tekst naast de twee vakken), 1.15/0.85 (aanpak), 0.9/1.1 (opleidingscentrum), 0.86/1.14 (ervaring), 1.2/0.8 (missie), 0.9/1.1 (partner), 0.72/1.28 (in een partnerbord), 1.3/0.7 (Begin klein naast de lijst), 1.1/0.9 (doorlezen). In het opleidingscentrum staat onder de kop het overzicht van het terrein, in dezelfde kolom (`grid-template-areas`); de tekst loopt ernaast over twee rijen. Zo staat er naast de lange tekst geen leeg vlak meer. De rest van de galerij is geen raster maar een flexrij van twee met daaronder het grasveld als panorama (zie Foto). De ongelijkheid is het punt: geschilderde compositie, geen kolomindeling. De enige uitzondering is het raster van de twee lusvakken zelf, dat exact 1/1 is, en dat is een inhoudelijke eis (zie Components).
 
 **Breekpunten.** Twee, geen meer.
 
-- **62rem**: alle tweekoloms rasters vallen naar één kolom; de kleefzittende aanpakfoto wordt statisch; de ervaringsfoto gaat onder de tekst (`order: 2`); de hoofdkop verruimt van 13ch naar 16ch.
+- **62rem**: alle tweekoloms rasters vallen naar één kolom, ook de lus (de vakken blijven dan maximaal 46rem breed) en het opleidingscentrum (volgorde kop, tekst, foto); de kleefzittende aanpakfoto wordt statisch; de ervaringsfoto gaat onder de tekst (`order: 2`); de hoofdkop verruimt van 13ch naar 16ch.
 - **54rem**: het lusraster valt naar één kolom en het circuit wordt een pijl terug omhoog (`max-height` 8rem naar 5rem); de telling stapelt getal boven woord; de fotorijen van het opleidingscentrum stapelen; Begin klein en de lijst ernaast gaan onder elkaar; de twee voetkolommen ook.
-- Twee lokale correcties daarbuiten: 60rem voor de navigatierij, 34rem voor de heroknoppen, 30rem voor de navigatieknop.
+- Lokale correcties daarbuiten: 74rem voor de navigatierij, 40rem waaronder de navigatieband meescrolt, 34rem voor de heroknoppen, 30rem voor de navigatieknop.
 
 **Ritme.** Tien stappen (`s1` 0.25rem tot `s10` 8rem), plus twee sectiematen.
 
@@ -310,7 +285,7 @@ Er zijn **geen schaduwen** in dit systeem. Geen enkele `box-shadow`, geen enkele
 
 1. **Verflagen.** Een vlak in `veld-diep` op een vlak in `veld` leest als tweede laag verf, niet als een opgetild paneel. Dat is de enige stapeling die het systeem kent.
 2. **Uit het lood.** Een foto zit op een vlek verf die 8 tot 18px is verschoven en `-0.7deg` gedraaid; de foto zelf staat `0.35deg` de andere kant op. Dat is geen slagschaduw maar een geplakt vel op een geverfde ondergrond. De vlek zit op `z-index: -1` binnen een `isolation: isolate`, dus hij kruipt nooit onder de buren.
-3. **De pleisterkorrel.** Eén turbulentielaag over de volle paginahoogte in `mix-blend-mode: overlay` op `opacity: 0.28`, die zowel oplicht als verdiept, want kalk is naar twee kanten korrelig.
+3. **De pleisterkorrel.** Eén turbulentielaag over de volle paginahoogte in `mix-blend-mode: overlay` op `opacity: 0.2`, die zowel oplicht als verdiept, want pleisterwerk is naar twee kanten korrelig.
 
 ### Named Rules
 
@@ -322,15 +297,15 @@ Er zijn **geen schaduwen** in dit systeem. Geen enkele `box-shadow`, geen enkele
 node scripts/meet-korrel.mjs <png> 5 <y> 80
 ```
 
-Bemonster **binnen** de paginamarge van 96px (`x = 5`, breedte 80), anders meet je letterantialiasing in plaats van pleisterwerk. Gemeten op de huidige opname (`.impeccable/review/desktop.png`, 1440px breed):
+Bemonster **binnen** de paginamarge van 96px (`x = 5`, breedte 80), anders meet je letterantialiasing in plaats van pleisterwerk. Gemeten op 13 oktober 2026 op een opname van 1440px breed, na de overstap naar zwart, met `--korrel-sterkte: 0.2`:
 
 | Ondergrond | R | G | B |
 | --- | --- | --- | --- |
-| `kalk` | 10 | 15 | 25 |
-| `kalk-diep` | 17 | 23 | 35 |
-| `veld` | 11 | 40 | 32 |
+| `kalk` (`#1a1a1a`) | 10 | 10 | 10 |
+| `kalk-diep` (`#242322`) | 14 | 14 | 14 |
+| `veld` (`#353433`) | 22 | 20 | 20 |
 
-De spreiding straddelt de doelband per kanaal: `overlay` moduleert de kanalen niet gelijk, dus op de warme, in rood bijna verzadigde kalk blijft het rode kanaal met 10 net onder de ondergrens terwijl blauw er met 25 net boven zit. Dat is de huidige, bewuste stand. Verlaag `--korrel-sterkte` niet zonder opnieuw te meten; onder ongeveer 0.2 zakt ook groen door de ondergrens en wordt de korrel een vinkje in plaats van materiaal.
+Op de kale zwarte muur blijft de spreiding met 10 net onder de ondergrens: `overlay` kan op bijna-zwart weinig verdiepen. Op de vlakken zit hij er ruim in. Dat is de huidige, bewuste stand: hoger zetten maakt de antraciet vlakken vuil. Verander `--korrel-sterkte` niet zonder opnieuw te meten. Zonder ffmpeg kan het ook met `sips -s format bmp --cropOffset <y> 5 -c 80 80` en de minimum- en maximumwaarde per kanaal.
 
 ## Shapes
 
@@ -362,36 +337,36 @@ Karakter: een pil met een pijl erin, klein en dicht, meer een gedrukte knop dan 
 
 - **Shape:** volledig rond (`rounded.pil`), padding `0.85em 1.5em`, altijd een 2px rand, ook bij de gevulde variant.
 - **Type:** Archivo 650, 0.875rem, breedte 96%, ls 0.02em, lh 1. Nooit kapitaal.
-- **Vol:** groen vlak met kalktekst. De enige primaire actie. Hover: naar `veld-diep`, rand mee.
-- **Lijn:** doorzichtig met een rand van 38% kwastzwart. Hover: rand naar vol kwastzwart. Op de hero krijgt deze variant expliciet een kalk-achtergrond, zodat de kwastregel er niet doorheen loopt.
-- **Licht:** kalkvlak met kwastzwarte tekst, voor gebruik op donker. Hover: **naar goud**, niet naar wit.
+- **Vol:** goud vlak met zwarte tekst (`--knop-vol`). De enige primaire actie. Hover: naar licht goud, rand mee.
+- **Lijn:** doorzichtig met een rand van 38% kwastzwart. Hover: rand naar vol kwastzwart. Op de hero krijgt deze variant expliciet de achtergrond van de muur, zodat de kwastregel er niet doorheen loopt.
+- **Licht:** goud vlak met zwarte tekst (`--knop-licht`), voor gebruik op de gekleurde vlakken. Hover: **naar licht goud**, niet naar wit.
 - **Lijnlicht:** de tweede actie op donker, naast een lichte knop. Doorzichtig, tekst in `op-veld`, rand van 45% `op-veld`. Hover: rand naar vol `op-veld`. Staat in de contactsectie naast de mailknop (WhatsApp).
 - **Uit:** doorzichtig met een gestippelde gouden rand, `cursor: not-allowed`, pijl op 45% en geen hoverbeweging. Betekent: deze knop bestaat wel, maar heeft nog geen bestemming. Zichtbaar leeg is eerlijker dan een dode link.
 - **Pijl:** een 1em SVG die bij hover 0.2em naar rechts schuift. Dat is de enige beweging die een knop maakt.
 
 ### Navigation (`Nav.astro`)
 
-Een kleefzittende kalkband (`position: sticky`, `z-index: 20`) met onderaan een gekwaste rand in kalkkleur, zodat de band eindigt zoals alle andere verf op deze muur. Merk links, ankers in het midden als `plaat`-plaatjes in `op-kalk-zacht`, primaire pil rechts. Hover op een link: tekst naar `op-kalk` plus een 2px onderstreping in `lak-helder`. Onder 60rem zakken de links onder het merk in plaats van in een uitklapmenu te verdwijnen: vier ankers verbergen achter een knop kost meer dan het oplevert. `scroll-padding-top` staat op 5.5rem zodat een anker niet onder de band eindigt.
+Een kleefzittende band in de kleur van de muur (`position: sticky`, `z-index: 20`) met onderaan een gekwaste rand in dezelfde kleur, zodat de band eindigt zoals alle andere verf op deze muur. Merk links, ankers in het midden als `plaat`-plaatjes in `op-kalk-zacht`, primaire pil rechts. Hover op een link: tekst naar `op-kalk` plus een 2px onderstreping in `lak-helder`. Onder 74rem zakken de links onder het merk in plaats van in een uitklapmenu te verdwijnen: vijf ankers verbergen achter een knop kost meer dan het oplevert. `scroll-padding-top` staat op 5.5rem zodat een anker niet onder de band eindigt. Onder 40rem is de band drie regels hoog en nam hij vast bovenin ruim een kwart van een telefoonscherm in; daar scrolt hij mee (`position: relative`) en zakt `scroll-padding-top` naar 1rem.
 
 ### Foto (`Foto.astro`)
 
-De signatuurcomponent. Props: `src` (ImageMetadata), `alt`, `plaat` (optioneel bijschrift), `vorm` (`boog` | `recht`, standaard `boog`), `vlek` (verfkleur van de vlek eronder, standaard `lak-helder`), `breedtes` (array voor `widths`), `sizes`, `verhouding` (optionele geforceerde `aspect-ratio`), `kwaliteit` (optionele webp-kwaliteit, alleen voor bronmateriaal dat slecht comprimeert), `class`.
+De signatuurcomponent. Props: `src` (ImageMetadata), `alt`, `plaat` (optioneel bijschrift), `vorm` (`boog` | `recht`, standaard `boog`), `vlek` (verfkleur van de vlek eronder, standaard `lak-helder`; altijd goud, zie De Gouden Vlek Regel), `breedtes` (array voor `widths`), `sizes`, `verhouding` (optionele geforceerde `aspect-ratio`), `kwaliteit` (optionele webp-kwaliteit, alleen voor bronmateriaal dat slecht comprimeert), `class`.
 
 Structuur: een `<figure>` met daarin een vel waarop de vlek verf achter het beeld ligt, en optioneel een `<figcaption>` met de `plaat`-opmaak, links uitgelijnd achter een 1px verticale streep op 45% currentColor, maximaal 34ch breed. Het bijschrift beschrijft wat je ziet; het is geen label dat de kop ernaast herhaalt.
 
 `verhouding` bestaat voor één doel: twee foto's naast elkaar dwingen hetzelfde vak te vullen ondanks verschillende bronformaten. Gebruik het niet decoratief.
 
-**De fotogalerij van het opleidingscentrum.** Vier rechte plaatjes (`vorm="recht"`, het is documentatie van de plek) in twee flexrijen. Elke foto krijgt `flex-grow` gelijk aan zijn `verhouding` (breedte gedeeld door hoogte) met basis 0, zodat de twee foto's in een rij exact even hoog uitkomen en hun bijschriften op één lijn beginnen. Wie een verhouding in het template wijzigt, wijzigt de `flex-grow` in de CSS mee. Onder 54rem stapelen de rijen.
+**De fotogalerij van het opleidingscentrum.** Vier rechte plaatjes (`vorm="recht"`, het is documentatie van de plek). De eerste, het terrein, staat groot onder de kop. Daaronder een flexrij met de vijver en de kring, en het grasveld als panorama over de volle breedte. In de rij krijgt elke foto `flex-grow` gelijk aan zijn `verhouding` (breedte gedeeld door hoogte) met basis 0, zodat de twee foto's exact even hoog uitkomen en hun bijschriften op één lijn beginnen. Wie een verhouding in het template wijzigt, wijzigt de `flex-grow` in de CSS mee. Onder 54rem stapelt de rij. De kop "Het opleidingscentrum." schaalt in de smalle kolom mee (`min(var(--t-h2), 4.3vw)`), anders loopt het lange woord de tekstkolom in.
 
 ### Paneel (het lusvak)
 
-Karakter: twee vakken in `veld-diep` binnen het groene vlak, elk met een gekwaste rand boven en onder, en met de vaste volgorde foto (met bijschrift), dan de zin. De zin loopt door over de twee vakken: "De jongere wordt opgeleid…" links, "…en het kind wordt begeleid." rechts. Een subgrid legt foto en zin van beide vakken op dezelfde rijen, zodat de zin rechts niet een regel hoger begint als het fotobijschrift links langer is.
+Karakter: twee vakken in `veld-diep` binnen het antraciet vlak, rechts naast de kop en de inleiding, elk met een gekwaste rand boven en onder, en met de vaste volgorde foto (met bijschrift), dan de zin. De zin loopt door over de twee vakken: "De jongere wordt opgeleid…" links, "…en het kind wordt begeleid." rechts. Een subgrid legt foto en zin van beide vakken op dezelfde rijen, zodat de zin rechts niet een regel hoger begint als het fotobijschrift links langer is. De vakken staan bewust niet over de volle breedte: de aangeleverde foto's zijn klein (het kind 728 bij 546 pixels) en werden daar wazig opgeblazen. Op 1440px is een lusfoto 285px breed. Komen er grotere originelen, dan kan het raster terug naar de volle breedte.
 
 **De Gelijkheidsregel.** De twee panelen in de peer-lus zijn **geometrisch identiek**: zelfde breedte (`repeat(2, minmax(0, 1fr))`, exact 1/1), zelfde `align-items: stretch`, zelfde padding, zelfde achtergrond, zelfde `vorm="recht"`, zelfde `vlek`, en dezelfde geforceerde `verhouding="1 / 1"` op de foto. Dat is geen opmaakvoorkeur maar de productclaim letterlijk gerenderd: de jongere die wordt opgeleid en het kind dat wordt begeleid staan in hetzelfde vak omdat ze dezelfde persoon worden. Ongelijke panelen breken de belofte. Het enige wat mag verschillen is het variantnummer van de gekwaste rand.
 
 ### Bord (het partnerbord)
 
-Wat een sponsor in het echt koopt is een geschilderd bord langs de rand van het veld. Drie borden onder elkaar, van klein naar groot, elk een vol vlak in een eigen verf met een gekwaste rand boven en onder: Community partner op `goud`, Impact partner op `veld`, Strategic partner op `lak`. Dat volgt het partnerdocument (goud, groen, blauw) zover de muur die verven heeft; blauw is er niet, dus menie. Tweekoloms 0.72/1.28. Links de naam in `--t-bord` met het werkwoord (Verbinden, Verbreden, Verankeren) cursief eronder, het bedrag in Vollkorn op `--t-h4` met `.cijfers`, en de doelgroep ("Voor: …") klein. Rechts eventueel "Alles uit …, plus:" en een `streeplijst` met de voordelen. Op verf dragen de streepjes de inkt van het bord in plaats van `lak-helder`, want oranje verdwijnt op goud en menie. Geen omlijning, geen radius, geen schaduw: verf op de muur. Verf en inkt komen uit één array in het template (`goud`/`roet`, `veld`/`op-veld`, `lak`/`op-lak`).
+Wat een sponsor in het echt koopt is een geschilderd bord langs de rand van het veld. Drie borden onder elkaar, van klein naar groot, elk een vol vlak in een eigen verf met een gekwaste rand boven en onder: Community partner op antraciet, Impact partner op zand, Strategic partner op goud: ze lopen op van donker naar goud. Tweekoloms 0.72/1.28. Links de naam in `--t-bord` met het werkwoord (Verbinden, Verbreden, Verankeren) cursief eronder, het bedrag in Vollkorn op `--t-h4` met `.cijfers`, en de doelgroep ("Voor: …") klein. Rechts eventueel "Alles uit …, plus:" en een `streeplijst` met de voordelen. Op verf dragen de streepjes de inkt van het bord in plaats van `lak-helder`, want goud verdwijnt op goud. Geen omlijning, geen radius, geen schaduw: verf op de muur. Verf en inkt komen uit `--bord-1` tot en met `--bord-3` en hun `-inkt` in `tokens.css`, via één array in het template.
 
 ### Kwastrand (`KwastRand.astro`)
 
@@ -442,7 +417,7 @@ Handgeschilderd etiket: pilvormig, doorzichtig, met een 2px rand op 55% `lak`. A
 - **Don't** een kastlijntje (em dash) in zichtbare tekst zetten, in geen enkele taal.
 - **Don't** grijs gebruiken voor secundaire tekst. Tint vanuit de ondergrond.
 - **Don't** een tweede bewegend element toevoegen. Er is precies één geregisseerd moment op deze pagina: het circuit van de lus dat gaat lopen zodra je het ziet (`stroke-dasharray: 6 14`, `animation: kruip 26s linear infinite`), aangezet door een IntersectionObserver op 25% zichtbaarheid die zichzelf daarna losknoopt, en volledig uitgeschakeld onder `prefers-reduced-motion: reduce`. Alle andere beweging is een toestandsovergang van 220ms op hover of focus, nooit iets dat vanzelf begint.
-- **Don't** een nieuwe kleur introduceren. Vier verven plus kwastzwart. Een tint ertussenin verdwijnt tegen de muur.
+- **Don't** een nieuwe kleur introduceren. Zwart, antraciet, goud, zand en crème. Een tint ertussenin verdwijnt tegen de muur.
 - **Don't** een geverfd vlak links of rechts een rand geven. Verf loopt de marge uit.
 
 ## Bekende inconsistenties in de huidige code

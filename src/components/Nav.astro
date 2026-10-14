@@ -147,6 +147,14 @@ const { t, taal } = Astro.props;
     border-bottom: var(--lijn) solid var(--lak-helder);
   }
 
+  /* Op een telefoon is de balk drie regels hoog: merk, talen met de
+     contactknop, en de vijf links. Vast bovenin nam dat ruim een kwart van
+     het scherm weg tijdens het lezen. Daar scrolt hij dus mee; de ankers
+     blijven bovenaan bereikbaar en de contactknop staat in de hero. */
+  @media (max-width: 40rem) {
+    .kop { position: relative; }
+  }
+
   /* Doorgegeven aan een component, dus :global() onder de gescopete ouder. */
   @media (max-width: 30rem) {
     .kop__rij :global(.kop__actie) { padding: 0.7em 1.05em; }

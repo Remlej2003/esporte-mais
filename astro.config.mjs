@@ -11,9 +11,12 @@ export default defineConfig({
     routing: { prefixDefaultLocale: false },
   },
   build: { inlineStylesheets: 'always' },
-  // De eerdere stijlvoorbeelden zijn vervangen door het kleurvoorbeeld.
+  // De stijl- en kleurvoorbeelden zijn opgegaan in de site zelf: de donkere
+  // stijl is gekozen. Oude adressen die nog rondgaan landen op de startpagina.
   redirects: {
-    '/voorbeeld-licht': '/voorbeeld-kleuren/',
-    '/voorbeeld-onno': '/voorbeeld-kleuren/',
+    '/voorbeeld-licht': '/',
+    '/voorbeeld-onno': '/',
+    '/voorbeeld-kleuren': '/',
+    '/voorbeeld-donker': '/',
   },
 });
