@@ -117,7 +117,6 @@ afgemaakt worden, omdat ze buiten deze computer liggen:
 
 | Punt | Wacht op |
 |---|---|
-| Uitgebreide versie downloadbaar? | Onno — zijn eigen instructies spreken elkaar tegen, zie M-10 |
 | Site live op maisesporte.nl | Onno's kleurkeuze, plus een Cloud86-code die naar hem gaat |
 | Het concept-antwoord versturen | Jelmer — hij stuurt het zelf |
 

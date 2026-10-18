@@ -24,7 +24,7 @@ Bronnen:
 | M-7 | Grotere originelen van twee foto's | E, W 14 okt | **Open** — Onno moet ze sturen |
 | M-8 | "Foto's bij onze aanpak zijn slecht, kleiner maken?" | E | **Open** — antwoord in de conceptmail |
 | M-9 | Leeg vlak naast tekst bij Opleidingscentrum | A 12 okt | **Open** — visueel nalopen |
-| M-10 | Uitgebreide versie ook downloadbaar? | D 4 okt | **Open — tegenstrijdig**, zie hieronder |
+| M-10 | Uitgebreide versie ook downloadbaar? | D 4 okt | **Beslist** — ja, zie hieronder |
 
 ### M-1 — de tussenversie staat klaar
 
@@ -80,8 +80,10 @@ uit de PDF geplukt in plaats van los aangeleverd.
   aanvraag** via een mailknop. In `nl.json` staat erbij `"Op verzoek"`, en
   commit `e2a1316` heet "Aanpassingen 4 oktober verwerkt".
 
-Iemand heeft dit dus bewust zo gezet, of juist over het hoofd gezien. **Niet
-zelf wijzigen** — eerst aan Onno vragen. Staat in de conceptmail.
+Op 19 oktober is dit beslist: **beide als download**. Zo staat het sinds die
+dag op onnoraadsen.nl (O-2). Op maisesporte.nl staat de uitgebreide versie nog
+steeds op aanvraag — dat is nu dus inconsistent tussen de twee sites. Trek dat
+gelijk zodra de kleurkeuze rond is en de site live gaat.
 
 ---
 
@@ -115,23 +117,39 @@ paginatelling of bestandsnaam. Verdere details staan in
 
 | # | Punt | Bron | Stand |
 |---|------|------|-------|
-| O-1 | maisesporte.nl toevoegen aan de lijst sites | W 9 okt | **Open** |
-| O-2 | Bij "Ambitie en droom": verkorte én uitgebreide versie downloadbaar, in plaats van het huidige document. Tekst wordt "Je kan hier de verkorte en uitgebreide versie downloaden." | D 4 okt | **Open** — beide PDF's zijn er |
-| O-3 | Bij "Voor investeerders en bedrijven": Partnershipmogelijkheden downloadbaar | D 4 okt, W 14 okt | **Half** — zie hieronder |
+| O-1 | maisesporte.nl toevoegen aan de lijst sites | W 9 okt | **Af** — al op 10 oktober gedaan |
+| O-2 | Verkorte én uitgebreide versie downloadbaar bij "Ambitie en droom" | D 4 okt | **Af en live** — 19 oktober |
+| O-3 | Partnershipmogelijkheden downloadbaar bij "Voor investeerders en bedrijven" | D 4 okt, W 14 okt | **Af en live** — 19 oktober |
 
-**O-3 staat er al deels op, maar met het verkeerde bestand.** In
-`Onnos-site/public/downloads/` staan `mais-esporte-korte-versie.pdf` en
-`mais-esporte-partnershipmogelijkheden.pdf`, neergezet op 10 oktober. Die
-partnership-PDF is de **oude** (md5 `c33184bb…`) — dezelfde fout die op
-maisesporte al rechtgezet is. Overschrijf hem met de juiste (md5
-`1ac5bc62…`), die nu in `esporte-mais/public/downloads/` staat. Controleer ook
-of er in de pagina's naar verwezen wordt.
+Alle drie staan live op onnoraadsen.nl.
 
-De bestanden voor O-2 staan klaar in `/Users/jelmersicloud/Downloads/`
-(korte versie, uitgebreide versie 2027–2031 vs 2) en voor de partnership-PDF
-geldt weer: **de juiste komt uit de WhatsApp-export**, niet uit Downloads.
+O-1 bleek op 10 oktober al gedaan: MAIS ESPORTE staat in de strip met
+initiatieven en bij de websites in de voet.
 
----
+Bij O-2 stond de uitgebreide versie op **aanvraag**, via een mailto-knop. Dat
+week af van Onno's document van 4 oktober, dat zegt dat beide versies gewoon te
+downloaden moeten zijn. Sinds 19 oktober zijn het twee downloadknoppen, en
+volgt de tekst zijn formulering: "Je kan hier de verkorte en uitgebreide versie
+downloaden."
+
+Bij O-3 stond de knop er al, maar met de **oude** partnership-PDF van 6
+oktober — precies de versie waar Onno op 14 oktober over viel bij maisesporte.
+Nu vervangen door die van 9 oktober.
+
+**De drie documenten, met hun md5 zodat je ze kunt controleren:**
+
+| Bestand | md5 |
+|---|---|
+| `mais-esporte-korte-versie.pdf` | `d9b84ec5209941420a3d21c3037f47b9` |
+| `mais-esporte-uitgebreide-versie.pdf` | `5a001d9c73e06fe2816cb28d7dc208c3` |
+| `mais-esporte-partnershipmogelijkheden.pdf` | `1ac5bc623f8fa18c5bd2ead45f0effec` |
+
+**Let op bij deze site:** de teksten staan niet alleen in de code. Elke
+`EditableText` haalt zijn waarde uit Upstash Redis via `/api/content`, en een
+daar opgeslagen tekst wint van de `defaultValue` in `app/page.tsx`. Voor deze
+wijziging was er geen opgeslagen versie — gecontroleerd tegen de live site —
+dus de code-wijziging kwam door. Is dat een volgende keer niet zo, dan moet de
+tekst in de bewerkmodus van de site zelf aangepast worden.
 
 ## 4. Administratief
 
