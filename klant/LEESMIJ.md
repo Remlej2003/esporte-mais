@@ -92,17 +92,36 @@ licht, en het donkere lijkt te veel op zijn eigen onnoraadsen.nl. Jelmer
 beloofde een tussenweg, voor uiterlijk zondag 18 oktober. Op 18 oktober appte
 hij "het is vanavond af, morgen kun je kijken". **Die toezegging is te laat.**
 
-In deze sessie (19 oktober) is gedaan:
+In deze sessie (19 oktober) is gedaan en live gezet:
 
-1. **De tussenversie gebouwd** → `/voorbeeld-tussen/`. Warme zandmuur,
-   diepgroen en terracotta, goud alleen nog als hooglicht. De site zelf is
-   níet gewijzigd en staat nog steeds donker. Zie `DESIGN.md`, "De tussenweg".
+1. **Twee tussenversies gebouwd**, allebei op een warme zandmuur:
+   `/voorbeeld-tussen/` met diepgroen en terracotta, en
+   `/voorbeeld-tussen-goud/` met zijn eigen antraciet en goud. Beide staan
+   op `esporte-mais.vercel.app` en zijn zonder inloggen te openen. De
+   startpagina is níet gewijzigd en staat nog donker. Zie `DESIGN.md`.
 2. **De partnership-PDF vervangen** door de versie van 9 oktober.
-3. Dit dossier aangelegd.
+3. Dit dossier aangelegd, met een concept-antwoord op zijn mail.
 
-Alles wat nog ligt staat in `openstaand.md`. Het hardnekkigste punt is de
-brochure van **Wat zie jij?**, drie keer gevraagd en nog steeds niet gedaan,
-omdat het bronbestand nergens op deze computer te vinden is.
+**Let op bij preview-links:** dit Vercel-project heeft deployment protection
+aan voor branch-previews. Een link als
+`esporte-mais-git-<branch>-project-onnos-projects.vercel.app` stuurt Onno naar
+een Vercel-inlogscherm. Alleen `esporte-mais.vercel.app` (productie, vanaf
+`main`) is voor hem te openen. Zo zag hij de vorige kleurvoorbeelden ook.
+
+### Wat er nog ligt, en op wie het wacht
+
+Alles staat in `openstaand.md`. Vier dingen kunnen niet door een AI-sessie
+afgemaakt worden, omdat ze buiten deze computer liggen:
+
+| Punt | Wacht op |
+|---|---|
+| Brochure Wat zie jij? vervangen | Onno moet het bestand opnieuw sturen — het staat nergens op deze computer |
+| Uitgebreide versie downloadbaar? | Onno — zijn eigen instructies spreken elkaar tegen, zie M-10 |
+| Site live op maisesporte.nl | Onno's kleurkeuze, plus een Cloud86-code die naar hem gaat |
+| Het concept-antwoord versturen | Jelmer — hij stuurt het zelf |
+
+Het hardnekkigste punt blijft de brochure van **Wat zie jij?**: drie keer
+gevraagd, nog steeds niet gedaan. Vraag er als eerste naar.
 
 ---
 
