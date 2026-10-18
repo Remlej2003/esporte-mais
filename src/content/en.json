@@ -217,10 +217,10 @@
 
   "documenten": {
     "kop": "Read the whole story.",
-    "inleiding": "The project description explains in more detail what MAIS ESPORTE does, for whom and why. You can read the short version here. We are happy to send you the full project plan for 2027 to 2031 on request.",
+    "inleiding": "The project description explains in more detail what MAIS ESPORTE does, for whom and why. You can read both the short version and the full project plan for 2027 to 2031 here.",
     "items": [
       { "naam": "Short version (PDF, Dutch)", "bestand": "/downloads/mais-esporte-korte-versie.pdf" },
-      { "naam": "Request the full project plan", "mail": "mailto:info@maisesporte.nl?subject=Request%20full%20project%20plan%20MAIS%20ESPORTE" }
+      { "naam": "Full project plan 2027\u20132031 (PDF, Dutch)", "bestand": "/downloads/mais-esporte-uitgebreide-versie.pdf" }
     ]
   },
 

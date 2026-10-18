@@ -217,10 +217,10 @@
 
   "documenten": {
     "kop": "Leia a história completa.",
-    "inleiding": "A descrição do projeto conta com mais detalhes o que o MAIS ESPORTE faz, para quem e por quê. A versão resumida está disponível aqui. O plano completo do projeto para 2027 a 2031 pode ser enviado mediante solicitação.",
+    "inleiding": "A descrição do projeto conta com mais detalhes o que o MAIS ESPORTE faz, para quem e por quê. Aqui estão disponíveis tanto a versão resumida quanto o plano completo do projeto para 2027 a 2031.",
     "items": [
       { "naam": "Versão resumida (PDF, em holandês)", "bestand": "/downloads/mais-esporte-korte-versie.pdf" },
-      { "naam": "Solicitar o plano completo", "mail": "mailto:info@maisesporte.nl?subject=Solicita%C3%A7%C3%A3o%20do%20plano%20completo%20MAIS%20ESPORTE" }
+      { "naam": "Plano completo 2027\u20132031 (PDF, em holandês)", "bestand": "/downloads/mais-esporte-uitgebreide-versie.pdf" }
     ]
   },
 
