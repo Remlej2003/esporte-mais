@@ -89,47 +89,27 @@ zelf wijzigen** — eerst aan Onno vragen. Staat in de conceptmail.
 
 | # | Punt | Bron | Stand |
 |---|------|------|-------|
-| W-1 | Downloadbare brochure vervangen | W 2 okt, E, W 14 okt | **Geblokkeerd** |
+| W-1 | Downloadbare brochure vervangen | W 2 okt, E, W 14 okt | **Af en live** — 19 oktober |
 
-**Dit is het punt waar Onno het meest over gevallen is.** Op 14 oktober:
-"nogmaals (derde keer....), vervang op wat zie jij graag het document dat down
-te loaden is." In de mail van 11 oktober: "Bij Wat zie jij? ontbreekt het
-document dat ik je gestuurd heb."
+**Dit was het punt waar Onno het meest over gevallen is** — hij heeft er drie
+keer om moeten vragen: 2 oktober via WhatsApp, 11 oktober per mail, en 14
+oktober met "nogmaals (derde keer....)". Op 19 oktober is het gedaan. Het
+bestand bleek in `~/Downloads` te staan.
 
-Waar het staat:
+De brochure heet nu `src/assets/Wat zie jij PO.pdf`, zoals Onno hem ook
+stuurde. De oude heette `Wat zie jij 2025-26 PO.pdf`; die jaargang in de naam
+suggereerde ten onrechte dat het bestand actueel was en heeft het zoeken op een
+dwaalspoor gezet. De zeven pagina's die hem importeren zijn mee aangepast.
 
-- Bestand: `src/assets/Wat zie jij 2025-26 PO.pdf` (26 MB, 18 pagina's)
-- Gebruikt door zeven pagina's: `Home`, `Index`, `DeLeerlijn`, `Kerndoelen`,
-  `Aanschaffen`, `OverOns`, `Subsidie` — allemaal via dezelfde import
-- **Eén bestand overschrijven is genoeg.** Alle zeven knoppen volgen mee.
-  (Hernoemen kan ook, maar dan moeten die zeven imports mee.)
+| | oud | nieuw |
+|---|---|---|
+| md5 | `128aed12…` | `48caf407…` |
+| grootte | 26 MB | 6 MB |
+| gemaakt | november 2025 | 2 februari 2026 |
 
-Waarom het nog niet kan:
-
-Het vervangende document — "Wat zie jij PO.pdf", 18 pagina's, door Onno
-gestuurd op **2 oktober 2026** met "Bij de pagina De Leerlijn" — **staat niet
-op deze computer**. Niet in Downloads, niet in iCloud, en ook niet in de
-WhatsApp-export: die bewaarde alleen bijlagen vanaf 11 oktober.
-
-Dat het er nog niet op staat is hard te zien: het huidige bestand is in git
-voor het laatst aangeraakt op **18 november 2025**, bijna een jaar geleden. Het
-nieuwe heeft toevallig óók 18 pagina's, dus op paginatelling alleen kun je ze
-niet uit elkaar houden — kijk naar het jaartal in de brochure zelf.
-
-**Nodig:** het bestand. Op 19 oktober is er uitputtend naar gezocht —
-bestandsnaam, Spotlight op inhoud, de media-opslag van WhatsApp Desktop, en de
-opgeruimde Downloads in `~/Op-te-ruimen`. Het staat niet op deze Mac.
-
-Het staat vrijwel zeker nog **in WhatsApp op de telefoon**: WhatsApp Desktop
-bewaart alleen recente bijlagen, en in Onno's map staat nog maar één PDF (de
-partnership-versie van 14 oktober). Kijk daar eerst, bij 2 oktober 2026.
-Anders Onno vragen het te mailen — zie `mail-onno-brochure-opvragen.md`.
-
-Zo controleer je achteraf of het gelukt is: het oude bestand heeft md5
-`128aed1244da7f512648280525725a1d`, en dat is ook precies wat er nu live op
-watziejij.nu staat. Zie je die md5 nog, dan is het niet doorgekomen.
-
----
+**Allebei 18 pagina's** — controleer dit soort dingen dus op md5, niet op
+paginatelling of bestandsnaam. Verdere details staan in
+`zie-jij-de-wereld-main/OPENSTAAND.md`.
 
 ## 3. onnoraadsen.nl — repo `Onnos-site`
 
