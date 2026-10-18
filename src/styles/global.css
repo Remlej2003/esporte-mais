@@ -70,19 +70,19 @@ h1, h2, h3, h4 {
 :is(.doelen, .bord) :is(h1, h2, h3, h4) { color: inherit; }
 
 /* Tussenweg-palet: de muur is licht, dus staan de koppen in inkt in
-   plaats van in verf — terracotta op zand zou als kop te bleek lezen.
+   plaats van in verf — brons op zand zou als kop te bleek lezen.
    Het cursieve slotwoord blijft wel de accentkleur (--accent-kop).
 
    De tweede regel is breder dan die hierboven. In het donkere palet is
    de kopkleur goud, en goud leest zowel op zwart als op een geverfd
    vlak; inkt doet dat niet. Elk vlak dat zijn eigen tekstkleur zet —
-   de lus en het contactblok in diepgroen, het impactblok in terracotta,
+   de lus en het contactblok in antraciet, het impactblok in brons,
    de partnerborden — moet hier dus ook zijn eigen kopkleur krijgen,
-   anders staat er donkere inkt op donkergroen.
+   anders staat er donkere inkt op antraciet.
 
-   Geldt voor beide zandpaletten: 'tussen' en 'tussen-goud'. */
-:root:is([data-palet='tussen'], [data-palet='tussen-goud']) :is(h1, h2, h3, h4) { color: var(--op-kalk); }
-:root:is([data-palet='tussen'], [data-palet='tussen-goud']) :is(.doelen, .bord, .lus, .contact) :is(h1, h2, h3, h4) { color: inherit; }
+   Geldt voor het zandpalet 'tussen-goud'. */
+:root[data-palet='tussen-goud'] :is(h1, h2, h3, h4) { color: var(--op-kalk); }
+:root[data-palet='tussen-goud'] :is(.doelen, .bord, .lus, .contact) :is(h1, h2, h3, h4) { color: inherit; }
 
 p { text-wrap: pretty; }
 
@@ -100,7 +100,7 @@ em { font-style: italic; }
 :root { caret-color: var(--lak-helder); accent-color: var(--lak); color-scheme: dark; }
 /* Een zandmuur is een lichte pagina: scrollbars en formuliervelden van
    de browser moeten dus licht meekleuren, niet donker. */
-:root:is([data-palet='tussen'], [data-palet='tussen-goud']) { color-scheme: light; }
+:root[data-palet='tussen-goud'] { color-scheme: light; }
 
 /* Geen eigen radius hier: de omlijning volgt de vorm die het element
    zelf heeft, zodat een pil bij toetsenbordfocus een pil blijft. */

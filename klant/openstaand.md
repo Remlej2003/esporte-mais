@@ -15,7 +15,7 @@ Bronnen:
 
 | # | Punt | Bron | Stand |
 |---|------|------|-------|
-| M-1 | Derde kleurversie, de "tussenweg" | A 15 okt | **Af en live** — twee varianten, zie hieronder |
+| M-1 | Derde kleurversie, de "tussenweg" | A 15 okt | **Af en live** — `/voorbeeld-tussen-goud/` |
 | M-2 | Partnership-PDF vervangen door laatste versie | W 14 okt | **Af** — zie hieronder |
 | M-3 | Site live zetten op maisesporte.nl | W 14 okt | **Open** — wacht op besluit + Cloud86-code |
 | M-4 | Logo naar Onno sturen | W 14 okt, D 4 okt | **Open** — bestanden klaar, moeten verstuurd |
@@ -26,21 +26,21 @@ Bronnen:
 | M-9 | Leeg vlak naast tekst bij Opleidingscentrum | A 12 okt | **Open** — visueel nalopen |
 | M-10 | Uitgebreide versie ook downloadbaar? | D 4 okt | **Open — tegenstrijdig**, zie hieronder |
 
-### M-1 — er liggen twee tussenversies klaar
+### M-1 — de tussenversie staat klaar
 
-Beide staan live op `esporte-mais.vercel.app` en zijn te openen zonder in
-te loggen. De startpagina zelf is **niet** gewijzigd en staat nog donker.
+Live op `esporte-mais.vercel.app`, te openen zonder in te loggen. De
+startpagina zelf is **niet** gewijzigd en staat nog donker.
 
 | Adres | Wat het is |
 |---|---|
-| `/voorbeeld-tussen/` | zandmuur, diepgroen en terracotta |
-| `/voorbeeld-tussen-goud/` | zandmuur, zijn antraciet en goud |
+| `/voorbeeld-tussen-goud/` | zandmuur met zijn antraciet en goud |
 | `/` | de huidige donkere site, onveranderd |
 
-De tweede kwam er op 19 oktober bij op verzoek: er mocht "ietsjes meer" van
-onnoraadsen.nl in. Schermafdrukken van alle drie staan in
-`kleurvergelijking/`. Zie `DESIGN.md` voor waarom zijn goud niet zomaar op
-een zandmuur kan.
+Er is op 19 oktober ook een variant met diepgroen en terracotta gemaakt. Die
+is er op verzoek weer uit: Onno's eigen kleuren wonnen. Het oude adres
+`/voorbeeld-tussen/` stuurt door naar het gouden, dus een link die al
+rondgaat blijft werken. Schermafdrukken staan in `kleurvergelijking/`, en
+`DESIGN.md` legt uit waarom zijn goud niet zomaar op een zandmuur kan.
 
 **Wacht nu op Onno's keuze.** Zolang die er niet is, blijft M-3 dicht.
 

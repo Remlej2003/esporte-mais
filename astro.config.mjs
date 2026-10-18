@@ -18,5 +18,6 @@ export default defineConfig({
     '/voorbeeld-onno': '/',
     '/voorbeeld-kleuren': '/',
     '/voorbeeld-donker': '/',
+    '/voorbeeld-tussen': '/voorbeeld-tussen-goud/',
   },
 });

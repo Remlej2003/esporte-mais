@@ -94,11 +94,12 @@ hij "het is vanavond af, morgen kun je kijken". **Die toezegging is te laat.**
 
 In deze sessie (19 oktober) is gedaan en live gezet:
 
-1. **Twee tussenversies gebouwd**, allebei op een warme zandmuur:
-   `/voorbeeld-tussen/` met diepgroen en terracotta, en
-   `/voorbeeld-tussen-goud/` met zijn eigen antraciet en goud. Beide staan
-   op `esporte-mais.vercel.app` en zijn zonder inloggen te openen. De
-   startpagina is níet gewijzigd en staat nog donker. Zie `DESIGN.md`.
+1. **De tussenversie gebouwd** → `/voorbeeld-tussen-goud/`: een warme
+   zandmuur met zijn eigen antraciet en goud. Staat live op
+   `esporte-mais.vercel.app` en is zonder inloggen te openen. De
+   startpagina is níet gewijzigd en staat nog donker. Een variant met
+   diepgroen en terracotta is gemaakt en op verzoek weer verwijderd; het
+   oude adres `/voorbeeld-tussen/` stuurt door. Zie `DESIGN.md`.
 2. **De partnership-PDF vervangen** door de versie van 9 oktober.
 3. Dit dossier aangelegd, met een concept-antwoord op zijn mail.
 

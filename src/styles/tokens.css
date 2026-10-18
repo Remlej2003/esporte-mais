@@ -169,59 +169,11 @@
   --korrel-sterkte: 0.2;
 }
 
-/* --- Palet: de tussenweg ----------------------------------------
-   Gevraagd op 15 oktober 2026: niet het felle licht van het eerste
-   kleurvoorbeeld, niet het zwart-met-goud van onnoraadsen.nl. Dat
-   zwart leest als luxe (parfum, horloge) en niet als een
-   maatschappelijk project, en het maakt de site bovendien te veel
-   een kopie van de persoonlijke site van de opdrachtgever.
-
-   De muur is hier gebakken klei: warm zand, duidelijk geen wit en
-   duidelijk geen zwart. Daarop drie aardkleuren in plaats van alleen
-   gouden accenten — diepgroen voor de geverfde vlakken, terracotta
-   als accent en actie, goud alleen nog als fijne hooglicht. Drie
-   tonen uit één familie, dus warmer dan donker zonder de drukte van
-   de eerste schets (veldgroen naast menie naast goud).
-
-   Contrast is nagerekend, niet geschat: tekst op de muur 10,5:1,
-   zachte tekst 5,8:1, crème op diepgroen 11:1, crème op terracotta
-   7,3:1, goud op diepgroen 4,6:1. Alles haalt WCAG AA. */
-:root[data-palet='tussen'] {
-  --kalk: #d9cdb9;
-  --kalk-diep: #cfc1aa;
-  --kalk-schaduw: #b6a68c;
-  --veld: #2f4038;
-  --veld-diep: #26332d;
-  --lak: #9c4523;
-  --lak-helder: #b4552f;
-  --goud: #c9922f;
-  --roet: #241f1a;
-
-  --op-kalk: #241f1a;
-  --op-kalk-zacht: #524838;
-  --op-veld: #f4efe4;
-  --op-veld-zacht: #cfc8b8;
-  --op-lak: #fdf8f0;
-
-  --accent-kop: #9c4523;
-  --accent-tekst: #8a3a1c;
-  --bord-1: #2f4038;  --bord-1-inkt: #f4efe4;
-  --bord-2: #efe6d6;  --bord-2-inkt: #241f1a;
-  --bord-3: #9c4523;  --bord-3-inkt: #fdf8f0;
-  --knop-vol: #9c4523;  --knop-vol-inkt: #fdf8f0;  --knop-vol-hover: #b4552f;
-  --knop-licht: #efe6d6;  --knop-licht-inkt: #241f1a;  --knop-licht-hover: #fdf8f0;
-  --theme-kleur: #d9cdb9;
-
-  /* Overlay bijt het hardst in de middentonen, dus op een zandmuur
-     telt dezelfde korrel zwaarder dan op zwart. Vandaar lager. */
-  --korrel-sterkte: 0.14;
-}
-
 /* --- Palet: de tussenweg, meer in zijn eigen kleuren --------------
-   Variant op het palet hierboven, gevraagd op 19 oktober: dezelfde
-   zandmuur, maar met de kleuren van onnoraadsen.nl erin in plaats van
-   diepgroen en terracotta. Zo blijft het licht genoeg, en herkent de
-   opdrachtgever er toch zijn eigen palet in.
+   Gevraagd op 15 oktober, aangescherpt op 19 oktober: niet het felle
+   licht van het eerste kleurvoorbeeld, en niet het zwart van
+   onnoraadsen.nl, maar wel zijn eigen kleuren erin. De muur is daarom
+   gebakken klei: warm zand, duidelijk geen wit en duidelijk geen zwart.
 
    Het probleem dat dit palet oplost: zijn goud (#d4a84b) is gemaakt
    voor een zwarte ondergrond en verdwijnt op zand — 1,4:1, onleesbaar.

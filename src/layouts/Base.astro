@@ -5,7 +5,7 @@ import { talen, taalCodes, standaardTaal } from '../i18n/talen';
 /* `palet` zet een ander kleurenpalet op de pagina (zie tokens.css). Zonder
    waarde staat de site in het gekozen donkere palet; 'tussen' is het
    kleurvoorbeeld van de tussenweg op /voorbeeld-tussen/. */
-interface Props { taal?: string; titel?: string; omschrijving?: string; palet?: 'tussen' | 'tussen-goud' }
+interface Props { taal?: string; titel?: string; omschrijving?: string; palet?: 'tussen-goud' }
 const { taal = standaardTaal, titel, omschrijving, palet } = Astro.props;
 const themeKleur = palet ? '#d9cdb9' : '#1a1a1a';
 const huidige = talen[taal as keyof typeof talen] ?? talen[standaardTaal];
