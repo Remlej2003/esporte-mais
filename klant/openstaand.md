@@ -23,7 +23,7 @@ Bronnen:
 | M-6 | Moet er een logo bij "Onze missie"? | E | **Open** — vraag van Onno terug aan Jelmer |
 | M-7 | Grotere originelen van twee foto's | E, W 14 okt | **Open** — Onno moet ze sturen |
 | M-8 | "Foto's bij onze aanpak zijn slecht, kleiner maken?" | E | **Open** — antwoord in de conceptmail |
-| M-9 | Leeg vlak naast tekst bij Opleidingscentrum | A 12 okt | **Open** — visueel nalopen |
+| M-9 | Leeg vlak naast tekst bij Opleidingscentrum | A 12 okt | **Niet reproduceerbaar** — zie hieronder |
 | M-10 | Uitgebreide versie ook downloadbaar | D 4 okt | **Af en live** — 19 oktober |
 
 ### M-1 — de tussenversie staat klaar
@@ -71,6 +71,19 @@ kant.
 Onno's eigen voorstel — ze kleiner tonen — werkt en kan meteen. Maar het echte
 antwoord is dat hij de originelen opstuurt; die zijn er, want deze twee zijn
 uit de PDF geplukt in plaats van los aangeleverd.
+
+### M-9 — ik zie het lege vlak niet meer
+
+Op 19 oktober nagelopen op 1440, 1920 en mobiel. Het opleidingscentrum heeft
+links de kop met daaronder de overzichtsfoto, rechts de tekst, en daaronder de
+rij met drie foto's. Op beide desktopbreedtes vullen de kolommen elkaar; op
+mobiel staat alles onder elkaar, dus daar kan per definitie geen vlak "naast de
+tekst" staan.
+
+Waarschijnlijk keek Onno naar een versie van vóór 10 oktober, toen de vier
+foto's van het centrum erbij kwamen — zijn bericht is van 12 oktober, maar de
+deploy kan hem later bereikt hebben. **Niet zelf gaan gokken naar een
+oplossing**: vraag hem een schermafdruk als hij het nog ziet.
 
 ### M-10 — hier spreken twee instructies elkaar tegen
 
