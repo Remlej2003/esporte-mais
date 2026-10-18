@@ -24,7 +24,7 @@ Bronnen:
 | M-7 | Grotere originelen van twee foto's | E, W 14 okt | **Open** — Onno moet ze sturen |
 | M-8 | "Foto's bij onze aanpak zijn slecht, kleiner maken?" | E | **Open** — antwoord in de conceptmail |
 | M-9 | Leeg vlak naast tekst bij Opleidingscentrum | A 12 okt | **Open** — visueel nalopen |
-| M-10 | Uitgebreide versie ook downloadbaar? | D 4 okt | **Beslist** — ja, zie hieronder |
+| M-10 | Uitgebreide versie ook downloadbaar | D 4 okt | **Af en live** — 19 oktober |
 
 ### M-1 — de tussenversie staat klaar
 
@@ -80,10 +80,20 @@ uit de PDF geplukt in plaats van los aangeleverd.
   aanvraag** via een mailknop. In `nl.json` staat erbij `"Op verzoek"`, en
   commit `e2a1316` heet "Aanpassingen 4 oktober verwerkt".
 
-Op 19 oktober is dit beslist: **beide als download**. Zo staat het sinds die
-dag op onnoraadsen.nl (O-2). Op maisesporte.nl staat de uitgebreide versie nog
-steeds op aanvraag — dat is nu dus inconsistent tussen de twee sites. Trek dat
-gelijk zodra de kleurkeuze rond is en de site live gaat.
+Op 19 oktober is dit beslist en doorgevoerd: **beide versies als download**,
+op allebei de sites. De aanvraagknop met mailto is weg; op maisesporte in alle
+drie de talen, waarbij bij en en pt vermeld staat dat het document
+Nederlandstalig is.
+
+De drie documenten op maisesporte, met hun md5:
+
+| Bestand | md5 |
+|---|---|
+| `mais-esporte-korte-versie.pdf` | `d9b84ec5209941420a3d21c3037f47b9` |
+| `mais-esporte-uitgebreide-versie.pdf` | `5a001d9c73e06fe2816cb28d7dc208c3` |
+| `mais-esporte-partnershipmogelijkheden.pdf` | `1ac5bc623f8fa18c5bd2ead45f0effec` |
+
+Dezelfde drie staan op onnoraadsen.nl, met dezelfde md5's.
 
 ---
 
