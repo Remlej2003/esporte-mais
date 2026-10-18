@@ -441,3 +441,11 @@ Eerlijk vastgelegd zodat niemand ze voor systeem aanziet.
 - **Dode responsieve regel.** In `src/pages/index.astro` zet de 62rem-mediaquery `grid-template-columns` en `gap` op `.pad__spoor`, maar dat element is geen grid- of flexcontainer. Beide declaraties doen niets.
 - **Ongetokeniseerde lettergewichten.** Naast de gewichten in de typeschaal staan losse waarden in de code: 550 (waarschuwing bij de doelen), 650 (knoplabel, eenheid in de telling), 600 (etiket, keerpunt, plaat). Ze zijn legitiem omdat Archivo en Vollkorn variabele fonts zijn, maar er is geen gewichtsschaal als token.
 - **Korrelspreiding per kanaal.** Zie De Gemeten Materiaal Regel: op kalk haalt het rode kanaal 10 in plaats van de beoogde 12 tot 24, terwijl blauw op 25 zit. Bekend en geaccepteerd, niet stilzwijgend gladgestreken.
+
+### De tussenweg, in zijn eigen kleuren
+
+Op 19 oktober 2026 kwam de vraag of er "ietsjes meer" van de kleuren van onnoraadsen.nl in kon. `/voorbeeld-tussen-goud/` is dezelfde zandmuur als hierboven, maar met antraciet en goud in plaats van diepgroen en terracotta.
+
+Dat kan niet door simpelweg zijn goud over te nemen. `#d4a84b` is gemaakt voor een zwarte ondergrond en haalt op zand 1,4:1 — onleesbaar. Dit palet splitst de goudfamilie daarom in tweeën. Op de muur staat een warm brons (`--lak`, `#6f4a16`), donker genoeg om als tekst en als knop te lezen. Het échte goud (`--goud`, zijn `#d4a84b`) verschijnt uitsluitend op de antracieten vlakken, waar het wél schittert: op de lus, het contactblok en het bovenste partnerbord. Een messing plaat op een donker paneel, niet een gouden letter op zand.
+
+Het eerste brons stond op `#6f5312` en las als een grote olijfgroene vlak bij het impactblok, dat de volle `--lak` als ondergrond neemt. `#6f4a16` is dezelfde helderheid maar warmer, en leest als brons.

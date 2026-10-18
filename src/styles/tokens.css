@@ -216,3 +216,49 @@
      telt dezelfde korrel zwaarder dan op zwart. Vandaar lager. */
   --korrel-sterkte: 0.14;
 }
+
+/* --- Palet: de tussenweg, meer in zijn eigen kleuren --------------
+   Variant op het palet hierboven, gevraagd op 19 oktober: dezelfde
+   zandmuur, maar met de kleuren van onnoraadsen.nl erin in plaats van
+   diepgroen en terracotta. Zo blijft het licht genoeg, en herkent de
+   opdrachtgever er toch zijn eigen palet in.
+
+   Het probleem dat dit palet oplost: zijn goud (#d4a84b) is gemaakt
+   voor een zwarte ondergrond en verdwijnt op zand — 1,4:1, onleesbaar.
+   Daarom twee tinten uit dezelfde familie. Op de muur staat brons
+   (--lak), donker genoeg om als tekst en knop te lezen. Het échte goud
+   (--goud) verschijnt uitsluitend op de antracieten vlakken, waar het
+   wél schittert: als een messing plaat op een donker paneel. Dat is
+   precies waar hij het mooi vindt.
+
+   Contrast: brons op zand 5,0:1, inkt op zand 10,5:1, crème op
+   antraciet 12,9:1, goud op antraciet 5,8:1, inkt op het gouden bord
+   7,3:1. Alles haalt WCAG AA. */
+:root[data-palet='tussen-goud'] {
+  --kalk: #d9cdb9;
+  --kalk-diep: #cfc1aa;
+  --kalk-schaduw: #b6a68c;
+  --veld: #33312e;
+  --veld-diep: #272523;
+  --lak: #6f4a16;
+  --lak-helder: #8a5e1d;
+  --goud: #d4a84b;
+  --roet: #241f1a;
+
+  --op-kalk: #241f1a;
+  --op-kalk-zacht: #524838;
+  --op-veld: #faf8f5;
+  --op-veld-zacht: #cfc8b8;
+  --op-lak: #fdf8f0;
+
+  --accent-kop: #8a5e1d;
+  --accent-tekst: #6f4a16;
+  --bord-1: #33312e;  --bord-1-inkt: #faf8f5;
+  --bord-2: #efe6d6;  --bord-2-inkt: #241f1a;
+  --bord-3: #d4a84b;  --bord-3-inkt: #241f1a;
+  --knop-vol: #6f4a16;  --knop-vol-inkt: #fdf8f0;  --knop-vol-hover: #8a5e1d;
+  --knop-licht: #d4a84b;  --knop-licht-inkt: #241f1a;  --knop-licht-hover: #e8c97b;
+  --theme-kleur: #d9cdb9;
+
+  --korrel-sterkte: 0.14;
+}
