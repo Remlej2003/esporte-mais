@@ -219,7 +219,19 @@ Gemeten contrast: gouden kop op de muur 7,9:1, op antraciet 5,6:1; zachte tekst 
 
 ### Herkomst
 
-Tot 12 oktober 2026 was de muur gekalkt (`#ede5d3`) met veldgroen, menie en goud. Daarna stonden er twee kleurvoorbeelden naast de site, `/voorbeeld-kleuren/` (licht) en `/voorbeeld-donker/`. Donker is gekozen; dat palet is nu de site zelf. De voorbeeldpagina's en de schakelaar `data-palet` zijn weg, en de oude adressen sturen door naar de startpagina (`astro.config.mjs`).
+Tot 12 oktober 2026 was de muur gekalkt (`#ede5d3`) met veldgroen, menie en goud. Daarna stonden er twee kleurvoorbeelden naast de site, `/voorbeeld-kleuren/` (licht) en `/voorbeeld-donker/`. Donker is gekozen; dat palet is nu de site zelf. De voorbeeldpagina's zijn weg en de oude adressen sturen door naar de startpagina (`astro.config.mjs`).
+
+### De tussenweg
+
+Op 15 oktober 2026 trok de opdrachtgever die keuze weer open. Twee bezwaren, allebei terecht: de site lijkt in het donkere palet te veel op zijn eigen onnoraadsen.nl, en zwart-met-goud leest als luxe — parfum, horloges — en niet als een maatschappelijk project. Het lichte voorbeeld vond hij te licht.
+
+`/voorbeeld-tussen/` is het antwoord: de muur is gebakken klei (`#d9cdb9`), warm zand dat duidelijk geen wit en duidelijk geen zwart is. Daarop drie aardkleuren in plaats van alleen gouden accenten — diepgroen (`#2f4038`) voor de geverfde vlakken, terracotta (`#9c4523`) als accent en actie, goud (`#c9922f`) nog alleen als fijn hooglicht. Drie tonen uit één familie: warmer dan donker, zonder de drukte van de eerste schets, waar veldgroen naast menie naast goud stond.
+
+Het palet staat in `tokens.css` onder `:root[data-palet='tussen']` en wordt aangezet via de prop `palet` op `Startpagina` en `Base`. De site zelf blijft donker tot er gekozen is.
+
+**De Inkt-tegen-Goud Regel.** Dit palet kan één ding niet wat het donkere wel kan. Daar staan koppen in goud, en goud leest op élke ondergrond in dit systeem. Hier staan koppen in inkt, en inkt leest niet op diepgroen. Elk vlak dat zijn eigen tekstkleur zet — `.lus`, `.contact`, `.doelen`, `.bord` — moet daarom in `global.css` zijn kop laten erven in plaats van inkt op te leggen. De uitzonderingslijst bij `:root[data-palet='tussen']` is dus langer dan die bij het standaardpalet, en dat is geen slordigheid: komt er een vlak met eigen tekstkleur bij, dan hoort het in die lijst. Zonder die regel stond "Jongeren leiden jongeren" in donkere inkt op donkergroen.
+
+Contrast is nagerekend, niet geschat: tekst op de muur 10,5:1, zachte tekst 5,8:1, crème op diepgroen 11:1, crème op terracotta 7,3:1, goud op diepgroen 4,6:1. Alles haalt WCAG AA. De korrel staat hier op 0.14 in plaats van 0.2, omdat overlay het hardst bijt in de middentonen: dezelfde korrel telt op een zandmuur zwaarder dan op zwart.
 
 ## Typography
 
