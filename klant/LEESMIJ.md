@@ -13,6 +13,7 @@ de klant.
 | `gesprekken/2026-10-spraakberichten.md` | De vier spraakberichten van okt 2026, uitgeschreven. Hierin staat letterlijk wat is beloofd. |
 | `gesprekken/_ruwe-whisper-output/` | Onbewerkte transcriptie, voor als je wilt nagaan of ik iets verkeerd heb gelezen. |
 | `antwoord-aan-onno-2026-10-19.md` | Concept-antwoord op Onno's mail van 11 oktober. Nog niet verstuurd. |
+| `mail-onno-brochure-opvragen.md` | Kort los mailtje voor alléén de brochure van Wat zie jij?, plus waar het bestand waarschijnlijk wél staat. |
 
 ---
 
@@ -116,7 +117,7 @@ afgemaakt worden, omdat ze buiten deze computer liggen:
 
 | Punt | Wacht op |
 |---|---|
-| Brochure Wat zie jij? vervangen | Onno moet het bestand opnieuw sturen — het staat nergens op deze computer |
+| Brochure Wat zie jij? vervangen | Het bestand. Staat niet op deze Mac; kijk eerst in WhatsApp op de telefoon bij 2 oktober |
 | Uitgebreide versie downloadbaar? | Onno — zijn eigen instructies spreken elkaar tegen, zie M-10 |
 | Site live op maisesporte.nl | Onno's kleurkeuze, plus een Cloud86-code die naar hem gaat |
 | Het concept-antwoord versturen | Jelmer — hij stuurt het zelf |

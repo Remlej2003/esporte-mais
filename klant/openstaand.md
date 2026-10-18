@@ -116,8 +116,18 @@ voor het laatst aangeraakt op **18 november 2025**, bijna een jaar geleden. Het
 nieuwe heeft toevallig óók 18 pagina's, dus op paginatelling alleen kun je ze
 niet uit elkaar houden — kijk naar het jaartal in de brochure zelf.
 
-**Nodig:** Onno het document nog één keer laten sturen, bij voorkeur per mail.
-In deze chat zijn al meerdere WeTransfers verlopen voordat ze gedownload waren.
+**Nodig:** het bestand. Op 19 oktober is er uitputtend naar gezocht —
+bestandsnaam, Spotlight op inhoud, de media-opslag van WhatsApp Desktop, en de
+opgeruimde Downloads in `~/Op-te-ruimen`. Het staat niet op deze Mac.
+
+Het staat vrijwel zeker nog **in WhatsApp op de telefoon**: WhatsApp Desktop
+bewaart alleen recente bijlagen, en in Onno's map staat nog maar één PDF (de
+partnership-versie van 14 oktober). Kijk daar eerst, bij 2 oktober 2026.
+Anders Onno vragen het te mailen — zie `mail-onno-brochure-opvragen.md`.
+
+Zo controleer je achteraf of het gelukt is: het oude bestand heeft md5
+`128aed1244da7f512648280525725a1d`, en dat is ook precies wat er nu live op
+watziejij.nu staat. Zie je die md5 nog, dan is het niet doorgekomen.
 
 ---
 
@@ -127,9 +137,17 @@ In deze chat zijn al meerdere WeTransfers verlopen voordat ze gedownload waren.
 |---|------|------|-------|
 | O-1 | maisesporte.nl toevoegen aan de lijst sites | W 9 okt | **Open** |
 | O-2 | Bij "Ambitie en droom": verkorte én uitgebreide versie downloadbaar, in plaats van het huidige document. Tekst wordt "Je kan hier de verkorte en uitgebreide versie downloaden." | D 4 okt | **Open** — beide PDF's zijn er |
-| O-3 | Bij "Voor investeerders en bedrijven": Partnershipmogelijkheden downloadbaar | D 4 okt, W 14 okt | **Open** — PDF is er |
+| O-3 | Bij "Voor investeerders en bedrijven": Partnershipmogelijkheden downloadbaar | D 4 okt, W 14 okt | **Half** — zie hieronder |
 
-De bestanden voor O-2 en O-3 staan klaar in `/Users/jelmersicloud/Downloads/`
+**O-3 staat er al deels op, maar met het verkeerde bestand.** In
+`Onnos-site/public/downloads/` staan `mais-esporte-korte-versie.pdf` en
+`mais-esporte-partnershipmogelijkheden.pdf`, neergezet op 10 oktober. Die
+partnership-PDF is de **oude** (md5 `c33184bb…`) — dezelfde fout die op
+maisesporte al rechtgezet is. Overschrijf hem met de juiste (md5
+`1ac5bc62…`), die nu in `esporte-mais/public/downloads/` staat. Controleer ook
+of er in de pagina's naar verwezen wordt.
+
+De bestanden voor O-2 staan klaar in `/Users/jelmersicloud/Downloads/`
 (korte versie, uitgebreide versie 2027–2031 vs 2) en voor de partnership-PDF
 geldt weer: **de juiste komt uit de WhatsApp-export**, niet uit Downloads.
 
