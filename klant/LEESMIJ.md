@@ -112,16 +112,21 @@ een Vercel-inlogscherm. Alleen `esporte-mais.vercel.app` (productie, vanaf
 
 ### Wat er nog ligt, en op wie het wacht
 
-Alles staat in `openstaand.md`. Vier dingen kunnen niet door een AI-sessie
-afgemaakt worden, omdat ze buiten deze computer liggen:
+Alles wat zonder Onno kon, is op 19 oktober gedaan en live gecontroleerd. Wat
+overblijft ligt buiten deze computer:
 
 | Punt | Wacht op |
 |---|---|
-| Site live op maisesporte.nl | Onno's kleurkeuze, plus een Cloud86-code die naar hem gaat |
-| Het concept-antwoord versturen | Jelmer — hij stuurt het zelf |
+| De conceptmail versturen | **Jelmer** — hij stuurt hem zelf. Bijgewerkt en alle links gecontroleerd. |
+| Kleurkeuze: donker of de tussenversie | **Onno** — antwoord op die mail |
+| Site live op maisesporte.nl | **Onno's** kleurkeuze, plus een Cloud86-code die naar hem gaat |
+| Grotere originelen van de twee lus-foto's | **Onno** — moet ze sturen |
+| Logo bij Onze missie, ja of nee | **Onno** — advies in de mail is nee |
+| Urenlijst | **Jelmer** — zijn eigen uren |
 
 De brochure van **Wat zie jij?** — drie keer gevraagd en lang blijven liggen —
-is op 19 oktober alsnog vervangen en staat live.
+is op 19 oktober alsnog vervangen en staat live. Zo ook de documenten op
+onnoraadsen.nl en het volledige projectplan op maisesporte.
 
 ---
 

@@ -4,21 +4,19 @@ Antwoord op zijn mail van zondag 11 oktober ("Onderaan de site van Mais Esporte
 staat dit. Reageer ff op mijn antwoorden"), plus de punten die daarna via
 WhatsApp kwamen.
 
-**Nog niet verstuurd.** Lees het door en pas de toon aan naar je eigen manier
-van schrijven. Twee dingen moet je zelf nog doen voor je op verzenden drukt:
-
-- de logobestanden als bijlage toevoegen (zie onderaan)
-- besluiten of je de link naar de tussenversie meestuurt — dat kan pas als die
-  online staat; nu is hij alleen lokaal te zien
+**Nog niet verstuurd — Jelmer stuurt hem zelf.** Bijgewerkt naar de stand van
+19 oktober, eind van de dag: alle links hieronder staan live en zijn
+gecontroleerd. Er hoeft niets als bijlage mee; het logo is een downloadlink.
+Pas alleen de toon aan naar je eigen manier van schrijven.
 
 ---
 
-Onderwerp: **Derde kleurversie + je punten van de site**
+Onderwerp: **Derde kleurversie, en je punten van de site**
 
 Hoi Onno,
 
-Sorry dat het later is dan ik zei. Hierbij de derde kleurversie en je vragen
-langs.
+Sorry dat het later is dan ik zei. Hierbij de derde kleurversie, en je vragen
+langs — een flink deel is inmiddels ook al gedaan.
 
 **De kleuren**
 
@@ -32,8 +30,12 @@ terracotta, en goud alleen nog als klein accent. Niet fel licht, niet donker.
 Meer kleur dan alleen goud, maar rustiger dan de allereerste versie. Het voelt
 warmer en maatschappelijker, en het staat duidelijk los van onnoraadsen.nl.
 
-[LINK] — de donkere versie staat er nog gewoon naast, dus je kunt ze
-vergelijken.
+https://esporte-mais.vercel.app/voorbeeld-tussen/
+
+De donkere versie staat er gewoon nog naast, dus je kunt ze vergelijken:
+https://esporte-mais.vercel.app
+
+Laat maar weten welke het wordt.
 
 **Je antwoorden van onderaan de site**
 
@@ -64,35 +66,36 @@ wordt hij wazig. Een vectorbestand (SVG) is geen pixels maar een beschrijving
 van de vormen, dus die blijft op elk formaat scherp — van een visitekaartje tot
 een spandoek of de zijkant van de Sportbus.
 
-Je hoeft niks te doen: ik heb het logo al in beide soorten gemaakt. Ik stuur ze
-mee als bijlage. Bewaar vooral de SVG-bestanden, dan kan een drukker er altijd
-mee uit de voeten.
+Je hoeft niks te doen: ik heb het logo al in beide soorten gemaakt. Je kunt ze
+hier allemaal in één keer downloaden:
 
-**De rest**
+https://esporte-mais.vercel.app/downloads/mais-esporte-logo.zip
+
+Er zit een korte uitleg bij welk bestand je waarvoor gebruikt. Kort gezegd: de
+PNG voor Word, PowerPoint en WhatsApp, en de SVG geef je aan de drukker.
+
+**Wat er verder al gedaan is**
+
+*Wat zie jij?* — het document dat je op 2 oktober stuurde staat er nu op.
+Sorry dat dit drie keer heeft moeten komen. Alle downloadknoppen op de site
+geven nu de nieuwe brochure.
 
 *Partnershipmogelijkheden* — je had gelijk, er stond nog de oude versie op.
-Staat nu goed.
+Staat nu goed, op maisesporte én op onnoraadsen.nl.
 
-*Wat zie jij?* — hier heb jij echt gelijk, en het is mijn fout dat dit nu drie
-keer heeft moeten komen. Het document dat je op 2 oktober stuurde is bij mij
-niet aangekomen; ik kan het nergens meer terugvinden. Zou je het nog één keer
-willen mailen in plaats van via WhatsApp? Dan zet ik het er dezelfde dag op.
-Het is één bestand vervangen, dan werken alle downloadknoppen op de site in één
-keer mee.
+*Uitgebreide versie* — staat nu op allebei de sites gewoon als download, naast
+de verkorte versie, zoals in je document van 4 oktober. Op onnoraadsen.nl staat
+bij Ambitie en droom nu ook: "Je kan hier de verkorte en uitgebreide versie
+downloaden."
 
-*Uitgebreide versie* — in jouw document van 4 oktober staat dat op maisesporte
-zowel de verkorte als de uitgebreide versie moet staan. Op de site staat nu de
-korte versie als download en het volledige plan op aanvraag per mail. Die
-aanvraagknop levert je wel de contactgegevens op van wie het opvraagt, en dat
-is voor partners best waardevol. Wil je dat zo houden, of mag het volledige
-plan er gewoon als download bij?
+*onnoraadsen.nl* — maisesporte.nl stond er al bij, onderaan en in de strip met
+je initiatieven.
+
+**Nog te doen**
 
 *Online zetten* — zodra je de kleuren hebt gekozen zet ik de site op
 maisesporte.nl. Ik heb dan wel weer even een code van je nodig voor Cloud86, en
 die verloopt snel. Laat weten wanneer je een kwartiertje bereikbaar bent.
-
-*onnoraadsen.nl* — maisesporte.nl erbij, en de documenten bij Ambitie en droom
-en bij investeerders. Dat pak ik mee in dezelfde ronde.
 
 Ik stuur je ook nog de urenlijst.
 
@@ -101,23 +104,17 @@ Jelmer
 
 ---
 
-## Bijlagen die mee moeten
+## Waarom de mail zo is opgebouwd
 
-Uit `merk/` in de repo:
-
-| Bestand | Waarvoor |
-|---|---|
-| `mais-esporte-logo-standaard.svg` + `.png` | het volledige logo |
-| `mais-esporte-beeldmerk-goud.svg` + `.png` | alleen het beeldmerk |
-| `mais-esporte-logo-zwart.svg` | drukwerk in één kleur |
-| `mais-esporte-logo-wit.svg` | op een donkere achtergrond |
-
-`merk/LEESMIJ.md` legt uit welke variant waarvoor is. Overweeg die ook mee te
-sturen, of de inhoud ervan in de mail te plakken.
-
-## Wat je bewust níet toezegt in deze mail
-
-- Geen nieuwe datum voor "alles af". De vorige twee zijn niet gehaald; een
-  derde maakt het alleen erger. Er staat wel een concrete toezegging in die je
-  wél kunt waarmaken: het Wat zie jij?-document gaat er dezelfde dag op.
-- Niet zelf de uitgebreide versie als download toevoegen — eerst zijn antwoord.
+- **Het gedane staat apart van het nog-te-doen.** Onno heeft meerdere punten
+  vaker moeten vragen. Een kopje "Wat er verder al gedaan is" laat in één
+  oogopslag zien dat er werk verzet is, in plaats van dat hij het uit de tekst
+  moet vissen.
+- **Geen nieuwe datum voor "alles af".** De vorige twee zijn niet gehaald; een
+  derde maakt het alleen erger. Wat er nog openstaat hangt bovendien op hem:
+  zijn kleurkeuze en een Cloud86-code.
+- **De goud/antraciet-variant wordt niet genoemd.** Die is op 19 oktober gemaakt
+  en dezelfde dag weer weggehaald; Onno heeft hem nooit gezien. Hem nu noemen
+  geeft alleen een extra keuze die er niet is.
+- **Het logo gaat als link, niet als bijlage.** Zestien losse bestanden in een
+  mail is onhandig, en zo zit de uitleg er automatisch bij.

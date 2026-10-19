@@ -18,11 +18,11 @@ Bronnen:
 | M-1 | Derde kleurversie, de "tussenweg" | A 15 okt | **Af en live** — `/voorbeeld-tussen/` |
 | M-2 | Partnership-PDF vervangen door laatste versie | W 14 okt | **Af** — zie hieronder |
 | M-3 | Site live zetten op maisesporte.nl | W 14 okt | **Open** — wacht op besluit + Cloud86-code |
-| M-4 | Logo naar Onno sturen | W 14 okt, D 4 okt | **Open** — bestanden klaar, moeten verstuurd |
-| M-5 | Uitleggen wat "logo als vectorbestand" is | E | **Open** — staat in de conceptmail |
+| M-4 | Logo naar Onno sturen | W 14 okt, D 4 okt | **Klaar om te versturen** — downloadlink in de conceptmail |
+| M-5 | Uitleggen wat "logo als vectorbestand" is | E | **Klaar om te versturen** — in de conceptmail en de LEES MIJ van de zip |
 | M-6 | Moet er een logo bij "Onze missie"? | E | **Open** — vraag van Onno terug aan Jelmer |
 | M-7 | Grotere originelen van twee foto's | E, W 14 okt | **Open** — Onno moet ze sturen |
-| M-8 | "Foto's bij onze aanpak zijn slecht, kleiner maken?" | E | **Open** — antwoord in de conceptmail |
+| M-8 | "Foto's bij onze aanpak zijn slecht, kleiner maken?" | E | **Klaar om te versturen** — antwoord in de conceptmail |
 | M-9 | Leeg vlak naast tekst bij Opleidingscentrum | A 12 okt | **Niet reproduceerbaar** — zie hieronder |
 | M-10 | Uitgebreide versie ook downloadbaar | D 4 okt | **Af en live** — 19 oktober |
 
@@ -191,6 +191,17 @@ Afgesproken tarief is € 15 per uur (W, 9 december 2025). Onno betaalt in
 termijnen. Uren worden bijgehouden in een Google Sheet.
 
 ---
+
+## Het logo
+
+Online als zip: `https://esporte-mais.vercel.app/downloads/mais-esporte-logo.zip`
+(lokaal: `public/downloads/mais-esporte-logo.zip`). Alle vijf varianten en de
+drie losse beeldmerken, elk als SVG en PNG, plus een `LEES MIJ.txt` in gewone
+taal. Wordt nergens op de site gelinkt; het adres is om te delen.
+
+**Let op:** de logobestanden zijn goud, passend bij de huidige donkere site.
+Kiest Onno de groen-terracotta tussenversie, dan is een terracotta-variant
+waarschijnlijk nodig. De bron staat in `scripts/maak-logo.py`.
 
 ## Wat Onno al heeft goedgekeurd — niet opnieuw vragen
 
