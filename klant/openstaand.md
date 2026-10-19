@@ -15,7 +15,7 @@ Bronnen:
 
 | # | Punt | Bron | Stand |
 |---|------|------|-------|
-| M-1 | Derde kleurversie, de "tussenweg" | A 15 okt | **Af en live** — `/voorbeeld-tussen-goud/` |
+| M-1 | Derde kleurversie, de "tussenweg" | A 15 okt | **Af en live** — `/voorbeeld-tussen/` |
 | M-2 | Partnership-PDF vervangen door laatste versie | W 14 okt | **Af** — zie hieronder |
 | M-3 | Site live zetten op maisesporte.nl | W 14 okt | **Open** — wacht op besluit + Cloud86-code |
 | M-4 | Logo naar Onno sturen | W 14 okt, D 4 okt | **Open** — bestanden klaar, moeten verstuurd |
@@ -33,14 +33,21 @@ startpagina zelf is **niet** gewijzigd en staat nog donker.
 
 | Adres | Wat het is |
 |---|---|
-| `/voorbeeld-tussen-goud/` | zandmuur met zijn antraciet en goud |
+| `/voorbeeld-tussen/` | zandmuur met diepgroen en terracotta |
 | `/` | de huidige donkere site, onveranderd |
 
-Er is op 19 oktober ook een variant met diepgroen en terracotta gemaakt. Die
-is er op verzoek weer uit: Onno's eigen kleuren wonnen. Het oude adres
-`/voorbeeld-tussen/` stuurt door naar het gouden, dus een link die al
-rondgaat blijft werken. Schermafdrukken staan in `kleurvergelijking/`, en
-`DESIGN.md` legt uit waarom zijn goud niet zomaar op een zandmuur kan.
+Op 19 oktober is er ook een variant gemaakt in Onno's eigen antraciet en goud
+(`/voorbeeld-tussen-goud/`). Jelmer koos dezelfde dag voor de groen-terracotta
+versie, en de gouden is weer verwijderd; dat oude adres stuurt door naar
+`/voorbeeld-tussen/`.
+
+**Let op, dit is één keer misgegaan:** bij het kiezen tussen de twee is eerst
+de verkeerde weggehaald — "die met gele teksten, die ipv die met donkergroen"
+is gelezen als *houd* de gele, terwijl het *weg met* de gele betekende. Bij
+een keuze tussen varianten: vraag terug welke **blijft**, met het adres erbij.
+
+Schermafdrukken staan in `kleurvergelijking/`, en `DESIGN.md` legt de keuzes
+uit.
 
 **Wacht nu op Onno's keuze.** Zolang die er niet is, blijft M-3 dicht.
 

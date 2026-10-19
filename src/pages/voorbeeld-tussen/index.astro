@@ -1,0 +1,12 @@
+---
+/* Kleurvoorbeeld "de tussenweg": dezelfde startpagina, maar op een warme
+   zandmuur met diepgroen en terracotta in plaats van zwart met goud.
+   Gevraagd op 15 oktober 2026, omdat het lichte voorbeeld te licht was en
+   het donkere te veel op onnoraadsen.nl lijkt en te luxe aanvoelt voor een
+   maatschappelijk project. De site zelf blijft ongewijzigd donker; dit is
+   een voorbeeldadres om naast elkaar te kunnen zetten. */
+import Startpagina from '../../layouts/Startpagina.astro';
+import { talen, standaardTaal } from '../../i18n/talen';
+---
+
+<Startpagina t={talen[standaardTaal].content} taal={standaardTaal} palet="tussen" />
