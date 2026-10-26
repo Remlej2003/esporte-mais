@@ -185,7 +185,8 @@
 
    Contrast is nagerekend, niet geschat: tekst op de muur 10,5:1,
    zachte tekst 5,8:1, crème op diepgroen 11:1, crème op terracotta
-   7,3:1, goud op diepgroen 4,6:1. Alles haalt WCAG AA. */
+   7,3:1, goud op diepgroen 4,6:1 (#d4a03c op --veld; het eerdere
+   #c9922f haalde maar 4,0:1). Alles haalt WCAG AA. */
 :root[data-palet='tussen'] {
   --kalk: #d9cdb9;
   --kalk-diep: #cfc1aa;
@@ -194,7 +195,7 @@
   --veld-diep: #26332d;
   --lak: #9c4523;
   --lak-helder: #b4552f;
-  --goud: #c9922f;
+  --goud: #d4a03c;
   --roet: #241f1a;
 
   --op-kalk: #241f1a;

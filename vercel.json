@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    { "source": "/voorbeeld-licht/:pad*", "destination": "/", "permanent": true },
+    { "source": "/voorbeeld-onno/:pad*", "destination": "/", "permanent": true },
+    { "source": "/voorbeeld-kleuren/:pad*", "destination": "/", "permanent": true },
+    { "source": "/voorbeeld-donker/:pad*", "destination": "/", "permanent": true },
+    { "source": "/voorbeeld-tussen/:pad*", "destination": "/", "permanent": true },
+    { "source": "/voorbeeld-tussen-goud/:pad*", "destination": "/", "permanent": true }
+  ]
+}

@@ -5,9 +5,12 @@ import { talen, taalCodes, standaardTaal } from '../i18n/talen';
 /* `palet` kiest het kleurenpalet (zie tokens.css). Op 20 oktober 2026 koos
    de opdrachtgever de tussenweg — zandmuur, diepgroen, terracotta — en dat is
    nu de site. Het donkere palet staat nog als basis in tokens.css. */
-interface Props { taal?: string; titel?: string; omschrijving?: string; palet?: 'donker' | 'tussen' }
-const { taal = standaardTaal, titel, omschrijving, palet = 'tussen' } = Astro.props;
+/* `zoekbaar` staat alleen uit voor de foutpagina: die hoort niet in Google. */
+interface Props { taal?: string; titel?: string; omschrijving?: string; palet?: 'donker' | 'tussen'; zoekbaar?: boolean }
+const { taal = standaardTaal, titel, omschrijving, palet = 'tussen', zoekbaar = true } = Astro.props;
 const themeKleur = palet === 'tussen' ? '#d9cdb9' : '#1a1a1a';
+/* og:locale wil taal_LAND; htmlLang is soms alleen de taal. */
+const ogLocale: Record<string, string> = { nl: 'nl_NL', en: 'en_GB', 'pt-BR': 'pt_BR' };
 const huidige = talen[taal as keyof typeof talen] ?? talen[standaardTaal];
 const kopTitel = titel ?? huidige.content.meta.titel;
 const kopOmschrijving = omschrijving ?? huidige.content.meta.omschrijving;
@@ -20,21 +23,32 @@ const kopOmschrijving = omschrijving ?? huidige.content.meta.omschrijving;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{kopTitel}</title>
     <meta name="description" content={kopOmschrijving} />
-    <link rel="canonical" href={new URL(huidige.pad, Astro.site)} />
+    {zoekbaar
+      ? <link rel="canonical" href={new URL(huidige.pad, Astro.site)} />
+      : <meta name="robots" content="noindex" />}
     <meta property="og:title" content={kopTitel} />
     <meta property="og:description" content={kopOmschrijving} />
-    <meta property="og:locale" content={huidige.htmlLang.replace('-', '_')} />
+    <meta property="og:locale" content={ogLocale[huidige.htmlLang] ?? huidige.htmlLang} />
+    <meta property="og:url" content={new URL(huidige.pad, Astro.site)} />
+    <meta property="og:image" content={new URL('/og-beeld.jpg', Astro.site)} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:type" content="website" />
     <meta name="theme-color" content={themeKleur} />
     {taalCodes.map((code) => (
       <link rel="alternate" hreflang={talen[code].htmlLang} href={new URL(talen[code].pad, Astro.site)} />
     ))}
     <link rel="alternate" hreflang="x-default" href={new URL(talen[standaardTaal].pad, Astro.site)} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="preload" href="/fonts/Vollkorn-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/Archivo-latin.woff2" as="font" type="font/woff2" crossorigin />
   </head>
   <body>
-    <!--
+    {/* Ontwerpnotities van de eerste, donkere versie. Staan alleen in de bron,
+       niet in de gepubliceerde pagina.
       THESIS: Een gemeenschap houdt haar eigen telling bij, met de kwast. Weigert de
       statistiekenbalk in kolommen die vijfjaardoelen als behaalde resultaten presenteert.
       OWN-WORLD: Een zwarte muur (#1a1a1a) onder één korrellaag, in de kleuren van
@@ -50,7 +64,7 @@ const kopOmschrijving = omschrijving ?? huidige.content.meta.omschrijving;
       FORM: Muurschrift, kandidaat 6 van 7, seed 42e25978.
       FINISH: unreviewed and undocumented is unfinished; this build ends with the finish
       review, the verdict, and DESIGN.md
-    -->
+    */}
     <slot />
   </body>
 </html>

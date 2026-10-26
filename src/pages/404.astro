@@ -1,0 +1,40 @@
+---
+/* Foutpagina voor adressen die niet bestaan. Vercel toont dit bestand
+   automatisch. Eén pagina voor alle drie de talen: de bezoeker kan op een
+   onbekend adres staan, dus we weten niet welke taal hij zocht. */
+import Base from '../layouts/Base.astro';
+import Merk from '../components/Merk.astro';
+import Knop from '../components/Knop.astro';
+import { talen } from '../i18n/talen';
+
+const regels = [
+  { lang: 'nl', kop: 'Deze pagina bestaat niet.', tekst: 'Misschien is het adres veranderd.', knop: 'Naar de startpagina', href: talen.nl.pad },
+  { lang: 'en', kop: 'This page does not exist.', tekst: 'The address may have changed.', knop: 'Go to the home page', href: talen.en.pad },
+  { lang: 'pt-BR', kop: 'Esta página não existe.', tekst: 'Talvez o endereço tenha mudado.', knop: 'Ir para a página inicial', href: talen.pt.pad },
+];
+---
+
+<Base titel="MAIS ESPORTE — 404" zoekbaar={false}>
+  <main class="omhulsel fout">
+    <a href="/" aria-label="MAIS ESPORTE"><Merk hoogte="3rem" kleur="var(--lak)" /></a>
+    {regels.map((r) => (
+      <section lang={r.lang} class="fout__taal">
+        <h1 class="fout__kop">{r.kop}</h1>
+        <p>{r.tekst}</p>
+        <Knop href={r.href} soort="vol">{r.knop}</Knop>
+      </section>
+    ))}
+  </main>
+</Base>
+
+<style>
+  .fout {
+    min-height: 100svh;
+    display: grid;
+    align-content: center;
+    gap: var(--s7);
+    padding-block: var(--s8);
+  }
+  .fout__taal { display: grid; justify-items: start; gap: var(--s3); }
+  .fout__kop { font-size: var(--t-h2); }
+</style>

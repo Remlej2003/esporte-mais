@@ -135,12 +135,9 @@ const { t, taal } = Astro.props;
     color: var(--op-kalk-zacht);
     text-decoration: none;
     padding: var(--s1) var(--s2);
-    opacity: 0.72;
-    transition:
-      color var(--duur-kort) var(--ease-uit),
-      opacity var(--duur-kort) var(--ease-uit);
+    transition: color var(--duur-kort) var(--ease-uit);
   }
-  .kop__taal:hover { color: var(--op-kalk); opacity: 1; }
+  .kop__taal:hover { color: var(--op-kalk); }
   .kop__taal--nu {
     color: var(--op-kalk);
     opacity: 1;

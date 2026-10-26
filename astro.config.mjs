@@ -13,7 +13,8 @@ export default defineConfig({
   build: { inlineStylesheets: 'always' },
   // De stijl- en kleurvoorbeelden zijn opgegaan in de site zelf: op 20 oktober
   // 2026 is de tussenweg gekozen. Oude adressen die nog rondgaan landen op de
-  // startpagina.
+  // startpagina. Op Vercel doet vercel.json dat met een echte 301; deze
+  // lijst is voor astro dev en houdt hetzelfde bij.
   redirects: {
     '/voorbeeld-licht': '/',
     '/voorbeeld-onno': '/',

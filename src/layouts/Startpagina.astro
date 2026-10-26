@@ -902,7 +902,7 @@ const centrumRijen = [centrumRest.slice(0, 2), centrumRest.slice(2)];
     margin-top: var(--s4);
     font-size: var(--t-groot);
   }
-  .doelen__daarnaast li { display: flex; align-items: baseline; gap: var(--s3); }
+  .doelen__daarnaast li { display: flex; gap: var(--s3); }
   /* Geen liggend streepje als leesteken maar hetzelfde geschilderde
      staafje dat de rest van de pagina gebruikt. */
   .doelen__daarnaast li::before {
@@ -912,7 +912,9 @@ const centrumRijen = [centrumRest.slice(0, 2), centrumRest.slice(2)];
     background: currentColor;
     opacity: 0.6;
     flex: none;
-    align-self: center;
+    /* Op de eerste regel, ook als het punt over twee regels loopt. */
+    align-self: flex-start;
+    margin-top: calc(0.5lh - 1px);
   }
 
   /* ══ De borden ═══════════════════════════════════════════ */
@@ -1117,7 +1119,7 @@ const centrumRijen = [centrumRest.slice(0, 2), centrumRest.slice(2)];
     margin-top: var(--s7);
   }
   .voet__afzender { color: var(--op-kalk-zacht); }
-  .voet__noot { color: var(--op-kalk-zacht); opacity: 0.7; }
+  .voet__noot { color: var(--op-kalk-zacht); }
 
   /* ══ Smallere schermen ═══════════════════════════════════ */
 
