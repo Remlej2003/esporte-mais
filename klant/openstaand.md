@@ -17,7 +17,7 @@ Bronnen:
 |---|------|------|-------|
 | M-1 | Derde kleurversie, de "tussenweg" | A 15 okt | **Af en live** — `/voorbeeld-tussen/` |
 | M-2 | Partnership-PDF vervangen door laatste versie | W 14 okt | **Af** — zie hieronder |
-| M-3 | Site live zetten op maisesporte.nl | W 14 okt, A 20 okt | **Bezig** — zie hieronder |
+| M-3 | Site live zetten op maisesporte.nl | W 14 okt, A 20 okt | **Af en live** — 26 oktober, zie hieronder |
 | M-4 | Logo naar Onno sturen | W 14 okt, D 4 okt | **Klaar om te versturen** — downloadlink in de conceptmail |
 | M-5 | Uitleggen wat "logo als vectorbestand" is | E | **Klaar om te versturen** — in de conceptmail en de LEES MIJ van de zip |
 | M-6 | Moet er een logo bij "Onze missie"? | E | **Open** — vraag van Onno terug aan Jelmer |
@@ -26,31 +26,36 @@ Bronnen:
 | M-9 | Leeg vlak naast tekst bij Opleidingscentrum | A 12 okt | **Niet reproduceerbaar** — zie hieronder |
 | M-10 | Uitgebreide versie ook downloadbaar | D 4 okt | **Af en live** — 19 oktober |
 
-### M-3 — live zetten, stand 26 oktober
+### M-3 — live op maisesporte.nl sinds 26 oktober
 
 Onno op 20 oktober (spraakbericht): "Nog vast te stellen" onderaan weghalen,
-en "zet hem online". Jelmer koos de **tussenversie**. Gedaan:
+en "zet hem online". Jelmer koos de **tussenversie**.
 
 - Tussenweg is het standaardpalet op alle talen, `/voorbeeld-tussen/` stuurt
-  door naar `/`. Het blok "Nog vast te stellen" is weg. noindex eraf, canonical
-  naar `https://maisesporte.nl/`. Live op `esporte-mais.vercel.app`.
-- **Mail losgekoppeld van het A-record** in Cloud86-DNS: MX is nu
-  `10 webmail.maisesporte.nl`, en `mail`, `smtp`, `ftp` zijn CNAME naar
-  `webmail.maisesporte.nl` (A, 45.82.188.146). Zo kan `@` naar Vercel zonder
-  dat de mail meeverhuist.
+  door naar `/`. Het blok "Nog vast te stellen" is weg. noindex eraf,
+  canonical naar `https://maisesporte.nl/`.
+- **Vercel** (team `project-onnos-projects`, inloggen als `projectonno-6492`):
+  `maisesporte.nl` → Production, `www.maisesporte.nl` → 308 naar
+  `maisesporte.nl`. Alle drie Valid Configuration, SSL door Vercel.
+- **Cloud86-DNS**, zone maisesporte.nl, na de wijziging:
 
-Nog te doen, in deze volgorde:
+| Naam | Type | Waarde |
+|---|---|---|
+| `@` | A | `216.198.79.1` (Vercel) |
+| `www` | CNAME | `61170e50c5ccd6da.vercel-dns-017.com` (Vercel) |
+| `webmail` | A | `45.82.188.146` (Cloud86) |
+| `mail`, `smtp`, `ftp` | CNAME | `webmail.maisesporte.nl` |
+| `@` | MX | `10 webmail.maisesporte.nl` |
+| `@` | TXT | `"v=spf1 +mx +ip4:45.82.188.146 -all"` |
+| `*` | A | `45.82.188.146` (ongewijzigd) |
 
-1. In Vercel (team `onnos-projects`, project `esporte-mais`) de domeinen
-   `maisesporte.nl` en `www.maisesporte.nl` toevoegen; www stuurt door naar
-   de kale naam. Het Vercel-account in Jelmers Chrome (fotoshoot) heeft geen
-   toegang tot dat team.
-2. Cloud86-DNS: `@ A` → `76.76.21.21`, `www CNAME` → `cname.vercel-dns.com`.
-   Het wildcard-record `*` en `webmail` blijven op 45.82.188.146.
-3. SPF: `+a` eruit → `"v=spf1 +mx +ip4:45.82.188.146 -all"`, anders mag
-   Vercel's IP mail versturen namens het domein.
-4. Als Onno's mailapp `maisesporte.nl` als server gebruikt (in plaats van
-   `mail.maisesporte.nl`), moet dat in die app om.
+  Vroeger wees alles, ook MX en `mail`, naar `maisesporte.nl` zelf. Die zijn
+  eerst losgekoppeld, daarna pas `@` naar Vercel. Gecontroleerd: de
+  mailserver neemt post voor `info@maisesporte.nl` nog aan.
+- **Let op mailapps:** wie in een mailapp `maisesporte.nl` als IMAP/SMTP-server
+  had ingevuld, moet dat veranderen in `mail.maisesporte.nl` (of
+  `shared36.cloud86-host.nl`, waar het certificaat van de mailserver op staat).
+  Webmail via `webmail.maisesporte.nl` werkt ongewijzigd.
 
 ### M-1 — de tussenversie staat klaar
 

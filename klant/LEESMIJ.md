@@ -25,7 +25,7 @@ dingen blijven liggen:
 
 | Site | Repo | Wat het is |
 |---|---|---|
-| **maisesporte.nl** | `esporte-mais` (deze) | Het nieuwe project. Nog niet live. |
+| **maisesporte.nl** | `esporte-mais` (deze) | Het nieuwe project. Live sinds 26 oktober 2026. |
 | **watziejij.nu** | `zie-jij-de-wereld-main` | Lesprogramma voor basisscholen. Live. |
 | **onnoraadsen.nl** | `Onnos-site` | Onno's persoonlijke site. Live. |
 
