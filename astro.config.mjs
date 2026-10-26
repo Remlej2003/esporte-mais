@@ -11,13 +11,15 @@ export default defineConfig({
     routing: { prefixDefaultLocale: false },
   },
   build: { inlineStylesheets: 'always' },
-  // De stijl- en kleurvoorbeelden zijn opgegaan in de site zelf: de donkere
-  // stijl is gekozen. Oude adressen die nog rondgaan landen op de startpagina.
+  // De stijl- en kleurvoorbeelden zijn opgegaan in de site zelf: op 20 oktober
+  // 2026 is de tussenweg gekozen. Oude adressen die nog rondgaan landen op de
+  // startpagina.
   redirects: {
     '/voorbeeld-licht': '/',
     '/voorbeeld-onno': '/',
     '/voorbeeld-kleuren': '/',
     '/voorbeeld-donker': '/',
-    '/voorbeeld-tussen-goud': '/voorbeeld-tussen/',
+    '/voorbeeld-tussen': '/',
+    '/voorbeeld-tussen-goud': '/',
   },
 });

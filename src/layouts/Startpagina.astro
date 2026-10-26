@@ -12,8 +12,8 @@ interface Props {
   /* Het contentbestand van deze taal. Dezelfde vorm voor nl, en en pt. */
   t: any;
   taal: string;
-  /* Alleen voor een kleurvoorbeeld: zet een ander palet op de pagina. */
-  palet?: 'tussen';
+  /* Zonder waarde het gekozen palet; zie Base.astro. */
+  palet?: 'donker' | 'tussen';
 }
 const { t, taal, palet } = Astro.props;
 
@@ -480,12 +480,6 @@ const centrumRijen = [centrumRest.slice(0, 2), centrumRest.slice(2)];
               {t.voet.websites.map((w) => (
                 <li><a href={w.href} target="_blank" rel="noopener noreferrer">{w.tekst}</a></li>
               ))}
-            </ul>
-          </div>
-          <div class="voet__open">
-            <p class="plaat voet__openkop">{t.voet.openKop}</p>
-            <ul class="voet__lijst">
-              {t.voet.open.map((o) => <li>{o}</li>)}
             </ul>
           </div>
         </div>
@@ -1090,7 +1084,7 @@ const centrumRijen = [centrumRest.slice(0, 2), centrumRest.slice(2)];
   }
   .voet__kolommen {
     display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--s6) clamp(var(--s6), 4vw, var(--s8));
   }
   .voet__openkop { color: var(--accent-tekst); }

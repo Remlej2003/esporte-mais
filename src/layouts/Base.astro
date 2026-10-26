@@ -2,11 +2,11 @@
 import '../styles/global.css';
 import { talen, taalCodes, standaardTaal } from '../i18n/talen';
 
-/* `palet` zet een ander kleurenpalet op de pagina (zie tokens.css). Zonder
-   waarde staat de site in het gekozen donkere palet; 'tussen' is het
-   kleurvoorbeeld van de tussenweg op /voorbeeld-tussen/. */
-interface Props { taal?: string; titel?: string; omschrijving?: string; palet?: 'tussen' }
-const { taal = standaardTaal, titel, omschrijving, palet } = Astro.props;
+/* `palet` kiest het kleurenpalet (zie tokens.css). Op 20 oktober 2026 koos
+   de opdrachtgever de tussenweg — zandmuur, diepgroen, terracotta — en dat is
+   nu de site. Het donkere palet staat nog als basis in tokens.css. */
+interface Props { taal?: string; titel?: string; omschrijving?: string; palet?: 'donker' | 'tussen' }
+const { taal = standaardTaal, titel, omschrijving, palet = 'tussen' } = Astro.props;
 const themeKleur = palet === 'tussen' ? '#d9cdb9' : '#1a1a1a';
 const huidige = talen[taal as keyof typeof talen] ?? talen[standaardTaal];
 const kopTitel = titel ?? huidige.content.meta.titel;
@@ -14,13 +14,13 @@ const kopOmschrijving = omschrijving ?? huidige.content.meta.omschrijving;
 ---
 
 <!doctype html>
-<html lang={huidige.htmlLang} data-palet={palet}>
+<html lang={huidige.htmlLang} data-palet={palet === 'donker' ? undefined : palet}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{kopTitel}</title>
     <meta name="description" content={kopOmschrijving} />
-    <meta name="robots" content="noindex, nofollow" />
+    <link rel="canonical" href={new URL(huidige.pad, Astro.site)} />
     <meta property="og:title" content={kopTitel} />
     <meta property="og:description" content={kopOmschrijving} />
     <meta property="og:locale" content={huidige.htmlLang.replace('-', '_')} />
