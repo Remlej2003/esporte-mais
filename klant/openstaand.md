@@ -223,8 +223,10 @@ het hele verloop. Wat er nu staat:
   hier de verkorte en uitgebreide versie downloaden", die niet meer klopte.
 - De tweede knop heet "Uitgebreide versie aanvragen" en opent een mail naar
   **onnoraadsen@hotmail.com** — het adres dat al op zijn site staat. Op
-  maisesporte gaat de aanvraag naar `info@maisesporte.nl`; vraag Onno of hij ze
-  liever allebei naar hetzelfde adres heeft.
+  maisesporte gaat de aanvraag naar `info@maisesporte.nl`. **Dat verschil is een
+  besluit, niet een los eindje:** Jelmer koos op 30 oktober om het zo te
+  houden — zijn persoonlijke site naar zijn eigen mail, de projectsite naar het
+  projectadres. Niet opnieuw voorleggen.
 - `mais-esporte-uitgebreide-versie.pdf` is uit `public/downloads/` gehaald, net
   als op maisesporte, zodat de directe link ook echt niet meer werkt. Het
   bestand blijft in de git-historie.

@@ -24,7 +24,7 @@ https://maisesporte.nl
 https://onnoraadsen.nl
 
 Op onnoraadsen.nl komt de aanvraag bij je hotmail binnen, op maisesporte bij
-info@maisesporte.nl. Zeg het als je dat liever allebei op hetzelfde adres hebt.
+info@maisesporte.nl.
 
 En hier het logo — alle varianten in PNG en SVG, met een uitleg erbij welk
 bestand je waarvoor gebruikt. Kort: PNG voor Word en WhatsApp, SVG voor de
@@ -49,8 +49,6 @@ Dit staat er wel in, en dat is met opzet:
 - **Welke foto's.** Hij noemt ze niet bij naam. Vraag je het nu, dan kan hij in
   het weekend zoeken; vraag je het niet, dan begint volgende week met een
   wachtronde. De originelen moeten van hem komen (M-7/M-8).
-- **Welk aanvraagadres.** De twee sites mailen nu naar twee verschillende
-  adressen. Dat is een keuze van één regel, maar hij moet hem maken.
 
 Niet meegenomen, kan wachten tot volgende week:
 
