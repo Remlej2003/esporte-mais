@@ -1,4 +1,4 @@
-# Openstaand werk voor Onno — stand op 19 oktober 2026
+# Openstaand werk voor Onno — stand op 30 oktober 2026
 
 Alles wat Onno Raadsen gevraagd heeft en nog niet af is, met per punt waar het
 vandaan komt en wat het blokkeert. Drie sites lopen door elkaar in dezelfde
@@ -9,13 +9,16 @@ Bronnen:
 `W` = WhatsApp-tekst · `E` = e-mail Onno 11 oktober · `D` = document
 "Aanpassingen 4 oktober.docx"
 
+Het spraakbericht van 30 oktober staat in
+`gesprekken/2026-10-30-onno-projectplan-op-aanvraag.md`.
+
 ---
 
 ## 1. MAIS ESPORTE — deze repo, maisesporte.nl
 
 | # | Punt | Bron | Stand |
 |---|------|------|-------|
-| M-1 | Derde kleurversie, de "tussenweg" | A 15 okt | **Af en live** — `/voorbeeld-tussen/` |
+| M-1 | Derde kleurversie, de "tussenweg" | A 15 okt | **Af en live** — definitief besluit, staat op `/` |
 | M-2 | Partnership-PDF vervangen door laatste versie | W 14 okt | **Af** — zie hieronder |
 | M-3 | Site live zetten op maisesporte.nl | W 14 okt, A 20 okt | **Af en live** — 26 oktober, zie hieronder |
 | M-4 | Logo naar Onno sturen | W 14 okt, D 4 okt | **Klaar om te versturen** — downloadlink in de conceptmail |
@@ -24,7 +27,7 @@ Bronnen:
 | M-7 | Grotere originelen van twee foto's | E, W 14 okt | **Open** — Onno moet ze sturen; het regeltje onderaan de site is op zijn verzoek weg (20 okt) |
 | M-8 | "Foto's bij onze aanpak zijn slecht, kleiner maken?" | E | **Klaar om te versturen** — antwoord in de conceptmail |
 | M-9 | Leeg vlak naast tekst bij Opleidingscentrum | A 12 okt | **Niet reproduceerbaar** — zie hieronder |
-| M-10 | Uitgebreide versie ook downloadbaar | D 4 okt | **Af en live** — 19 oktober |
+| M-10 | Uitgebreide versie: downloaden of op aanvraag? | D 4 okt, A 30 okt | **Teruggedraaid** — sinds 30 oktober weer op aanvraag |
 
 ### M-3 — live op maisesporte.nl sinds 26 oktober
 
@@ -57,20 +60,20 @@ en "zet hem online". Jelmer koos de **tussenversie**.
   `shared36.cloud86-host.nl`, waar het certificaat van de mailserver op staat).
   Webmail via `webmail.maisesporte.nl` werkt ongewijzigd.
 
-### M-1 — de tussenversie staat klaar
+### M-1 — de kleurkeuze is definitief
 
-Live op `esporte-mais.vercel.app`, te openen zonder in te loggen. De
-startpagina zelf is **niet** gewijzigd en staat nog donker.
+**Dit punt is dicht. De groen-terracotta tussenweg is het besluit en staat
+sinds 26 oktober op maisesporte.nl als het enige palet.** Niet opnieuw
+openbreken, en niet opnieuw aan Onno voorleggen.
 
 | Adres | Wat het is |
 |---|---|
-| `/voorbeeld-tussen/` | zandmuur met diepgroen en terracotta |
-| `/` | de huidige donkere site, onveranderd |
+| `/` | de site, groen-terracotta tussenweg |
+| `/voorbeeld-tussen/`, `/voorbeeld-tussen-goud/` en de andere voorbeeldadressen | sturen door naar `/` |
 
 Op 19 oktober is er ook een variant gemaakt in Onno's eigen antraciet en goud
 (`/voorbeeld-tussen-goud/`). Jelmer koos dezelfde dag voor de groen-terracotta
-versie, en de gouden is weer verwijderd; dat oude adres stuurt door naar
-`/voorbeeld-tussen/`.
+versie, en de gouden is weer verwijderd; dat oude adres stuurt door naar `/`.
 
 **Let op, dit is één keer misgegaan:** bij het kiezen tussen de twee is eerst
 de verkeerde weggehaald — "die met gele teksten, die ipv die met donkergroen"
@@ -79,8 +82,6 @@ een keuze tussen varianten: vraag terug welke **blijft**, met het adres erbij.
 
 Schermafdrukken staan in `kleurvergelijking/`, en `DESIGN.md` legt de keuzes
 uit.
-
-**Wacht nu op Onno's keuze.** Zolang die er niet is, blijft M-3 dicht.
 
 ### M-2 — wat er precies is gewisseld
 
@@ -123,28 +124,58 @@ foto's van het centrum erbij kwamen — zijn bericht is van 12 oktober, maar de
 deploy kan hem later bereikt hebben. **Niet zelf gaan gokken naar een
 oplossing**: vraag hem een schermafdruk als hij het nog ziet.
 
-### M-10 — hier spreken twee instructies elkaar tegen
+### M-10 — hier is een tegenspraak zelf opgelost, en dat was fout
+
+Twee instructies spraken elkaar tegen:
 
 - `D` (4 oktober) zegt: "Bij maisesporte.nl komt deze versie ook te staan,
-  samen met de verkorte versie." Dus beide als download.
-- De site doet nu: korte versie als download, volledig projectplan **op
-  aanvraag** via een mailknop. In `nl.json` staat erbij `"Op verzoek"`, en
-  commit `e2a1316` heet "Aanpassingen 4 oktober verwerkt".
+  samen met de verkorte versie." Te lezen als: beide als download.
+- De site deed: korte versie als download, volledig projectplan **op aanvraag**
+  via een mailknop. In `nl.json` stond erbij `"Op verzoek"`, en commit
+  `e2a1316` heet "Aanpassingen 4 oktober verwerkt".
 
-Op 19 oktober is dit beslist en doorgevoerd: **beide versies als download**,
-op allebei de sites. De aanvraagknop met mailto is weg; op maisesporte in alle
-drie de talen, waarbij bij en en pt vermeld staat dat het document
-Nederlandstalig is.
+Op 19 oktober is die tegenspraak **zelf beslist** in het voordeel van `D`:
+beide versies als download, op allebei de sites (commit `fba1818`). Er is niet
+teruggevraagd. Op 30 oktober kwam Onno er zelf op terug (`A` 30 okt):
 
-De drie documenten op maisesporte, met hun md5:
+> "Nu zie ik dat mensen de verlengde versie van het project kunnen downloaden.
+> Ik vind het eigenlijk veel fijner wat je eerst had, dat mensen die kunnen
+> aanvragen. […] Kijk even naar de tekst zoals je die had staan in de
+> één-na-laatste versie, want dat was prima."
+
+**Dit is dezelfde fout als bij de kleurvarianten (zie M-1): bij een
+tegenspraak of een keuze hoort een vraag terug, geen eigen besluit.** Dat stond
+al in dit dossier opgeschreven en is één punt lager alsnog misgegaan.
+
+Op 30 oktober teruggedraaid op maisesporte.nl:
+
+- De oude tekst en de aanvraagknop met mailto staan terug in nl, en en pt —
+  letterlijk de formulering van vóór `fba1818`, want dat is wat Onno "prima"
+  noemde.
+- `mais-esporte-uitgebreide-versie.pdf` is **uit `public/downloads/` gehaald**,
+  zodat de directe link ook echt niet meer werkt. Een knop weghalen terwijl het
+  bestand blijft staan is alleen cosmetisch. Het bestand blijft in de
+  git-historie (`fba1818`) en op onnoraadsen.nl.
+
+**onnoraadsen.nl is níet teruggedraaid** (O-2 blijft twee downloads). De
+downloadtekst daar — "Je kan hier de verkorte en uitgebreide versie
+downloaden" — is Onno's eigen formulering. De twee sites lopen hiermee bewust
+uit elkaar; dat was in oktober juist het argument om ze gelijk te trekken, dus
+leg het bij hem terug als hij er iets over zegt.
+
+**Let op: de uitgebreide versie is dus nog steeds te downloaden op
+onnoraadsen.nl.** Wil Onno echt grip op wie het volledige plan krijgt, dan moet
+het daar ook weg — dat is zijn keuze, niet de onze.
+
+De documenten op maisesporte, met hun md5:
 
 | Bestand | md5 |
 |---|---|
 | `mais-esporte-korte-versie.pdf` | `d9b84ec5209941420a3d21c3037f47b9` |
-| `mais-esporte-uitgebreide-versie.pdf` | `5a001d9c73e06fe2816cb28d7dc208c3` |
 | `mais-esporte-partnershipmogelijkheden.pdf` | `1ac5bc623f8fa18c5bd2ead45f0effec` |
 
-Dezelfde drie staan op onnoraadsen.nl, met dezelfde md5's.
+Op onnoraadsen.nl staan deze twee plus
+`mais-esporte-uitgebreide-versie.pdf` (`5a001d9c73e06fe2816cb28d7dc208c3`).
 
 ---
 
