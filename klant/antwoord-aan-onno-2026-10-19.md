@@ -4,6 +4,15 @@ Antwoord op zijn mail van zondag 11 oktober ("Onderaan de site van Mais Esporte
 staat dit. Reageer ff op mijn antwoorden"), plus de punten die daarna via
 WhatsApp kwamen.
 
+> **ACHTERHAALD — niet versturen.** Dit concept is nooit verstuurd en is op
+> 30 oktober vervangen door `antwoord-aan-onno-2026-10-30.md`. Vier dingen
+> kloppen niet meer: het vraagt Onno nog om een kleurkeuze (die is gemaakt, zie
+> M-1), het linkt naar `/voorbeeld-tussen/` als aparte versie (stuurt nu door
+> naar `/`), het zegt dat de uitgebreide versie als download op beide sites
+> staat (op 30 oktober teruggedraaid naar op aanvraag, zie M-10), en het noemt
+> het live zetten als nog te doen (staat live sinds 26 oktober). Bewaard omdat
+> de uitleg over vectorbestanden en de foto's hier vandaan komt.
+
 **Nog niet verstuurd — Jelmer stuurt hem zelf.** Bijgewerkt naar de stand van
 19 oktober, eind van de dag: alle links hieronder staan live en zijn
 gecontroleerd. Er hoeft niets als bijlage mee; het logo is een downloadlink.

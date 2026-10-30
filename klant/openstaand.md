@@ -157,15 +157,11 @@ Op 30 oktober teruggedraaid op maisesporte.nl:
   bestand blijft staan is alleen cosmetisch. Het bestand blijft in de
   git-historie (`fba1818`) en op onnoraadsen.nl.
 
-**onnoraadsen.nl is níet teruggedraaid** (O-2 blijft twee downloads). De
-downloadtekst daar — "Je kan hier de verkorte en uitgebreide versie
-downloaden" — is Onno's eigen formulering. De twee sites lopen hiermee bewust
-uit elkaar; dat was in oktober juist het argument om ze gelijk te trekken, dus
-leg het bij hem terug als hij er iets over zegt.
-
-**Let op: de uitgebreide versie is dus nog steeds te downloaden op
-onnoraadsen.nl.** Wil Onno echt grip op wie het volledige plan krijgt, dan moet
-het daar ook weg — dat is zijn keuze, niet de onze.
+**Op onnoraadsen.nl is het dezelfde dag ook teruggedraaid**, op verzoek van
+Jelmer ("onnoraadsen.nl moet ook de op aanvraag hebben"). Eerst bleef die site
+staan omdat de downloadtekst daar Onno's eigen formulering was; dat argument
+weegt niet op tegen dat het plan dan alsnog overal te downloaden was. Zie O-2.
+De twee sites staan dus weer gelijk, nu allebei op aanvraag.
 
 De documenten op maisesporte, met hun md5:
 
@@ -210,7 +206,7 @@ paginatelling of bestandsnaam. Verdere details staan in
 | # | Punt | Bron | Stand |
 |---|------|------|-------|
 | O-1 | maisesporte.nl toevoegen aan de lijst sites | W 9 okt | **Af** — al op 10 oktober gedaan |
-| O-2 | Verkorte én uitgebreide versie downloadbaar bij "Ambitie en droom" | D 4 okt | **Af en live** — 19 oktober |
+| O-2 | Verkorte versie downloadbaar, uitgebreide op aanvraag | D 4 okt, A 30 okt | **Teruggedraaid** — 30 oktober, zie hieronder |
 | O-3 | Partnershipmogelijkheden downloadbaar bij "Voor investeerders en bedrijven" | D 4 okt, W 14 okt | **Af en live** — 19 oktober |
 
 Alle drie staan live op onnoraadsen.nl.
@@ -218,23 +214,50 @@ Alle drie staan live op onnoraadsen.nl.
 O-1 bleek op 10 oktober al gedaan: MAIS ESPORTE staat in de strip met
 initiatieven en bij de websites in de voet.
 
-Bij O-2 stond de uitgebreide versie op **aanvraag**, via een mailto-knop. Dat
-week af van Onno's document van 4 oktober, dat zegt dat beide versies gewoon te
-downloaden moeten zijn. Sinds 19 oktober zijn het twee downloadknoppen, en
-volgt de tekst zijn formulering: "Je kan hier de verkorte en uitgebreide versie
-downloaden."
+Bij O-2 stond de uitgebreide versie eerst op **aanvraag**, van 19 tot 30
+oktober als **download**, en sinds 30 oktober weer op aanvraag — zie M-10 voor
+het hele verloop. Wat er nu staat:
+
+- De tekst is "De verkorte versie kun je hier downloaden; de uitgebreide versie
+  stuur ik je graag op aanvraag toe." Dat verving Onno's eigen regel "Je kan
+  hier de verkorte en uitgebreide versie downloaden", die niet meer klopte.
+- De tweede knop heet "Uitgebreide versie aanvragen" en opent een mail naar
+  **onnoraadsen@hotmail.com** — het adres dat al op zijn site staat. Op
+  maisesporte gaat de aanvraag naar `info@maisesporte.nl`; vraag Onno of hij ze
+  liever allebei naar hetzelfde adres heeft.
+- `mais-esporte-uitgebreide-versie.pdf` is uit `public/downloads/` gehaald, net
+  als op maisesporte, zodat de directe link ook echt niet meer werkt. Het
+  bestand blijft in de git-historie.
+- De link zit niet meer in `lib/links.ts` als `DOCUMENT_UITGEBREIDE_VERSIE`;
+  daar staat nu `DOCUMENT_UITGEBREIDE_VERSIE_AANVRAAG` met de mailto.
+
+**Gecontroleerd vóór de wijziging:** `/api/content` gaf 26 opgeslagen teksten,
+maar geen `home-ambition-focus`. De `defaultValue` uit `app/page.tsx` wint dus
+en de code-wijziging komt door. Was die sleutel er wél geweest, dan had de
+tekst in de bewerkmodus van de site zelf aangepast moeten worden.
+
+**Nog een losse eindje daar:** `public/downloads/` bevat ook
+`mijn-ambitie-en-droom-verkort.txt` en `-uitgebreid.txt` uit juli. Ze worden
+nergens op de site gelinkt, maar zijn wel op hun eigen adres op te vragen, en
+de uitgebreide bevat zijn ambitietekst plus zijn mailadres en telefoonnummer.
+Niet hetzelfde document als het projectplan, dus geen spoedgeval — maar vraag
+hem of die weg kunnen.
 
 Bij O-3 stond de knop er al, maar met de **oude** partnership-PDF van 6
 oktober — precies de versie waar Onno op 14 oktober over viel bij maisesporte.
 Nu vervangen door die van 9 oktober.
 
-**De drie documenten, met hun md5 zodat je ze kunt controleren:**
+**De documenten die er nu staan, met hun md5 zodat je ze kunt controleren.**
+De uitgebreide versie staat er sinds 30 oktober niet meer bij:
 
 | Bestand | md5 |
 |---|---|
 | `mais-esporte-korte-versie.pdf` | `d9b84ec5209941420a3d21c3037f47b9` |
-| `mais-esporte-uitgebreide-versie.pdf` | `5a001d9c73e06fe2816cb28d7dc208c3` |
 | `mais-esporte-partnershipmogelijkheden.pdf` | `1ac5bc623f8fa18c5bd2ead45f0effec` |
+
+De uitgebreide versie (`5a001d9c73e06fe2816cb28d7dc208c3`) stond hier tot
+30 oktober en is nu van beide sites af. Hij zit nog in de git-historie van
+allebei de repo's.
 
 **Let op bij deze site:** de teksten staan niet alleen in de code. Elke
 `EditableText` haalt zijn waarde uit Upstash Redis via `/api/content`, en een
