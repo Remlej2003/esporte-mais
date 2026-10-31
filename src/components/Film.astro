@@ -1,0 +1,88 @@
+---
+/* Een filmpje aan de muur, in dezelfde lijst als Foto: een vlek verf op het
+   pleisterwerk, het beeld daar net iets uit het lood overheen, en een
+   gesjabloneerd plaatje eronder dat zegt wat je ziet.
+
+   `preload="none"` is hier geen detail maar het hele punt: het bestand is 25 MB
+   en wordt pas opgehaald als de bezoeker zelf op play drukt. Tot die tijd staat
+   er alleen het posterbeeld, dat 45 kB weegt. Geen autoplay en geen geluid dat
+   uit zichzelf begint. */
+interface Props {
+  src: string;
+  poster: string;
+  /* Wat er te zien is, voor wie het beeld niet kan zien. */
+  label: string;
+  plaat?: string;
+  vorm?: 'boog' | 'recht';
+  vlek?: string;
+  verhouding?: string;
+  class?: string;
+}
+const {
+  src,
+  poster,
+  label,
+  plaat,
+  vorm = 'recht',
+  vlek = 'var(--lak-helder)',
+  verhouding,
+  class: klasse = '',
+} = Astro.props;
+---
+
+<figure
+  class={`film film--${vorm} ${klasse}`}
+  style={`--vlek:${vlek}${verhouding ? `;--verhouding:${verhouding}` : ''}`}
+>
+  <div class="film__vel">
+    <video
+      class="film__beeld"
+      src={src}
+      poster={poster}
+      controls
+      preload="none"
+      playsinline
+      aria-label={label}></video>
+  </div>
+  {plaat && <figcaption class="film__plaat plaat">{plaat}</figcaption>}
+</figure>
+
+<style>
+  .film { margin: 0; }
+
+  .film__vel {
+    position: relative;
+    isolation: isolate;
+  }
+  /* De geverfde vlek waar het beeld op geplakt zit. */
+  .film__vel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--vlek);
+    transform: translate(clamp(8px, 1.4vw, 18px), clamp(8px, 1.4vw, 18px)) rotate(-0.7deg);
+    z-index: -1;
+  }
+  .film__beeld {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: var(--verhouding, auto);
+    object-fit: cover;
+    object-position: center;
+    background: var(--roet);
+  }
+
+  .film--boog .film__beeld,
+  .film--boog .film__vel::before { border-radius: var(--r-boog); }
+  .film--recht .film__beeld,
+  .film--recht .film__vel::before { border-radius: var(--r-plaat); }
+
+  .film__plaat {
+    margin-top: calc(var(--s5) + 0.4vw);
+    padding-left: var(--s3);
+    border-left: 1px solid color-mix(in srgb, currentColor 45%, transparent);
+    opacity: 0.78;
+    max-width: 34ch;
+  }
+</style>

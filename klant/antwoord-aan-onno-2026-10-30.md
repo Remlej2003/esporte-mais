@@ -32,8 +32,9 @@ drukker.
 
 https://maisesporte.nl/downloads/mais-esporte-logo.zip
 
-Eén ding van jou: welke foto's moeten vervangen worden? Stuur de originelen als
-je ze hebt, dan kunnen ze juist groter in plaats van kleiner.
+Eén ding van jou: bij "Jongeren leiden jongeren" staan twee foto's die klein
+zijn aangeleverd — de krattentoren en het kind dat begeleid wordt. Heb je daar
+de originelen van? Dan kunnen ze juist groter in plaats van kleiner.
 
 Succes dit weekend.
 
@@ -46,9 +47,10 @@ Jelmer
 
 Dit staat er wel in, en dat is met opzet:
 
-- **Welke foto's.** Hij noemt ze niet bij naam. Vraag je het nu, dan kan hij in
-  het weekend zoeken; vraag je het niet, dan begint volgende week met een
-  wachtronde. De originelen moeten van hem komen (M-7/M-8).
+- **Welke foto's.** Ze staan er sinds 31 oktober bij naam in. Onno stuurde die
+  dag drie andere foto's (zie M-11); zonder die namen leest de vraag alsof die
+  nog openstaat. Het gaat om de twee kleine bij "Jongeren leiden jongeren", en
+  de originelen moeten van hem komen (M-7/M-8).
 
 Niet meegenomen, kan wachten tot volgende week:
 

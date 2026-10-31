@@ -2,6 +2,7 @@
 import Base from './Base.astro';
 import Nav from '../components/Nav.astro';
 import Knop from '../components/Knop.astro';
+import Film from '../components/Film.astro';
 import Foto from '../components/Foto.astro';
 import Merk from '../components/Merk.astro';
 import KwastRand from '../components/KwastRand.astro';
@@ -22,24 +23,29 @@ import hellingFoto from '../images/helling-omhoog.jpg';
 import krattenFoto from '../images/kratten-toren.jpg';
 import kindFoto from '../images/kind-begeleid.jpg';
 import bandFoto from '../images/band-paal.jpg';
-import terreinFoto from '../images/terrein.jpg';
-import centrumTerrein from '../images/centrum-terrein.jpg';
+import kampFoto from '../images/terrein-kamp.jpg';
 import centrumVijver from '../images/centrum-vijver.jpg';
-import centrumKring from '../images/centrum-kring.jpg';
-import centrumGrasveld from '../images/centrum-grasveld.jpg';
+import centrumSamenwerking from '../images/centrum-samenwerking.jpg';
+import centrumUitzicht from '../images/centrum-uitzicht.jpg';
 
-/* De vier foto's van het opleidingscentrum, in de volgorde van
-   `centrum.fotos` in het contentbestand. De eerste is het overzicht van het
-   terrein: die staat groot onder de kop, in de kolom naast de tekst. De
-   andere drie staan eronder: smal naast breed, dan het grasveld als
-   panorama over de volle breedte. `verhouding` is wat de foto krijgt; in de
-   rij deelt de breedte daar naar, zodat de twee foto's exact even hoog
+/* De vier beelden van het opleidingscentrum, in de volgorde van
+   `centrum.fotos` in het contentbestand. Het eerste staat groot onder de
+   kop, in de kolom naast de tekst: sinds 31 oktober is dat niet langer de
+   overzichtsfoto maar het filmpje van het landgoed, op verzoek van de
+   opdrachtgever. De andere drie staan eronder: smal naast breed, dan het
+   uitzicht over de volle breedte. `verhouding` is wat het beeld krijgt; in
+   de rij deelt de breedte daar naar, zodat de twee foto's exact even hoog
    uitkomen (zie de CSS bij .centrum__rij). */
 const centrumBeelden = [
-  { src: centrumTerrein, verhouding: '4 / 3', vlek: 'var(--lak)' },
+  {
+    film: '/video/vale-da-serra.mp4',
+    poster: '/video/vale-da-serra-poster.jpg',
+    verhouding: '478 / 850',
+    vlek: 'var(--lak)',
+  },
   { src: centrumVijver, verhouding: '8 / 9', vlek: 'var(--goud)' },
-  { src: centrumKring, verhouding: '3 / 2', vlek: 'var(--lak)' },
-  { src: centrumGrasveld, verhouding: '2000 / 922', vlek: 'var(--goud)' },
+  { src: centrumSamenwerking, verhouding: '3 / 2', vlek: 'var(--lak)' },
+  { src: centrumUitzicht, verhouding: '16 / 9', vlek: 'var(--goud)' },
 ];
 const centrumFotos = t.centrum.fotos.map((f: any, i: number) => ({ ...f, ...centrumBeelden[i] }));
 const [centrumOverzicht, ...centrumRest] = centrumFotos;
@@ -120,12 +126,12 @@ const centrumRijen = [centrumRest.slice(0, 2), centrumRest.slice(2)];
           <p class="visie__slot maat">{t.visie.slot}</p>
         </div>
         <Foto
-          src={terreinFoto}
+          src={kampFoto}
           alt={t.visie.foto.alt}
           plaat={t.visie.foto.plaat}
           vorm="recht"
           vlek="var(--goud)"
-          breedtes={[400, 660]}
+          breedtes={[400, 660, 900]}
           sizes="(max-width: 62rem) 88vw, 34vw"
           class="visie__foto"
         />
@@ -238,18 +244,16 @@ const centrumRijen = [centrumRest.slice(0, 2), centrumRest.slice(2)];
       <div class="omhulsel">
         <div class="centrum__raster">
           <h2 class="centrum__kop">{t.centrum.kop}</h2>
-          <!-- Het overzicht van het terrein vult de kolom onder de kop, waar
+          <!-- Het filmpje van het landgoed vult de kolom onder de kop, waar
                naast de lange tekst anders een leeg vlak stond. -->
-          <Foto
-            src={centrumOverzicht.src}
-            alt={centrumOverzicht.alt}
+          <Film
+            src={centrumOverzicht.film}
+            poster={centrumOverzicht.poster}
+            label={centrumOverzicht.alt}
             plaat={centrumOverzicht.plaat}
             vorm="recht"
             vlek={centrumOverzicht.vlek}
             verhouding={centrumOverzicht.verhouding}
-            breedtes={[420, 760, 1100]}
-            sizes="(max-width: 62rem) 88vw, 36vw"
-            kwaliteit={64}
             class="centrum__overzicht"
           />
           <div class="centrum__woord">
@@ -809,6 +813,9 @@ const centrumRijen = [centrumRest.slice(0, 2), centrumRest.slice(2)];
      kop mee met het scherm, anders loopt hij de tekstkolom in. */
   .centrum__kop { grid-area: kop; font-size: min(var(--t-h2), 4.3vw); }
   .centrum__raster :global(.centrum__overzicht) { grid-area: foto; }
+  /* Het filmpje is staand en 478 pixels breed aangeleverd. Breder
+     uitrekken maakt het alleen maar zachter, dus daar houdt het op. */
+  .centrum__raster :global(.centrum__overzicht) { max-width: 30rem; }
   .centrum__woord { grid-area: woord; }
   .centrum__alinea { margin-top: var(--s5); color: var(--op-kalk-zacht); }
 

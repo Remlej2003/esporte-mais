@@ -1,4 +1,4 @@
-# Openstaand werk voor Onno — stand op 30 oktober 2026
+# Openstaand werk voor Onno — stand op 31 oktober 2026
 
 Alles wat Onno Raadsen gevraagd heeft en nog niet af is, met per punt waar het
 vandaan komt en wat het blokkeert. Drie sites lopen door elkaar in dezelfde
@@ -10,7 +10,8 @@ Bronnen:
 "Aanpassingen 4 oktober.docx"
 
 Het spraakbericht van 30 oktober staat in
-`gesprekken/2026-10-30-onno-projectplan-op-aanvraag.md`.
+`gesprekken/2026-10-30-onno-projectplan-op-aanvraag.md`, de getypte opdracht
+van 31 oktober in `gesprekken/2026-10-31-onno-fotos-en-filmpje.md`.
 
 ---
 
@@ -28,6 +29,7 @@ Het spraakbericht van 30 oktober staat in
 | M-8 | "Foto's bij onze aanpak zijn slecht, kleiner maken?" | E | **Klaar om te versturen** — antwoord in de conceptmail |
 | M-9 | Leeg vlak naast tekst bij Opleidingscentrum | A 12 okt | **Niet reproduceerbaar** — zie hieronder |
 | M-10 | Uitgebreide versie: downloaden of op aanvraag? | D 4 okt, A 30 okt | **Teruggedraaid** — sinds 30 oktober weer op aanvraag |
+| M-11 | Drie foto's vervangen en een filmpje erin | W 31 okt | **Af** — zie hieronder |
 
 ### M-3 — live op maisesporte.nl sinds 26 oktober
 
@@ -114,8 +116,9 @@ uit de PDF geplukt in plaats van los aangeleverd.
 ### M-9 — ik zie het lege vlak niet meer
 
 Op 19 oktober nagelopen op 1440, 1920 en mobiel. Het opleidingscentrum heeft
-links de kop met daaronder de overzichtsfoto, rechts de tekst, en daaronder de
-rij met drie foto's. Op beide desktopbreedtes vullen de kolommen elkaar; op
+links de kop met daaronder het grote beeld (sinds 31 oktober het filmpje,
+daarvoor de overzichtsfoto), rechts de tekst, en daaronder de rij met drie
+foto's. Op beide desktopbreedtes vullen de kolommen elkaar; op
 mobiel staat alles onder elkaar, dus daar kan per definitie geen vlak "naast de
 tekst" staan.
 
@@ -172,6 +175,61 @@ De documenten op maisesporte, met hun md5:
 
 Op onnoraadsen.nl staan deze twee plus
 `mais-esporte-uitgebreide-versie.pdf` (`5a001d9c73e06fe2816cb28d7dc208c3`).
+
+### M-11 — drie foto's vervangen en het filmpje erin, 31 oktober
+
+Onno vroeg het 's ochtends om 11:16, met een reden erbij: "Morgen ga ik
+investeerders benaderen en zou fijn als alles gelijk goed staat." Hij wees per
+stuk aan welk beeld weg moest, met een schermafdruk erbij, en gaf twee keer
+zelf het bijschrift op. Uitgeschreven in
+`gesprekken/2026-10-31-onno-fotos-en-filmpje.md`.
+
+| Plek op de site | Was | Is nu |
+|---|---|---|
+| Onze missie, naast de tekst | `terrein.jpg` | `terrein-kamp.jpg` — tenten bij schemering |
+| Opleidingscentrum, groot onder de kop | `centrum-terrein.jpg` | het filmpje `public/video/vale-da-serra.mp4` |
+| Opleidingscentrum, rij van twee | `centrum-kring.jpg` | `centrum-samenwerking.jpg` — "Samenwerkingsoefening" |
+| Opleidingscentrum, breed eronder | `centrum-grasveld.jpg` | `centrum-uitzicht.jpg` — "75 hectare grond op het opleidingscentrum" |
+
+De vier oude bestanden zijn uit `src/images/` verwijderd; ze blijven in de
+git-historie. De md5 van wat er nu staat:
+
+| Bestand | md5 |
+|---|---|
+| `src/images/terrein-kamp.jpg` | `04766386c7cd9bf27a278b1b52671fb1` |
+| `src/images/centrum-samenwerking.jpg` | `613df795b001db4bbc179c9feb85d04c` |
+| `src/images/centrum-uitzicht.jpg` | `eddbe3d3fa457b21d30c8dc17aeb3346` |
+| `public/video/vale-da-serra.mp4` | `3fb350a8b3a6757852c47c1441e6ce6a` |
+
+Wat er onderweg aan keuzes is gemaakt, zodat het terug te draaien is:
+
+- **De samenwerkingsfoto is bijgesneden.** De bron is staand (3000 × 4000); het
+  vak in die rij is liggend 3:2. Uitgesneden rond de groep op de stam, 2000 ×
+  1333. De volle staande foto zit in de WhatsApp-export
+  (`00000086-20240809_113211.jpg`, md5 `b8edfa394c3a227717e48876b638abf9`).
+- **Het brede vak staat nu op 16:9 in plaats van 2000/922.** Onno's foto is
+  4:3; in de oude smalle band viel de lucht en het gazon eraf. Het vak is
+  alleen in zijn eigen rij, dus geen enkele andere foto verschuift hierdoor.
+- **"Samenwerk oefening" is "Samenwerkingsoefening" geworden** — los
+  geschreven is het geen Nederlands, en dit staat op de pagina waar hij
+  investeerders naartoe stuurt. Zijn tweede bijschrift staat er letterlijk.
+- **Het filmpje speelt niet uit zichzelf.** Nieuw component `Film.astro`, met
+  `preload="none"`: tot iemand op play drukt wordt er niets van de 25 MB
+  opgehaald, alleen het posterbeeld van 45 kB. Geen autoplay, geen geluid dat
+  zomaar begint. Het staat op zijn eigen staande maat (478 × 850) en wordt niet
+  breder gerekt dan 480 pixels, want breder is alleen maar zachter.
+
+Twee dingen die aandacht vragen en **niet** zelf zijn beslist:
+
+1. **Er zijn twee filmpjes gestuurd.** In de export staat na de video van
+   11:37:47 nog `video weggelaten` (11:37:55). Er is gewerkt met de video die
+   er wél in zit. Vraag Onno of dat de goede was.
+2. **Het filmpje is niet van MAIS ESPORTE.** Het is de promotievideo van het
+   landgoed: Portugese ondertitels, GPS-coördinaten in beeld en het logo van
+   Vale da Serra, 2 minuten 17 lang. Onno vroeg er zelf om en werkt met die
+   plek, dus het staat erin — maar op een pagina voor investeerders staat nu
+   het merk van een ander. Dat is zijn keuze om te maken, niet die van de
+   bouwer.
 
 ---
 
