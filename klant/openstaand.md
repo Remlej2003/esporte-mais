@@ -1,4 +1,4 @@
-# Openstaand werk voor Onno — stand op 31 oktober 2026
+# Openstaand werk voor Onno — stand op 8 november 2026
 
 Alles wat Onno Raadsen gevraagd heeft en nog niet af is, met per punt waar het
 vandaan komt en wat het blokkeert. Drie sites lopen door elkaar in dezelfde
@@ -30,6 +30,8 @@ van 31 oktober in `gesprekken/2026-10-31-onno-fotos-en-filmpje.md`.
 | M-9 | Leeg vlak naast tekst bij Opleidingscentrum | A 12 okt | **Niet reproduceerbaar** — zie hieronder |
 | M-10 | Uitgebreide versie: downloaden of op aanvraag? | D 4 okt, A 30 okt | **Teruggedraaid** — sinds 30 oktober weer op aanvraag |
 | M-11 | Drie foto's vervangen en een filmpje erin | W 31 okt | **Af** — zie hieronder |
+| M-12 | Onepager op de site, "met titel One pager" | W begin nov | **Af en live** — 8 november, zie hieronder |
+| M-13 | Filmpje vervangen door het origineel | W 5 nov | **Af en live** — 8 november, zie hieronder |
 
 ### M-3 — live op maisesporte.nl sinds 26 oktober
 
@@ -221,15 +223,56 @@ Wat er onderweg aan keuzes is gemaakt, zodat het terug te draaien is:
 
 Twee dingen die aandacht vragen en **niet** zelf zijn beslist:
 
-1. **Er zijn twee filmpjes gestuurd.** In de export staat na de video van
-   11:37:47 nog `video weggelaten` (11:37:55). Er is gewerkt met de video die
-   er wél in zit. Vraag Onno of dat de goede was.
+1. ~~**Er zijn twee filmpjes gestuurd.**~~ **Beantwoord op 5 november:** Onno
+   stuurde het origineel van dezelfde film, dus het was de goede. Zie M-13.
 2. **Het filmpje is niet van MAIS ESPORTE.** Het is de promotievideo van het
    landgoed: Portugese ondertitels, GPS-coördinaten in beeld en het logo van
    Vale da Serra, 2 minuten 17 lang. Onno vroeg er zelf om en werkt met die
    plek, dus het staat erin — maar op een pagina voor investeerders staat nu
    het merk van een ander. Dat is zijn keuze om te maken, niet die van de
    bouwer.
+
+### M-12 — de onepager erbij, 8 november
+
+Onno stuurde `MAIS ESPORTE onepager.pdf` met "Kan je deze nog op de site
+zetten? Met titel One pager". Uitgeschreven in
+`gesprekken/2026-11-onno-onepager-en-origineel.md`.
+
+- Staat op `public/downloads/mais-esporte-one-pager.pdf`.
+- Eerste knop in "Lees het hele verhaal", vóór de korte versie: van kort naar
+  lang. Naam "One pager (PDF)"; in het Engels en Portugees met "(PDF, Dutch)"
+  en "(PDF, em holandês)", net als de andere PDF's.
+- De inleiding van dat blok noemt hem nu ook ("De one pager en de korte versie
+  kun je hier lezen"), in alle drie de talen.
+- Erbij, niet in plaats van: de korte versie blijft staan. Bedoelde hij
+  vervangen, dan is dat één regel weghalen.
+
+### M-13 — het filmpje in de volle kwaliteit, 8 november
+
+Onno stuurde op 5 november "het origineel": dezelfde film van 2 minuten 17,
+maar in 4K (2160 × 3840, 858,6 MB) in plaats van de 478 × 850 die WhatsApp er
+op 31 oktober van had gemaakt.
+
+| Bestand | Wat | Grootte |
+|---|---|---|
+| `public/video/vale-da-serra.webm` | 1080 × 1920, VP9 + Opus, twee passes op 1,6 Mbit/s | 29 MB |
+| `public/video/vale-da-serra.mp4` | 1080 × 1920, H.264 + AAC, terugval | 43 MB (was 25 MB bij 478 breed) |
+| `public/video/vale-da-serra-poster.webp` | posterbeeld, 720 breed, zelfde moment als eerst (0:55) | 150 kB |
+
+- **Waarom 1080 en niet 4K:** het vak is hoogstens 480 pixels breed, dus 960
+  op een retinascherm. 4K is 858 MB en dat is voor een website niet te doen.
+- **Twee bronnen:** Jelmer opperde een lichter webformaat. Voor video is dat
+  WebM; de browser pakt die als hij hem kan afspelen, anders de MP4 (oudere
+  iPhones). Er wordt maar één van de twee opgehaald, en pas na een druk op
+  play: `preload="none"` staat er nog steeds.
+- **Poster als WebP** in plaats van JPG; de oude `vale-da-serra-poster.jpg` is
+  weg. Op 0:55 schemert rechtsonder al het onderschrift "Restaurante e
+  Cozinha" in; dat was op de oude poster ook zo, alleen te klein om te zien.
+- md5: webm `18114adce21bad4184387dd8b1418c1f`, mp4
+  `8fe674e536e2d585dd29139423a6183a`, poster `2398600eb1e2119a38669ab9bc4ab8e0`.
+  De md5 van de mp4 in de tabel bij M-11 is die van de oude versie.
+- De 4K-bron zit niet in de repo (te groot voor GitHub). Hij staat in Jelmers
+  Downloads-map en in de WhatsApp-chat.
 
 ---
 

@@ -220,11 +220,12 @@
     "foto": { "alt": "Kinderen en begeleiders in een sportactiviteit op een zandveld, met bakstenen huizen en de stad op de achtergrond.", "plaat": "Sportactiviteit op het veld in de wijk" }
   },
 
-  "_documenten_herkomst": "De korte versie staat online, het volledige projectplan is op aanvraag. Van 19 tot 30 oktober 2026 waren het twee downloads, op grond van het document van de opdrachtgever van 4 oktober; op 30 oktober vroeg hij zelf om de aanvraagknop terug. Op onnoraadsen.nl is het sinds 30 oktober ook op aanvraag.",
+  "_documenten_herkomst": "De korte versie staat online, het volledige projectplan is op aanvraag. Van 19 tot 30 oktober 2026 waren het twee downloads, op grond van het document van de opdrachtgever van 4 oktober; op 30 oktober vroeg hij zelf om de aanvraagknop terug. Op onnoraadsen.nl is het sinds 30 oktober ook op aanvraag. De one pager staat erbij sinds 8 november, op verzoek van de opdrachtgever (per WhatsApp: \"Met titel One pager\").",
   "documenten": {
     "kop": "Lees het hele verhaal.",
-    "inleiding": "De projectbeschrijving vertelt uitgebreider wat MAIS ESPORTE doet, voor wie en waarom. De korte versie kun je hier lezen. Het volledige projectplan voor 2027 tot en met 2031 sturen we je graag op aanvraag toe.",
+    "inleiding": "De projectbeschrijving vertelt uitgebreider wat MAIS ESPORTE doet, voor wie en waarom. De one pager en de korte versie kun je hier lezen. Het volledige projectplan voor 2027 tot en met 2031 sturen we je graag op aanvraag toe.",
     "items": [
+      { "naam": "One pager (PDF)", "bestand": "/downloads/mais-esporte-one-pager.pdf" },
       { "naam": "Korte versie (PDF)", "bestand": "/downloads/mais-esporte-korte-versie.pdf" },
       { "naam": "Volledig projectplan aanvragen", "mail": "mailto:info@maisesporte.nl?subject=Aanvraag%20volledig%20projectplan%20MAIS%20ESPORTE" }
     ]

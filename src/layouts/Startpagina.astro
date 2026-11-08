@@ -39,8 +39,9 @@ import centrumUitzicht from '../images/centrum-uitzicht.jpg';
 const centrumBeelden = [
   {
     film: '/video/vale-da-serra.mp4',
-    poster: '/video/vale-da-serra-poster.jpg',
-    verhouding: '478 / 850',
+    webm: '/video/vale-da-serra.webm',
+    poster: '/video/vale-da-serra-poster.webp',
+    verhouding: '9 / 16',
     vlek: 'var(--lak)',
   },
   { src: centrumVijver, verhouding: '8 / 9', vlek: 'var(--goud)' },
@@ -248,6 +249,7 @@ const centrumRijen = [centrumRest.slice(0, 2), centrumRest.slice(2)];
                naast de lange tekst anders een leeg vlak stond. -->
           <Film
             src={centrumOverzicht.film}
+            webm={centrumOverzicht.webm}
             poster={centrumOverzicht.poster}
             label={centrumOverzicht.alt}
             plaat={centrumOverzicht.plaat}

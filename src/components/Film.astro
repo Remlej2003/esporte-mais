@@ -3,12 +3,18 @@
    pleisterwerk, het beeld daar net iets uit het lood overheen, en een
    gesjabloneerd plaatje eronder dat zegt wat je ziet.
 
-   `preload="none"` is hier geen detail maar het hele punt: het bestand is 25 MB
+   `preload="none"` is hier geen detail maar het hele punt: het bestand is tientallen MB's
    en wordt pas opgehaald als de bezoeker zelf op play drukt. Tot die tijd staat
-   er alleen het posterbeeld, dat 45 kB weegt. Geen autoplay en geen geluid dat
-   uit zichzelf begint. */
+   er alleen het posterbeeld. Geen autoplay en geen geluid dat
+   uit zichzelf begint.
+
+   Twee bronnen: eerst de WebM (VP9), die bij hetzelfde beeld kleiner is, en
+   de MP4 als terugval voor browsers die WebM niet afspelen (oudere iPhones).
+   De browser pakt de eerste die hij kan, en haalt alleen die op. */
 interface Props {
   src: string;
+  /* Optioneel: dezelfde film als WebM, die als eerste wordt aangeboden. */
+  webm?: string;
   poster: string;
   /* Wat er te zien is, voor wie het beeld niet kan zien. */
   label: string;
@@ -20,6 +26,7 @@ interface Props {
 }
 const {
   src,
+  webm,
   poster,
   label,
   plaat,
@@ -37,12 +44,14 @@ const {
   <div class="film__vel">
     <video
       class="film__beeld"
-      src={src}
       poster={poster}
       controls
       preload="none"
       playsinline
-      aria-label={label}></video>
+      aria-label={label}>
+      {webm && <source src={webm} type="video/webm" />}
+      <source src={src} type="video/mp4" />
+    </video>
   </div>
   {plaat && <figcaption class="film__plaat plaat">{plaat}</figcaption>}
 </figure>
